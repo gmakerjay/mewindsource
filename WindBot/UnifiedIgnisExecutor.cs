@@ -1371,7 +1371,7 @@ namespace ProjectIgnisAI
                 if (card != null && _cardRegistry.ContainsKey(card.Id))
                 {
                     var meta = _cardRegistry[card.Id];
-                    if (meta.roles.Contains("starter") || meta.roles.Contains("extender") || meta.roles.Contains("payoff"))
+                    if (meta.roles.Contains("starter") || meta.roles.Contains("extender") || meta.roles.Contains("payoff") || meta.roles.Contains("searcher"))
                     {
                         return true;
                     }
@@ -1404,7 +1404,7 @@ namespace ProjectIgnisAI
                 if (_cardRegistry.ContainsKey(card.Id))
                 {
                     var meta = _cardRegistry[card.Id];
-                    if (!meta.roles.Contains("starter") && !meta.roles.Contains("extender") && !meta.roles.Contains("payoff"))
+                    if (!meta.roles.Contains("starter") && !meta.roles.Contains("extender") && !meta.roles.Contains("payoff") && !meta.roles.Contains("searcher"))
                     {
                         return false;
                     }

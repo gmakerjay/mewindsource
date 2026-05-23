@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": 99249638,
     "roles": [
@@ -47,9 +47,9 @@
   {
     "id": 14558127,
     "roles": [
-      "handtrap",
       "combo_piece",
-      "interruption"
+      "interruption",
+      "handtrap"
     ],
     "priority": 7,
     "risk_if_negated": 1,
@@ -58,7 +58,10 @@
     "recovery_value": 1,
     "combo_plans": [
       "PlanA"
-    ]
+    ],
+    "q_values": {
+      "establish_interruptions": -0.0011
+    }
   },
   {
     "id": 14558128,
@@ -312,7 +315,11 @@
     "recovery_value": 4,
     "combo_plans": [
       "PlanA"
-    ]
+    ],
+    "q_values": {
+      "break_board": -0.0113,
+      "establish_interruptions": -0.04
+    }
   },
   {
     "id": 68468459,
@@ -377,8 +384,8 @@
   {
     "id": 10045474,
     "roles": [
-      "handtrap",
-      "interruption"
+      "interruption",
+      "handtrap"
     ],
     "priority": 7,
     "risk_if_negated": 1,
@@ -387,7 +394,11 @@
     "recovery_value": 4,
     "combo_plans": [
       "PlanA"
-    ]
+    ],
+    "q_values": {
+      "establish_interruptions": -0.0012,
+      "break_board": -0.0074
+    }
   },
   {
     "id": 23434538,
@@ -407,8 +418,8 @@
   {
     "id": 24224830,
     "roles": [
-      "handtrap",
-      "interruption"
+      "interruption",
+      "handtrap"
     ],
     "priority": 9,
     "risk_if_negated": 1,
@@ -452,9 +463,9 @@
   {
     "id": 73642296,
     "roles": [
-      "handtrap",
       "combo_piece",
-      "interruption"
+      "interruption",
+      "handtrap"
     ],
     "priority": 7,
     "risk_if_negated": 1,
@@ -463,7 +474,10 @@
     "recovery_value": 6,
     "combo_plans": [
       "PlanA"
-    ]
+    ],
+    "q_values": {
+      "establish_interruptions": -0.0082
+    }
   },
   {
     "id": 84192580,
@@ -498,9 +512,9 @@
   {
     "id": 97268402,
     "roles": [
-      "handtrap",
       "combo_piece",
-      "interruption"
+      "interruption",
+      "handtrap"
     ],
     "priority": 7,
     "risk_if_negated": 1,
@@ -509,7 +523,10 @@
     "recovery_value": 5,
     "combo_plans": [
       "PlanA"
-    ]
+    ],
+    "q_values": {
+      "establish_interruptions": -0.006
+    }
   },
   {
     "id": 38648860,
@@ -831,7 +848,11 @@
     "recovery_value": 5,
     "combo_plans": [
       "PlanA"
-    ]
+    ],
+    "q_values": {
+      "break_board": -0.0054,
+      "establish_interruptions": -0.0067
+    }
   },
   {
     "id": 14307929,
@@ -1928,9 +1949,9 @@
   {
     "id": 25311006,
     "roles": [
-      "extender",
+      "removal",
       "searcher",
-      "removal"
+      "extender"
     ],
     "priority": 8,
     "risk_if_negated": 3,
@@ -1939,7 +1960,10 @@
     "recovery_value": 5,
     "combo_plans": [
       "PlanA"
-    ]
+    ],
+    "q_values": {
+      "survive": -0.0678
+    }
   },
   {
     "id": 35269904,
@@ -2356,7 +2380,10 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": -0.0213,
+      "establish_interruptions": -0.036
+    }
   },
   {
     "id": 84211599,
@@ -2371,7 +2398,9 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": -0.048
+    }
   },
   {
     "id": 59438930,
@@ -2386,7 +2415,9 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": -0.0126
+    }
   },
   {
     "id": 97474300,
@@ -2401,7 +2432,10 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": -0.0044,
+      "establish_interruptions": -0.0092
+    }
   },
   {
     "id": 16387555,
@@ -2416,7 +2450,10 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": -0.0385,
+      "survive": -0.0064
+    }
   },
   {
     "id": 78058681,
@@ -2432,7 +2469,10 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "establish_interruptions": -0.0014,
+      "break_board": -0.0619
+    }
   },
   {
     "id": 89392810,
@@ -2447,7 +2487,10 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": -0.0475,
+      "survive": -0.1104
+    }
   },
   {
     "id": 17209452,
@@ -2462,7 +2505,9 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": -0.0336
+    }
   },
   {
     "id": 16509007,
@@ -2477,7 +2522,10 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "establish_interruptions": -0.0015,
+      "break_board": -0.0017
+    }
   },
   {
     "id": 14442329,
@@ -2493,7 +2541,10 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": -0.0479,
+      "survive": -0.0029
+    }
   },
   {
     "id": 43904702,

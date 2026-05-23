@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": 99249638,
     "roles": [
@@ -48,8 +48,8 @@
     "id": 14558127,
     "roles": [
       "interruption",
-      "combo_piece",
-      "handtrap"
+      "handtrap",
+      "combo_piece"
     ],
     "priority": 8,
     "risk_if_negated": 1,
@@ -453,8 +453,8 @@
     "id": 73642296,
     "roles": [
       "interruption",
-      "combo_piece",
-      "handtrap"
+      "handtrap",
+      "combo_piece"
     ],
     "priority": 8,
     "risk_if_negated": 1,
