@@ -2360,8 +2360,8 @@
   {
     "id": 2347656,
     "roles": [
-      "payoff",
-      "combo_piece"
+      "combo_piece",
+      "payoff"
     ],
     "priority": 7,
     "risk_if_negated": 3,
@@ -2468,8 +2468,8 @@
   {
     "id": 6351147,
     "roles": [
-      "recovery",
-      "extender"
+      "extender",
+      "recovery"
     ],
     "priority": 7,
     "risk_if_negated": 3,
@@ -2559,9 +2559,9 @@
   {
     "id": 81497285,
     "roles": [
-      "payoff",
       "disruption",
       "combo_piece",
+      "payoff",
       "extender"
     ],
     "priority": 8,

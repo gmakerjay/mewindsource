@@ -47,9 +47,9 @@
   {
     "id": 14558127,
     "roles": [
+      "interruption",
       "handtrap",
-      "combo_piece",
-      "interruption"
+      "combo_piece"
     ],
     "priority": 8,
     "risk_if_negated": 1,
@@ -377,8 +377,8 @@
   {
     "id": 10045474,
     "roles": [
-      "handtrap",
-      "interruption"
+      "interruption",
+      "handtrap"
     ],
     "priority": 9,
     "risk_if_negated": 1,
@@ -437,9 +437,9 @@
   {
     "id": 42141493,
     "roles": [
+      "interruption",
       "handtrap",
-      "combo_piece",
-      "interruption"
+      "combo_piece"
     ],
     "priority": 9,
     "risk_if_negated": 1,
@@ -483,9 +483,9 @@
   {
     "id": 94145021,
     "roles": [
+      "interruption",
       "handtrap",
-      "combo_piece",
-      "interruption"
+      "combo_piece"
     ],
     "priority": 8,
     "risk_if_negated": 1,
@@ -1886,8 +1886,8 @@
   {
     "id": 102380,
     "roles": [
-      "combo_piece",
-      "removal"
+      "removal",
+      "combo_piece"
     ],
     "priority": 9,
     "risk_if_negated": 4,
@@ -2377,10 +2377,10 @@
   {
     "id": 39185163,
     "roles": [
-      "combo_piece",
+      "recovery",
       "disruption",
       "payoff",
-      "recovery"
+      "combo_piece"
     ],
     "priority": 8,
     "risk_if_negated": 3,
@@ -2395,9 +2395,9 @@
   {
     "id": 9822220,
     "roles": [
+      "recovery",
       "extender",
-      "combo_piece",
-      "recovery"
+      "combo_piece"
     ],
     "priority": 7,
     "risk_if_negated": 3,
@@ -2412,10 +2412,10 @@
   {
     "id": 95440946,
     "roles": [
-      "extender",
-      "starter",
+      "combo_piece",
       "payoff",
-      "combo_piece"
+      "extender",
+      "starter"
     ],
     "priority": 8,
     "risk_if_negated": 3,
@@ -2430,8 +2430,8 @@
   {
     "id": 20590515,
     "roles": [
-      "extender",
-      "disruption"
+      "disruption",
+      "extender"
     ],
     "priority": 8,
     "risk_if_negated": 3,
@@ -2461,8 +2461,8 @@
   {
     "id": 66570171,
     "roles": [
-      "combo_piece",
-      "starter"
+      "starter",
+      "combo_piece"
     ],
     "priority": 7,
     "risk_if_negated": 3,
@@ -2477,8 +2477,8 @@
   {
     "id": 49959355,
     "roles": [
-      "combo_piece",
-      "starter"
+      "starter",
+      "combo_piece"
     ],
     "priority": 8,
     "risk_if_negated": 3,
@@ -2523,8 +2523,8 @@
   {
     "id": 93191801,
     "roles": [
-      "extender",
-      "disruption"
+      "disruption",
+      "extender"
     ],
     "priority": 7,
     "risk_if_negated": 3,

@@ -48,8 +48,8 @@
     "id": 14558127,
     "roles": [
       "combo_piece",
-      "interruption",
-      "handtrap"
+      "handtrap",
+      "interruption"
     ],
     "priority": 7,
     "risk_if_negated": 1,
@@ -384,8 +384,8 @@
   {
     "id": 10045474,
     "roles": [
-      "interruption",
-      "handtrap"
+      "handtrap",
+      "interruption"
     ],
     "priority": 7,
     "risk_if_negated": 1,
@@ -418,8 +418,8 @@
   {
     "id": 24224830,
     "roles": [
-      "interruption",
-      "handtrap"
+      "handtrap",
+      "interruption"
     ],
     "priority": 9,
     "risk_if_negated": 1,
@@ -464,8 +464,8 @@
     "id": 73642296,
     "roles": [
       "combo_piece",
-      "interruption",
-      "handtrap"
+      "handtrap",
+      "interruption"
     ],
     "priority": 7,
     "risk_if_negated": 1,
@@ -513,8 +513,8 @@
     "id": 97268402,
     "roles": [
       "combo_piece",
-      "interruption",
-      "handtrap"
+      "handtrap",
+      "interruption"
     ],
     "priority": 7,
     "risk_if_negated": 1,
@@ -1950,8 +1950,8 @@
     "id": 25311006,
     "roles": [
       "removal",
-      "searcher",
-      "extender"
+      "extender",
+      "searcher"
     ],
     "priority": 8,
     "risk_if_negated": 3,
