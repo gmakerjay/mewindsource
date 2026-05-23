@@ -1205,7 +1205,7 @@ namespace ProjectIgnisAI
                 }
                 if (isBlocked)
                 {
-                    score -= 40.0;
+                    score -= 90.0;
                     LogToTurn(string.Format("Penalizing dead combo card: {0} because its plan is blocked.", GetCardName(card.Id)));
                 }
             }
