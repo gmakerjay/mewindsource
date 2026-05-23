@@ -1,0 +1,6 @@
+{
+  "playstyle": "combo",
+  "goals": ["survive", "establish_interruptions", "push_lethal"],
+  "choke_points": [28954097, 92565383, 95365081],
+  "weaknesses": ["handtraps", "boardwipes"]
+}

@@ -1,0 +1,6 @@
+{
+  "playstyle": "go_second",
+  "goals": ["survive", "establish_interruptions", "push_lethal"],
+  "choke_points": [95365081, 20415050],
+  "weaknesses": ["floodgate", "handtraps"]
+}

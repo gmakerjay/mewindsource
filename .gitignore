@@ -1,0 +1,41 @@
+# EDOPro / Game Client assets and binaries
+EDOPro.exe
+ocgcore.dll
+cacert.pem
+cards.cdb
+cards.delta.cdb
+nul
+pics/
+sound/
+skin/
+textures/
+fonts/
+replay/
+notices/
+puzzles/
+repositories/
+expansions/
+script/
+lflists/
+deck/
+
+# Compiled Binaries and build outputs
+*.exe
+*.dll
+*.pdb
+!WindBot/sqlite3.dll
+!WindBot/Mono.Data.Sqlite.dll
+
+# WindBot match logs and temporary files
+WindBot/Logs/
+WindBot/config/*.bak
+WindBot_Sandbox/training_progress.log
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Local editor and system configurations
+.vscode/
+crashdumps/
+*.log

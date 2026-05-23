@@ -1,0 +1,6 @@
+{
+  "playstyle": "midrange",
+  "goals": ["survive", "establish_interruptions", "push_lethal"],
+  "choke_points": [101402052, 101402001],
+  "weaknesses": ["handtraps", "backrow"]
+}
