@@ -66,6 +66,25 @@ namespace ProjectIgnisAI
         // Deduplication for decisions.jsonl — prevents logging the same evaluation twice
         private HashSet<string> _loggedDecisionKeys = new HashSet<string>();
 
+        private bool IsLethalOnBoard()
+        {
+            if (Duel.Phase != DuelPhase.Main1) return false;
+
+            if (Enemy.GetMonsterCount() == 0)
+            {
+                int totalAtk = 0;
+                foreach (var card in Bot.GetMonsters())
+                {
+                    if (card != null && card.IsFaceup() && card.IsAttack() && !card.IsDisabled() && !card.Attacked)
+                    {
+                        totalAtk += card.Attack;
+                    }
+                }
+                return totalAtk >= Enemy.LifePoints;
+            }
+            return false;
+        }
+
         private static UnifiedIgnisExecutor _currentInstance = null;
         private static bool _processExitRegistered = false;
         private static readonly Random _random = new Random();
@@ -1311,6 +1330,38 @@ namespace ProjectIgnisAI
                 score = 0;
             }
 
+            // 7. Macro-Decision Refactoring Upgrades
+            // 7.1 Anti-Overextension / Lethal Check
+            if (Duel.Phase == DuelPhase.Main1 && IsLethalOnBoard())
+            {
+                if (meta.roles.Contains("combo") || meta.roles.Contains("extender") || meta.roles.Contains("starter") || meta.roles.Contains("combo_piece"))
+                {
+                    score -= 100.0;
+                    LogToTurn(string.Format("Lethal on board detected! Penalizing overextending card: {0} (-100.0)", GetCardName(card.Id)));
+                }
+            }
+
+            // 7.2 Redundant Field Spell Protection
+            if (type == ExecutorType.Activate && card.HasType(CardType.Field))
+            {
+                var currentField = Bot.SpellZone[5];
+                if (currentField != null && IsFaceUp(currentField) && currentField.Id == card.Id)
+                {
+                    score -= 500.0;
+                    LogToTurn(string.Format("Redundant Field Spell detected! Penalizing duplicate: {0} (-500.0)", GetCardName(card.Id)));
+                }
+            }
+
+            // 7.3 Anti-Self Harm Check
+            if (Duel.CurrentChain.Count > 0 && Duel.LastChainPlayer == 0)
+            {
+                if (meta.roles.Contains("negate") || meta.roles.Contains("removal") || meta.roles.Contains("interruption") || meta.roles.Contains("disruption"))
+                {
+                    score -= 200.0;
+                    LogToTurn(string.Format("Self-chain prevention: Penalizing disruptive card: {0} responding to our own chain link (-200.0)", GetCardName(card.Id)));
+                }
+            }
+
             LogToTurn(string.Format("Analysing Card: {0} (ID: {1}) | Action: {2} | Goal: {3} | Opp Threat: {4:F1} | Score: {5:F1}",
                 GetCardName(card.Id), card.Id, type, _currentGoal, opponentThreat, score));
 
@@ -1486,16 +1537,29 @@ namespace ProjectIgnisAI
 
         private bool OnDefaultSpellSet()
         {
-            if (Util.IsTurn1OrMain2())
+            ClientCard card = Card;
+            if (card == null) return false;
+
+            double score = 50.0; // Base score for setting
+
+            if (_cardRegistry.ContainsKey(card.Id))
             {
-                ClientCard card = Card;
-                if (card != null)
-                {
-                    LogToTurn(string.Format("{0} Set Spell/Trap: {1} (ID: {2})", _resolvedDeckName, GetCardName(card.Id), card.Id));
-                }
-                return true;
+                var meta = _cardRegistry[card.Id];
+                score = meta.priority * 10.0;
             }
-            return false;
+
+            if ((card.IsTrap() || card.HasType(CardType.QuickPlay)) && Duel.Phase == DuelPhase.Main1 && Duel.Turn > 1)
+            {
+                score -= 30.0; // Penalty for setting in Main 1
+                LogToTurn(string.Format("Smart Trap Setting: Penalizing setting {0} in Main 1 (-30.0)", GetCardName(card.Id)));
+            }
+
+            bool decision = score > 35.0;
+            if (decision)
+            {
+                LogToTurn(string.Format("{0} Set Spell/Trap: {1} (ID: {2})", _resolvedDeckName, GetCardName(card.Id), card.Id));
+            }
+            return decision;
         }
 
         private bool OnDefaultRepos()
