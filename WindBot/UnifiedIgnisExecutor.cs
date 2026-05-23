@@ -288,23 +288,31 @@ namespace ProjectIgnisAI
                         }
 
                         card.roles = new ArrayList();
-                        if (item.ContainsKey("roles") && item["roles"] is IEnumerable && !(item["roles"] is string))
+                        if (item.ContainsKey("roles") && item["roles"] != null)
                         {
-                            var rawRoles = item["roles"] as IEnumerable;
-                            foreach (var r in rawRoles)
-                                card.roles.Add(r.ToString());
+                            if (item["roles"] is IEnumerable && !(item["roles"] is string))
+                            {
+                                foreach (var r in (IEnumerable)item["roles"])
+                                    card.roles.Add(r.ToString());
+                            }
                         }
 
                         card.combo_plans = new ArrayList();
-                        if (item.ContainsKey("combo_plans") && item["combo_plans"] is IEnumerable && !(item["combo_plans"] is string))
+                        if (item.ContainsKey("combo_plans") && item["combo_plans"] != null)
                         {
-                            var rawPlans = item["combo_plans"] as IEnumerable;
-                            foreach (var p in rawPlans)
-                                card.combo_plans.Add(p.ToString());
+                            if (item["combo_plans"] is IEnumerable && !(item["combo_plans"] is string))
+                            {
+                                foreach (var p in (IEnumerable)item["combo_plans"])
+                                    card.combo_plans.Add(p.ToString());
+                            }
+                            else
+                            {
+                                card.combo_plans.Add("PlanA");
+                            }
                         }
                         else
                         {
-                            card.combo_plans.Add("PlanA"); // Default fallback
+                            card.combo_plans.Add("PlanA");
                         }
 
                         _cardRegistry[card.id] = card;
@@ -548,13 +556,12 @@ namespace ProjectIgnisAI
                         
                         if (outcome == "Win" || outcome == "WeakWin")
                         {
-                            double strength = (outcome == "Win") ? 1.0 : 0.5;
                             // Smart Reward: only boost priority for key contributors (starters, payoffs, searchers)
                             // This prevents all-card inflation where every played card drifts to priority 10
                             if (meta.roles.Contains("starter") || meta.roles.Contains("payoff") || meta.roles.Contains("searcher"))
                             {
                                 int delta = (outcome == "Win") ? 1 : 0;
-                                if (strength >= 0.5 && meta.priority < 10 && outcome == "WeakWin" && meta.priority < 8) delta = 1;
+                                if (outcome == "WeakWin" && meta.priority < 8) delta = 1;
                                 meta.priority = Math.Min(10, meta.priority + delta);
                             }
                             if (_turnCount >= 2 && (meta.roles.Contains("extender") || meta.roles.Contains("combo_piece")))
@@ -567,7 +574,7 @@ namespace ProjectIgnisAI
                         {
                             int delta = (outcome == "Loss") ? 1 : 0;
                             if (meta.priority > 1 && (outcome == "WeakLoss" && meta.priority > 3)) delta = 1;
-                            meta.priority = Math.Max(1, meta.priority - (outcome == "Loss" ? 1 : (meta.priority >= 4 ? 1 : 0)));
+                            meta.priority = Math.Max(1, meta.priority - delta);
                             if (_disruptionsInMatch.ContainsKey(cardId) && _disruptionsInMatch[cardId].Count > 0)
                             {
                                 meta.risk_if_negated = Math.Min(10, meta.risk_if_negated + 1);
@@ -605,17 +612,6 @@ namespace ProjectIgnisAI
                     }
                 }
 
-                // Hard Cap: Prevent any card from exceeding priority 8 via learning
-                foreach (var kvpCap in _cardRegistry)
-                {
-                    if (kvpCap.Value.priority > 8)
-                    {
-                        LogToMatch(string.Format("  Hard Cap: Card {0} ({1}) priority capped from {2} to 8",
-                            kvpCap.Key, GetCardName(kvpCap.Key), kvpCap.Value.priority));
-                        kvpCap.Value.priority = 8;
-                    }
-                }
-
                 // Anti-Inflation Decay: reduce priority for high-priority cards NOT played in this match
                 // This counteracts the natural upward drift from repeated wins
                 foreach (var kvpDecay in _cardRegistry)
@@ -630,6 +626,17 @@ namespace ProjectIgnisAI
                             LogToMatch(string.Format("  Decay: Card {0} ({1}) priority {2}->{3} (not played, anti-inflation)",
                                 kvpDecay.Key, GetCardName(kvpDecay.Key), oldP, decayCard.priority));
                         }
+                    }
+                }
+
+                // Hard Cap: Prevent any card from exceeding priority 8 via learning
+                foreach (var kvpCap in _cardRegistry)
+                {
+                    if (kvpCap.Value.priority > 8)
+                    {
+                        LogToMatch(string.Format("  Hard Cap: Card {0} ({1}) priority capped from {2} to 8",
+                            kvpCap.Key, GetCardName(kvpCap.Key), kvpCap.Value.priority));
+                        kvpCap.Value.priority = 8;
                     }
                 }
 
@@ -691,6 +698,46 @@ namespace ProjectIgnisAI
             foreach (var s in Duel.Fields[1].SpellZone)
             {
                 if (s != null) total += CalculateCardDanger(s);
+            }
+            // Check Graveyard danger
+            foreach (var g in Duel.Fields[1].Graveyard)
+            {
+                if (g != null)
+                {
+                    double danger = CalculateCardDanger(g);
+                    if (_cardRegistry.ContainsKey(g.Id))
+                    {
+                        var meta = _cardRegistry[g.Id];
+                        if (meta.roles.Contains("recovery") || meta.roles.Contains("starter") || meta.roles.Contains("extender") || meta.roles.Contains("payoff"))
+                        {
+                            total += danger * 0.5;
+                        }
+                    }
+                    else if (GetStapleBaselineDanger(g.Id) > 0)
+                    {
+                        total += danger * 0.3;
+                    }
+                }
+            }
+            // Check Hand danger (revealed/visible cards only)
+            foreach (var h in Duel.Fields[1].Hand)
+            {
+                if (h != null && h.Id > 0)
+                {
+                    double danger = CalculateCardDanger(h);
+                    if (_cardRegistry.ContainsKey(h.Id))
+                    {
+                        var meta = _cardRegistry[h.Id];
+                        if (meta.roles.Contains("handtrap") || meta.roles.Contains("interruption") || meta.roles.Contains("disruption"))
+                        {
+                            total += danger;
+                        }
+                    }
+                    else if (GetStapleBaselineDanger(h.Id) > 0)
+                    {
+                        total += danger;
+                    }
+                }
             }
             return total;
         }
@@ -1324,7 +1371,7 @@ namespace ProjectIgnisAI
                 if (card != null && _cardRegistry.ContainsKey(card.Id))
                 {
                     var meta = _cardRegistry[card.Id];
-                    if (meta.roles.Contains("starter") || meta.roles.Contains("extender"))
+                    if (meta.roles.Contains("starter") || meta.roles.Contains("extender") || meta.roles.Contains("payoff"))
                     {
                         return true;
                     }
@@ -1357,7 +1404,7 @@ namespace ProjectIgnisAI
                 if (_cardRegistry.ContainsKey(card.Id))
                 {
                     var meta = _cardRegistry[card.Id];
-                    if (!meta.roles.Contains("starter") && !meta.roles.Contains("extender"))
+                    if (!meta.roles.Contains("starter") && !meta.roles.Contains("extender") && !meta.roles.Contains("payoff"))
                     {
                         return false;
                     }

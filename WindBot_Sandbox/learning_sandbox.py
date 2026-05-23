@@ -1,7 +1,6 @@
 import os
 import json
 import re
-import glob
 import sys
 
 from shared_utils import (
@@ -253,7 +252,14 @@ def apply_learning(registry, all_match_analyses):
     return changes
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Self-Learning Engine Heuristics Adjuster")
+    parser.add_argument("--deck", type=str, default=None, help="Specific deck name to process learning for")
+    args = parser.parse_args()
+
     print("=== SELF-LEARNING ENGINE v2.0 ===")
+    if args.deck:
+        print(f"Filtering updates for deck: {args.deck}")
     
     match_dirs = discover_match_dirs(LIVE_LOGS_DIR)
     source = "LIVE"
@@ -285,6 +291,8 @@ def main():
         deck_groups[deck_name].append(analysis)
         
     for deck_name, matches in deck_groups.items():
+        if args.deck and deck_name != args.deck:
+            continue
         print(f"\n🧠 Processing learning updates for Deck: {deck_name} ({len(matches)} matches)")
         sandbox_reg, live_reg = get_registry_paths(deck_name)
         registry = load_registry_list(sandbox_reg)

@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "id": 99249638,
     "roles": [
@@ -2509,5 +2509,193 @@
       "PlanA"
     ],
     "q_values": {}
+  },
+  {
+    "id": 821049,
+    "roles": [
+      "starter",
+      "extender"
+    ],
+    "priority": 8,
+    "risk_if_negated": 5,
+    "bait_value": 3,
+    "followup_value": 6,
+    "recovery_value": 5,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 15665977,
+    "roles": [
+      "starter",
+      "extender"
+    ],
+    "priority": 8,
+    "risk_if_negated": 5,
+    "bait_value": 3,
+    "followup_value": 6,
+    "recovery_value": 5,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 18144507,
+    "roles": [
+      "removal"
+    ],
+    "priority": 8,
+    "risk_if_negated": 2,
+    "bait_value": 4,
+    "followup_value": 4,
+    "recovery_value": 3,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 38814750,
+    "roles": [
+      "handtrap",
+      "interruption"
+    ],
+    "priority": 8,
+    "risk_if_negated": 3,
+    "bait_value": 1,
+    "followup_value": 5,
+    "recovery_value": 5,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 39576656,
+    "roles": [
+      "extender"
+    ],
+    "priority": 7,
+    "risk_if_negated": 4,
+    "bait_value": 2,
+    "followup_value": 5,
+    "recovery_value": 4,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 41069676,
+    "roles": [
+      "extender"
+    ],
+    "priority": 7,
+    "risk_if_negated": 4,
+    "bait_value": 2,
+    "followup_value": 5,
+    "recovery_value": 4,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 42781164,
+    "roles": [
+      "starter",
+      "extender"
+    ],
+    "priority": 8,
+    "risk_if_negated": 5,
+    "bait_value": 3,
+    "followup_value": 6,
+    "recovery_value": 5,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 46502744,
+    "roles": [
+      "handtrap",
+      "interruption"
+    ],
+    "priority": 7,
+    "risk_if_negated": 3,
+    "bait_value": 1,
+    "followup_value": 5,
+    "recovery_value": 4,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 49036338,
+    "roles": [
+      "combo_piece"
+    ],
+    "priority": 5,
+    "risk_if_negated": 1,
+    "bait_value": 1,
+    "followup_value": 1,
+    "recovery_value": 1,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 65961304,
+    "roles": [
+      "extender"
+    ],
+    "priority": 7,
+    "risk_if_negated": 4,
+    "bait_value": 2,
+    "followup_value": 5,
+    "recovery_value": 4,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 74203495,
+    "roles": [
+      "handtrap",
+      "interruption"
+    ],
+    "priority": 8,
+    "risk_if_negated": 3,
+    "bait_value": 1,
+    "followup_value": 5,
+    "recovery_value": 5,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 84749824,
+    "roles": [
+      "interruption"
+    ],
+    "priority": 8,
+    "risk_if_negated": 3,
+    "bait_value": 1,
+    "followup_value": 4,
+    "recovery_value": 4,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 88170262,
+    "roles": [
+      "extender"
+    ],
+    "priority": 7,
+    "risk_if_negated": 4,
+    "bait_value": 2,
+    "followup_value": 5,
+    "recovery_value": 4,
+    "combo_plans": [
+      "PlanA"
+    ]
   }
 ]

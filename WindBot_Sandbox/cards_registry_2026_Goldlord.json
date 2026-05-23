@@ -2560,5 +2560,34 @@
       "PlanA"
     ],
     "q_values": {}
+  },
+  {
+    "id": 43143567,
+    "roles": [
+      "extender"
+    ],
+    "priority": 7,
+    "risk_if_negated": 4,
+    "bait_value": 2,
+    "followup_value": 5,
+    "recovery_value": 4,
+    "combo_plans": [
+      "PlanA"
+    ]
+  },
+  {
+    "id": 74889525,
+    "roles": [
+      "payoff",
+      "removal"
+    ],
+    "priority": 9,
+    "risk_if_negated": 6,
+    "bait_value": 2,
+    "followup_value": 7,
+    "recovery_value": 5,
+    "combo_plans": [
+      "PlanA"
+    ]
   }
 ]

@@ -1,6 +1,5 @@
 import os
 import sys
-import json
 import shutil
 import subprocess
 import time
@@ -45,7 +44,7 @@ def get_new_match_log(before_dirs, deck_a_name):
 def parse_match_outcome(match_dir):
     summary_path = os.path.join(match_dir, "match_summary.log")
     if not os.path.exists(summary_path):
-        return "Unknown", 0, 0
+        return "Unknown", 0, 0, 0
     
     bot_lp = 0
     opp_lp = 0
@@ -202,15 +201,15 @@ def main():
             
         injected_subclasses = f"""
 [Deck("{deck_a_name}", "{deck_a_name}")]
-public class {args.deck}VerAExecutor : UnifiedIgnisExecutor
+public class Deck_{args.deck}VerAExecutor : UnifiedIgnisExecutor
 {{
-    public {args.deck}VerAExecutor(GameAI ai, Duel duel) : base(ai, duel) {{}}
+    public Deck_{args.deck}VerAExecutor(GameAI ai, Duel duel) : base(ai, duel) {{}}
 }}
 
 [Deck("{deck_b_name}", "{deck_b_name}")]
-public class {args.deck}VerBExecutor : UnifiedIgnisExecutor
+public class Deck_{args.deck}VerBExecutor : UnifiedIgnisExecutor
 {{
-    public {args.deck}VerBExecutor(GameAI ai, Duel duel) : base(ai, duel) {{}}
+    public Deck_{args.deck}VerBExecutor(GameAI ai, Duel duel) : base(ai, duel) {{}}
 }}
 """
         new_cs_content = original_cs_content[:last_brace_idx] + injected_subclasses + "\n}"

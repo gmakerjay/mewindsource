@@ -14,7 +14,6 @@ from shared_utils import (
     get_available_decks, get_registry_paths,
 )
 
-REGISTRY_PATH = os.path.join(SCRIPT_DIR, "cards_registry.json")
 REAL_REGISTRY_PATH = os.path.join(WINDBOT_DIR, "config", "cards_registry.json")
 
 active_process = None
@@ -79,22 +78,6 @@ def consume_stream(proc, name, log_file_path):
         with open(log_file_path, "a", encoding="utf-8") as f:
             f.write(f"[{name}] เกิดข้อผิดพลาดในการอ่านลอก: {str(e)}\n")
 
-def forward_bot_logs(p1, p2, log_file_path, name1, name2):
-    global active_bots
-    active_bots = [p1, p2]
-    t1 = threading.Thread(target=consume_stream, args=(p1, name1, log_file_path), daemon=True)
-    t2 = threading.Thread(target=consume_stream, args=(p2, name2, log_file_path), daemon=True)
-    t1.start()
-    t2.start()
-    try:
-        while p1.poll() is None or p2.poll() is None:
-            time.sleep(1.0)
-        with open(log_file_path, "a", encoding="utf-8") as f:
-            f.write("\n==================================================\n")
-            f.write("การดวลจำลองจำลองระหว่างบอทสิ้นสุดลงแล้ว\n")
-            f.write("==================================================\n")
-    except Exception:
-        pass
 
 def run_live_duel_loop(deck, opponent, opp_deck, iterations, progress_log):
     global active_bots

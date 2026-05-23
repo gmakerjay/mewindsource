@@ -1,7 +1,6 @@
 import os
 import sqlite3
 import json
-import re
 import argparse
 import sys
 

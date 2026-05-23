@@ -20,7 +20,7 @@ def main():
     # 1. Run learning_sandbox.py (Supervised Heuristic Updates)
     print("\n[Step 1/2] Running Supervised Heuristics Adjuster...")
     sandbox_script = os.path.join(SCRIPT_DIR, "learning_sandbox.py")
-    res1 = subprocess.run([sys.executable, sandbox_script], stdout=sys.stdout, stderr=sys.stderr)
+    res1 = subprocess.run([sys.executable, sandbox_script, "--deck", args.deck], stdout=sys.stdout, stderr=sys.stderr)
     
     if res1.returncode != 0:
         print("Warning: Heuristics Adjuster returned non-zero exit code.")
