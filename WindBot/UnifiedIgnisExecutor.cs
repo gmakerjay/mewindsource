@@ -1224,8 +1224,12 @@ namespace ProjectIgnisAI
                 }
                 if (isBlocked)
                 {
-                    score -= 90.0;
-                    LogToTurn(string.Format("Penalizing dead combo card: {0} because its plan is blocked.", GetCardName(card.Id)));
+                    // Only penalize if the card has deck-specific combo roles (starter, extender, combo_piece, payoff)
+                    if (meta.roles.Contains("starter") || meta.roles.Contains("extender") || meta.roles.Contains("combo_piece") || meta.roles.Contains("payoff"))
+                    {
+                        score -= 90.0;
+                        LogToTurn(string.Format("Penalizing dead combo card: {0} because its plan is blocked.", GetCardName(card.Id)));
+                    }
                 }
             }
 
