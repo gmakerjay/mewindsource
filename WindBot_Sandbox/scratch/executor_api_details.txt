@@ -1,0 +1,494 @@
+================ TYPE DETAILS ================
+Type: YGOSharp.OCGWrapper.Enums.DuelPhase (Base: System.Enum)
+  --- Public Methods ---
+  --- Virtual/Override Methods ---
+    Virtual: Int32 GetHashCode ()
+    Virtual: String ToString ()
+    Virtual: Boolean Equals (Object obj)
+    Virtual: Void Finalize ()
+  --- Properties ---
+================================================
+
+Type: WindBot.Game.ClientCard (Base: System.Object)
+  --- Public Methods ---
+    Int32 get_Id ()
+    NamedCard get_Data ()
+    String get_Name ()
+    Int32 get_Position ()
+    Void set_Position (Int32 value)
+    Int32 get_Sequence ()
+    Void set_Sequence (Int32 value)
+    CardLocation get_Location ()
+    Void set_Location (CardLocation value)
+    Int32 get_Alias ()
+    Int32 get_Level ()
+    Int32 get_Rank ()
+    Int32 get_Type ()
+    Int32 get_Attribute ()
+    UInt64 get_Race ()
+    Int32 get_Attack ()
+    Int32 get_Defense ()
+    Int32 get_LScale ()
+    Int32 get_RScale ()
+    Int32 get_LinkCount ()
+    Int32 get_LinkMarker ()
+    Int32 get_BaseAttack ()
+    Int32 get_BaseDefense ()
+    Int32 get_RealPower ()
+    Void set_RealPower (Int32 value)
+    List`1 get_Overlays ()
+    Int32 get_Owner ()
+    Int32 get_Controller ()
+    Void set_Controller (Int32 value)
+    Int32 get_Disabled ()
+    Int32 get_ProcCompleted ()
+    Int32 get_SelectSeq ()
+    Void set_SelectSeq (Int32 value)
+    Int32 get_OpParam1 ()
+    Void set_OpParam1 (Int32 value)
+    Int32 get_OpParam2 ()
+    Void set_OpParam2 (Int32 value)
+    List`1 get_EquipCards ()
+    Void set_EquipCards (List`1 value)
+    List`1 get_OwnTargets ()
+    Void set_OwnTargets (List`1 value)
+    List`1 get_TargetCards ()
+    Void set_TargetCards (List`1 value)
+    Boolean get_CanDirectAttack ()
+    Void set_CanDirectAttack (Boolean value)
+    Boolean get_ShouldDirectAttack ()
+    Void set_ShouldDirectAttack (Boolean value)
+    Boolean get_Attacked ()
+    Void set_Attacked (Boolean value)
+    Boolean get_IsLastAttacker ()
+    Void set_IsLastAttacker (Boolean value)
+    Boolean get_IsSpecialSummoned ()
+    Void set_IsSpecialSummoned (Boolean value)
+    Int32[] get_ActionIndex ()
+    Void set_ActionIndex (Int32[] value)
+    IDictionary`2 get_ActionActivateIndex ()
+    Void SetId (Int32 id)
+    Int64 Update (BinaryReader packet, Duel duel)
+    Void ClearCardTargets ()
+    Boolean HasLinkMarker (Int32 dir)
+    Boolean HasLinkMarker (CardLinkMarker dir)
+    Int32 GetLinkedZones ()
+    Boolean HasType (CardType type)
+    Boolean HasPosition (CardPosition position)
+    Boolean HasAttribute (CardAttribute attribute)
+    Boolean HasRace (CardRace race)
+    Boolean HasSetcode (Int32 setcode)
+    Boolean IsMonster ()
+    Boolean IsTuner ()
+    Boolean IsSpell ()
+    Boolean IsTrap ()
+    Boolean IsExtraCard ()
+    Boolean IsFaceup ()
+    Boolean IsFacedown ()
+    Boolean IsAttack ()
+    Boolean IsDefense ()
+    Boolean IsDisabled ()
+    Boolean IsCanRevive ()
+    Boolean IsCode (Int32 id)
+    Boolean IsCode (IList`1 ids)
+    Boolean IsCode (Int32[] ids)
+    Boolean IsOriginalCode (Int32 id)
+    Boolean HasXyzMaterial ()
+    Boolean HasXyzMaterial (Int32 count)
+    Boolean HasXyzMaterial (Int32 count, Int32 cardid)
+    Int32 GetDefensePower ()
+    Boolean Equals (ClientCard card)
+  --- Virtual/Override Methods ---
+    Virtual: Boolean Equals (Object obj)
+    Virtual: Int32 GetHashCode ()
+    Virtual: Void Finalize ()
+    Virtual: String ToString ()
+  --- Properties ---
+    Prop: Int32 Id
+    Prop: NamedCard Data
+    Prop: String Name
+    Prop: Int32 Position
+    Prop: Int32 Sequence
+    Prop: CardLocation Location
+    Prop: Int32 Alias
+    Prop: Int32 Level
+    Prop: Int32 Rank
+    Prop: Int32 Type
+    Prop: Int32 Attribute
+    Prop: UInt64 Race
+    Prop: Int32 Attack
+    Prop: Int32 Defense
+    Prop: Int32 LScale
+    Prop: Int32 RScale
+    Prop: Int32 LinkCount
+    Prop: Int32 LinkMarker
+    Prop: Int32 BaseAttack
+    Prop: Int32 BaseDefense
+    Prop: Int32 RealPower
+    Prop: List`1 Overlays
+    Prop: Int32 Owner
+    Prop: Int32 Controller
+    Prop: Int32 Disabled
+    Prop: Int32 ProcCompleted
+    Prop: Int32 SelectSeq
+    Prop: Int32 OpParam1
+    Prop: Int32 OpParam2
+    Prop: List`1 EquipCards
+    Prop: List`1 OwnTargets
+    Prop: List`1 TargetCards
+    Prop: Boolean CanDirectAttack
+    Prop: Boolean ShouldDirectAttack
+    Prop: Boolean Attacked
+    Prop: Boolean IsLastAttacker
+    Prop: Boolean IsSpecialSummoned
+    Prop: Int32[] ActionIndex
+    Prop: IDictionary`2 ActionActivateIndex
+================================================
+
+Type: WindBot.Game.Duel (Base: System.Object)
+  --- Public Methods ---
+    Boolean get_IsFirst ()
+    Void set_IsFirst (Boolean value)
+    Boolean get_IsNewRule ()
+    Void set_IsNewRule (Boolean value)
+    Boolean get_IsNewRule2020 ()
+    Void set_IsNewRule2020 (Boolean value)
+    ClientField[] get_Fields ()
+    Int32 get_Turn ()
+    Void set_Turn (Int32 value)
+    Int32 get_Player ()
+    Void set_Player (Int32 value)
+    DuelPhase get_Phase ()
+    Void set_Phase (DuelPhase value)
+    MainPhase get_MainPhase ()
+    Void set_MainPhase (MainPhase value)
+    BattlePhase get_BattlePhase ()
+    Void set_BattlePhase (BattlePhase value)
+    Int32 get_LastChainPlayer ()
+    Void set_LastChainPlayer (Int32 value)
+    IList`1 get_CurrentChain ()
+    Void set_CurrentChain (IList`1 value)
+    IList`1 get_ChainTargets ()
+    Void set_ChainTargets (IList`1 value)
+    IList`1 get_ChainTargetOnly ()
+    Void set_ChainTargetOnly (IList`1 value)
+    Int32 get_LastSummonPlayer ()
+    Void set_LastSummonPlayer (Int32 value)
+    IList`1 get_SummoningCards ()
+    Void set_SummoningCards (IList`1 value)
+    IList`1 get_LastSummonedCards ()
+    Void set_LastSummonedCards (IList`1 value)
+    Boolean get_MainPhaseEnd ()
+    Void set_MainPhaseEnd (Boolean value)
+    Void Clear ()
+    ClientCard GetCard (Int32 player, CardLocation loc, Int32 seq)
+    ClientCard GetCard (Int32 player, Int32 loc, Int32 seq, Int32 subSeq)
+    Void AddCard (CardLocation loc, Int32 cardId, Int32 player, Int32 seq, Int32 pos)
+    Void AddCard (CardLocation loc, ClientCard card, Int32 player, Int32 seq, Int32 pos, Int32 id)
+    Void RemoveCard (CardLocation loc, ClientCard card, Int32 player, Int32 seq)
+    Int32 GetLocalPlayer (Int32 player)
+  --- Virtual/Override Methods ---
+    Virtual: Boolean Equals (Object obj)
+    Virtual: Int32 GetHashCode ()
+    Virtual: Void Finalize ()
+    Virtual: String ToString ()
+  --- Properties ---
+    Prop: Boolean IsFirst
+    Prop: Boolean IsNewRule
+    Prop: Boolean IsNewRule2020
+    Prop: ClientField[] Fields
+    Prop: Int32 Turn
+    Prop: Int32 Player
+    Prop: DuelPhase Phase
+    Prop: MainPhase MainPhase
+    Prop: BattlePhase BattlePhase
+    Prop: Int32 LastChainPlayer
+    Prop: IList`1 CurrentChain
+    Prop: IList`1 ChainTargets
+    Prop: IList`1 ChainTargetOnly
+    Prop: Int32 LastSummonPlayer
+    Prop: IList`1 SummoningCards
+    Prop: IList`1 LastSummonedCards
+    Prop: Boolean MainPhaseEnd
+================================================
+
+Type: WindBot.Game.GameAI (Base: System.Object)
+  --- Public Methods ---
+    Duel get_Duel ()
+    Executor get_Executor ()
+    Void set_Executor (Executor value)
+    Void Log (LogLevel level, String message)
+    Void OnRetry ()
+    Void OnDeckError (String card)
+    Void OnJoinGame ()
+    Void OnStart ()
+    Int32 OnRockPaperScissors ()
+    Boolean OnSelectHand ()
+    Void OnDraw (Int32 player)
+    Void OnNewTurn ()
+    Void OnNewPhase ()
+    Void OnDirectAttack (ClientCard card)
+    Void OnChaining (ClientCard card, Int32 player)
+    Void OnChainEnd ()
+    BattlePhaseAction OnSelectBattleCmd (BattlePhase battle)
+    IList`1 OnSelectCard (IList`1 cards, Int32 min, Int32 max, Int64 hint, Boolean cancelable)
+    Int32 OnSelectChain (IList`1 cards, IList`1 descs, Boolean forced)
+    IList`1 OnSelectCounter (Int32 type, Int32 quantity, IList`1 cards, IList`1 counters)
+    IList`1 OnCardSorting (IList`1 cards)
+    Boolean OnSelectEffectYn (ClientCard card, Int64 desc)
+    MainPhaseAction OnSelectIdleCmd (MainPhase main)
+    Int32 OnSelectOption (IList`1 options)
+    Int32 OnSelectPlace (Int64 cardId, Int32 player, CardLocation location, Int32 available)
+    CardPosition OnSelectPosition (Int32 cardId, IList`1 positions)
+    IList`1 OnSelectSum (IList`1 cards, Int32 sum, Int32 min, Int32 max, Int64 hint, Boolean mode)
+    IList`1 OnSelectTribute (IList`1 cards, Int32 min, Int32 max, Int64 hint, Boolean cancelable)
+    Boolean OnSelectYesNo (Int64 desc)
+    Boolean OnSelectBattleReplay ()
+    Int32 OnAnnounceCard (IList`1 avail)
+    Void SelectCard (ClientCard card)
+    Void SelectCard (IList`1 cards)
+    Void SelectCard (Int32 cardId)
+    Void SelectCard (IList`1 ids)
+    Void SelectCard (Int32[] ids)
+    Void SelectCard (CardLocation loc)
+    Void SelectNextCard (ClientCard card)
+    Void SelectNextCard (IList`1 cards)
+    Void SelectNextCard (Int32 cardId)
+    Void SelectNextCard (IList`1 ids)
+    Void SelectNextCard (Int32[] ids)
+    Void SelectNextCard (CardLocation loc)
+    Void SelectThirdCard (ClientCard card)
+    Void SelectThirdCard (IList`1 cards)
+    Void SelectThirdCard (Int32 cardId)
+    Void SelectThirdCard (IList`1 ids)
+    Void SelectThirdCard (Int32[] ids)
+    Void SelectThirdCard (CardLocation loc)
+    Void SelectMaterials (ClientCard card, Int32 hint)
+    Void SelectMaterials (IList`1 cards, Int32 hint)
+    Void SelectMaterials (Int32 cardId, Int32 hint)
+    Void SelectMaterials (IList`1 ids, Int32 hint)
+    Void SelectMaterials (CardLocation loc, Int32 hint)
+    Void CleanSelectMaterials ()
+    Boolean HaveSelectedCards ()
+    CardSelector GetSelectedCards ()
+    CardPosition GetSelectedPosition ()
+    Void SelectPosition (CardPosition pos)
+    Void SelectPlace (Int32 zones)
+    Void SelectOption (Int32 opt)
+    Void SelectNumber (Int32 number)
+    Void SelectAttribute (CardAttribute attribute)
+    Void SelectAttributes (CardAttribute[] attributes)
+    Void SelectRace (CardRace race)
+    Void SelectRaces (CardRace[] races)
+    Void SelectAnnounceID (Int32 id)
+    Void SelectYesNo (Boolean opt)
+    Int32 OnAnnounceNumber (IList`1 numbers)
+    IList`1 OnAnnounceAttrib (Int32 count, IList`1 attributes)
+    IList`1 OnAnnounceRace (Int32 count, IList`1 races)
+    BattlePhaseAction Attack (ClientCard attacker, ClientCard defender)
+    BattlePhaseAction ToEndPhase ()
+    BattlePhaseAction ToMainPhase2 ()
+  --- Virtual/Override Methods ---
+    Virtual: IList`1 OnAnnounceAttrib (Int32 count, IList`1 attributes)
+    Virtual: IList`1 OnAnnounceRace (Int32 count, IList`1 races)
+    Virtual: Boolean Equals (Object obj)
+    Virtual: Int32 GetHashCode ()
+    Virtual: Void Finalize ()
+    Virtual: String ToString ()
+  --- Properties ---
+    Prop: Duel Duel
+    Prop: Executor Executor
+================================================
+
+Type: WindBot.Game.AI.CardExecutor (Base: System.Object)
+  --- Public Methods ---
+    Int32 get_CardId ()
+    ExecutorType get_Type ()
+    Func`1 get_Func ()
+  --- Virtual/Override Methods ---
+    Virtual: Boolean Equals (Object obj)
+    Virtual: Int32 GetHashCode ()
+    Virtual: Void Finalize ()
+    Virtual: String ToString ()
+  --- Properties ---
+    Prop: Int32 CardId
+    Prop: ExecutorType Type
+    Prop: Func`1 Func
+================================================
+
+Type: WindBot.Game.AI.DefaultExecutor (Base: WindBot.Game.AI.Executor)
+  --- Public Methods ---
+    BattlePhaseAction OnSelectAttackTarget (ClientCard attacker, IList`1 defenders)
+    Boolean OnPreBattleBetween (ClientCard attacker, ClientCard defender)
+    Boolean OnPreActivate (ClientCard card)
+    CardPosition OnSelectPosition (Int32 cardId, IList`1 positions)
+    Boolean OnSelectBattleReplay ()
+    Boolean OnSelectMonsterSummonOrSet (ClientCard card)
+  --- Virtual/Override Methods ---
+    Virtual: BattlePhaseAction OnSelectAttackTarget (ClientCard attacker, IList`1 defenders)
+    Virtual: Boolean OnPreBattleBetween (ClientCard attacker, ClientCard defender)
+    Virtual: Boolean OnPreActivate (ClientCard card)
+    Virtual: CardPosition OnSelectPosition (Int32 cardId, IList`1 positions)
+    Virtual: Boolean OnSelectBattleReplay ()
+    Virtual: Boolean OnSelectMonsterSummonOrSet (ClientCard card)
+    Virtual: Int32 OnRockPaperScissors ()
+    Virtual: Boolean OnSelectHand ()
+    Virtual: BattlePhaseAction OnBattle (IList`1 attackers, IList`1 defenders)
+    Virtual: ClientCard OnSelectAttacker (IList`1 attackers, IList`1 defenders)
+    Virtual: Void OnChaining (Int32 player, ClientCard card)
+    Virtual: Void OnChainEnd ()
+    Virtual: Void OnNewPhase ()
+    Virtual: Void OnNewTurn ()
+    Virtual: Void OnDraw (Int32 player)
+    Virtual: IList`1 OnSelectCard (IList`1 cards, Int32 min, Int32 max, Int64 hint, Boolean cancelable)
+    Virtual: IList`1 OnSelectSum (IList`1 cards, Int32 sum, Int32 min, Int32 max, Int64 hint, Boolean mode)
+    Virtual: IList`1 OnSelectFusionMaterial (IList`1 cards, Int32 min, Int32 max)
+    Virtual: IList`1 OnSelectSynchroMaterial (IList`1 cards, Int32 sum, Int32 min, Int32 max)
+    Virtual: IList`1 OnSelectXyzMaterial (IList`1 cards, Int32 min, Int32 max)
+    Virtual: IList`1 OnSelectLinkMaterial (IList`1 cards, Int32 min, Int32 max)
+    Virtual: IList`1 OnSelectRitualTribute (IList`1 cards, Int32 sum, Int32 min, Int32 max)
+    Virtual: IList`1 OnSelectPendulumSummon (IList`1 cards, Int32 max)
+    Virtual: IList`1 OnCardSorting (IList`1 cards)
+    Virtual: Void OnSelectChain (IList`1 cards)
+    Virtual: Boolean OnSelectYesNo (Int64 desc)
+    Virtual: Int32 OnSelectOption (IList`1 options)
+    Virtual: Int32 OnSelectPlace (Int64 cardId, Int32 player, CardLocation location, Int32 available)
+    Virtual: Int32 OnAnnounceCard (IList`1 avail)
+    Virtual: Boolean Equals (Object obj)
+    Virtual: Int32 GetHashCode ()
+    Virtual: Void Finalize ()
+    Virtual: String ToString ()
+  --- Properties ---
+    Prop: String Deck
+    Prop: Duel Duel
+    Prop: IList`1 Executors
+    Prop: GameAI AI
+    Prop: AIUtil Util
+================================================
+
+Type: WindBot.Game.AI.Executor (Base: System.Object)
+  --- Public Methods ---
+    String get_Deck ()
+    Void set_Deck (String value)
+    Duel get_Duel ()
+    IList`1 get_Executors ()
+    GameAI get_AI ()
+    AIUtil get_Util ()
+    Int32 OnRockPaperScissors ()
+    Boolean OnSelectHand ()
+    BattlePhaseAction OnBattle (IList`1 attackers, IList`1 defenders)
+    ClientCard OnSelectAttacker (IList`1 attackers, IList`1 defenders)
+    BattlePhaseAction OnSelectAttackTarget (ClientCard attacker, IList`1 defenders)
+    Boolean OnPreBattleBetween (ClientCard attacker, ClientCard defender)
+    Boolean OnPreActivate (ClientCard card)
+    Void OnChaining (Int32 player, ClientCard card)
+    Void OnChainEnd ()
+    Void OnNewPhase ()
+    Void OnNewTurn ()
+    Void OnDraw (Int32 player)
+    IList`1 OnSelectCard (IList`1 cards, Int32 min, Int32 max, Int64 hint, Boolean cancelable)
+    IList`1 OnSelectSum (IList`1 cards, Int32 sum, Int32 min, Int32 max, Int64 hint, Boolean mode)
+    IList`1 OnSelectFusionMaterial (IList`1 cards, Int32 min, Int32 max)
+    IList`1 OnSelectSynchroMaterial (IList`1 cards, Int32 sum, Int32 min, Int32 max)
+    IList`1 OnSelectXyzMaterial (IList`1 cards, Int32 min, Int32 max)
+    IList`1 OnSelectLinkMaterial (IList`1 cards, Int32 min, Int32 max)
+    IList`1 OnSelectRitualTribute (IList`1 cards, Int32 sum, Int32 min, Int32 max)
+    IList`1 OnSelectPendulumSummon (IList`1 cards, Int32 max)
+    IList`1 OnCardSorting (IList`1 cards)
+    Void OnSelectChain (IList`1 cards)
+    Boolean OnSelectYesNo (Int64 desc)
+    Int32 OnSelectOption (IList`1 options)
+    Int32 OnSelectPlace (Int64 cardId, Int32 player, CardLocation location, Int32 available)
+    CardPosition OnSelectPosition (Int32 cardId, IList`1 positions)
+    Boolean OnSelectBattleReplay ()
+    Boolean OnSelectMonsterSummonOrSet (ClientCard card)
+    Int32 OnAnnounceCard (IList`1 avail)
+    Void SetMain (MainPhase main)
+    Void SetBattle (BattlePhase battle)
+    Void SetCard (ExecutorType type, ClientCard card, Int64 description)
+    Void AddExecutor (ExecutorType type, Int32 cardId, Func`1 func)
+    Void AddExecutor (ExecutorType type, Int32 cardId)
+    Void AddExecutor (ExecutorType type, Func`1 func)
+    Void AddExecutor (ExecutorType type)
+  --- Virtual/Override Methods ---
+    Virtual: Int32 OnRockPaperScissors ()
+    Virtual: Boolean OnSelectHand ()
+    Virtual: BattlePhaseAction OnBattle (IList`1 attackers, IList`1 defenders)
+    Virtual: ClientCard OnSelectAttacker (IList`1 attackers, IList`1 defenders)
+    Virtual: BattlePhaseAction OnSelectAttackTarget (ClientCard attacker, IList`1 defenders)
+    Virtual: Boolean OnPreBattleBetween (ClientCard attacker, ClientCard defender)
+    Virtual: Boolean OnPreActivate (ClientCard card)
+    Virtual: Void OnChaining (Int32 player, ClientCard card)
+    Virtual: Void OnChainEnd ()
+    Virtual: Void OnNewPhase ()
+    Virtual: Void OnNewTurn ()
+    Virtual: Void OnDraw (Int32 player)
+    Virtual: IList`1 OnSelectCard (IList`1 cards, Int32 min, Int32 max, Int64 hint, Boolean cancelable)
+    Virtual: IList`1 OnSelectSum (IList`1 cards, Int32 sum, Int32 min, Int32 max, Int64 hint, Boolean mode)
+    Virtual: IList`1 OnSelectFusionMaterial (IList`1 cards, Int32 min, Int32 max)
+    Virtual: IList`1 OnSelectSynchroMaterial (IList`1 cards, Int32 sum, Int32 min, Int32 max)
+    Virtual: IList`1 OnSelectXyzMaterial (IList`1 cards, Int32 min, Int32 max)
+    Virtual: IList`1 OnSelectLinkMaterial (IList`1 cards, Int32 min, Int32 max)
+    Virtual: IList`1 OnSelectRitualTribute (IList`1 cards, Int32 sum, Int32 min, Int32 max)
+    Virtual: IList`1 OnSelectPendulumSummon (IList`1 cards, Int32 max)
+    Virtual: IList`1 OnCardSorting (IList`1 cards)
+    Virtual: Void OnSelectChain (IList`1 cards)
+    Virtual: Boolean OnSelectYesNo (Int64 desc)
+    Virtual: Int32 OnSelectOption (IList`1 options)
+    Virtual: Int32 OnSelectPlace (Int64 cardId, Int32 player, CardLocation location, Int32 available)
+    Virtual: CardPosition OnSelectPosition (Int32 cardId, IList`1 positions)
+    Virtual: Boolean OnSelectBattleReplay ()
+    Virtual: Boolean OnSelectMonsterSummonOrSet (ClientCard card)
+    Virtual: Int32 OnAnnounceCard (IList`1 avail)
+    Virtual: Boolean Equals (Object obj)
+    Virtual: Int32 GetHashCode ()
+    Virtual: Void Finalize ()
+    Virtual: String ToString ()
+  --- Properties ---
+    Prop: String Deck
+    Prop: Duel Duel
+    Prop: IList`1 Executors
+    Prop: GameAI AI
+    Prop: AIUtil Util
+================================================
+
+Type: WindBot.Game.AI.ExecutorType (Base: System.Enum)
+  --- Public Methods ---
+  --- Virtual/Override Methods ---
+    Virtual: Int32 GetHashCode ()
+    Virtual: String ToString ()
+    Virtual: Boolean Equals (Object obj)
+    Virtual: Void Finalize ()
+  --- Properties ---
+================================================
+
+Type: WindBot.Game.AI.DefaultExecutor+_CardId (Base: System.Object)
+  --- Public Methods ---
+  --- Virtual/Override Methods ---
+    Virtual: Boolean Equals (Object obj)
+    Virtual: Int32 GetHashCode ()
+    Virtual: Void Finalize ()
+    Virtual: String ToString ()
+  --- Properties ---
+================================================
+
+Type: WindBot.Game.AI.DefaultExecutor+<>c (Base: System.Object)
+  --- Public Methods ---
+  --- Virtual/Override Methods ---
+    Virtual: Boolean Equals (Object obj)
+    Virtual: Int32 GetHashCode ()
+    Virtual: Void Finalize ()
+    Virtual: String ToString ()
+  --- Properties ---
+================================================
+
+Type: WindBot.Game.AI.DefaultExecutor+<>c__DisplayClass3_0 (Base: System.Object)
+  --- Public Methods ---
+  --- Virtual/Override Methods ---
+    Virtual: Boolean Equals (Object obj)
+    Virtual: Int32 GetHashCode ()
+    Virtual: Void Finalize ()
+    Virtual: String ToString ()
+  --- Properties ---
+================================================
+
