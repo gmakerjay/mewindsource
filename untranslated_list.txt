@@ -1,0 +1,919 @@
+==================================================
+ID: 102380
+CDB: cards.delta.cdb
+Name: Lava Golem
+Description:
+Cannot be Normal Summoned/Set. Must first be Special Summoned (from your hand) to your opponent's field by Tributing 2 monsters they control. You cannot Normal Summon/Set the turn you Special Summon this card. Once per turn, during your Standby Phase: Take 1000 damage.
+==================================================
+
+==================================================
+ID: 4215180
+CDB: cards.delta.cdb
+Name: Lollipo☆Yummy
+Description:
+If you control a Link-1 monster or a Level 2 Synchro Monster, you can Special Summon this card (from your hand). You can only Special Summon "Lollipo☆Yummy" once per turn this way. If this card is Normal or Special Summoned: You can target 1 card in your opponent's GY; shuffle it into the Deck, or, if this card was Special Summoned by the effect of a Synchro Monster, you can banish that card instead. You can only use this effect of "Lollipo☆Yummy" once per turn.
+==================================================
+
+==================================================
+ID: 4891376
+CDB: cards.delta.cdb
+Name: Zalen the Shackled Dragon
+Description:
+1 Tuner + 1+ Synchro Monsters
+If this card you control would be used as Synchro Material, you can treat it as a non-Tuner. When a card or effect is activated in response to another card or effect activation (Quick Effect): You can activate 1 of these effects;
+● Negate the first effect, and if you do, destroy that card.
+● Negate the second effect, and if you do, destroy that card.
+You can only use this effect of "Zalen the Shackled Dragon" once per turn.
+==================================================
+
+==================================================
+ID: 6325660
+CDB: release-blzd.cdb
+Name: Dominus Spark
+Description:
+During the turn in which your opponent has activated a monster effect in the hand or GY, you can activate this card from your hand. Target 1 monster your opponent controls; banish it, then if you have no Traps in your GY, your opponent can Special Summon 1 monster from their hand. If you activated this card from your hand, you cannot activate the effects of EARTH, WATER, FIRE, and WIND monsters for the rest of this Duel. You can only activate 1 "Dominus Spark" per turn.
+==================================================
+
+==================================================
+ID: 6636319
+CDB: cards.delta.cdb
+Name: Evil★Twin Ki-sikil Deal
+Description:
+1 "Ki-sikil" monster
+You can only Link Summon "Evil★Twin Ki-sikil Deal" once per turn. You can send 1 "Lil-la" monster from your Deck or Extra Deck to the GY; apply this effect this turn.
+● Each time your opponent activates a card or effect in response to your "Ki-sikil" or "Lil-la" monster effect activation, draw 1 card when that card/effect resolves.
+You can only use this effect of "Evil★Twin Ki-sikil Deal" once per turn.
+==================================================
+
+==================================================
+ID: 10266279
+CDB: release-blzd.cdb
+Name: Power Patron Shadow Spirit Junordo
+Description:
+[ Pendulum Effect ]
+If a "Power Patron" and/or "Elfnote" monster(s) is Special Summoned to your field while this card is in the Pendulum Zone: You can destroy this card, and if you do, draw 2 cards, then discard 1 card. You can only use this effect of "Power Patron Shadow Spirit Junordo" once per turn.
+----------------------------------------
+[ Monster Effect ]
+(This card is always treated as an "Elfnote" card.)
+You can banish (face-down) the top 3 cards of your Deck; destroy this card, and if you do, Special Summon 1 "Junora the Power Patron of Tuning" from your Extra Deck (this is treated as a Synchro Summon). If this card is added to your Extra Deck face-up: You can add 1 "Power Patron" or "Elfnote" card from your face-up Extra Deck or GY to your hand, except "Power Patron Shadow Spirit Junordo". You can only use each effect of "Power Patron Shadow Spirit Junordo" once per turn.
+==================================================
+
+==================================================
+ID: 10966439
+CDB: cards.delta.cdb
+Name: Marshmao☆Yummy
+Description:
+If you control no monsters, or all monsters you control are LIGHT Beast monsters: You can Special Summon this card from your hand. If this card is Normal or Special Summoned: You can add 1 "Yummy" Spell/Trap from your GY to your hand, or, if this card was Special Summoned by the effect of a Synchro Monster, you can place 1 "Yummy" Field Spell or 1 "Yummy" Continuous Spell/Trap from your Deck or banishment, face-up on your field instead. You can only use each effect of "Marshmao☆Yummy" once per turn.
+==================================================
+
+==================================================
+ID: 12375297
+CDB: cards.delta.cdb
+Name: Elfnote Power Patron
+Description:
+You cannot Special Summon from the Extra Deck, except Synchro Monsters. You can only use each of the following effects of "Elfnote Power Patron" once per turn. During the Main Phase (Quick Effect): You can target 1 monster in your center Main Monster Zone; increase its Level by 3 (until the end of this turn), then immediately after this effect resolves, you can Synchro Summon 1 "Elfnote" Synchro Monster or 1 "Junora the Power Patron of Tuning". If this card is sent to the GY as Synchro Material: You can add 1 "Elfnote" card from your Deck to your hand.
+==================================================
+
+==================================================
+ID: 13243124
+CDB: cards.delta.cdb
+Name: Favorite HERO Flame Wingman
+Description:
+2 monsters with the same Type but different Attributes
+(This card is always treated as an "Elemental HERO" card.)
+When an attack is declared involving this card and a monster with 2200 or more ATK: You can make this card gain 1000 ATK, then you can Special Summon 1 Level 4 or lower monster from your hand in Defense Position. If a monster(s) was destroyed by battle this turn (Quick Effect): You can Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your hand or field. You can only use each effect of "Favorite HERO Flame Wingman" once per turn.
+==================================================
+
+==================================================
+ID: 13597785
+CDB: cards.delta.cdb
+Name: Elfnote Lucina
+Description:
+You can Special Summon this card (from your hand) to your center Main Monster Zone. You can only Special Summon "Elfnote Lucina" once per turn this way. You can only use each of the following effects of "Elfnote Lucina" once per turn. During your Main Phase: You can add 1 "Elfnote" monster from your Deck to your hand, except "Elfnote Lucina". During your opponent's turn (Quick Effect): You can switch the locations of this card in your Main Monster Zone and the monster in your center Main Monster Zone, then you can return 1 Level 6 or lower monster your opponent controls to the hand.
+==================================================
+
+==================================================
+ID: 14442329
+CDB: cards.delta.cdb
+Name: JJ "Kewl Tune"
+Description:
+You can Normal Summon 1 Tuner during your Main Phase each turn, in addition to your Normal Summon/Set (you can only gain this effect once per turn). Each "Kewl Tune Loudness War" you control gains 3300 ATK while your opponent has a Tuner in their field or GY. You can Tribute 1 Tuner; add to your hand or Special Summon, 1 "Kewl Tune" monster from your Deck, also you cannot Special Summon for the rest of this turn, except Tuners. You can only use this effect of "JJ "Kewl Tune"" once per turn.
+==================================================
+
+==================================================
+ID: 15123983
+CDB: cards.delta.cdb
+Name: THE Star Ham
+Description:
+1 Tuner + 1+ non-Tuner monsters
+If this card is Synchro Summoned: You can discard 1 card; Special Summon 1 monster from your GY that was used as material for this card's Synchro Summon, and if you do, it is treated as a Tuner. If this card is in your GY: You can discard 2 cards; Special Summon this card, but banish it when it leaves the field. You can only use each effect of "THE Star Ham" once per turn.
+==================================================
+
+==================================================
+ID: 15665977
+CDB: cards.delta.cdb
+Name: Kewl Tune RS
+Description:
+"Kewl Tune Reco" + 1+ Tuners
+Gains 300 ATK for each Tuner in the GYs. The Levels of monsters your opponent controls with 1700 or less original ATK are increased by 1. During the Main Phase (Quick Effect): You can banish 1 Tuner from your GY, then target 1 face-up card your opponent controls; negate its effects until the end of this turn. You can only use this effect of "Kewl Tune RS" once per turn.
+==================================================
+
+==================================================
+ID: 16387555
+CDB: cards.delta.cdb
+Name: Kewl Tune Cue
+Description:
+If this card on the field would be used as Synchro Material, 1 Tuner in your hand can be used as 1 of the other materials. You can only use each of the following effects of "Kewl Tune Cue" once per turn. If this card is Normal Summoned: You can Special Summon 1 Tuner from your hand, Deck, or GY, except "Kewl Tune Cue", also for the rest of this turn you cannot Special Summon, except Tuners. If this card is sent to the GY as Synchro Material: You can excavate 2 cards from the top of your opponent's Deck, banish 1 of them, and place the other on the top or bottom of the Deck.
+==================================================
+
+==================================================
+ID: 16509007
+CDB: cards.delta.cdb
+Name: Kewl Tune Mix
+Description:
+If this card on the field would be used as Synchro Material, 1 Tuner in your hand can be used as 1 of the other materials. You can only use each of the following effects of "Kewl Tune Mix" once per turn. If this card is Normal or Special Summoned: You can add 1 "Kewl Tune" monster from your Deck or GY to your hand, except a Level 2 monster. If this card is sent to the GY as Synchro Material: You can target 1 monster your opponent controls; destroy it.
+==================================================
+
+==================================================
+ID: 16693934
+CDB: cards.delta.cdb
+Name: Quadogmatika Beast
+Description:
+Target 1 monster in your GY or banishment; send to the GY, 1 monster from your Extra Deck or 1 "Dogmatika" monster from your Deck, with ATK higher than or equal to that target, and if you do, Special Summon that target. Until the end of your next turn after this card resolves, you cannot Special Summon from the Extra Deck. You can only activate 1 "Quadogmatika Beast" per turn.
+==================================================
+
+==================================================
+ID: 17209452
+CDB: release-blzd.cdb
+Name: Kewl Tune Rotary
+Description:
+If this card on the field would be used as Synchro Material, 1 Tuner in your hand can be used as 1 of the other materials. You can only use each of the following effects of "Kewl Tune Rotary" once per turn. You can reveal this card and 1 other Tuner in your hand; immediately after this effect resolves, Normal Summon 1 Tuner. If this card is sent to the GY as Synchro Material: You can activate 1 of these effects;
+● Place 1 card from your opponent's GY on the bottom of the Deck.
+● Look at your opponent's hand, then you can add 1 "Kewl Tune" Spell/Trap from your Deck to your hand.
+==================================================
+
+==================================================
+ID: 18321034
+CDB: release-blzd.cdb
+Name: Hecahands Makibel
+Description:
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Makibel" once per turn. You can reveal this card in your hand; Fusion Summon 1 "Hecahands" Fusion Monster from your Extra Deck, using monsters from your hand or field, including this card in the hand. If an Illusion Fusion Monster(s) is sent to your GY while this card is in your GY: You can add this card to your hand.
+==================================================
+
+==================================================
+ID: 20415050
+CDB: cards.delta.cdb
+Name: The Hidden Hecahands
+Description:
+When you activate this card, you can also send 1 other card you control to the GY; add 1 "Hecahands" monster from your Deck to your hand, then if you sent another card to the GY at activation, you can Set 1 "Hecahands" Spell/Trap from your Deck, except "The Hidden Hecahands". You can banish this card from your GY; your opponent draws 1 card, then they discard 1 card. You can only use each effect of "The Hidden Hecahands" once per turn.
+==================================================
+
+==================================================
+ID: 21637502
+CDB: cards.delta.cdb
+Name: Hecahands Breus
+Description:
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Breus" once per turn. If a card(s) is added to your opponent's hand (except during the Draw Phase or Damage Step): You can Special Summon this card from your hand. During your Main Phase: You can look at 1 random card in your opponent's hand, then if it is a monster, you can Special Summon it to your field.
+==================================================
+
+==================================================
+ID: 22669793
+CDB: cards.delta.cdb
+Name: Eldlixir of the Glorious Golden Land
+Description:
+You can pay 800 LP, then activate 1 of these effects;
+● Special Summon this card as a Normal Monster (Zombie/LIGHT/Level 10/ATK 1500/DEF 2800) (this card is also still a Trap), then if you control "Eldlich the Golden Lord", you can return 1 monster from the field to the hand.
+● Set 1 of your banished "Golden Land" or "Eldlixir" Spells/Traps.
+You can only use this effect of "Eldlixir of the Glorious Golden Land" once per turn.
+==================================================
+
+==================================================
+ID: 24092792
+CDB: cards.delta.cdb
+Name: Elfnotes: Rhapsodia of Madness
+Description:
+While you control a monster in your center Main Monster Zone, your opponent's monsters cannot attack, except to attack that monster. You can send 1 monster from your hand or field to the GY, then target 1 "Elfnote" monster in your GY with a different original Attribute; Special Summon it, then if you control a Synchro Monster, you can negate the effects of 1 face-up card your opponent controls until the end of this turn. You can only use this effect of "Elfnotes: Rhapsodia of Madness" once per turn.
+==================================================
+
+==================================================
+ID: 25311006
+CDB: cards.delta.cdb
+Name: Triple Tactics Talent
+Description:
+If your opponent has activated a monster effect during your Main Phase this turn: Activate 1 of these effects;
+● Draw 2 cards.
+● Take control of 1 monster your opponent controls until the End Phase.
+● Look at your opponent's hand, and choose 1 card from it to shuffle into the Deck.
+You can only activate 1 "Triple Tactics Talent" per turn.
+==================================================
+
+==================================================
+ID: 29369059
+CDB: cards.delta.cdb
+Name: Yummy☆Surprise
+Description:
+Activate 1 of these effects (but you can only use each effect of "Yummy☆Surprise" once per turn);
+● Target 2 LIGHT Beast monsters you control and 2 cards your opponent controls; return them to the hand.
+● Special Summon 1 "Yummy" monster from your hand or GY, but it cannot attack directly this turn.
+● Return 1 Field Spell from your face-up field or GY to the hand, then you can place 1 "Yummy" Field Spell from your hand, face-up on your field.
+==================================================
+
+==================================================
+ID: 29792472
+CDB: cards.delta.cdb
+Name: Yad'al-Hecahands
+Description:
+When your opponent activates a Spell/Trap Card, while you control a "Hecahands" monster: Negate the activation, and if you do, destroy that card, then you can Set the destroyed Spell/Trap to your field. You can only activate 1 "Yad'al-Hecahands" per turn.
+==================================================
+
+==================================================
+ID: 30271097
+CDB: cards.delta.cdb
+Name: The Fallen & The Virtuous
+Description:
+(This card is always treated as a "Branded" and "Dogmatika" card.)
+Activate 1 of these effects;
+● Send 1 monster that mentions "Fallen of Albaz" from your Extra Deck to the GY, then target 1 face-up card on the field; destroy it.
+● If you have an "Ecclesia" monster in your field or GY: Target 1 monster in either GY; Special Summon it to your field.
+You can only activate 1 "The Fallen & The Virtuous" per turn.
+==================================================
+
+==================================================
+ID: 30581601
+CDB: cards.delta.cdb
+Name: Yummy★Snatchy
+Description:
+1 Level 4 or lower LIGHT Beast monster
+If this card is Special Summoned: You can place 1 "Yummy" Field Spell from your hand or Deck, face-up on your field, also you cannot Link Summon Link-3 or higher Link Monsters for the rest of this turn. You can only use this effect of "Yummy★Snatchy" once per turn. Once per Chain, during the Main Phase or your opponent's Battle Phase (Quick Effect): You can pay 100 LP; immediately after this effect resolves, Synchro Summon using monsters you control as material, including a "Yummy" monster.
+==================================================
+
+==================================================
+ID: 31411835
+CDB: release-blzd.cdb
+Name: Hecahands Dandalos
+Description:
+2 "Hecahands" monsters
+You can target 1 monster your opponent controls; take control of it. You can only use this effect of "Hecahands Dandalos" once per turn. Your "Hecahands" Fusion Monsters and your monsters that are owned by your opponent can attack directly. If this card battles a monster, neither can be destroyed by that battle.
+==================================================
+
+==================================================
+ID: 31425736
+CDB: cards.delta.cdb
+Name: Cupsy☆Yummy
+Description:
+If you control a Link-1 monster or a Level 2 Synchro Monster, you can Special Summon this card (from your hand). You can only Special Summon "Cupsy☆Yummy" once per turn this way. If this card is Normal or Special Summoned: You can add 1 "Yummy" card from your Deck to your hand, except "Cupsy☆Yummy", or, if this card was Special Summoned by the effect of a Synchro Monster, you can draw 1 card instead. You can only use this effect of "Cupsy☆Yummy" once per turn.
+==================================================
+
+==================================================
+ID: 31603289
+CDB: cards.delta.cdb
+Name: Cupsy★Yummy Way
+Description:
+1 Tuner + 1 non-Tuner monster
+For this card's Synchro Summon, you can treat 1 Link-1 monster you control as a Level 1 Tuner. You can only use each of the following effects of "Cupsy★Yummy Way" once per turn. If this card is Synchro Summoned: You can add 2 "Yummy" monsters from your Deck to your hand, then discard 1 card. When your opponent activates a card or effect (Quick Effect): You can return this card to the Extra Deck; Special Summon up to 2 "Yummy" monsters from your GY.
+==================================================
+
+==================================================
+ID: 32759190
+CDB: cards.delta.cdb
+Name: Hecahands Yadel
+Description:
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Yadel" once per turn. You can reveal this card in your hand; shuffle this card into the Deck, then add 1 "Hecahands" Spell/Trap from your Deck to your hand. If this card is sent to the GY: You can target 1 "Hecahands" Spell/Trap in your GY; Set it.
+==================================================
+
+==================================================
+ID: 33017964
+CDB: cards.delta.cdb
+Name: Illusion Gate
+Description:
+Pay half your LP; destroy as many monsters your opponent controls as possible, then you can Special Summon 1 monster from your opponent's GY to your field, ignoring its Summoning conditions. You can only apply this effect of "Illusion Gate" once per Duel.
+==================================================
+
+==================================================
+ID: 33781156
+CDB: cards.delta.cdb
+Name: Tri-Brigade Arms Mouser
+Description:
+2 Beast, Beast-Warrior, and/or Winged Beast monsters
+If this card is Link Summoned: You can send 2 "Tri-Brigade" cards with different names from your Deck and/or Extra Deck to the GY, except "Tri-Brigade Arms Mouser", also you cannot Special Summon from the Extra Deck for the rest of this turn, except Beast, Beast-Warrior, or Winged Beast monsters. If this card is sent to the GY: You can target 1 face-up monster on the field; change it to face-down Defense Position. You can only use each effect of "Tri-Brigade Arms Mouser" once per turn.
+==================================================
+
+==================================================
+ID: 35269904
+CDB: cards.delta.cdb
+Name: Triple Tactics Thrust
+Description:
+If your opponent has activated a monster effect during this turn: Set 1 Normal Spell/Trap directly from your Deck, except "Triple Tactics Thrust", or if your opponent controls a monster, you can add it to your hand instead. That Set card cannot be activated this turn. You can only activate 1 "Triple Tactics Thrust" per turn.
+==================================================
+
+==================================================
+ID: 38423248
+CDB: cards.delta.cdb
+Name: Invoked Magistus Omega
+Description:
+"Aleister the Invoker" + 1 Fusion, Synchro, Xyz, or Link Monster
+If this card is Special Summoned: You can target 1 Fusion, Synchro, Xyz, or Link Monster in your GY and 1 monster on the field; banish them. If this Fusion Summoned card is destroyed by battle or card effect: You can Special Summon 1 Level 4 Spellcaster monster from your Deck, then you can equip this card to it as an Equip Spell that gives it 1000 ATK. You can only use each effect of "Invoked Magistus Omega" once per turn.
+==================================================
+
+==================================================
+ID: 39185163
+CDB: cards.delta.cdb
+Name: Doomking Balerdroch
+Description:
+During the Standby Phase, if a face-up card is in a Field Zone and this card is in your GY: You can Special Summon this card in Defense Position. You can only use this effect of "Doomking Balerdroch" once per turn. Once per Chain, when a Zombie monster, except "Doomking Balerdroch", activates its effect (except during the Damage Step) (Quick Effect): You can apply 1 of these effects (but you cannot apply that same effect of "Doomking Balerdroch" again this turn).
+● Negate that effect.
+● Banish 1 monster from the field or GY.
+==================================================
+
+==================================================
+ID: 39576656
+CDB: release-blzd.cdb
+Name: Kewl Tune Crackle
+Description:
+"Kewl Tune Clip" + 1+ Tuners
+If this card is Synchro Summoned: You can look at your opponent's Extra Deck, and if you do, banish (face-up) 1 card from it (until the End Phase), then you can make this card gain ATK equal to the banished monster's. If this Synchro Summoned card is sent to the GY: You can Special Summon this card, then you can look at your opponent's Extra Deck, and if you do, banish (face-up) 2 cards from it until the End Phase. You can only use each effect of "Kewl Tune Crackle" once per turn.
+==================================================
+
+==================================================
+ID: 40673853
+CDB: cards.delta.cdb
+Name: Vallon, the Super Psy Skyblaster
+Description:
+2 Level 5 monsters
+During the Main Phase (Quick Effect): You can detach 1 material from this card, then target 1 face-up monster your opponent controls; change it to face-down Defense Position. If this card is sent to the GY: You can target 1 face-down card on the field; destroy it. You can only use each effect of "Vallon, the Super Psy Skyblaster" once per turn.
+==================================================
+
+==================================================
+ID: 41069676
+CDB: cards.delta.cdb
+Name: Kewl Tune Loudness War
+Description:
+2+ Tuners
+Other Tuners you control cannot be destroyed by card effects, also your opponent cannot target them with card effects. When your opponent activates a card or effect (Quick Effect): You can banish 1 "Kewl Tune" monster from your GY; apply that banished monster's effect that activates when it is sent to the GY as Synchro Material. You can only use this effect of "Kewl Tune Loudness War" once per turn.
+==================================================
+
+==================================================
+ID: 41373230
+CDB: cards.delta.cdb
+Name: Titaniklad the Ash Dragon
+Description:
+"Fallen of Albaz" + 1 monster with 2500 or more ATK
+Gains ATK equal to the combined original Levels of the monsters used for its Fusion Summon x 100. After this card is Fusion Summoned, for the rest of this turn, it is unaffected by the activated effects of any other monsters Special Summoned from the Extra Deck. During the End Phase, if this card is in the GY because it was sent there this turn: You can add to your hand, or Special Summon, 1 "Dogmatika" monster or 1 "Fallen of Albaz" from your Deck. You can only use this effect of "Titaniklad the Ash Dragon" once per turn.
+==================================================
+
+==================================================
+ID: 42302563
+CDB: cards.delta.cdb
+Name: Elfnote Seraphim Strelitzia
+Description:
+1 Tuner + 1+ non-Tuners
+This card's original ATK becomes 3000, while in the center Main Monster Zone. During the Main Phase (Quick Effect): You can Special Summon 1 Level 6 or lower "Elfnote" monster from your hand or GY, then you can reduce the Levels of all Level 4 or higher monsters on the field by 3 until the end of this turn, also you cannot Special Summon from the Extra Deck for the rest of this turn, except Synchro Monsters. You can only use this effect of "Elfnote Seraphim Strelitzia" once per turn.
+==================================================
+
+==================================================
+ID: 42781164
+CDB: cards.delta.cdb
+Name: Kewl Tune Track Maker
+Description:
+1 "Kewl Tune" Tuner + 1+ Tuners
+If this card on the field would be used as Synchro Material, 1 Tuner in your hand can be used as 1 of the other materials. You can only use each of the following effects of "Kewl Tune Track Maker" once per turn. If this card is Special Summoned: You can add 1 "Kewl Tune" card from your Deck to your hand. If this card is sent to the GY as Synchro Material: You can return 1 card your opponent controls to the hand.
+==================================================
+
+==================================================
+ID: 43143567
+CDB: cards.delta.cdb
+Name: Fallen Angel of the Golden Land
+Description:
+"Eldlich the Golden Lord" + 1 Zombie monster
+Must be either Fusion Summoned, or Special Summoned (from your Extra Deck) by Tributing 1 LIGHT Zombie monster, while you have "Eldlich the Golden Lord" in your field or GY. You can only Special Summon "Fallen Angel of the Golden Land" once per turn this way, no matter which method you use. If this card is sent from the field to the GY: You can Special Summon 1 "Eldlich" monster from your Deck, Extra Deck, or GY. You can only use this effect of "Fallen Angel of the Golden Land" once per turn.
+==================================================
+
+==================================================
+ID: 43904702
+CDB: cards.delta.cdb
+Name: Kewl Tune Clip
+Description:
+If this card on the field would be used as Synchro Material, 1 Tuner in your hand can be used as 1 of the other materials. You can only use each of the following effects of "Kewl Tune Clip" once per turn. During your opponent's Main Phase, if this card is in your hand (Quick Effect): You can Special Summon this card, then immediately after this effect resolves, you can Synchro Summon 1 Tuner Synchro Monster. If this card is sent to the GY as Synchro Material: You can banish (face-up) 1 random face-down card from your opponent's Extra Deck.
+==================================================
+
+==================================================
+ID: 43932352
+CDB: release-blzd.cdb
+Name: Bayt'al-Hecahands
+Description:
+You can Tribute 1 monster you control that is a "Hecahands" monster or a monster owned by your opponent; take control of 1 monster your opponent controls. You can only use this effect of "Bayt'al-Hecahands" once per turn. Once per turn, during your End Phase: Send 1 card you control to the GY.
+==================================================
+
+==================================================
+ID: 45951104
+CDB: cards.delta.cdb
+Name: Bot Herder
+Description:
+Target 1 monster your opponent controls, that is a face-up monster you own or a face-down Defense Position monster; if that monster is no longer on the field, or is a monster you own (if face-down, reveal it briefly to check), apply these effects in sequence.
+● Inflict 200 damage to your opponent.
+● Take control of all monsters your opponent controls, except that monster.
+==================================================
+
+==================================================
+ID: 55273560
+CDB: cards.delta.cdb
+Name: Incredible Ecclesia, the Virtuous
+Description:
+If your opponent controls more monsters than you do, you can Special Summon this card (from your hand). You can only Special Summon "Incredible Ecclesia, the Virtuous" once per turn this way. You can only use each of the following effects of "Incredible Ecclesia, the Virtuous" once per turn. During the Main Phase (Quick Effect): You can Tribute this card; Special Summon 1 "Swordsoul" monster or 1 "Fallen of Albaz" from your hand or Deck. During the End Phase, if a Fusion Monster(s) was sent to your GY this turn: You can add this card from the GY to your hand.
+
+* The above text is unofficial and describes the card's functionality in the OCG.
+==================================================
+
+==================================================
+ID: 56651978
+CDB: release-blzd.cdb
+Name: Elfnote Regina
+Description:
+(Quick Effect): You can send 1 other "Elfnote" card from your hand or face-up field to the GY; Special Summon this card from your hand. If this card is Normal or Special Summoned to the center Main Monster Zone: You can Special Summon 1 "Elfnote" monster from your Deck, except "Elfnote Regina". If this card is sent to the GY as Synchro Material: You can add this card to your hand. You can only use each effect of "Elfnote Regina" once per turn.
+==================================================
+
+==================================================
+ID: 57809669
+CDB: cards.delta.cdb
+Name: Hecahands Tartaros
+Description:
+Activate 1 of these effects (but you can only use each effect of "Hecahands Tartaros" once per turn);
+● If you control a "Hecahands" monster: You can target 1 Spell/Trap your opponent controls; return it to the hand.
+● Fusion Summon 1 "Hecahands" Fusion Monster from your Extra Deck, by banishing its materials from your field and/or GY. If you use a face-up monster you control that is owned by your opponent as material, you can treat it as a "Hecahands" monster.
+==================================================
+
+==================================================
+ID: 59400890
+CDB: cards.delta.cdb
+Name: Dark Magician of Destruction
+Description:
+"Dark Magician" + 1 LIGHT or DARK monster
+Must be either Fusion Summoned, or Special Summoned (from your Extra Deck) during the turn a Spell Card or effect is activated, by banishing 1 Level 6 or higher DARK Spellcaster monster you control as material. You can only Special Summon "Dark Magician of Destruction" once per turn this way, no matter which method you use. This card's name becomes "Dark Magician" while on the field or in the GY. If this card is Special Summoned: You can add 1 "Dark Magician" or 1 card that mentions it from your Deck to your hand.
+==================================================
+
+==================================================
+ID: 59581480
+CDB: cards.delta.cdb
+Name: Elfnote Tinia
+Description:
+You can Special Summon this card (from your hand) to your center Main Monster Zone. You can only Special Summon "Elfnote Tinia" once per turn this way. You can only use each of the following effects of "Elfnote Tinia" once per turn. During your Main Phase: You can place 1 "Elfnote" Continuous Spell from your Deck face-up on your field. During your opponent's turn (Quick Effect): You can switch the locations of this card in your Main Monster Zone and the monster in your center Main Monster Zone, then you can banish (face-up) 1 random card from your opponent's hand, until the End Phase.
+==================================================
+
+==================================================
+ID: 60303688
+CDB: cards.delta.cdb
+Name: Dogmatika Ecclesia, the Virtuous
+Description:
+Cannot be destroyed by battle with a monster Special Summoned from the Extra Deck. You can only use each of the following effects of "Dogmatika Ecclesia, the Virtuous" once per turn. If a monster Special Summoned from the Extra Deck is on the field: You can Special Summon this card from your hand. If this card is Normal or Special Summoned: You can activate this effect; add 1 "Dogmatika" card from your Deck to your hand, except "Dogmatika Ecclesia, the Virtuous", also you cannot Special Summon monsters from the Extra Deck for the rest of this turn.
+==================================================
+
+==================================================
+ID: 63013339
+CDB: cards.delta.cdb
+Name: Sky Striker Ace - Camellia
+Description:
+2 Effect Monsters
+Must first be Link Summoned. You can only Special Summon "Sky Striker Ace - Camellia(s)" once per turn. Once per turn, if you have 3 or less Spells in your GY: You can send 1 "Sky Striker" card from your Deck to the GY. If this card is sent to the GY: You can target 1 monster your opponent controls; Special Summon this card to your opponent's field (but shift control to its owner during the End Phase of this turn), and if you do, send that targeted monster to the GY.
+==================================================
+
+==================================================
+ID: 64491754
+CDB: cards.delta.cdb
+Name: Elfnotes: Welcome Home
+Description:
+The monster in your center Main Monster Zone cannot be destroyed by card effects. You can send 1 monster from your hand or field to the GY; Special Summon 1 "Elfnote" monster with a different original Attribute from your Deck in Defense Position, also you cannot Special Summon from the Extra Deck for the rest of this turn, except Synchro Monsters. You can only use this effect of "Elfnotes: Welcome Home" once per turn.
+==================================================
+
+==================================================
+ID: 65961304
+CDB: release-blzd.cdb
+Name: Kewl Tune Back 2 Back
+Description:
+1 Tuner + 1+ Synchro Monsters
+The Levels of monsters your opponent controls are increased by 2. Your Tuners can make a second attack during each Battle Phase. When your opponent activates a monster effect (Quick Effect): You can target 1 Tuner in your GY or banishment, except a Level 10 monster; either add it to your hand or Special Summon it, then immediately after this effect resolves, you can Synchro Summon 1 Synchro Monster. You can only use this effect of "Kewl Tune Back 2 Back" twice per turn.
+==================================================
+
+==================================================
+ID: 66122213
+CDB: cards.delta.cdb
+Name: Infernal Strike Fighter
+Description:
+1 Tuner + 1+ non-Tuner monsters
+During the Main Phase 2 (Quick Effect): You can destroy as many face-up monsters on the field as possible, and if you do, inflict damage to your opponent equal to the combined original Levels of those destroyed monsters x 200. If this card is destroyed by battle or card effect: You can target 1 Level 5 or lower Machine monster in your GY; Special Summon it in Defense Position. You can only use each effect of "Infernal Strike Fighter" once per turn.
+==================================================
+
+==================================================
+ID: 66975205
+CDB: cards.delta.cdb
+Name: Yummyusment☆Mignon
+Description:
+"Yummy" monsters you control gain 500 ATK for each LIGHT Beast monster on the field. You can only use each of the following effects of "Yummyusment☆Mignon" once per turn. If you control a Link-1 monster: You can target 1 Level 1 "Yummy" monster in your GY; Special Summon it. If this card is in your GY: You can target 2 "Yummy" monsters in your GY and/or banishment; place this card, and them, on the bottom of the Deck in any order.
+==================================================
+
+==================================================
+ID: 67021206
+CDB: cards.delta.cdb
+Name: Hecahands Jauzah
+Description:
+1 "Hecahands" monster + 1 Illusion monster
+Must first be either Fusion Summoned, or Special Summoned (from your Extra Deck) by Tributing 2 monsters you control (1 face-up monster owned by your opponent and 1 Illusion monster). If this card battles a monster, neither can be destroyed by that battle. During your Main Phase: You can add 1 "Hecahands" card from your Deck or GY to your hand. You can only use this effect of "Hecahands Jauzah" once per turn.
+==================================================
+
+==================================================
+ID: 67098897
+CDB: cards.delta.cdb
+Name: Cooky★Yummy Way
+Description:
+1 Tuner + 1 non-Tuner monster
+For this card's Synchro Summon, you can treat 1 Link-1 monster you control as a Level 1 Tuner. You can only use each of the following effects of "Cooky★Yummy Way" once per turn. If this card is Synchro Summoned: You can target up to 2 face-up monsters on the field; change them to face-down Defense Position. When your opponent activates a card or effect (Quick Effect): You can return this card to the Extra Deck; Special Summon up to 2 "Yummy" monsters from your GY.
+==================================================
+
+==================================================
+ID: 68144894
+CDB: cards.delta.cdb
+Name: Hecahands Godos
+Description:
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Godos" once per turn. If a card(s) is added to your opponent's hand (except during the Draw Phase or Damage Step): You can Special Summon this card from your hand. During your opponent's Main Phase (Quick Effect): You can target 1 monster in your opponent's GY; Special Summon it to your field, but banish it when it leaves the field.
+==================================================
+
+==================================================
+ID: 68810435
+CDB: cards.delta.cdb
+Name: Cooky☆Yummy
+Description:
+If you control a Link-1 monster or a Level 2 Synchro Monster, you can Special Summon this card (from your hand). You can only Special Summon "Cooky☆Yummy" once per turn this way. If this card is Normal or Special Summoned: You can target 1 face-up monster your opponent controls; it loses 1000 ATK, or, if this card was Special Summoned by the effect of a Synchro Monster, you can destroy that monster instead. You can only use this effect of "Cooky☆Yummy" once per turn.
+==================================================
+
+==================================================
+ID: 70088809
+CDB: release-blzd.cdb
+Name: Fidraulis Harmonia
+Description:
+When your opponent activates a monster effect on the field (Quick Effect): You can reveal this card in your hand and up to 5 Synchro Monsters in your Extra Deck; apply these effects in sequence based on the total number revealed, also you cannot activate the effects of monsters Special Summoned from the Extra Deck until the end of your next turn, except Synchro Monsters.
+● 2+: Special Summon this card.
+● 4+: Send 1 of the revealed Synchro Monsters to the GY.
+● 6: Destroy 1 monster your opponent controls.
+You can only use this effect of "Fidraulis Harmonia" once per turn.
+==================================================
+
+==================================================
+ID: 73355772
+CDB: cards.delta.cdb
+Name: Dogmatika Fleurdelis, the Thunderbolt
+Description:
+During the Main Phase, if a monster Special Summoned from the Extra Deck is on the field (Quick Effect): You can Special Summon this card from your hand. If this card is Special Summoned from the hand: You can Set 1 "Dogmatika" Trap from your Deck. It can be activated this turn, while your opponent controls a Fusion, Synchro, Xyz, or Link Monster with 2500 or more ATK. You can only use each effect of "Dogmatika Fleurdelis, the Thunderbolt" once per turn.
+==================================================
+
+==================================================
+ID: 73642296
+CDB: cards.delta.cdb
+Name: Ghost Belle & Haunted Mansion
+Description:
+When a card or effect is activated that includes any of these effects (Quick Effect): You can discard this card; negate that activation.
+● Add a card(s) from the GY to the hand, Deck, and/or Extra Deck.
+● Special Summon a Monster Card(s) from the GY.
+● Banish a card(s) from the GY.
+You can only use this effect of "Ghost Belle & Haunted Mansion" once per turn.
+==================================================
+
+==================================================
+ID: 73819701
+CDB: cards.delta.cdb
+Name: Fallen of the White Dragon
+Description:
+(This card is always treated as "Fallen of Albaz".)
+If this card is in your hand: You can send 1 monster that mentions "Fallen of Albaz" from your Extra Deck to the GY; Special Summon this card, also you cannot Special Summon from the Extra Deck for the rest of this turn, except Level 8 Fusion or Synchro Monsters. If this card is Normal or Special Summoned: You can Special Summon 1 "Ecclesia" monster from your hand, Deck, or GY. You can only use each effect of "Fallen of the White Dragon" once per turn.
+==================================================
+
+==================================================
+ID: 76666602
+CDB: cards.delta.cdb
+Name: The Dragon that Devours the Dogma
+Description:
+"Fallen of Albaz" + 1 LIGHT or DARK monster + 1 Effect Monster
+While an "Ecclesia" monster is on the field or in either GY, this card gains 500 ATK, also it is unaffected by other cards' effects. You can only use each of the following effects of "The Dragon that Devours the Dogma" once per turn. If this card is Special Summoned: You can shuffle up to 2 cards from any GY(s) and/or banishment into the Deck. During the End Phase, if this card is in the GY because it was sent there this turn: You can add 1 "Dogmatika" or "Tri-Brigade" card from your Deck to your hand.
+==================================================
+
+==================================================
+ID: 78058681
+CDB: cards.delta.cdb
+Name: Kewl Tune Synchro
+Description:
+Add 1 "Kewl Tune" card from your Deck to your hand, except "Kewl Tune Synchro", then immediately after this effect resolves, you can Synchro Summon 1 Tuner Synchro Monster. You cannot Special Summon for the rest of this turn after this card resolves, except Tuners. You can activate up to 2 "Kewl Tune Synchro" per turn.
+==================================================
+
+==================================================
+ID: 78114463
+CDB: release-blzd.cdb
+Name: Solemn Report
+Description:
+You can activate this card the turn it was Set, by revealing 1 other Set Trap you control. When a Spell/Trap Card is activated: Activate 1 of these effects;
+● Pay 1500 LP; negate the activation, and if you do, destroy that card, and if you do that, for the rest of this turn, neither player can activate cards, or the effects of cards, with its same original name.
+● Pay 3000 LP; negate the activation, and if you do, banish that card, then your opponent banishes all cards with its same original name from their hand and Deck.
+==================================================
+
+==================================================
+ID: 78397661
+CDB: cards.delta.cdb
+Name: Ecclesia and the Dark Dragon
+Description:
+1 Tuner + 1+ non-Tuners
+During the Main Phase (Quick Effect): You can banish this card (until the End Phase), and if you do, Special Summon 1 "Fallen of Albaz" or 1 Level 4 or lower monster that mentions it from your Deck or GY. If this card is in your GY: You can target 1 Level 8 Fusion Monster in your GY or banishment and 1 card on the field; shuffle both of those cards and this card into the Deck. You can only use each effect of "Ecclesia and the Dark Dragon" once per turn.
+==================================================
+
+==================================================
+ID: 82699999
+CDB: cards.delta.cdb
+Name: Live☆Twin Lil-la Sweet
+Description:
+When your opponent activates a card or effect in response to your "Live☆Twin" card or effect activation (Quick Effect): You can discard this card; negate that opponent's effect. If you control a "Ki-sikil" monster and this card is in your GY: You can Special Summon this card, but while it is face-up in the Monster Zone, you cannot Special Summon from the Extra Deck, except Fiend monsters. You can only use each effect of "Live☆Twin Lil-la Sweet" once per turn.
+==================================================
+
+==================================================
+ID: 85976588
+CDB: cards.delta.cdb
+Name: Elfnote Fortuna
+Description:
+You can Special Summon this card (from your hand) to your center Main Monster Zone. You can only Special Summon "Elfnote Fortuna" once per turn this way. You can only use each of the following effects of "Elfnote Fortuna" once per turn. During your Main Phase: You can place 1 "Elfnote" Continuous Trap from your hand or Deck, face-up on your field. During your opponent's turn (Quick Effect): You can switch the locations of this card in your Main Monster Zone and the monster in your center Main Monster Zone, then you can return 1 face-up Spell/Trap on the field to the hand.
+==================================================
+
+==================================================
+ID: 86120751
+CDB: cards.delta.cdb
+Name: Aleister the Invoker
+Description:
+(Quick Effect): You can send this card from your hand to the GY, then target 1 Fusion Monster you control; it gains 1000 ATK/DEF until the end of this turn. If this card is Normal Summoned or flipped face-up: You can add 1 "Invocation" from your Deck to your hand.
+==================================================
+
+==================================================
+ID: 86762958
+CDB: cards.delta.cdb
+Name: Assist★Yummy!
+Description:
+Once per turn, during the Standby Phase: You can gain 100 LP, and if you do, your opponent pays 100 LP. You can only use 1 of the following effects of "Assist★Yummy!" per turn, and only once that turn. During the Main Phase or your opponent's Battle Phase: You can send 2 face-up "Yummy" cards you control to the GY, including this card; return 1 card on the field or either GY to the hand. You can banish this card from your GY; send 1 "Yummy" card from your Deck to the GY, except "Assist★Yummy!".
+==================================================
+
+==================================================
+ID: 88170262
+CDB: cards.delta.cdb
+Name: Kewl Tune Remix
+Description:
+"Kewl Tune Mix" + 1+ Tuners
+Gains 1500 ATK while your opponent has a Tuner in their field or GY. During your opponent's turn (Quick Effect): You can Tribute this card; choose 2 non-Synchro Tuners in your GY, add 1 of them to your hand, and if you do, Special Summon the other, then immediately after this effect resolves, you can Synchro Summon 1 Tuner Synchro Monster. You can only use this effect of "Kewl Tune Remix" once per turn.
+==================================================
+
+==================================================
+ID: 89392810
+CDB: cards.delta.cdb
+Name: Kewl Tune Reco
+Description:
+If this card on the field would be used as Synchro Material, 1 Tuner in your hand can be used as 1 of the other materials. You can only use each of the following effects of "Kewl Tune Reco" once per turn. If this card is Normal or Special Summoned: You can add 1 "Kewl Tune" monster from your Deck or GY to your hand, except a Level 3 monster. If this card is sent to the GY as Synchro Material: You can target 1 Spell/Trap your opponent controls; destroy it.
+==================================================
+
+==================================================
+ID: 93192592
+CDB: cards.delta.cdb
+Name: Lollipo★Yummy Way
+Description:
+1 Tuner + 1 non-Tuner monster
+For this card's Synchro Summon, you can treat 1 Link-1 monster you control as a Level 1 Tuner. You can only use each of the following effects of "Lollipo★Yummy Way" once per turn. If this card is Synchro Summoned: You can Special Summon 2 "Yummy" monsters from your GY, but negate their effects. When your opponent activates a card or effect (Quick Effect): You can return this card to the Extra Deck; Special Summon up to 2 "Yummy" monsters from your GY.
+==================================================
+
+==================================================
+ID: 93294363
+CDB: cards.delta.cdb
+Name: Ib'al-Hecahands
+Description:
+When your opponent activates a monster effect, while you control a "Hecahands" monster: Negate the activation, and if you do, destroy that monster, then you can Special Summon the destroyed monster to your field. You can only activate 1 "Ib'al-Hecahands" per turn.
+==================================================
+
+==================================================
+ID: 93360904
+CDB: cards.delta.cdb
+Name: Yummyusment★Acroquey
+Description:
+If you Synchro Summon a LIGHT Beast Synchro Monster: You can target 1 card your opponent controls; destroy it. If a face-up monster(s) you control leaves the field by an opponent's card effect (except during the Damage Step): You can Special Summon 1 "Yummy" monster from your Deck. If this card is in your GY: You can target 2 "Yummy" monsters in your GY and/or banishment; place this card, and them, on the bottom of the Deck in any order. You can only use each effect of "Yummyusment★Acroquey" once per turn.
+==================================================
+
+==================================================
+ID: 93860227
+CDB: cards.delta.cdb
+Name: Necroquip Princess
+Description:
+1 monster equipped with a Monster Card + 1 Fiend Monster Card
+Must be Special Summoned (from your Extra Deck) by sending the above cards from your hand and/or field to the GY. You can only control 1 "Necroquip Princess". If a monster(s) is sent from the hand to the GY to activate a card or effect: You can activate 1 of these effects;
+● Equip 1 of those monsters to this card as an Equip Spell that gives it 500 ATK.
+● Draw 1 card.
+You can only use this effect of "Necroquip Princess" once per turn.
+==================================================
+
+==================================================
+ID: 94410955
+CDB: cards.delta.cdb
+Name: Hecahands Xeno
+Description:
+3 "Hecahands" monsters
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Xeno" once per turn. During the Main Phase (Quick Effect): You can look at 2 random face-down cards in your opponent's Extra Deck, then you can Special Summon 1 of them to your field. If this Fusion Summoned card you own and control is destroyed by your opponent's card effect: You can take control of any number of monsters your opponent controls.
+==================================================
+
+==================================================
+ID: 95132593
+CDB: cards.delta.cdb
+Name: Hecahands Gaigas
+Description:
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Gaigas" once per turn. If a card(s) is added to your opponent's hand (except during the Draw Phase or Damage Step): You can Special Summon this card from your hand. During your Main Phase: You can excavate the top 3 cards of your opponent's Deck, and if you do, you can Special Summon 1 excavated monster to your field, also shuffle the rest into the Deck.
+==================================================
+
+==================================================
+ID: 95365081
+CDB: cards.delta.cdb
+Name: Hecahands Ibtel
+Description:
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Ibtel" once per turn. You can reveal this card in your hand; shuffle this card into the Deck, then Special Summon 1 "Hecahands" monster from your Deck in Defense Position, except "Hecahands Ibtel". If this card is sent to the GY: You can target 1 "Hecahands" monster in your GY, except "Hecahands Ibtel"; Special Summon it.
+==================================================
+
+==================================================
+ID: 97556336
+CDB: cards.delta.cdb
+Name: Medius the Pure
+Description:
+If this card is Normal or Special Summoned: You can add to your hand, or Special Summon, 1 "Power Patron" monster from your Deck. If this card is in your GY: You can shuffle 1 monster from your hand or face-up field into the Deck, and if you do, Special Summon this card, but banish it when it leaves the field. You can only use each effect of "Medius the Pure" once per turn.
+==================================================
+
+==================================================
+ID: 97973962
+CDB: cards.delta.cdb
+Name: Aleister the Invoker of Madness
+Description:
+2 monsters with different Types and different Attributes
+This card's name becomes "Aleister the Invoker" while on the field or in the GY. If a monster is Fusion Summoned while you control this monster (except during the Damage Step): You can discard 1 card, and if you do, add 1 "Invocation" or "The Book of the Law" from your Deck to your hand. If this face-up card you control leaves the field because of an opponent's card effect: You can add 1 "Omega Summon" from your Deck to your hand.
+==================================================
+
+==================================================
+ID: 101305015
+CDB: prerelease-cori.cdb
+Name: Aleister the Reminiscent
+Description:
+If this card is in your hand: You can target 1 Spellcaster monster or 1 Fusion Monster on the field; Special Summon this card, and if you do, the targeted monster gains 1000 ATK until the end of this turn. If this card is Normal or Special Summoned, or flipped face-up: You can banish 1 "Invoked" monster from your Extra Deck; add 1 "Invocation", or 1 Spell that mentions it, from your Deck to your hand. You can only use each effect of "Aleister the Reminiscent" once per turn.
+==================================================
+
+==================================================
+ID: 101305016
+CDB: prerelease-cori.cdb
+Name: Aiwass the Spirit of the Law
+Description:
+You can banish this card from your hand or field; add 1 "Aleister" monster from your Deck to your hand, then if this effect was activated on the field, immediately after this effect resolves, you can Normal Summon 1 Spellcaster monster. If a face-up Fusion Monster(s) you control is sent to the GY, except by battle, while this card is in your GY: You can Special Summon this card, then you can Fusion Summon 1 "Invoked" monster, using monsters from your hand or field. You can only use each effect of "Aiwass the Spirit of the Law" once per turn.
+==================================================
+
+==================================================
+ID: 101305017
+CDB: prerelease-cori.cdb
+Name: Virakam the Artificial Spirit
+Description:
+If you have an "Aleister" monster in your field or GY: You can Special Summon this card from your hand. If this card is Special Summoned: You can Set 1 "Invocation", or 1 Spell that mentions it, from your Deck. When your opponent activates a card or effect in response to the activation of your Fusion Monster's effect (Quick Effect): You can banish this card from the field, and if you do, negate that opponent's effect, and if you do that, banish that card. You can only use each effect of "Virakam the Artificial Spirit" once per turn.
+==================================================
+
+==================================================
+ID: 101305030
+CDB: prerelease-cori.cdb
+Name: Invoked Sorath
+Description:
+1 "Aleister" monster + 1 FIRE or WIND monster
+During the Main Phase (Quick Effect): You can target 1 Level 6 or lower monster in either GY; Special Summon it to your field in Defense Position, but negate its effects. If this card is in your GY: You can Fusion Summon 1 "Invoked" Fusion Monster from your Extra Deck, by banishing its materials from your field and/or GY, including this card in the GY. You can only use each effect of "Invoked Sorath" once per turn.
+==================================================
+
+==================================================
+ID: 101305031
+CDB: prerelease-cori.cdb
+Name: Invoked Babalon
+Description:
+1 "Aleister" monster + 1 LIGHT or EARTH monster
+If this card is Special Summoned: You can add 1 "Virakam the Artificial Spirit" or "Magical Name - "Rosa Mundi"" from your Deck to your hand, then you can banish 1 monster from either GY. You can banish this card from your GY, then target 1 Fusion Monster you control; all monsters your opponent currently controls lose ATK equal to that monster's until the end of this turn. You can only use each effect of "Invoked Babalon" once per turn.
+==================================================
+
+==================================================
+ID: 101305032
+CDB: prerelease-cori.cdb
+Name: Invoked Okeanos
+Description:
+1 "Aleister" monster + 1 DARK or WATER monster
+While this card is in the Main Monster Zone, your opponent's monsters cannot target monsters for attacks, except this one. While this card is in the Extra Monster Zone, any monster sent to your opponent's GY is banished instead. You can banish this card from your GY, then target 1 Fusion Monster you control; it can attack directly this turn. You can only use this effect of "Invoked Okeanos" once per turn.
+==================================================
+
+==================================================
+ID: 101305033
+CDB: prerelease-cori.cdb
+Name: Invoked Transcendence Aeon
+Description:
+2+ Fusion Monsters with different Attributes
+If this card is Fusion Summoned: You can banish cards from the field and/or GYs, up to the number of materials used, then if you used 3 or more, you can look at your opponent's Extra Deck, and if you do, banish up to 3 cards from it. (Quick Effect): You can declare 1 Attribute; all other monsters currently on the field become that Attribute until the end of this turn. You can only use 1 "Invoked Transcendence Aeon" effect per turn, and only once that turn.
+==================================================
+
+==================================================
+ID: 101305053
+CDB: prerelease-cori.cdb
+Name: Invocation "Sword"
+Description:
+Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters you control. If Summoning an "Invoked" Fusion Monster this way, you can also return banished monsters to the GY as material. During your Main Phase, if this card is in your GY: You can target 1 "Aleister" monster or "Invocation" in your GY; shuffle this card into the Deck, and if you do, add the targeted card to your hand. You can only use each effect of "Invocation "Sword"" once per turn.
+==================================================
+
+==================================================
+ID: 101305054
+CDB: prerelease-cori.cdb
+Name: Spirit Sword Aiwass
+Description:
+Activate 1 of these effects; you cannot declare attacks for the rest of this turn, except with Fusion Monsters.
+● Special Summon 1 "Aiwass the Spirit of the Law" from your Deck or GY.
+● Send to the GY, or banish, 1 "Aleister" monster from your Deck.
+● Look at 3 random face-down cards in your opponent's Extra Deck, and if you do, banish 1 of them.
+You can only activate 1 "Spirit Sword Aiwass" per turn.
+==================================================
+
+==================================================
+ID: 101305070
+CDB: prerelease-cori.cdb
+Name: Magical Name - "Rosa Mundi"
+Description:
+Banish 1 "Aleister" monster or 1 Fusion Monster from your GY; Special Summon 1 "Invoked" monster from your Extra Deck, ignoring its Summoning conditions, but banish it during the End Phase. If a monster(s) is banished face-up, while this card is in your GY: You can banish this card, then target 1 of your banished "Invoked" monsters; Special Summon it. You can only use each effect of "Magical Name - "Rosa Mundi"" once per turn.
+==================================================
+
+==================================================
+ID: 101402001
+CDB: prerelease-betb.cdb
+Name: Swift Panther Warrior
+Description:
+During the Main Phase (Quick Effect): You can Tribute 1 other monster from your hand or field, then activate 1 of these effects;
+● Special Summon 1 monster that mentions "Dark Time Wizard" from your hand or Deck, except "Swift Panther Warrior".
+● Send 1 Spell/Trap that mentions "Dark Time Wizard" from your Deck to the GY.
+You can only use this effect of "Swift Panther Warrior" once per turn. Cannot declare an attack unless a monster(s) was Tributed this turn.
+==================================================
+
+==================================================
+ID: 101402002
+CDB: prerelease-betb.cdb
+Name: Alligator's Sword Dragon Knight
+Description:
+Can attack directly. You can only use each of the following effects of "Alligator's Sword Dragon Knight" once per turn. If this card is in your hand: You can reveal 1 other card in your hand that mentions "Dark Time Wizard"; Special Summon this card. If this card is Normal or Special Summoned: You can add up to 2 Spells/Traps with different names from each other that mention "Dark Time Wizard" from your Deck to your hand, then discard 1 card.
+==================================================
+
+==================================================
+ID: 101402003
+CDB: prerelease-betb.cdb
+Name: Jinzo - Energy Shocker
+Description:
+This card's name becomes "Jinzo" while in the field or GY. If this card is Normal or Special Summoned: You can destroy as many Traps your opponent controls as possible (if a card is Set, reveal it), then this card gains 300 ATK for each card destroyed this way. You can only use this effect of "Jinzo - Energy Shocker" once per turn. Your opponent cannot activate Trap Cards or effects while you have another monster in your field or GY that mentions "Dark Time Wizard".
+==================================================
+
+==================================================
+ID: 101402004
+CDB: prerelease-betb.cdb
+Name: Fisherman, Legend of the Sea
+Description:
+If your opponent activates a monster effect on the field, or when their monster declares an attack, and "Umi" or a card that mentions "Dark Time Wizard" other than "Fisherman, Legend of the Sea" is on the field: You can Special Summon this card from your hand. If this card is Special Summoned: You can target 1 monster your opponent controls; destroy it, also return this card from the field to the hand during the End Phase of this turn. You can only use each effect of "Fisherman, Legend of the Sea" once per turn.
+==================================================
+
+==================================================
+ID: 101402052
+CDB: prerelease-betb.cdb
+Name: Dark Time Wizard
+Description:
+Activate 1 of these effects (but you can only use each effect of "Dark Time Wizard" once per turn);
+● Add 1 card that mentions "Dark Time Wizard" from your Deck to your hand, except "Dark Time Wizard", also add 1 "Dark Time Wizard" from your GY to your hand during the End Phase of this turn.
+● Toss a coin and call it. If you call it right, destroy as many monsters your opponent controls as possible, and if you do, inflict damage to your opponent equal to half the total original ATK of those monsters. If you call it wrong, destroy all monsters you control.
+==================================================
+
+==================================================
+ID: 101402053
+CDB: prerelease-betb.cdb
+Name: Graceful Skull Dice
+Description:
+Roll a six-sided die twice and apply these effects for the rest of this turn.
+● Monsters you control that mention "Dark Time Wizard" gain ATK/DEF equal to the total x 200.
+● Monsters your opponent controls lose ATK/DEF equal to the total x 200.
+If your opponent Normal or Special Summons a monster(s) while this card is in your GY: You can banish this card, then target 1 of those monsters; roll a six-sided die twice, and if the total is 6 or more, destroy that monster.
+==================================================
+
+==================================================
+ID: 101402054
+CDB: prerelease-betb.cdb
+Name: Sleeping Scapegoats
+Description:
+Special Summon up to 4 "Scapegoat Tokens" (Beast/EARTH/Level 1/ATK 0/DEF 0) in Defense Position, then if your opponent controls a monster, you can Special Summon 1 "Swift Panther Warrior" from your Deck, also for the rest of this turn, these Tokens cannot be Tributed for a Tribute Summon, also you cannot Special Summon from the Extra Deck, except Fusion Monsters. If a card(s) you control that mentions "Dark Time Wizard" would be destroyed by battle or card effect, you can destroy 1 Token you control that was Special Summoned by this effect instead.
+==================================================
+
+==================================================
+ID: 101402070
+CDB: prerelease-betb.cdb
+Name: Foolish Graverobber
+Description:
+Send 1 card that mentions "Dark Time Wizard" from your Deck to the GY, except "Foolish Graverobber", then you can Special Summon 1 monster from either GY to your field. You can banish this card from your GY; Set to your field, 1 Spell/Trap that mentions "Dark Time Wizard" from your GY, except "Foolish Graverobber", or 1 Spell/Trap from your opponent's GY. You can only use each effect of "Foolish Graverobber" once per turn.
+==================================================
+
+==================================================
+ID: 101402071
+CDB: prerelease-betb.cdb
+Name: Reversal Box
+Description:
+Once per turn, during the Standby Phase: Roll a six-sided die and place counters on this card equal to the result (max. 6). When a monster effect is activated on your opponent's field, or once per battle, during damage calculation, if an opponent's monster attacks: You can remove 1 counter from this card, then target 1 of those monsters; toss a coin and call it. If you call it right, you can Special Summon 1 monster that mentions "Dark Time Wizard" from your Deck, and if you do, until the end of this turn, change the targeted monster's ATK to 0, also its effects are negated.
+==================================================
+

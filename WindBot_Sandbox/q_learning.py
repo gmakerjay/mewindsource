@@ -182,7 +182,9 @@ def main():
             
             # Discounted future return (MC return)
             # Decisions closer to the end get closer to the final reward
-            G_t = reward * (args.gamma ** (T - 1 - t))
+            # Proper episodic MC return: gamma^(steps_remaining) * reward
+            steps_from_end = T - 1 - t
+            G_t = reward * (args.gamma ** steps_from_end)
             
             # TD update step
             new_q = current_q + args.alpha * (G_t - current_q)

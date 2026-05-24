@@ -11,7 +11,7 @@ namespace ProjectIgnisAI
 {
     // Register the deck name and its corresponding .ydk filename
     [Deck("UnifiedIgnis", "AI_CustomIgnis")]
-    public class UnifiedIgnisExecutor : DefaultExecutor
+    public class UnifiedIgnisExecutor : DefaultExecutor, IDisposable
     {
         public class CardMetadata
         {
@@ -68,7 +68,7 @@ namespace ProjectIgnisAI
 
         private bool IsLethalOnBoard()
         {
-            if (Duel.Phase != DuelPhase.Main1) return false;
+            if (Duel.Phase != DuelPhase.Main1 && Duel.Phase != DuelPhase.Battle) return false;
 
             if (Enemy.GetMonsterCount() == 0)
             {
@@ -170,7 +170,10 @@ namespace ProjectIgnisAI
             {
                 File.AppendAllText(_generalLogPath, "[" + DateTime.Now.ToString("HH:mm:ss") + "] " + message + Environment.NewLine);
             }
-            catch {}
+            catch (Exception ex)
+            {
+                Console.WriteLine("[IgnisEngine] LogToMatch error: " + ex.Message);
+            }
         }
 
         private void LogToTurn(string message)
@@ -184,7 +187,10 @@ namespace ProjectIgnisAI
             {
                 File.AppendAllText(_currentTurnLogPath, "[" + DateTime.Now.ToString("HH:mm:ss") + "] " + message + Environment.NewLine);
             }
-            catch {}
+            catch (Exception ex)
+            {
+                Console.WriteLine("[IgnisEngine] LogToTurn error: " + ex.Message);
+            }
         }
 
         private void LogDecision(int cardId, string action, string goal, double score, bool decision, string plan)
@@ -204,7 +210,10 @@ namespace ProjectIgnisAI
                     Duel.Fields[0].LifePoints, Duel.Fields[1].LifePoints);
                 File.AppendAllText(_decisionsLogPath, json + Environment.NewLine);
             }
-            catch {}
+            catch (Exception ex)
+            {
+                Console.WriteLine("[IgnisEngine] LogDecision error: " + ex.Message);
+            }
         }
 
         private string GetCardName(int id)
@@ -495,7 +504,7 @@ namespace ProjectIgnisAI
 
                 // Safety Backup: create .bak before overwriting registry
                 string backupPath = registryPath + ".bak";
-                try { if (File.Exists(registryPath)) File.Copy(registryPath, backupPath, true); } catch {}
+                try { if (File.Exists(registryPath)) File.Copy(registryPath, backupPath, true); } catch (Exception ex) { LogToMatch("Backup error for " + registryPath + ": " + ex.Message); }
 
                 WriteFileWithRetry(registryPath, regJson);
                 LogToMatch("Saved " + regList.Count + " cards to " + registryPath + " (backup: " + backupPath + ")");
@@ -541,6 +550,13 @@ namespace ProjectIgnisAI
         private void ApplyRealTimeLearning()
         {
             if (_learningApplied) return;
+            
+            // Safety: Ensure Duel and Fields are valid before proceeding
+            if (Duel == null || Duel.Fields == null || Duel.Fields.Length < 2 || Duel.Fields[0] == null || Duel.Fields[1] == null)
+            {
+                return;
+            }
+
             _learningApplied = true;
 
             try
@@ -581,7 +597,7 @@ namespace ProjectIgnisAI
                             {
                                 int delta = (outcome == "Win") ? 1 : 0;
                                 if (outcome == "WeakWin" && meta.priority < 8) delta = 1;
-                                meta.priority = Math.Min(10, meta.priority + delta);
+                                meta.priority = Math.Min(8, meta.priority + delta);
                             }
                             if (_turnCount >= 2 && (meta.roles.Contains("extender") || meta.roles.Contains("combo_piece")))
                             {
@@ -616,8 +632,8 @@ namespace ProjectIgnisAI
                         else if (outcome == "Draw")
                         {
                             // Draw: mild decay on high-priority cards not played, no boost
-                            // This prevents inflation from drawn-out matches
-                            if (meta.priority >= 9)
+                            // Anti-inflation: threshold at 8 to align with hard cap (was 9)
+                            if (meta.priority >= 8)
                             {
                                 meta.priority = Math.Max(6, meta.priority - 1);
                             }
@@ -631,8 +647,8 @@ namespace ProjectIgnisAI
                     }
                 }
 
-                // Anti-Inflation Decay: reduce priority for high-priority cards NOT played in this match
-                // This counteracts the natural upward drift from repeated wins
+                // Anti-Inflation Decay: reduce priority for high-priority unplayed cards (run BEFORE hard cap)
+                // Running before hard cap ensures cards at priority 8 get decayed if not played
                 foreach (var kvpDecay in _cardRegistry)
                 {
                     var decayCard = kvpDecay.Value;
@@ -648,7 +664,7 @@ namespace ProjectIgnisAI
                     }
                 }
 
-                // Hard Cap: Prevent any card from exceeding priority 8 via learning
+                // Hard Cap: Prevent any card from exceeding priority 8 via learning (run AFTER decay)
                 foreach (var kvpCap in _cardRegistry)
                 {
                     if (kvpCap.Value.priority > 8)
@@ -1101,17 +1117,12 @@ namespace ProjectIgnisAI
                     }
                 }
 
-                // 5. Infinite Impermanence (ID: 10045474) - If on our turn, never activate; if starting a chain, require target
+                // 5. Infinite Impermanence (ID: 10045474) - allow set from hand in our turn (going second), require target if chaining
                 if (card.Id == 10045474)
                 {
-                    if (Duel.Player == 0)
+                    if (lastChainCard == null && Duel.Player == 0 && GetOpponentFaceUpMonsterCount() == 0)
                     {
-                        LogToTurn("Block Infinite Impermanence on our own turn.");
-                        return false;
-                    }
-                    if (lastChainCard == null && GetOpponentFaceUpMonsterCount() == 0)
-                    {
-                        LogToTurn("Block Infinite Impermanence: No face-up monsters on opponent's field to target.");
+                        LogToTurn("Block Infinite Impermanence activation from hand: No face-up monsters on opponent's field to target.");
                         return false;
                     }
                 }
@@ -1122,6 +1133,36 @@ namespace ProjectIgnisAI
                     LogToTurn("Block Mulcharmy Fuwalos on our own turn.");
                     return false;
                 }
+
+                // 7. Nibiru, the Primal Being (ID: 10000010) — Only activate if opponent summoned 5+ monsters this turn
+                // The game engine guarantees the 5+ summon condition is met before offering activation.
+                if (card.Id == 10000010)
+                {
+                    if (Duel.Player == 0)
+                    {
+                        LogToTurn("Block Nibiru on our own turn.");
+                        return false;
+                    }
+                }
+
+                // 8. PSY-Framegear Gamma (ID: 53334641) — Only activate if we control no monsters
+                if (card.Id == 53334641)
+                {
+                    int ourMonCount = GetZoneCount(Duel.Fields[0].MonsterZone);
+                    if (ourMonCount > 0)
+                    {
+                        LogToTurn("Block PSY-Framegear Gamma: We control a monster.");
+                        return false;
+                    }
+                    if (lastChainCard == null)
+                    {
+                        LogToTurn("Block PSY-Framegear Gamma: No target to chain to.");
+                        return false;
+                    }
+                }
+
+                // 9. Triple Tactics Talent (ID: 25366487) / Thrust (ID: 34029630) — let game engine handle legality
+                // These are Normal Spells; the engine will not offer them on opponent's turn.
             }
 
             double score = meta.priority * 10.0;
@@ -1718,6 +1759,14 @@ namespace ProjectIgnisAI
         // --- Lifecycle Hooks ---
         public override void OnNewTurn()
         {
+            if (Duel != null && Duel.Fields != null && Duel.Fields.Length >= 2 && Duel.Fields[0] != null && Duel.Fields[1] != null)
+            {
+                if (Duel.Fields[0].LifePoints == 0 || Duel.Fields[1].LifePoints == 0)
+                {
+                    ApplyRealTimeLearning();
+                }
+            }
+
             _turnCount = Duel.Turn;
             _currentTurnLogPath = Path.Combine(_matchLogDir, "turn_" + _turnCount + ".log");
 
@@ -1751,10 +1800,17 @@ namespace ProjectIgnisAI
 
         public override bool OnSelectHand()
         {
-            if (_deckConfig.playstyle == "control" || _deckConfig.playstyle == "midrange")
+            // Going first (true) is preferred for combo and control decks that need to set up
+            if (_deckConfig.playstyle == "control" || _deckConfig.playstyle == "combo" || _deckConfig.playstyle == "midrange")
             {
-                LogToTurn("Playstyle is control/midrange, selecting to go first.");
+                LogToTurn(string.Format("Playstyle is {0}, selecting to go first.", _deckConfig.playstyle));
                 return true;
+            }
+            // go_second style: let the opponent set up then break their board
+            if (_deckConfig.playstyle == "go_second")
+            {
+                LogToTurn("Playstyle is go_second, selecting to go second.");
+                return false;
             }
             LogToTurn("Selecting to go second.");
             return false;
@@ -1932,6 +1988,13 @@ namespace ProjectIgnisAI
         public override void OnChainEnd()
         {
             LogToTurn("--- Chain resolution finished ---");
+            if (Duel != null && Duel.Fields != null && Duel.Fields.Length >= 2 && Duel.Fields[0] != null && Duel.Fields[1] != null)
+            {
+                if (Duel.Fields[0].LifePoints == 0 || Duel.Fields[1].LifePoints == 0)
+                {
+                    ApplyRealTimeLearning();
+                }
+            }
             base.OnChainEnd();
         }
 
@@ -1943,13 +2006,39 @@ namespace ProjectIgnisAI
             }
         }
 
+        private bool _disposed = false;
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                ApplyRealTimeLearning();
+                
+                try
+                {
+                    LogToMatch("=== Duel Session Finished ===");
+                    if (Duel != null && Duel.Fields != null && Duel.Fields.Length >= 2 && Duel.Fields[0] != null && Duel.Fields[1] != null)
+                    {
+                        LogToMatch("Final Bot LP: " + Duel.Fields[0].LifePoints);
+                        LogToMatch("Final Opponent LP: " + Duel.Fields[1].LifePoints);
+                    }
+                    LogToMatch("Finished Time: " + DateTime.Now.ToString());
+                }
+                catch {}
+
+                _disposed = true;
+            }
+        }
+
         ~UnifiedIgnisExecutor()
         {
-            ApplyRealTimeLearning();
-            LogToMatch("=== Duel Session Finished ===");
-            LogToMatch("Final Bot LP: " + Duel.Fields[0].LifePoints);
-            LogToMatch("Final Opponent LP: " + Duel.Fields[1].LifePoints);
-            LogToMatch("Finished Time: " + DateTime.Now.ToString());
+            Dispose(false);
         }
     }
 

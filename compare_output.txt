@@ -1,0 +1,769 @@
+ID: 4215180 | Name: Lollipo☆Yummy | CDB: cards.delta.cdb
+ENG:
+If you control a Link-1 monster or a Level 2 Synchro Monster, you can Special Summon this card (from your hand). You can only Special Summon "Lollipo☆Yummy" once per turn this way. If this card is Normal or Special Summoned: You can target 1 card in your opponent's GY; shuffle it into the Deck, or, if this card was Special Summoned by the effect of a Synchro Monster, you can banish that card instead. You can only use this effect of "Lollipo☆Yummy" once per turn.
+THAI:
+หากคุณควบคุมมอนสเตอร์ลิงก์-1 หรือมอนสเตอร์ซิงโครเลเวล 2 คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้ (จากมือของคุณ) ได้ คุณสามารถอัญเชิญแบบพิเศษ "Lollipo☆Yummy" ด้วยวิธีนี้ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้ถูกอัญเชิญแบบปกติหรือแบบพิเศษ: คุณสามารถเลือกเป้าหมายการ์ด 1 ใบในสุสานของฝ่ายตรงข้าม; สับการ์ดนั้นกลับเข้าเด็ค หรือหากการ์ดใบนี้ถูกอัญเชิญแบบพิเศษด้วยเอฟเฟกต์ของมอนสเตอร์ซิงโคร คุณสามารถนำการ์ดนั้นออกนอกเกมแทนได้ คุณสามารถใช้เอฟเฟกต์นี้ของ "Lollipo☆Yummy" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 4891376 | Name: Zalen the Shackled Dragon | CDB: cards.delta.cdb
+ENG:
+1 Tuner + 1+ Synchro Monsters
+If this card you control would be used as Synchro Material, you can treat it as a non-Tuner. When a card or effect is activated in response to another card or effect activation (Quick Effect): You can activate 1 of these effects;
+● Negate the first effect, and if you do, destroy that card.
+● Negate the second effect, and if you do, destroy that card.
+You can only use this effect of "Zalen the Shackled Dragon" once per turn.
+THAI:
+มอนสเตอร์ Tuner 1 ตัว + มอนสเตอร์ซิงโคร 1 ตัวขึ้นไป
+หากการ์ดใบนี้ที่คุณควบคุมจะถูกใช้เป็นวัตถุดิบซิงโคร คุณสามารถถือว่ามันไม่ใช่มอนสเตอร์ Tuner ได้ เมื่อมีการเปิดใช้งานการ์ดหรือเอฟเฟกต์เพื่อตอบสนองต่อการเปิดใช้งานการ์ดหรือเอฟเฟกต์อื่น (เอฟเฟกต์ความเร็วสูง): คุณสามารถเปิดใช้งาน 1 ในเอฟเฟกต์เหล่านี้;
+● ยกเลิกเอฟเฟกต์แรก และหากทำเช่นนั้น ให้ทำลายการ์ดใบนั้น
+● ยกเลิกเอฟเฟกต์ที่สอง และหากทำเช่นนั้น ให้ทำลายการ์ดใบนั้น
+คุณสามารถใช้เอฟเฟกต์นี้ของ "Zalen the Shackled Dragon" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 6636319 | Name: Evil★Twin Ki-sikil Deal | CDB: cards.delta.cdb
+ENG:
+1 "Ki-sikil" monster
+You can only Link Summon "Evil★Twin Ki-sikil Deal" once per turn. You can send 1 "Lil-la" monster from your Deck or Extra Deck to the GY; apply this effect this turn.
+● Each time your opponent activates a card or effect in response to your "Ki-sikil" or "Lil-la" monster effect activation, draw 1 card when that card/effect resolves.
+You can only use this effect of "Evil★Twin Ki-sikil Deal" once per turn.
+THAI:
+มอนสเตอร์ "Ki-sikil" 1 ตัว
+คุณสามารถอัญเชิญลิงก์ "Evil★Twin Ki-sikil Deal" ได้เทิร์นละครั้งเท่านั้น คุณสามารถส่งมอนสเตอร์ "Lil-la" 1 ตัวจากเด็คหรือเอ็กซ์ตร้าเด็คของคุณลงสุสาน; ใช้เอฟเฟกต์นี้ในเทิร์นนี้
+● ทุกครั้งที่ฝ่ายตรงข้ามเปิดใช้งานการ์ดหรือเอฟเฟกต์เพื่อตอบสนองต่อการเปิดใช้งานเอฟเฟกต์มอนสเตอร์ "Ki-sikil" หรือ "Lil-la" ของคุณ คุณจะได้จั่วการ์ด 1 ใบเมื่อการ์ด/เอฟเฟกต์นั้นทำงานเสร็จสิ้น
+คุณสามารถใช้เอฟเฟกต์นี้ของ "Evil★Twin Ki-sikil Deal" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 10966439 | Name: Marshmao☆Yummy | CDB: cards.delta.cdb
+ENG:
+If you control no monsters, or all monsters you control are LIGHT Beast monsters: You can Special Summon this card from your hand. If this card is Normal or Special Summoned: You can add 1 "Yummy" Spell/Trap from your GY to your hand, or, if this card was Special Summoned by the effect of a Synchro Monster, you can place 1 "Yummy" Field Spell or 1 "Yummy" Continuous Spell/Trap from your Deck or banishment, face-up on your field instead. You can only use each effect of "Marshmao☆Yummy" once per turn.
+THAI:
+หากคุณไม่ควบคุมมอนสเตอร์ หรือมอนสเตอร์ทั้งหมดที่คุณควบคุมเป็นมอนสเตอร์ประเภท Beast ธาตุแสง: คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้จากมือของคุณได้ หากการ์ดใบนี้ถูกอัญเชิญแบบปกติหรือแบบพิเศษ: คุณสามารถเพิ่มการ์ดเวทมนตร์/กับดัก "Yummy" 1 ใบจากสุสานขึ้นมือของคุณ หรือหากการ์ดใบนี้ถูกอัญเชิญแบบพิเศษด้วยเอฟเฟกต์ของมอนสเตอร์ซิงโคร คุณสามารถนำการ์ดเวทมนตร์ฟิลด์ "Yummy" 1 ใบ หรือการ์ดเวทมนตร์/กับดักต่อเนื่อง "Yummy" 1 ใบจากเด็คหรือที่ถูกนำออกนอกเกมของคุณมาวางหงายหน้าบนสนามของคุณแทนได้ คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Marshmao☆Yummy" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 12375297 | Name: Elfnote Power Patron | CDB: cards.delta.cdb
+ENG:
+You cannot Special Summon from the Extra Deck, except Synchro Monsters. You can only use each of the following effects of "Elfnote Power Patron" once per turn. During the Main Phase (Quick Effect): You can target 1 monster in your center Main Monster Zone; increase its Level by 3 (until the end of this turn), then immediately after this effect resolves, you can Synchro Summon 1 "Elfnote" Synchro Monster or 1 "Junora the Power Patron of Tuning". If this card is sent to the GY as Synchro Material: You can add 1 "Elfnote" card from your Deck to your hand.
+THAI:
+คุณไม่สามารถอัญเชิญแบบพิเศษมอนสเตอร์จากเอ็กซ์ตร้าเด็คได้ ยกเว้นมอนสเตอร์ซิงโคร คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Elfnote Power Patron" ได้เทิร์นละครั้งเท่านั้น ในช่วง Main Phase (เอฟเฟกต์ความเร็วสูง): คุณสามารถเลือกเป้าหมายมอนสเตอร์ในโซนมอนสเตอร์หลักช่องกลางของคุณ 1 ตัว; เพิ่มเลเวลของมอนสเตอร์นั้นขึ้น 3 (จนกระทั่งจบเทิร์นนี้) จากนั้นทันทีหลังจากเอฟเฟกต์นี้ทำงานเสร็จสิ้น คุณสามารถอัญเชิญซิงโครมอนสเตอร์ซิงโคร "Elfnote" 1 ตัว หรือ "Junora the Power Patron of Tuning" 1 ตัวได้ หากการ์ดใบนี้ถูกส่งลงสุสานในฐานะวัตถุดิบซิงโคร: คุณสามารถเพิ่มการ์ด "Elfnote" 1 ใบจากเด็คขึ้นมือของคุณ
+============================================================
+
+ID: 13243124 | Name: Favorite HERO Flame Wingman | CDB: cards.delta.cdb
+ENG:
+2 monsters with the same Type but different Attributes
+(This card is always treated as an "Elemental HERO" card.)
+When an attack is declared involving this card and a monster with 2200 or more ATK: You can make this card gain 1000 ATK, then you can Special Summon 1 Level 4 or lower monster from your hand in Defense Position. If a monster(s) was destroyed by battle this turn (Quick Effect): You can Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your hand or field. You can only use each effect of "Favorite HERO Flame Wingman" once per turn.
+THAI:
+มอนสเตอร์ 2 ตัวที่มีประเภทเดียวกันแต่มีธาตุต่างกัน
+(การ์ดใบนี้จะถูกถือว่าเป็นการ์ด "Elemental HERO" เสมอ)
+เมื่อมีการประกาศโจมตีที่เกี่ยวข้องกับการ์ดใบนี้และมอนสเตอร์ที่มี ATK ตั้งแต่ 2200 ขึ้นไป: คุณสามารถทำให้การ์ดใบนี้ได้รับ ATK เพิ่มขึ้น 1000 จากนั้นคุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์เลเวล 4 หรือต่ำกว่า 1 ตัวจากในมือของคุณในตำแหน่งป้องกัน หากมีมอนสเตอร์ถูกทำลายจากการต่อสู้ในเทิร์นนี้ (เอฟเฟกต์ความเร็วสูง): คุณสามารถอัญเชิญฟิวชันมอนสเตอร์ฟิวชัน 1 ตัวจากเอ็กซ์ตร้าเด็คของคุณ โดยใช้มอนสเตอร์จากมือหรือสนามของคุณเป็นวัตถุดิบ คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Favorite HERO Flame Wingman" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 13597785 | Name: Elfnote Lucina | CDB: cards.delta.cdb
+ENG:
+You can Special Summon this card (from your hand) to your center Main Monster Zone. You can only Special Summon "Elfnote Lucina" once per turn this way. You can only use each of the following effects of "Elfnote Lucina" once per turn. During your Main Phase: You can add 1 "Elfnote" monster from your Deck to your hand, except "Elfnote Lucina". During your opponent's turn (Quick Effect): You can switch the locations of this card in your Main Monster Zone and the monster in your center Main Monster Zone, then you can return 1 Level 6 or lower monster your opponent controls to the hand.
+THAI:
+คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้ (จากมือของคุณ) มายังโซนมอนสเตอร์หลักช่องกลางของคุณได้ คุณสามารถอัญเชิญแบบพิเศษ "Elfnote Lucina" ด้วยวิธีนี้ได้เทิร์นละครั้งเท่านั้น คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Elfnote Lucina" ได้เทิร์นละครั้งเท่านั้น ในช่วง Main Phase ของคุณ: คุณสามารถเพิ่มมอนสเตอร์ "Elfnote" 1 ตัวจากเด็คขึ้นมือ ยกเว้น "Elfnote Lucina" ในระหว่างเทิร์นของฝ่ายตรงข้าม (เอฟเฟกต์ความเร็วสูง): คุณสามารถสลับตำแหน่งของการ์ดใบนี้ในโซนมอนสเตอร์หลักของคุณกับมอนสเตอร์ในโซนมอนสเตอร์หลักช่องกลางของคุณ จากนั้นคุณสามารถนำมอนสเตอร์เลเวล 6 หรือต่ำกว่าที่ฝ่ายตรงข้ามควบคุม 1 ตัวกลับขึ้นมือ
+============================================================
+
+ID: 14442329 | Name: JJ "Kewl Tune" | CDB: cards.delta.cdb
+ENG:
+You can Normal Summon 1 Tuner during your Main Phase each turn, in addition to your Normal Summon/Set (you can only gain this effect once per turn). Each "Kewl Tune Loudness War" you control gains 3300 ATK while your opponent has a Tuner in their field or GY. You can Tribute 1 Tuner; add to your hand or Special Summon, 1 "Kewl Tune" monster from your Deck, also you cannot Special Summon for the rest of this turn, except Tuners. You can only use this effect of "JJ "Kewl Tune"" once per turn.
+THAI:
+คุณสามารถอัญเชิญแบบปกติมอนสเตอร์ Tuner ได้ 1 ตัวในระหว่างช่วง Main Phase ของคุณในแต่ละเทิร์น นอกเหนือจากการอัญเชิญปกติ/เซ็ตคว่ำตามปกติ (คุณได้รับเอฟเฟกต์นี้เพียงครั้งเดียวต่อเทิร์นเท่านั้น) การ์ด "Kewl Tune Loudness War" แต่ละใบที่คุณควบคุมจะได้รับ ATK เพิ่มขึ้น 3300 ตราบใดที่ฝ่ายตรงข้ามมีมอนสเตอร์ Tuner อยู่บนสนามหรือในสุสานของพวกเขา คุณสามารถสังเวยมอนสเตอร์ Tuner 1 ตัว; เพิ่มขึ้นมือหรืออัญเชิญแบบพิเศษมอนสเตอร์ "Kewl Tune" 1 ตัวจากเด็คของคุณ อีกทั้งคุณจะไม่สามารถอัญเชิญแบบพิเศษมอนสเตอร์ได้ในเทิร์นที่เหลือ ยกเว้นมอนสเตอร์ Tuner คุณสามารถใช้เอฟเฟกต์นี้ของ "JJ "Kewl Tune"" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 15123983 | Name: THE Star Ham | CDB: cards.delta.cdb
+ENG:
+1 Tuner + 1+ non-Tuner monsters
+If this card is Synchro Summoned: You can discard 1 card; Special Summon 1 monster from your GY that was used as material for this card's Synchro Summon, and if you do, it is treated as a Tuner. If this card is in your GY: You can discard 2 cards; Special Summon this card, but banish it when it leaves the field. You can only use each effect of "THE Star Ham" once per turn.
+THAI:
+มอนสเตอร์ Tuner 1 ตัว + มอนสเตอร์ที่ไม่ใช่ Tuner 1 ตัวขึ้นไป
+หากการ์ดใบนี้ถูกอัญเชิญซิงโคร: คุณสามารถทิ้งการ์ด 1 ใบ; อัญเชิญแบบพิเศษมอนสเตอร์ 1 ตัวจากสุสานของคุณที่เคยถูกใช้เป็นวัตถุดิบในการอัญเชิญซิงโครของการ์ดใบนี้ และหากทำเช่นนั้น มอนสเตอร์นั้นจะถูกถือว่าเป็นมอนสเตอร์ Tuner ด้วย หากการ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถทิ้งการ์ด 2 ใบ; อัญเชิญแบบพิเศษการ์ดใบนี้ แต่ให้นำการ์ดใบนี้ออกนอกเกมเมื่อออกจากสนาม คุณสามารถใช้แต่ละเอฟเฟกต์ของ "THE Star Ham" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 15665977 | Name: Kewl Tune RS | CDB: cards.delta.cdb
+ENG:
+"Kewl Tune Reco" + 1+ Tuners
+Gains 300 ATK for each Tuner in the GYs. The Levels of monsters your opponent controls with 1700 or less original ATK are increased by 1. During the Main Phase (Quick Effect): You can banish 1 Tuner from your GY, then target 1 face-up card your opponent controls; negate its effects until the end of this turn. You can only use this effect of "Kewl Tune RS" once per turn.
+THAI:
+"Kewl Tune Reco" + มอนสเตอร์ Tuner 1 ตัวขึ้นไป
+ได้รับ ATK เพิ่มขึ้น 300 ต่อมอนสเตอร์ Tuner แต่ละตัวที่อยู่ในสุสานของทั้งสองฝ่าย เลเวลของมอนสเตอร์ที่ฝ่ายตรงข้ามควบคุมซึ่งมี ATK ดั้งเดิมตั้งแต่ 1700 หรือต่ำกว่าจะเพิ่มขึ้น 1 เลเวล ในระหว่างช่วง Main Phase (เอฟเฟกต์ความเร็วสูง): คุณสามารถนำมอนสเตอร์ Tuner 1 ตัวจากสุสานของคุณออกนอกเกม จากนั้นเลือกเป้าหมายการ์ดที่หงายหน้าอยู่ 1 ใบที่ฝ่ายตรงข้ามควบคุม; ยกเลิกเอฟเฟกต์ของการ์ดใบนั้นจนกระทั่งจบเทิร์นนี้ คุณสามารถใช้เอฟเฟกต์นี้ของ "Kewl Tune RS" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 16387555 | Name: Kewl Tune Cue | CDB: cards.delta.cdb
+ENG:
+If this card on the field would be used as Synchro Material, 1 Tuner in your hand can be used as 1 of the other materials. You can only use each of the following effects of "Kewl Tune Cue" once per turn. If this card is Normal Summoned: You can Special Summon 1 Tuner from your hand, Deck, or GY, except "Kewl Tune Cue", also for the rest of this turn you cannot Special Summon, except Tuners. If this card is sent to the GY as Synchro Material: You can excavate 2 cards from the top of your opponent's Deck, banish 1 of them, and place the other on the top or bottom of the Deck.
+THAI:
+หากการ์ดใบนี้บนสนามจะถูกใช้เป็นวัตถุดิบซิงโคร คุณสามารถใช้มอนสเตอร์ Tuner 1 ตัวในมือของคุณเป็นหนึ่งในวัตถุดิบอื่นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Kewl Tune Cue" ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้ถูกอัญเชิญแบบปกติ: คุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ Tuner 1 ตัวจากมือ เด็ค หรือสุสานของคุณได้ ยกเว้น "Kewl Tune Cue" อีกทั้งในเทิร์นที่เหลือคุณจะไม่สามารถอัญเชิญแบบพิเศษได้ ยกเว้นมอนสเตอร์ Tuner หากการ์ดใบนี้ถูกส่งลงสุสานในฐานะวัตถุดิบซิงโคร: คุณสามารถขุดการ์ด 2 ใบแรกจากบนสุดของเด็คฝ่ายตรงข้าม นำ 1 ใบออกนอกเกม และนำการ์ดที่เหลือไปวางไว้บนสุดหรือใต้สุดของเด็ค
+============================================================
+
+ID: 16509007 | Name: Kewl Tune Mix | CDB: cards.delta.cdb
+ENG:
+If this card on the field would be used as Synchro Material, 1 Tuner in your hand can be used as 1 of the other materials. You can only use each of the following effects of "Kewl Tune Mix" once per turn. If this card is Normal or Special Summoned: You can add 1 "Kewl Tune" monster from your Deck or GY to your hand, except a Level 2 monster. If this card is sent to the GY as Synchro Material: You can target 1 monster your opponent controls; destroy it.
+THAI:
+หากการ์ดใบนี้บนสนามจะถูกใช้เป็นวัตถุดิบซิงโคร คุณสามารถใช้มอนสเตอร์ Tuner 1 ตัวในมือของคุณเป็นหนึ่งในวัตถุดิบอื่นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Kewl Tune Mix" ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้ถูกอัญเชิญแบบปกติหรือแบบพิเศษ: คุณสามารถเพิ่มมอนสเตอร์ "Kewl Tune" 1 ตัวจากเด็คหรือสุสานขึ้นมือ ยกเว้นมอนสเตอร์เลเวล 2 หากการ์ดใบนี้ถูกส่งลงสุสานในฐานะวัตถุดิบซิงโคร: คุณสามารถเลือกเป้าหมายมอนสเตอร์ที่ฝ่ายตรงข้ามควบคุม 1 ตัว; ทำลายมัน
+============================================================
+
+ID: 16693934 | Name: Quadogmatika Beast | CDB: cards.delta.cdb
+ENG:
+Target 1 monster in your GY or banishment; send to the GY, 1 monster from your Extra Deck or 1 "Dogmatika" monster from your Deck, with ATK higher than or equal to that target, and if you do, Special Summon that target. Until the end of your next turn after this card resolves, you cannot Special Summon from the Extra Deck. You can only activate 1 "Quadogmatika Beast" per turn.
+THAI:
+เลือกเป้าหมายมอนสเตอร์ 1 ตัวในสุสานหรือที่ถูกนำออกนอกเกมของคุณ; ส่งมอนสเตอร์ 1 ตัวจากเอ็กซ์ตร้าเด็ค หรือส่งมอนสเตอร์ "Dogmatika" 1 ตัวจากเด็คลงสุสาน โดยต้องมี ATK เท่ากับหรือสูงกว่าเป้าหมายนั้น และหากทำเช่นนั้น อัญเชิญแบบพิเศษเป้าหมายนั้นขึ้นมา จนกระทั่งจบเทิร์นถัดไปของคุณหลังจากที่การ์ดใบนี้ทำงานเสร็จสิ้น คุณไม่สามารถอัญเชิญแบบพิเศษจากเอ็กซ์ตร้าเด็คได้ คุณสามารถเปิดใช้งาน "Quadogmatika Beast" ได้เทิร์นละ 1 ใบเท่านั้น
+============================================================
+
+ID: 20415050 | Name: The Hidden Hecahands | CDB: cards.delta.cdb
+ENG:
+When you activate this card, you can also send 1 other card you control to the GY; add 1 "Hecahands" monster from your Deck to your hand, then if you sent another card to the GY at activation, you can Set 1 "Hecahands" Spell/Trap from your Deck, except "The Hidden Hecahands". You can banish this card from your GY; your opponent draws 1 card, then they discard 1 card. You can only use each effect of "The Hidden Hecahands" once per turn.
+THAI:
+เมื่อคุณเปิดใช้งานการ์ดใบนี้ คุณสามารถส่งการ์ดที่คุณควบคุมใบอื่น 1 ใบลงสุสานได้ด้วย; เพิ่มมอนสเตอร์ "Hecahands" 1 ตัวจากเด็คขึ้นมือ จากนั้นหากคุณส่งการ์ดใบอื่นลงสุสานตอนเปิดใช้งาน คุณสามารถเซ็ตการ์ดเวทมนตร์/กับดัก "Hecahands" 1 ใบจากเด็คของคุณได้ ยกเว้น "The Hidden Hecahands" คุณสามารถนำการ์ดใบนี้จากสุสานของคุณออกนอกเกม; ฝ่ายตรงข้ามจั่วการ์ด 1 ใบ จากนั้นพวกเขาต้องทิ้งการ์ด 1 ใบ คุณสามารถใช้แต่ละเอฟเฟกต์ของ "The Hidden Hecahands" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 21637502 | Name: Hecahands Breus | CDB: cards.delta.cdb
+ENG:
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Breus" once per turn. If a card(s) is added to your opponent's hand (except during the Draw Phase or Damage Step): You can Special Summon this card from your hand. During your Main Phase: You can look at 1 random card in your opponent's hand, then if it is a monster, you can Special Summon it to your field.
+THAI:
+หากการ์ดใบนี้ต่อสู้กับมอนสเตอร์ มอนสเตอร์ทั้งสองตัวจะไม่สามารถถูกทำลายจากการต่อสู้นั้นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Hecahands Breus" ได้เทิร์นละครั้งเท่านั้น หากมีการ์ดถูกเพิ่มขึ้นมือฝ่ายตรงข้าม (ยกเว้นในช่วง Draw Phase หรือ Damage Step): คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้จากมือของคุณ ในช่วง Main Phase ของคุณ: คุณสามารถดูการ์ดในมือของฝ่ายตรงข้ามแบบสุ่ม 1 ใบ จากนั้นหากการ์ดใบนั้นเป็นมอนสเตอร์ คุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ตัวนั้นมายังสนามของคุณได้
+============================================================
+
+ID: 22669793 | Name: Eldlixir of the Glorious Golden Land | CDB: cards.delta.cdb
+ENG:
+You can pay 800 LP, then activate 1 of these effects;
+● Special Summon this card as a Normal Monster (Zombie/LIGHT/Level 10/ATK 1500/DEF 2800) (this card is also still a Trap), then if you control "Eldlich the Golden Lord", you can return 1 monster from the field to the hand.
+● Set 1 of your banished "Golden Land" or "Eldlixir" Spells/Traps.
+You can only use this effect of "Eldlixir of the Glorious Golden Land" once per turn.
+THAI:
+คุณสามารถจ่าย 800 LP จากนั้นเปิดใช้งาน 1 ในเอฟเฟกต์เหล่านี้;
+● อัญเชิญแบบพิเศษการ์ดใบนี้ในฐานะมอนสเตอร์ปกติ (ประเภท Zombie/ธาตุแสง/เลเวล 10/ATK 1500/DEF 2800) (การ์ดใบนี้ยังคงถือว่าเป็นกับดักด้วย) จากนั้นหากคุณควบคุม "Eldlich the Golden Lord" คุณสามารถนำมอนสเตอร์ 1 ตัวจากบนสนามกลับขึ้นมือ
+● เซ็ตการ์ดเวทมนตร์/กับดัก "Golden Land" หรือ "Eldlixir" ของคุณที่ถูกนำออกนอกเกม 1 ใบ
+คุณสามารถใช้เอฟเฟกต์นี้ของ "Eldlixir of the Glorious Golden Land" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 24092792 | Name: Elfnotes: Rhapsodia of Madness | CDB: cards.delta.cdb
+ENG:
+While you control a monster in your center Main Monster Zone, your opponent's monsters cannot attack, except to attack that monster. You can send 1 monster from your hand or field to the GY, then target 1 "Elfnote" monster in your GY with a different original Attribute; Special Summon it, then if you control a Synchro Monster, you can negate the effects of 1 face-up card your opponent controls until the end of this turn. You can only use this effect of "Elfnotes: Rhapsodia of Madness" once per turn.
+THAI:
+ตราบใดที่คุณควบคุมมอนสเตอร์ในโซนมอนสเตอร์หลักช่องกลาง มอนสเตอร์ของฝ่ายตรงข้ามจะไม่สามารถประกาศโจมตีได้ ยกเว้นเพื่อโจมตีมอนสเตอร์ตัวนั้น คุณสามารถส่งมอนสเตอร์ 1 ตัวจากมือหรือสนามของคุณลงสุสาน จากนั้นเลือกเป้าหมายมอนสเตอร์ "Elfnote" 1 ตัวในสุสานของคุณที่มีธาตุดั้งเดิมต่างกัน; อัญเชิญแบบพิเศษมอนสเตอร์นั้น จากนั้นหากคุณควบคุมมอนสเตอร์ซิงโครอยู่ คุณสามารถยกเลิกเอฟเฟกต์ของการ์ดที่หงายหน้าอยู่ 1 ใบที่ฝ่ายตรงข้ามควบคุมได้จนกระทั่งจบเทิร์นนี้ คุณสามารถใช้เอฟเฟกต์นี้ของ "Elfnotes: Rhapsodia of Madness" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 29369059 | Name: Yummy☆Surprise | CDB: cards.delta.cdb
+ENG:
+Activate 1 of these effects (but you can only use each effect of "Yummy☆Surprise" once per turn);
+● Target 2 LIGHT Beast monsters you control and 2 cards your opponent controls; return them to the hand.
+● Special Summon 1 "Yummy" monster from your hand or GY, but it cannot attack directly this turn.
+● Return 1 Field Spell from your face-up field or GY to the hand, then you can place 1 "Yummy" Field Spell from your hand, face-up on your field.
+THAI:
+เปิดใช้งาน 1 ในเอฟเฟกต์เหล่านี้ (แต่คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Yummy☆Surprise" ได้เทิร์นละครั้งเท่านั้น);
+● เลือกเป้าหมายมอนสเตอร์ประเภท Beast ธาตุแสงที่คุณควบคุม 2 ตัว และการ์ดที่ฝ่ายตรงข้ามควบคุม 2 ใบ; นำการ์ดเหล่านั้นกลับขึ้นมือ
+● อัญเชิญแบบพิเศษมอนสเตอร์ "Yummy" 1 ตัวจากมือหรือสุสานของคุณ แต่จะไม่สามารถโจมตีโดยตรงได้ในเทิร์นนี้
+● นำการ์ดเวทมนตร์ฟิลด์ 1 ใบจากบนสนามที่หงายหน้าอยู่หรือจากสุสานกลับขึ้นมือ จากนั้นคุณสามารถนำการ์ดเวทมนตร์ฟิลด์ "Yummy" 1 ใบจากในมือมาวางหงายหน้าบนสนามของคุณได้
+============================================================
+
+ID: 29792472 | Name: Yad'al-Hecahands | CDB: cards.delta.cdb
+ENG:
+When your opponent activates a Spell/Trap Card, while you control a "Hecahands" monster: Negate the activation, and if you do, destroy that card, then you can Set the destroyed Spell/Trap to your field. You can only activate 1 "Yad'al-Hecahands" per turn.
+THAI:
+เมื่อฝ่ายตรงข้ามเปิดใช้งานการ์ดเวทมนตร์/กับดัก ในขณะที่คุณควบคุมมอนสเตอร์ "Hecahands": ยกเลิกการเปิดใช้งานนั้น และหากทำเช่นนั้น ให้ทำลายการ์ดใบนั้น จากนั้นคุณสามารถเซ็ตการ์ดเวทมนตร์/กับดักที่ถูกทำลายใบนั้นมาบนสนามของคุณได้ คุณสามารถเปิดใช้งาน "Yad'al-Hecahands" ได้เทิร์นละ 1 ใบเท่านั้น
+============================================================
+
+ID: 30271097 | Name: The Fallen & The Virtuous | CDB: cards.delta.cdb
+ENG:
+(This card is always treated as a "Branded" and "Dogmatika" card.)
+Activate 1 of these effects;
+● Send 1 monster that mentions "Fallen of Albaz" from your Extra Deck to the GY, then target 1 face-up card on the field; destroy it.
+● If you have an "Ecclesia" monster in your field or GY: Target 1 monster in either GY; Special Summon it to your field.
+You can only activate 1 "The Fallen & The Virtuous" per turn.
+THAI:
+(การ์ดใบนี้จะถูกถือว่าเป็นการ์ด "Branded" และ "Dogmatika" เสมอ)
+เปิดใช้งาน 1 ในเอฟเฟกต์เหล่านี้;
+● ส่งมอนสเตอร์ที่ระบุชื่อ "Fallen of Albaz" 1 ตัวจากเอ็กซ์ตร้าเด็คของคุณลงสุสาน จากนั้นเลือกเป้าหมายการ์ดที่หงายหน้าอยู่บนสนาม 1 ใบ; ทำลายมัน
+● หากคุณมีมอนสเตอร์ "Ecclesia" อยู่บนสนามหรือในสุสานของคุณ: เลือกเป้าหมายมอนสเตอร์ 1 ตัวในสุสานของฝ่ายใดฝ่ายหนึ่ง; อัญเชิญแบบพิเศษมอนสเตอร์นั้นมายังสนามของคุณ
+คุณสามารถเปิดใช้งาน "The Fallen & The Virtuous" ได้เทิร์นละ 1 ใบเท่านั้น
+============================================================
+
+ID: 30581601 | Name: Yummy★Snatchy | CDB: cards.delta.cdb
+ENG:
+1 Level 4 or lower LIGHT Beast monster
+If this card is Special Summoned: You can place 1 "Yummy" Field Spell from your hand or Deck, face-up on your field, also you cannot Link Summon Link-3 or higher Link Monsters for the rest of this turn. You can only use this effect of "Yummy★Snatchy" once per turn. Once per Chain, during the Main Phase or your opponent's Battle Phase (Quick Effect): You can pay 100 LP; immediately after this effect resolves, Synchro Summon using monsters you control as material, including a "Yummy" monster.
+THAI:
+มอนสเตอร์ประเภท Beast ธาตุแสงเลเวล 4 หรือต่ำกว่า 1 ตัว
+หากการ์ดใบนี้ถูกอัญเชิญแบบพิเศษ: คุณสามารถนำการ์ดเวทมนตร์ฟิลด์ "Yummy" 1 ใบจากมือหรือเด็คของคุณมาวางหงายหน้าบนสนามของคุณ อีกทั้งคุณจะไม่สามารถอัญเชิญลิงก์มอนสเตอร์ลิงก์-3 หรือสูงกว่าได้ในเทิร์นที่เหลือ คุณสามารถใช้เอฟเฟกต์นี้ของ "Yummy★Snatchy" ได้เทิร์นละครั้งเท่านั้น ครั้งละ 1 เชน ในช่วง Main Phase หรือ Battle Phase ของฝ่ายตรงข้าม (เอฟเฟกต์ความเร็วสูง): คุณสามารถจ่าย 100 LP; ทันทีหลังจากเอฟเฟกต์นี้ทำงานเสร็จสิ้น ให้อัญเชิญซิงโครโดยใช้มอนสเตอร์ที่คุณควบคุมเป็นวัตถุดิบ ซึ่งต้องรวมมอนสเตอร์ "Yummy" อยู่ด้วย
+============================================================
+
+ID: 31425736 | Name: Cupsy☆Yummy | CDB: cards.delta.cdb
+ENG:
+If you control a Link-1 monster or a Level 2 Synchro Monster, you can Special Summon this card (from your hand). You can only Special Summon "Cupsy☆Yummy" once per turn this way. If this card is Normal or Special Summoned: You can add 1 "Yummy" card from your Deck to your hand, except "Cupsy☆Yummy", or, if this card was Special Summoned by the effect of a Synchro Monster, you can draw 1 card instead. You can only use this effect of "Cupsy☆Yummy" once per turn.
+THAI:
+หากคุณควบคุมมอนสเตอร์ลิงก์-1 หรือมอนสเตอร์ซิงโครเลเวล 2 คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้ (จากมือของคุณ) ได้ คุณสามารถอัญเชิญแบบพิเศษ "Cupsy☆Yummy" ด้วยวิธีนี้ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้ถูกอัญเชิญแบบปกติหรือแบบพิเศษ: คุณสามารถเพิ่มการ์ด "Yummy" 1 ใบจากเด็คของคุณขึ้นมือ ยกเว้น "Cupsy☆Yummy" หรือหากการ์ดใบนี้ถูกอัญเชิญแบบพิเศษด้วยเอฟเฟกต์ของมอนสเตอร์ซิงโคร คุณสามารถจั่วการ์ด 1 ใบแทนได้ คุณสามารถใช้เอฟเฟกต์นี้ของ "Cupsy☆Yummy" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 31603289 | Name: Cupsy★Yummy Way | CDB: cards.delta.cdb
+ENG:
+1 Tuner + 1 non-Tuner monster
+For this card's Synchro Summon, you can treat 1 Link-1 monster you control as a Level 1 Tuner. You can only use each of the following effects of "Cupsy★Yummy Way" once per turn. If this card is Synchro Summoned: You can add 2 "Yummy" monsters from your Deck to your hand, then discard 1 card. When your opponent activates a card or effect (Quick Effect): You can return this card to the Extra Deck; Special Summon up to 2 "Yummy" monsters from your GY.
+THAI:
+มอนสเตอร์ Tuner 1 ตัว + มอนสเตอร์ที่ไม่ใช่ Tuner 1 ตัว
+สำหรับการอัญเชิญซิงโครของการ์ดใบนี้ คุณสามารถถือว่ามอนสเตอร์ลิงก์-1 ที่คุณควบคุมเป็นมอนสเตอร์ Tuner เลเวล 1 ได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Cupsy★Yummy Way" ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้ถูกอัญเชิญซิงโคร: คุณสามารถเพิ่มมอนสเตอร์ "Yummy" 2 ตัวจากเด็คของคุณขึ้นมือ จากนั้นทิ้งการ์ด 1 ใบ เมื่อฝ่ายตรงข้ามเปิดใช้งานการ์ดหรือเอฟเฟกต์ (เอฟเฟกต์ความเร็วสูง): คุณสามารถนำการ์ดใบนี้กลับเข้าเอ็กซ์ตร้าเด็ค; อัญเชิญแบบพิเศษมอนสเตอร์ "Yummy" ได้สูงสุด 2 ตัวจากสุสานของคุณ
+============================================================
+
+ID: 32759190 | Name: Hecahands Yadel | CDB: cards.delta.cdb
+ENG:
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Yadel" once per turn. You can reveal this card in your hand; shuffle this card into the Deck, then add 1 "Hecahands" Spell/Trap from your Deck to your hand. If this card is sent to the GY: You can target 1 "Hecahands" Spell/Trap in your GY; Set it.
+THAI:
+หากการ์ดใบนี้ต่อสู้กับมอนสเตอร์ มอนสเตอร์ทั้งสองตัวจะไม่สามารถถูกทำลายจากการต่อสู้นั้นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Hecahands Yadel" ได้เทิร์นละครั้งเท่านั้น คุณสามารถเปิดเผยการ์ดใบนี้ในมือของคุณ; สับการ์ดใบนี้กลับเข้าเด็ค จากนั้นเพิ่มการ์ดเวทมนตร์/กับดัก "Hecahands" 1 ใบจากเด็คขึ้นมือของคุณ หากการ์ดใบนี้ถูกส่งลงสุสาน: คุณสามารถเลือกเป้าหมายการ์ดเวทมนตร์/กับดัก "Hecahands" 1 ใบในสุสานของคุณ; เซ็ตการ์ดนั้นมาบนสนาม
+============================================================
+
+ID: 33017964 | Name: Illusion Gate | CDB: cards.delta.cdb
+ENG:
+Pay half your LP; destroy as many monsters your opponent controls as possible, then you can Special Summon 1 monster from your opponent's GY to your field, ignoring its Summoning conditions. You can only apply this effect of "Illusion Gate" once per Duel.
+THAI:
+จ่าย LP ครึ่งหนึ่ง; ทำลายมอนสเตอร์ที่ฝ่ายตรงข้ามควบคุมให้ได้มากที่สุดเท่าที่จะทำได้ จากนั้นคุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ 1 ตัวจากสุสานของฝ่ายตรงข้ามมายังสนามของคุณได้โดยไม่สนใจเงื่อนไขการอัญเชิญ คุณสามารถใช้เอฟเฟกต์นี้ของ "Illusion Gate" ได้เพียงครั้งเดียวต่อการดูเอลเท่านั้น
+============================================================
+
+ID: 33781156 | Name: Tri-Brigade Arms Mouser | CDB: cards.delta.cdb
+ENG:
+2 Beast, Beast-Warrior, and/or Winged Beast monsters
+If this card is Link Summoned: You can send 2 "Tri-Brigade" cards with different names from your Deck and/or Extra Deck to the GY, except "Tri-Brigade Arms Mouser", also you cannot Special Summon from the Extra Deck for the rest of this turn, except Beast, Beast-Warrior, or Winged Beast monsters. If this card is sent to the GY: You can target 1 face-up monster on the field; change it to face-down Defense Position. You can only use each effect of "Tri-Brigade Arms Mouser" once per turn.
+THAI:
+มอนสเตอร์ประเภท Beast, Beast-Warrior และ/หรือ Winged Beast 2 ตัว
+หากการ์ดใบนี้ถูกอัญเชิญลิงก์: คุณสามารถส่งการ์ด "Tri-Brigade" ที่มีชื่อต่างกัน 2 ใบจากเด็ค และ/หรือเอ็กซ์ตร้าเด็คของคุณลงสุสาน ยกเว้น "Tri-Brigade Arms Mouser" อีกทั้งคุณจะไม่สามารถอัญเชิญแบบพิเศษจากเอ็กซ์ตร้าเด็คได้ในเทิร์นที่เหลือ ยกเว้นมอนสเตอร์ประเภท Beast, Beast-Warrior หรือ Winged Beast หากการ์ดใบนี้ถูกส่งลงสุสาน: คุณสามารถเลือกเป้าหมายมอนสเตอร์ที่หงายหน้าอยู่ 1 ตัวบนสนาม; เปลี่ยนมอนสเตอร์นั้นเป็นตำแหน่งป้องกันคว่ำหน้า คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Tri-Brigade Arms Mouser" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 40673853 | Name: Vallon, the Super Psy Skyblaster | CDB: cards.delta.cdb
+ENG:
+2 Level 5 monsters
+During the Main Phase (Quick Effect): You can detach 1 material from this card, then target 1 face-up monster your opponent controls; change it to face-down Defense Position. If this card is sent to the GY: You can target 1 face-down card on the field; destroy it. You can only use each effect of "Vallon, the Super Psy Skyblaster" once per turn.
+THAI:
+มอนสเตอร์เลเวล 5 จำนวน 2 ตัว
+ในระหว่างช่วง Main Phase (เอฟเฟกต์ความเร็วสูง): คุณสามารถเอาวัตถุดิบของการ์ดใบนี้ออก 1 ชิ้น จากนั้นเลือกเป้าหมายมอนสเตอร์ที่หงายหน้าอยู่ 1 ตัวที่ฝ่ายตรงข้ามควบคุม; เปลี่ยนมอนสเตอร์นั้นเป็นตำแหน่งป้องกันคว่ำหน้า หากการ์ดใบนี้ถูกส่งลงสุสาน: คุณสามารถเลือกเป้าหมายการ์ดที่คว่ำหน้าอยู่บนสนาม 1 ใบ; ทำลายมัน คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Vallon, the Super Psy Skyblaster" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 41069676 | Name: Kewl Tune Loudness War | CDB: cards.delta.cdb
+ENG:
+2+ Tuners
+Other Tuners you control cannot be destroyed by card effects, also your opponent cannot target them with card effects. When your opponent activates a card or effect (Quick Effect): You can banish 1 "Kewl Tune" monster from your GY; apply that banished monster's effect that activates when it is sent to the GY as Synchro Material. You can only use this effect of "Kewl Tune Loudness War" once per turn.
+THAI:
+มอนสเตอร์ Tuner 2 ตัวขึ้นไป
+มอนสเตอร์ Tuner ตัวอื่นที่คุณควบคุมจะไม่สามารถถูกทำลายด้วยเอฟเฟกต์การ์ดได้ อีกทั้งฝ่ายตรงข้ามจะไม่สามารถเลือกเป้าหมายการ์ดเหล่านั้นด้วยเอฟเฟกต์การ์ดได้ เมื่อฝ่ายตรงข้ามเปิดใช้งานการ์ดหรือเอฟเฟกต์ (เอฟเฟกต์ความเร็วสูง): คุณสามารถนำมอนสเตอร์ "Kewl Tune" 1 ตัวจากสุสานของคุณออกนอกเกม; นำเอฟเฟกต์ของการ์ดที่ถูกนำออกนอกเกมใบนั้นที่จะทำงานเมื่อถูกส่งลงสุสานในฐานะวัตถุดิบซิงโครมาใช้ คุณสามารถใช้เอฟเฟกต์นี้ของ "Kewl Tune Loudness War" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 42302563 | Name: Elfnote Seraphim Strelitzia | CDB: cards.delta.cdb
+ENG:
+1 Tuner + 1+ non-Tuners
+This card's original ATK becomes 3000, while in the center Main Monster Zone. During the Main Phase (Quick Effect): You can Special Summon 1 Level 6 or lower "Elfnote" monster from your hand or GY, then you can reduce the Levels of all Level 4 or higher monsters on the field by 3 until the end of this turn, also you cannot Special Summon from the Extra Deck for the rest of this turn, except Synchro Monsters. You can only use this effect of "Elfnote Seraphim Strelitzia" once per turn.
+THAI:
+มอนสเตอร์ Tuner 1 ตัว + มอนสเตอร์ที่ไม่ใช่ Tuner 1 ตัวขึ้นไป
+ATK ดั้งเดิมของการ์ดใบนี้จะกลายเป็น 3000 ตราบใดที่อยู่บนโซนมอนสเตอร์หลักช่องกลาง ในระหว่างช่วง Main Phase (เอฟเฟกต์ความเร็วสูง): คุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ "Elfnote" เลเวล 6 หรือต่ำกว่า 1 ตัวจากมือหรือสุสานของคุณ จากนั้นคุณสามารถลดเลเวลของมอนสเตอร์เลเวล 4 หรือสูงกว่าทั้งหมดบนสนามลง 3 เลเวลจนกระทั่งจบเทิร์นนี้ อีกทั้งคุณไม่สามารถอัญเชิญแบบพิเศษจากเอ็กซ์ตร้าเด็คได้ในเทิร์นที่เหลือ ยกเว้นมอนสเตอร์ซิงโคร คุณสามารถใช้เอฟเฟกต์นี้ของ "Elfnote Seraphim Strelitzia" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 42781164 | Name: Kewl Tune Track Maker | CDB: cards.delta.cdb
+ENG:
+1 "Kewl Tune" Tuner + 1+ Tuners
+If this card on the field would be used as Synchro Material, 1 Tuner in your hand can be used as 1 of the other materials. You can only use each of the following effects of "Kewl Tune Track Maker" once per turn. If this card is Special Summoned: You can add 1 "Kewl Tune" card from your Deck to your hand. If this card is sent to the GY as Synchro Material: You can return 1 card your opponent controls to the hand.
+THAI:
+มอนสเตอร์ Tuner "Kewl Tune" 1 ตัว + มอนสเตอร์ Tuner 1 ตัวขึ้นไป
+หากการ์ดใบนี้บนสนามจะถูกใช้เป็นวัตถุดิบซิงโคร คุณสามารถใช้มอนสเตอร์ Tuner 1 ตัวในมือของคุณเป็นหนึ่งในวัตถุดิบอื่นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Kewl Tune Track Maker" ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้ถูกอัญเชิญแบบพิเศษ: คุณสามารถเพิ่มการ์ด "Kewl Tune" 1 ใบจากเด็คขึ้นมือ หากการ์ดใบนี้ถูกส่งลงสุสานในฐานะวัตถุดิบซิงโคร: คุณสามารถนำการ์ดที่ฝ่ายตรงข้ามควบคุม 1 ใบกลับขึ้นมือ
+============================================================
+
+ID: 43143567 | Name: Fallen Angel of the Golden Land | CDB: cards.delta.cdb
+ENG:
+"Eldlich the Golden Lord" + 1 Zombie monster
+Must be either Fusion Summoned, or Special Summoned (from your Extra Deck) by Tributing 1 LIGHT Zombie monster, while you have "Eldlich the Golden Lord" in your field or GY. You can only Special Summon "Fallen Angel of the Golden Land" once per turn this way, no matter which method you use. If this card is sent from the field to the GY: You can Special Summon 1 "Eldlich" monster from your Deck, Extra Deck, or GY. You can only use this effect of "Fallen Angel of the Golden Land" once per turn.
+THAI:
+"Eldlich the Golden Lord" + มอนสเตอร์ประเภท Zombie 1 ตัว
+ต้องถูกอัญเชิญฟิวชัน หรืออัญเชิญแบบพิเศษ (จากเอ็กซ์ตร้าเด็คของคุณ) โดยการสังเวยมอนสเตอร์ประเภท Zombie ธาตุแสง 1 ตัว ในขณะที่คุณมี "Eldlich the Golden Lord" อยู่บนสนามหรือในสุสานของคุณ คุณสามารถอัญเชิญแบบพิเศษ "Fallen Angel of the Golden Land" ด้วยวิธีนี้ได้เทิร์นละครั้งเท่านั้นไม่ว่าจะใช้วิธีใดก็ตาม หากการ์ดใบนี้ถูกส่งจากบนสนามลงสุสาน: คุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ "Eldlich" 1 ตัวจากเด็ค เอ็กซ์ตร้าเด็ค หรือสุสานของคุณ คุณสามารถใช้เอฟเฟกต์นี้ของ "Fallen Angel of the Golden Land" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 43904702 | Name: Kewl Tune Clip | CDB: cards.delta.cdb
+ENG:
+If this card on the field would be used as Synchro Material, 1 Tuner in your hand can be used as 1 of the other materials. You can only use each of the following effects of "Kewl Tune Clip" once per turn. During your opponent's Main Phase, if this card is in your hand (Quick Effect): You can Special Summon this card, then immediately after this effect resolves, you can Synchro Summon 1 Tuner Synchro Monster. If this card is sent to the GY as Synchro Material: You can banish (face-up) 1 random face-down card from your opponent's Extra Deck.
+THAI:
+หากการ์ดใบนี้บนสนามจะถูกใช้เป็นวัตถุดิบซิงโคร คุณสามารถใช้มอนสเตอร์ Tuner 1 ตัวในมือของคุณเป็นหนึ่งในวัตถุดิบอื่นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Kewl Tune Clip" ได้เทิร์นละครั้งเท่านั้น ในช่วง Main Phase ของฝ่ายตรงข้าม หากการ์ดใบนี้อยู่ในมือของคุณ (เอฟเฟกต์ความเร็วสูง): คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้ จากนั้นทันทีหลังจากเอฟเฟกต์นี้ทำงานเสร็จสิ้น คุณสามารถอัญเชิญซิงโครมอนสเตอร์ซิงโคร Tuner 1 ตัวได้ หากการ์ดใบนี้ถูกส่งลงสุสานในฐานะวัตถุดิบซิงโคร: คุณสามารถนำการ์ดที่คว่ำหน้าอยู่ในเอ็กซ์ตร้าเด็คของฝ่ายตรงข้าม 1 ใบออกนอกเกมแบบสุ่ม (ในสภาพหงายหน้า)
+============================================================
+
+ID: 45951104 | Name: Bot Herder | CDB: cards.delta.cdb
+ENG:
+Target 1 monster your opponent controls, that is a face-up monster you own or a face-down Defense Position monster; if that monster is no longer on the field, or is a monster you own (if face-down, reveal it briefly to check), apply these effects in sequence.
+● Inflict 200 damage to your opponent.
+● Take control of all monsters your opponent controls, except that monster.
+THAI:
+เลือกเป้าหมายมอนสเตอร์ที่ฝ่ายตรงข้ามควบคุม 1 ตัวที่เป็นมอนสเตอร์หงายหน้าของคุณเองหรือมอนสเตอร์ตำแหน่งป้องกันคว่ำหน้า; หากมอนสเตอร์ตัวนั้นไม่อยู่บนสนามอีกต่อไป หรือเป็นมอนสเตอร์ที่เป็นของคุณเอง (หากคว่ำหน้าอยู่ ให้เปิดเผยสั้นๆ เพื่อตรวจสอบ) ให้ใช้เอฟเฟกต์ตามลำดับนี้
+● สร้างความเสียหาย 200 LP แก่ฝ่ายตรงข้าม
+● ยึดการควบคุมมอนสเตอร์ทั้งหมดที่ฝ่ายตรงข้ามควบคุม ยกเว้นมอนสเตอร์เป้าหมายตัวนั้น
+============================================================
+
+ID: 57809669 | Name: Hecahands Tartaros | CDB: cards.delta.cdb
+ENG:
+Activate 1 of these effects (but you can only use each effect of "Hecahands Tartaros" once per turn);
+● If you control a "Hecahands" monster: You can target 1 Spell/Trap your opponent controls; return it to the hand.
+● Fusion Summon 1 "Hecahands" Fusion Monster from your Extra Deck, by banishing its materials from your field and/or GY. If you use a face-up monster you control that is owned by your opponent as material, you can treat it as a "Hecahands" monster.
+THAI:
+เปิดใช้งาน 1 ในเอฟเฟกต์เหล่านี้ (แต่คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Hecahands Tartaros" ได้เทิร์นละครั้งเท่านั้น);
+● หากคุณควบคุมมอนสเตอร์ "Hecahands": คุณสามารถเลือกเป้าหมายการ์ดเวทมนตร์/กับดักที่ฝ่ายตรงข้ามควบคุม 1 ใบ; นำมันกลับขึ้นมือ
+● อัญเชิญฟิวชันมอนสเตอร์ฟิวชัน "Hecahands" 1 ตัวจากเอ็กซ์ตร้าเด็คของคุณ โดยการนำวัตถุดิบออกจากสนาม และ/หรือสุสานของคุณออกนอกเกม หากคุณใช้มอนสเตอร์ที่หงายหน้าอยู่บนสนามที่คุณควบคุมซึ่งมีฝ่ายตรงข้ามเป็นเจ้าของเป็นวัตถุดิบ คุณสามารถถือว่ามันเป็นมอนสเตอร์ "Hecahands" ได้
+============================================================
+
+ID: 59400890 | Name: Dark Magician of Destruction | CDB: cards.delta.cdb
+ENG:
+"Dark Magician" + 1 LIGHT or DARK monster
+Must be either Fusion Summoned, or Special Summoned (from your Extra Deck) during the turn a Spell Card or effect is activated, by banishing 1 Level 6 or higher DARK Spellcaster monster you control as material. You can only Special Summon "Dark Magician of Destruction" once per turn this way, no matter which method you use. This card's name becomes "Dark Magician" while on the field or in the GY. If this card is Special Summoned: You can add 1 "Dark Magician" or 1 card that mentions it from your Deck to your hand.
+THAI:
+"Dark Magician" + มอนสเตอร์ธาตุแสงหรือมืด 1 ตัว
+ต้องถูกอัญเชิญฟิวชัน หรืออัญเชิญแบบพิเศษ (จากเอ็กซ์ตร้าเด็คของคุณ) ในระหว่างเทิร์นที่มีการเปิดใช้งานการ์ดเวทมนตร์หรือเอฟเฟกต์ โดยการนำมอนสเตอร์ประเภท Spellcaster ธาตุมืดเลเวล 6 หรือสูงกว่าที่คุณควบคุม 1 ตัวออกนอกเกมเป็นวัตถุดิบ คุณสามารถอัญเชิญแบบพิเศษ "Dark Magician of Destruction" ด้วยวิธีนี้ได้เทิร์นละครั้งเท่านั้นไม่ว่าจะใช้วิธีใดก็ตาม ชื่อของการ์ดใบนี้จะถูกถือว่าเป็น "Dark Magician" เสมอตราบใดที่อยู่บนสนามหรือในสุสาน หากการ์ดใบนี้ถูกอัญเชิญแบบพิเศษ: คุณสามารถเพิ่ม "Dark Magician" หรือการ์ดที่ระบุชื่อการ์ดนั้น 1 ใบจากเด็คขึ้นมือของคุณ
+============================================================
+
+ID: 59581480 | Name: Elfnote Tinia | CDB: cards.delta.cdb
+ENG:
+You can Special Summon this card (from your hand) to your center Main Monster Zone. You can only Special Summon "Elfnote Tinia" once per turn this way. You can only use each of the following effects of "Elfnote Tinia" once per turn. During your Main Phase: You can place 1 "Elfnote" Continuous Spell from your Deck face-up on your field. During your opponent's turn (Quick Effect): You can switch the locations of this card in your Main Monster Zone and the monster in your center Main Monster Zone, then you can banish (face-up) 1 random card from your opponent's hand, until the End Phase.
+THAI:
+คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้ (จากมือของคุณ) มายังโซนมอนสเตอร์หลักช่องกลางของคุณได้ คุณสามารถอัญเชิญแบบพิเศษ "Elfnote Tinia" ด้วยวิธีนี้ได้เทิร์นละครั้งเท่านั้น คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Elfnote Tinia" ได้เทิร์นละครั้งเท่านั้น ในช่วง Main Phase ของคุณ: คุณสามารถนำการ์ดเวทมนตร์ต่อเนื่อง "Elfnote" 1 ใบจากเด็คของคุณมาวางหงายหน้าบนสนามของคุณ ในระหว่างเทิร์นของฝ่ายตรงข้าม (เอฟเฟกต์ความเร็วสูง): คุณสามารถสลับตำแหน่งของการ์ดใบนี้ในโซนมอนสเตอร์หลักของคุณกับมอนสเตอร์ในโซนมอนสเตอร์หลักช่องกลางของคุณ จากนั้นนำการ์ด 1 ใบในมือฝ่ายตรงข้ามออกนอกเกมแบบสุ่ม (ในสภาพหงายหน้า) จนกระทั่งถึง End Phase
+============================================================
+
+ID: 64491754 | Name: Elfnotes: Welcome Home | CDB: cards.delta.cdb
+ENG:
+The monster in your center Main Monster Zone cannot be destroyed by card effects. You can send 1 monster from your hand or field to the GY; Special Summon 1 "Elfnote" monster with a different original Attribute from your Deck in Defense Position, also you cannot Special Summon from the Extra Deck for the rest of this turn, except Synchro Monsters. You can only use this effect of "Elfnotes: Welcome Home" once per turn.
+THAI:
+มอนสเตอร์ในโซนมอนสเตอร์หลักช่องกลางของคุณจะไม่สามารถถูกทำลายด้วยเอฟเฟกต์การ์ดได้ คุณสามารถส่งมอนสเตอร์ 1 ตัวจากมือหรือสนามของคุณลงสุสาน; อัญเชิญแบบพิเศษมอนสเตอร์ "Elfnote" ที่มีธาตุดั้งเดิมต่างกัน 1 ตัวจากเด็คของคุณในตำแหน่งป้องกัน อีกทั้งคุณจะไม่สามารถอัญเชิญแบบพิเศษจากเอ็กซ์ตร้าเด็คได้ในเทิร์นที่เหลือ ยกเว้นมอนสเตอร์ซิงโคร คุณสามารถใช้เอฟเฟกต์นี้ของ "Elfnotes: Welcome Home" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 66122213 | Name: Infernal Strike Fighter | CDB: cards.delta.cdb
+ENG:
+1 Tuner + 1+ non-Tuner monsters
+During the Main Phase 2 (Quick Effect): You can destroy as many face-up monsters on the field as possible, and if you do, inflict damage to your opponent equal to the combined original Levels of those destroyed monsters x 200. If this card is destroyed by battle or card effect: You can target 1 Level 5 or lower Machine monster in your GY; Special Summon it in Defense Position. You can only use each effect of "Infernal Strike Fighter" once per turn.
+THAI:
+มอนสเตอร์ Tuner 1 ตัว + มอนสเตอร์ที่ไม่ใช่ Tuner 1 ตัวขึ้นไป
+ในระหว่างช่วง Main Phase 2 (เอฟเฟกต์ความเร็วสูง): คุณสามารถทำลายมอนสเตอร์ที่หงายหน้าอยู่บนสนามให้ได้มากที่สุดเท่าที่จะทำได้ และหากทำเช่นนั้น สร้างความเสียหายแก่ฝ่ายตรงข้ามเท่ากับผลรวมเลเวลดั้งเดิมของมอนสเตอร์ที่ถูกทำลายเหล่านั้น x 200 หากการ์ดใบนี้ถูกทำลายจากการต่อสู้หรือเอฟเฟกต์การ์ด: คุณสามารถเลือกเป้าหมายมอนสเตอร์ประเภท Machine เลเวล 5 หรือต่ำกว่า 1 ตัวในสุสานของคุณ; อัญเชิญแบบพิเศษมอนสเตอร์นั้นในตำแหน่งป้องกัน คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Infernal Strike Fighter" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 66975205 | Name: Yummyusment☆Mignon | CDB: cards.delta.cdb
+ENG:
+"Yummy" monsters you control gain 500 ATK for each LIGHT Beast monster on the field. You can only use each of the following effects of "Yummyusment☆Mignon" once per turn. If you control a Link-1 monster: You can target 1 Level 1 "Yummy" monster in your GY; Special Summon it. If this card is in your GY: You can target 2 "Yummy" monsters in your GY and/or banishment; place this card, and them, on the bottom of the Deck in any order.
+THAI:
+มอนสเตอร์ "Yummy" ที่คุณควบคุมจะได้รับ ATK เพิ่มขึ้น 500 ต่อมอนสเตอร์ประเภท Beast ธาตุแสงที่อยู่บนสนามแต่ละตัว คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Yummyusment☆Mignon" ได้เทิร์นละครั้งเท่านั้น หากคุณควบคุมมอนสเตอร์ลิงก์-1: คุณสามารถเลือกเป้าหมายมอนสเตอร์ "Yummy" เลเวล 1 ในสุสานของคุณ 1 ตัว; อัญเชิญแบบพิเศษมอนสเตอร์นั้น หากการ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถเลือกเป้าหมายมอนสเตอร์ "Yummy" 2 ตัวในสุสาน และ/หรือที่ถูกนำออกนอกเกมของคุณ; นำการ์ดใบนี้รวมถึงมอนสเตอร์เป้าหมายเหล่านั้นกลับไปไว้ใต้เด็คตามลำดับที่ต้องการ
+============================================================
+
+ID: 67021206 | Name: Hecahands Jauzah | CDB: cards.delta.cdb
+ENG:
+1 "Hecahands" monster + 1 Illusion monster
+Must first be either Fusion Summoned, or Special Summoned (from your Extra Deck) by Tributing 2 monsters you control (1 face-up monster owned by your opponent and 1 Illusion monster). If this card battles a monster, neither can be destroyed by that battle. During your Main Phase: You can add 1 "Hecahands" card from your Deck or GY to your hand. You can only use this effect of "Hecahands Jauzah" once per turn.
+THAI:
+มอนสเตอร์ "Hecahands" 1 ตัว + มอนสเตอร์ประเภท Illusion 1 ตัว
+ต้องถูกอัญเชิญฟิวชันก่อน หรืออัญเชิญแบบพิเศษ (จากเอ็กซ์ตร้าเด็คของคุณ) โดยการสังเวยมอนสเตอร์ที่คุณควบคุม 2 ตัว (มอนสเตอร์ที่หงายหน้าอยู่ 1 ตัวซึ่งมีฝ่ายตรงข้ามเป็นเจ้าของ และมอนสเตอร์ประเภท Illusion 1 ตัว) หากการ์ดใบนี้ต่อสู้กับมอนสเตอร์ มอนสเตอร์ทั้งสองตัวจะไม่สามารถถูกทำลายจากการต่อสู้นั้นได้ ในระหว่างช่วง Main Phase ของคุณ: คุณสามารถเพิ่มการ์ด "Hecahands" 1 ใบจากเด็คหรือสุสานขึ้นมือของคุณ คุณสามารถใช้เอฟเฟกต์นี้ของ "Hecahands Jauzah" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 67098897 | Name: Cooky★Yummy Way | CDB: cards.delta.cdb
+ENG:
+1 Tuner + 1 non-Tuner monster
+For this card's Synchro Summon, you can treat 1 Link-1 monster you control as a Level 1 Tuner. You can only use each of the following effects of "Cooky★Yummy Way" once per turn. If this card is Synchro Summoned: You can target up to 2 face-up monsters on the field; change them to face-down Defense Position. When your opponent activates a card or effect (Quick Effect): You can return this card to the Extra Deck; Special Summon up to 2 "Yummy" monsters from your GY.
+THAI:
+มอนสเตอร์ Tuner 1 ตัว + มอนสเตอร์ที่ไม่ใช่ Tuner 1 ตัว
+สำหรับการอัญเชิญซิงโครของการ์ดใบนี้ คุณสามารถถือว่ามอนสเตอร์ลิงก์-1 ที่คุณควบคุมเป็นมอนสเตอร์ Tuner เลเวล 1 ได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Cooky★Yummy Way" ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้ถูกอัญเชิญซิงโคร: คุณสามารถเลือกเป้าหมายมอนสเตอร์ที่หงายหน้าอยู่บนสนามได้สูงสุด 2 ตัว; เปลี่ยนพวกมันเป็นตำแหน่งป้องกันคว่ำหน้า เมื่อฝ่ายตรงข้ามเปิดใช้งานการ์ดหรือเอฟเฟกต์ (เอฟเฟกต์ความเร็วสูง): คุณสามารถนำการ์ดใบนี้กลับเข้าเอ็กซ์ตร้าเด็ค; อัญเชิญแบบพิเศษมอนสเตอร์ "Yummy" ได้สูงสุด 2 ตัวจากสุสานของคุณ
+============================================================
+
+ID: 68144894 | Name: Hecahands Godos | CDB: cards.delta.cdb
+ENG:
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Godos" once per turn. If a card(s) is added to your opponent's hand (except during the Draw Phase or Damage Step): You can Special Summon this card from your hand. During your opponent's Main Phase (Quick Effect): You can target 1 monster in your opponent's GY; Special Summon it to your field, but banish it when it leaves the field.
+THAI:
+หากการ์ดใบนี้ต่อสู้กับมอนสเตอร์ มอนสเตอร์ทั้งสองตัวจะไม่สามารถถูกทำลายจากการต่อสู้นั้นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Hecahands Godos" ได้เทิร์นละครั้งเท่านั้น หากมีการ์ดถูกเพิ่มขึ้นมือฝ่ายตรงข้าม (ยกเว้นในช่วง Draw Phase หรือ Damage Step): คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้จากมือของคุณ ในช่วง Main Phase ของฝ่ายตรงข้าม (เอฟเฟกต์ความเร็วสูง): คุณสามารถเลือกเป้าหมายมอนสเตอร์ในสุสานของฝ่ายตรงข้าม 1 ตัว; อัญเชิญแบบพิเศษมอนสเตอร์นั้นมายังสนามของคุณ แต่นำมอนสเตอร์นั้นออกนอกเกมเมื่อออกจากสนาม
+============================================================
+
+ID: 68810435 | Name: Cooky☆Yummy | CDB: cards.delta.cdb
+ENG:
+If you control a Link-1 monster or a Level 2 Synchro Monster, you can Special Summon this card (from your hand). You can only Special Summon "Cooky☆Yummy" once per turn this way. If this card is Normal or Special Summoned: You can target 1 face-up monster your opponent controls; it loses 1000 ATK, or, if this card was Special Summoned by the effect of a Synchro Monster, you can destroy that monster instead. You can only use this effect of "Cooky☆Yummy" once per turn.
+THAI:
+หากคุณควบคุมมอนสเตอร์ลิงก์-1 หรือมอนสเตอร์ซิงโครเลเวล 2 คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้ (จากมือของคุณ) ได้ คุณสามารถอัญเชิญแบบพิเศษ "Cooky☆Yummy" ด้วยวิธีนี้ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้ถูกอัญเชิญแบบปกติหรือแบบพิเศษ: คุณสามารถเลือกเป้าหมายมอนสเตอร์ที่หงายหน้าอยู่ 1 ตัวที่ฝ่ายตรงข้ามควบคุม; มอนสเตอร์นั้นจะเสีย ATK 1000 หรือหากการ์ดใบนี้ถูกอัญเชิญแบบพิเศษด้วยเอฟเฟกต์ของมอนสเตอร์ซิงโคร คุณสามารถทำลายมอนสเตอร์ตัวนั้นแทนได้ คุณสามารถใช้เอฟเฟกต์นี้ของ "Cooky☆Yummy" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 73355772 | Name: Dogmatika Fleurdelis, the Thunderbolt | CDB: cards.delta.cdb
+ENG:
+During the Main Phase, if a monster Special Summoned from the Extra Deck is on the field (Quick Effect): You can Special Summon this card from your hand. If this card is Special Summoned from the hand: You can Set 1 "Dogmatika" Trap from your Deck. It can be activated this turn, while your opponent controls a Fusion, Synchro, Xyz, or Link Monster with 2500 or more ATK. You can only use each effect of "Dogmatika Fleurdelis, the Thunderbolt" once per turn.
+THAI:
+ในระหว่างช่วง Main Phase หากมีมอนสเตอร์ที่ถูกอัญเชิญแบบพิเศษจากเอ็กซ์ตร้าเด็คอยู่บนสนาม (เอฟเฟกต์ความเร็วสูง): คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้จากมือของคุณได้ หากการ์ดใบนี้ถูกอัญเชิญแบบพิเศษจากมือ: คุณสามารถเซ็ตการ์ดกับดัก "Dogmatika" 1 ใบจากเด็คของคุณได้ การ์ดนั้นจะสามารถเปิดใช้งานได้ในเทิร์นนี้ในขณะที่ฝ่ายตรงข้ามควบคุมมอนสเตอร์ฟิวชัน, ซิงโคร, เอ็กซีส หรือลิงก์ที่มี ATK ตั้งแต่ 2500 ขึ้นไป คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Dogmatika Fleurdelis, the Thunderbolt" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 73819701 | Name: Fallen of the White Dragon | CDB: cards.delta.cdb
+ENG:
+(This card is always treated as "Fallen of Albaz".)
+If this card is in your hand: You can send 1 monster that mentions "Fallen of Albaz" from your Extra Deck to the GY; Special Summon this card, also you cannot Special Summon from the Extra Deck for the rest of this turn, except Level 8 Fusion or Synchro Monsters. If this card is Normal or Special Summoned: You can Special Summon 1 "Ecclesia" monster from your hand, Deck, or GY. You can only use each effect of "Fallen of the White Dragon" once per turn.
+THAI:
+(การ์ดใบนี้จะถูกถือว่าเป็น "Fallen of Albaz" เสมอ)
+หากการ์ดใบนี้อยู่ในมือของคุณ: คุณสามารถส่งมอนสเตอร์ที่ระบุชื่อ "Fallen of Albaz" 1 ตัวจากเอ็กซ์ตร้าเด็คของคุณลงสุสาน; อัญเชิญแบบพิเศษการ์ดใบนี้ อีกทั้งคุณไม่สามารถอัญเชิญแบบพิเศษจากเอ็กซ์ตร้าเด็คได้ในเทิร์นที่เหลือ ยกเว้นมอนสเตอร์ฟิวชันหรือซิงโครเลเวล 8 หากการ์ดใบนี้ถูกอัญเชิญแบบปกติหรือแบบพิเศษ: คุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ "Ecclesia" 1 ตัวจากมือ เด็ค หรือสุสานของคุณได้ คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Fallen of the White Dragon" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 76666602 | Name: The Dragon that Devours the Dogma | CDB: cards.delta.cdb
+ENG:
+"Fallen of Albaz" + 1 LIGHT or DARK monster + 1 Effect Monster
+While an "Ecclesia" monster is on the field or in either GY, this card gains 500 ATK, also it is unaffected by other cards' effects. You can only use each of the following effects of "The Dragon that Devours the Dogma" once per turn. If this card is Special Summoned: You can shuffle up to 2 cards from any GY(s) and/or banishment into the Deck. During the End Phase, if this card is in the GY because it was sent there this turn: You can add 1 "Dogmatika" or "Tri-Brigade" card from your Deck to your hand.
+THAI:
+"Fallen of Albaz" + มอนสเตอร์ธาตุแสงหรือมืด 1 ตัว + มอนสเตอร์เอฟเฟกต์ 1 ตัว
+ตราบใดที่มีมอนสเตอร์ "Ecclesia" อยู่บนสนามหรือในสุสานของฝ่ายใดฝ่ายหนึ่ง การ์ดใบนี้จะได้รับ ATK เพิ่มขึ้น 500 และจะไม่ได้รับผลกระทบจากเอฟเฟกต์การ์ดใบอื่น คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "The Dragon that Devours the Dogma" ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้ถูกอัญเชิญแบบพิเศษ: คุณสามารถสับการ์ดจากในสุสาน และ/หรือที่ถูกนำออกนอกเกมของฝ่ายใดฝ่ายหนึ่งได้สูงสุด 2 ใบกลับเข้าเด็ค ในช่วง End Phase หากการ์ดใบนี้อยู่ในสุสานเนื่องจากถูกส่งลงสุสานในเทิร์นนี้: คุณสามารถเพิ่มการ์ด "Dogmatika" หรือ "Tri-Brigade" 1 ใบจากเด็คของคุณขึ้นมือ
+============================================================
+
+ID: 78058681 | Name: Kewl Tune Synchro | CDB: cards.delta.cdb
+ENG:
+Add 1 "Kewl Tune" card from your Deck to your hand, except "Kewl Tune Synchro", then immediately after this effect resolves, you can Synchro Summon 1 Tuner Synchro Monster. You cannot Special Summon for the rest of this turn after this card resolves, except Tuners. You can activate up to 2 "Kewl Tune Synchro" per turn.
+THAI:
+เพิ่มการ์ด "Kewl Tune" 1 ใบจากเด็คของคุณขึ้นมือ ยกเว้น "Kewl Tune Synchro" จากนั้นทันทีหลังจากเอฟเฟกต์นี้ทำงานเสร็จสิ้น คุณสามารถอัญเชิญซิงโครมอนสเตอร์ซิงโคร Tuner 1 ตัวได้ คุณไม่สามารถอัญเชิญแบบพิเศษได้ในเทิร์นที่เหลือหลังจากที่การ์ดใบนี้ทำงานเสร็จสิ้น ยกเว้นมอนสเตอร์ Tuner คุณสามารถเปิดใช้งาน "Kewl Tune Synchro" ได้สูงสุด 2 ใบต่อเทิร์น
+============================================================
+
+ID: 78397661 | Name: Ecclesia and the Dark Dragon | CDB: cards.delta.cdb
+ENG:
+1 Tuner + 1+ non-Tuners
+During the Main Phase (Quick Effect): You can banish this card (until the End Phase), and if you do, Special Summon 1 "Fallen of Albaz" or 1 Level 4 or lower monster that mentions it from your Deck or GY. If this card is in your GY: You can target 1 Level 8 Fusion Monster in your GY or banishment and 1 card on the field; shuffle both of those cards and this card into the Deck. You can only use each effect of "Ecclesia and the Dark Dragon" once per turn.
+THAI:
+มอนสเตอร์ Tuner 1 ตัว + มอนสเตอร์ที่ไม่ใช่ Tuner 1 ตัวขึ้นไป
+ในระหว่างช่วง Main Phase (เอฟเฟกต์ความเร็วสูง): คุณสามารถนำการ์ดใบนี้ออกนอกเกม (จนกระทั่งถึง End Phase) และหากทำเช่นนั้น อัญเชิญแบบพิเศษ "Fallen of Albaz" หรือมอนสเตอร์เลเวล 4 หรือต่ำกว่าที่ระบุชื่อการ์ดนั้น 1 ตัวจากเด็คหรือสุสานของคุณ หากการ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถเลือกเป้าหมายมอนสเตอร์ฟิวชันเลเวล 8 ในสุสานหรือที่ถูกนำออกนอกเกมของคุณ 1 ตัว และการ์ดบนสนาม 1 ใบ; สับการ์ดทั้งสองใบรวมถึงการ์ดใบนี้กลับเข้าเด็ค คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Ecclesia and the Dark Dragon" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 82699999 | Name: Live☆Twin Lil-la Sweet | CDB: cards.delta.cdb
+ENG:
+When your opponent activates a card or effect in response to your "Live☆Twin" card or effect activation (Quick Effect): You can discard this card; negate that opponent's effect. If you control a "Ki-sikil" monster and this card is in your GY: You can Special Summon this card, but while it is face-up in the Monster Zone, you cannot Special Summon from the Extra Deck, except Fiend monsters. You can only use each effect of "Live☆Twin Lil-la Sweet" once per turn.
+THAI:
+เมื่อฝ่ายตรงข้ามเปิดใช้งานการ์ดหรือเอฟเฟกต์เพื่อตอบสนองต่อการเปิดใช้งานการ์ดหรือเอฟเฟกต์ "Live☆Twin" ของคุณ (เอฟเฟกต์ความเร็วสูง): คุณสามารถทิ้งการ์ดใบนี้; ยกเลิกเอฟเฟกต์ของฝ่ายตรงข้ามนั้น หากคุณควบคุมมอนสเตอร์ "Ki-sikil" และการ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้ได้ แต่ตราบใดที่หงายหน้าอยู่ในโซนมอนสเตอร์หลัก คุณจะไม่สามารถอัญเชิญแบบพิเศษจากเอ็กซ์ตร้าเด็คได้ ยกเว้นมอนสเตอร์ประเภท Fiend คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Live☆Twin Lil-la Sweet" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 85976588 | Name: Elfnote Fortuna | CDB: cards.delta.cdb
+ENG:
+You can Special Summon this card (from your hand) to your center Main Monster Zone. You can only Special Summon "Elfnote Fortuna" once per turn this way. You can only use each of the following effects of "Elfnote Fortuna" once per turn. During your Main Phase: You can place 1 "Elfnote" Continuous Trap from your hand or Deck, face-up on your field. During your opponent's turn (Quick Effect): You can switch the locations of this card in your Main Monster Zone and the monster in your center Main Monster Zone, then you can return 1 face-up Spell/Trap on the field to the hand.
+THAI:
+คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้ (จากมือของคุณ) มายังโซนมอนสเตอร์หลักช่องกลางของคุณได้ คุณสามารถอัญเชิญแบบพิเศษ "Elfnote Fortuna" ด้วยวิธีนี้ได้เทิร์นละครั้งเท่านั้น คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Elfnote Fortuna" ได้เทิร์นละครั้งเท่านั้น ในช่วง Main Phase ของคุณ: คุณสามารถนำการ์ดกับดักต่อเนื่อง "Elfnote" 1 ใบจากมือหรือเด็คของคุณมาวางหงายหน้าบนสนามของคุณ ในระหว่างเทิร์นของฝ่ายตรงข้าม (เอฟเฟกต์ความเร็วสูง): คุณสามารถสลับตำแหน่งของการ์ดใบนี้ในโซนมอนสเตอร์หลักของคุณกับมอนสเตอร์ในโซนมอนสเตอร์หลักช่องกลางของคุณ จากนั้นคุณสามารถนำการ์ดเวทมนตร์/กับดักที่หงายหน้าอยู่บนสนาม 1 ใบกลับขึ้นมือ
+============================================================
+
+ID: 86762958 | Name: Assist★Yummy! | CDB: cards.delta.cdb
+ENG:
+Once per turn, during the Standby Phase: You can gain 100 LP, and if you do, your opponent pays 100 LP. You can only use 1 of the following effects of "Assist★Yummy!" per turn, and only once that turn. During the Main Phase or your opponent's Battle Phase: You can send 2 face-up "Yummy" cards you control to the GY, including this card; return 1 card on the field or either GY to the hand. You can banish this card from your GY; send 1 "Yummy" card from your Deck to the GY, except "Assist★Yummy!".
+THAI:
+เทิร์นละครั้ง ในช่วง Standby Phase: คุณสามารถได้รับ 100 LP และหากทำเช่นนั้น ฝ่ายตรงข้ามจะต้องจ่าย 100 LP คุณสามารถเลือกใช้เอฟเฟกต์ใดเอฟเฟกต์หนึ่งต่อไปนี้ของ "Assist★Yummy!" ได้เทิร์นละครั้งเท่านั้น ในช่วง Main Phase หรือ Battle Phase ของฝ่ายตรงข้าม: คุณสามารถส่งการ์ด "Yummy" ที่หงายหน้าอยู่ที่คุณควบคุม 2 ใบรวมถึงการ์ดใบนี้ลงสุสาน; นำการ์ด 1 ใบบนสนามหรือในสุสานของฝ่ายใดฝ่ายหนึ่งกลับขึ้นมือ คุณสามารถนำการ์ดใบนี้จากสุสานของคุณออกนอกเกม; ส่งการ์ด "Yummy" 1 ใบจากเด็คลงสุสาน ยกเว้น "Assist★Yummy!"
+============================================================
+
+ID: 88170262 | Name: Kewl Tune Remix | CDB: cards.delta.cdb
+ENG:
+"Kewl Tune Mix" + 1+ Tuners
+Gains 1500 ATK while your opponent has a Tuner in their field or GY. During your opponent's turn (Quick Effect): You can Tribute this card; choose 2 non-Synchro Tuners in your GY, add 1 of them to your hand, and if you do, Special Summon the other, then immediately after this effect resolves, you can Synchro Summon 1 Tuner Synchro Monster. You can only use this effect of "Kewl Tune Remix" once per turn.
+THAI:
+"Kewl Tune Mix" + มอนสเตอร์ Tuner 1 ตัวขึ้นไป
+ได้รับ ATK เพิ่มขึ้น 1500 ตราบใดที่ฝ่ายตรงข้ามมีมอนสเตอร์ Tuner อยู่บนสนามหรือในสุสานของพวกเขา ในระหว่างเทิร์นของฝ่ายตรงข้าม (เอฟเฟกต์ความเร็วสูง): คุณสามารถสังเวยการ์ดใบนี้; เลือกมอนสเตอร์ Tuner ที่ไม่ใช่มอนสเตอร์ซิงโคร 2 ตัวในสุสานของคุณ เพิ่ม 1 ตัวขึ้นมือ และหากทำเช่นนั้น อัญเชิญแบบพิเศษอีกตัวหนึ่ง จากนั้นทันทีหลังจากเอฟเฟกต์นี้ทำงานเสร็จสิ้น คุณสามารถอัญเชิญซิงโครมอนสเตอร์ซิงโคร Tuner 1 ตัวได้ คุณสามารถใช้เอฟเฟกต์นี้ของ "Kewl Tune Remix" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 89392810 | Name: Kewl Tune Reco | CDB: cards.delta.cdb
+ENG:
+If this card on the field would be used as Synchro Material, 1 Tuner in your hand can be used as 1 of the other materials. You can only use each of the following effects of "Kewl Tune Reco" once per turn. If this card is Normal or Special Summoned: You can add 1 "Kewl Tune" monster from your Deck or GY to your hand, except a Level 3 monster. If this card is sent to the GY as Synchro Material: You can target 1 Spell/Trap your opponent controls; destroy it.
+THAI:
+หากการ์ดใบนี้บนสนามจะถูกใช้เป็นวัตถุดิบซิงโคร คุณสามารถใช้มอนสเตอร์ Tuner 1 ตัวในมือของคุณเป็นหนึ่งในวัตถุดิบอื่นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Kewl Tune Reco" ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้ถูกอัญเชิญแบบปกติหรือแบบพิเศษ: คุณสามารถเพิ่มมอนสเตอร์ "Kewl Tune" 1 ตัวจากเด็คหรือสุสานของคุณขึ้นมือ ยกเว้นมอนสเตอร์เลเวล 3 หากการ์ดใบนี้ถูกส่งลงสุสานในฐานะวัตถุดิบซิงโคร: คุณสามารถเลือกเป้าหมายการ์ดเวทมนตร์/กับดักที่ฝ่ายตรงข้ามควบคุม 1 ใบ; ทำลายมัน
+============================================================
+
+ID: 93192592 | Name: Lollipo★Yummy Way | CDB: cards.delta.cdb
+ENG:
+1 Tuner + 1 non-Tuner monster
+For this card's Synchro Summon, you can treat 1 Link-1 monster you control as a Level 1 Tuner. You can only use each of the following effects of "Lollipo★Yummy Way" once per turn. If this card is Synchro Summoned: You can Special Summon 2 "Yummy" monsters from your GY, but negate their effects. When your opponent activates a card or effect (Quick Effect): You can return this card to the Extra Deck; Special Summon up to 2 "Yummy" monsters from your GY.
+THAI:
+มอนสเตอร์ Tuner 1 ตัว + มอนสเตอร์ที่ไม่ใช่ Tuner 1 ตัว
+สำหรับการอัญเชิญซิงโครของการ์ดใบนี้ คุณสามารถถือว่ามอนสเตอร์ลิงก์-1 ที่คุณควบคุมเป็นมอนสเตอร์ Tuner เลเวล 1 ได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Lollipo★Yummy Way" ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้ถูกอัญเชิญซิงโคร: คุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ "Yummy" 2 ตัวจากสุสานของคุณ แต่เอฟเฟกต์ของพวกมันจะถูกยกเลิก เมื่อฝ่ายตรงข้ามเปิดใช้งานการ์ดหรือเอฟเฟกต์ (เอฟเฟกต์ความเร็วสูง): คุณสามารถนำการ์ดใบนี้กลับเข้าเอ็กซ์ตร้าเด็ค; อัญเชิญแบบพิเศษมอนสเตอร์ "Yummy" ได้สูงสุด 2 ตัวจากสุสานของคุณ
+============================================================
+
+ID: 93294363 | Name: Ib'al-Hecahands | CDB: cards.delta.cdb
+ENG:
+When your opponent activates a monster effect, while you control a "Hecahands" monster: Negate the activation, and if you do, destroy that monster, then you can Special Summon the destroyed monster to your field. You can only activate 1 "Ib'al-Hecahands" per turn.
+THAI:
+เมื่อฝ่ายตรงข้ามเปิดใช้งานเอฟเฟกต์มอนสเตอร์ ในขณะที่คุณควบคุมมอนสเตอร์ "Hecahands": ยกเลิกการเปิดใช้งานนั้น และหากทำเช่นนั้น ให้ทำลายมอนสเตอร์ตัวนั้น จากนั้นคุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ที่ถูกทำลายตัวนั้นมายังสนามของคุณได้ คุณสามารถเปิดใช้งาน "Ib'al-Hecahands" ได้เทิร์นละ 1 ใบเท่านั้น
+============================================================
+
+ID: 93360904 | Name: Yummyusment★Acroquey | CDB: cards.delta.cdb
+ENG:
+If you Synchro Summon a LIGHT Beast Synchro Monster: You can target 1 card your opponent controls; destroy it. If a face-up monster(s) you control leaves the field by an opponent's card effect (except during the Damage Step): You can Special Summon 1 "Yummy" monster from your Deck. If this card is in your GY: You can target 2 "Yummy" monsters in your GY and/or banishment; place this card, and them, on the bottom of the Deck in any order. You can only use each effect of "Yummyusment★Acroquey" once per turn.
+THAI:
+หากคุณอัญเชิญซิงโครมอนสเตอร์ซิงโครประเภท Beast ธาตุแสง: คุณสามารถเลือกเป้าหมายการ์ดที่ฝ่ายตรงข้ามควบคุม 1 ใบ; ทำลายมัน หากมอนสเตอร์ที่หงายหน้าอยู่ที่คุณควบคุมออกจากสนามโดยเอฟเฟกต์การ์ดของฝ่ายตรงข้าม (ยกเว้นในช่วง Damage Step): คุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ "Yummy" 1 ตัวจากเด็คของคุณ หากการ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถเลือกเป้าหมายมอนสเตอร์ "Yummy" 2 ตัวในสุสาน และ/หรือที่ถูกนำออกนอกเกมของคุณ; นำการ์ดใบนี้รวมถึงมอนสเตอร์เป้าหมายเหล่านั้นกลับไปไว้ใต้เด็คตามลำดับที่ต้องการ คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Yummyusment★Acroquey" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 94410955 | Name: Hecahands Xeno | CDB: cards.delta.cdb
+ENG:
+3 "Hecahands" monsters
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Xeno" once per turn. During the Main Phase (Quick Effect): You can look at 2 random face-down cards in your opponent's Extra Deck, then you can Special Summon 1 of them to your field. If this Fusion Summoned card you own and control is destroyed by your opponent's card effect: You can take control of any number of monsters your opponent controls.
+THAI:
+มอนสเตอร์ "Hecahands" 3 ตัว
+หากการ์ดใบนี้ต่อสู้กับมอนสเตอร์ มอนสเตอร์ทั้งสองตัวจะไม่สามารถถูกทำลายจากการต่อสู้นั้นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Hecahands Xeno" ได้เทิร์นละครั้งเท่านั้น ในระหว่างช่วง Main Phase (เอฟเฟกต์ความเร็วสูง): คุณสามารถดูการ์ดที่คว่ำหน้าอยู่ในเอ็กซ์ตร้าเด็คของฝ่ายตรงข้ามแบบสุ่ม 2 ใบ จากนั้นคุณสามารถอัญเชิญแบบพิเศษ 1 ในการ์ดเหล่านั้นมายังสนามของคุณได้ หากการ์ดที่ถูกอัญเชิญฟิวชันใบนี้ที่คุณเป็นเจ้าของและควบคุมถูกทำลายโดยเอฟเฟกต์การ์ดของฝ่ายตรงข้าม: คุณสามารถยึดการควบคุมมอนสเตอร์ที่ฝ่ายตรงข้ามควบคุมกี่ตัวก็ได้
+============================================================
+
+ID: 95132593 | Name: Hecahands Gaigas | CDB: cards.delta.cdb
+ENG:
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Gaigas" once per turn. If a card(s) is added to your opponent's hand (except during the Draw Phase or Damage Step): You can Special Summon this card from your hand. During your Main Phase: You can excavate the top 3 cards of your opponent's Deck, and if you do, you can Special Summon 1 excavated monster to your field, also shuffle the rest into the Deck.
+THAI:
+หากการ์ดใบนี้ต่อสู้กับมอนสเตอร์ มอนสเตอร์ทั้งสองตัวจะไม่สามารถถูกทำลายจากการต่อสู้นั้นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Hecahands Gaigas" ได้เทิร์นละครั้งเท่านั้น หากมีการ์ดถูกเพิ่มขึ้นมือฝ่ายตรงข้าม (ยกเว้นในช่วง Draw Phase หรือ Damage Step): คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้จากมือของคุณ ในช่วง Main Phase ของคุณ: คุณสามารถขุดการ์ด 3 ใบแรกจากบนสุดของเด็คฝ่ายตรงข้าม และหากทำเช่นนั้น คุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ที่ถูกขุดเจอ 1 ตัวมายังสนามของคุณได้ และให้สับการ์ดที่เหลือกลับเข้าเด็ค
+============================================================
+
+ID: 95365081 | Name: Hecahands Ibtel | CDB: cards.delta.cdb
+ENG:
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Ibtel" once per turn. You can reveal this card in your hand; shuffle this card into the Deck, then Special Summon 1 "Hecahands" monster from your Deck in Defense Position, except "Hecahands Ibtel". If this card is sent to the GY: You can target 1 "Hecahands" monster in your GY, except "Hecahands Ibtel"; Special Summon it.
+THAI:
+หากการ์ดใบนี้ต่อสู้กับมอนสเตอร์ มอนสเตอร์ทั้งสองตัวจะไม่สามารถถูกทำลายจากการต่อสู้นั้นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Hecahands Ibtel" ได้เทิร์นละครั้งเท่านั้น คุณสามารถเปิดเผยการ์ดใบนี้ในมือของคุณ; สับการ์ดใบนี้กลับเข้าเด็ค จากนั้นอัญเชิญแบบพิเศษมอนสเตอร์ "Hecahands" 1 ตัวจากเด็คของคุณในตำแหน่งป้องกัน ยกเว้น "Hecahands Ibtel" หากการ์ดใบนี้ถูกส่งลงสุสาน: คุณสามารถเลือกเป้าหมายมอนสเตอร์ "Hecahands" 1 ตัวในสุสานของคุณ ยกเว้น "Hecahands Ibtel"; อัญเชิญแบบพิเศษมอนสเตอร์นั้น
+============================================================
+
+ID: 97556336 | Name: Medius the Pure | CDB: cards.delta.cdb
+ENG:
+If this card is Normal or Special Summoned: You can add to your hand, or Special Summon, 1 "Power Patron" monster from your Deck. If this card is in your GY: You can shuffle 1 monster from your hand or face-up field into the Deck, and if you do, Special Summon this card, but banish it when it leaves the field. You can only use each effect of "Medius the Pure" once per turn.
+THAI:
+หากการ์ดใบนี้ถูกอัญเชิญแบบปกติหรือแบบพิเศษ: คุณสามารถเพิ่มขึ้นมือหรืออัญเชิญแบบพิเศษมอนสเตอร์ "Power Patron" 1 ตัวจากเด็คของคุณ หากการ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถสับมอนสเตอร์จากมือหรือสนามที่หงายหน้าอยู่ของคุณ 1 ตัวกลับเข้าเด็ค และหากทำเช่นนั้น อัญเชิญแบบพิเศษการ์ดใบนี้ แต่ให้นำการ์ดใบนี้ออกนอกเกมเมื่อออกจากสนาม คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Medius the Pure" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 101402001 | Name: Swift Panther Warrior | CDB: prerelease-betb.cdb
+ENG:
+During the Main Phase (Quick Effect): You can Tribute 1 other monster from your hand or field, then activate 1 of these effects;
+● Special Summon 1 monster that mentions "Dark Time Wizard" from your hand or Deck, except "Swift Panther Warrior".
+● Send 1 Spell/Trap that mentions "Dark Time Wizard" from your Deck to the GY.
+You can only use this effect of "Swift Panther Warrior" once per turn. Cannot declare an attack unless a monster(s) was Tributed this turn.
+THAI:
+ในระหว่างช่วง Main Phase (เอฟเฟกต์ความเร็วสูง): คุณสามารถสังเวยมอนสเตอร์ตัวอื่น 1 ตัวจากมือหรือสนามของคุณ จากนั้นเปิดใช้งาน 1 ในเอฟเฟกต์เหล่านี้;
+● อัญเชิญแบบพิเศษมอนสเตอร์ 1 ตัวที่ระบุชื่อ "Dark Time Wizard" จากมือหรือเด็คของคุณ ยกเว้น "Swift Panther Warrior"
+● ส่งการ์ดเวทมนตร์/กับดัก 1 ใบที่ระบุชื่อ "Dark Time Wizard" จากเด็คของคุณลงสุสาน
+คุณสามารถใช้เอฟเฟกต์นี้ของ "Swift Panther Warrior" ได้เทิร์นละครั้งเท่านั้น การ์ดใบนี้ไม่สามารถประกาศโจมตีได้ เว้นแต่จะมีการสังเวยมอนสเตอร์ในเทิร์นนี้
+============================================================
+
+ID: 101402002 | Name: Alligator's Sword Dragon Knight | CDB: prerelease-betb.cdb
+ENG:
+Can attack directly. You can only use each of the following effects of "Alligator's Sword Dragon Knight" once per turn. If this card is in your hand: You can reveal 1 other card in your hand that mentions "Dark Time Wizard"; Special Summon this card. If this card is Normal or Special Summoned: You can add up to 2 Spells/Traps with different names from each other that mention "Dark Time Wizard" from your Deck to your hand, then discard 1 card.
+THAI:
+การ์ดใบนี้สามารถโจมตีโดยตรงได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Alligator's Sword Dragon Knight" ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้อยู่ในมือของคุณ: คุณสามารถเปิดเผยการ์ดใบอื่นในมือของคุณ 1 ใบที่ระบุชื่อ "Dark Time Wizard"; อัญเชิญแบบพิเศษการ์ดใบนี้ หากการ์ดใบนี้ถูกอัญเชิญแบบปกติหรือแบบพิเศษ: คุณสามารถเพิ่มการ์ดเวทมนตร์/กับดักที่มีชื่อต่างกันสูงสุด 2 ใบที่ระบุชื่อ "Dark Time Wizard" จากเด็คของคุณขึ้นมือ จากนั้นทิ้งการ์ด 1 ใบ
+============================================================
+
+ID: 101402003 | Name: Jinzo - Energy Shocker | CDB: prerelease-betb.cdb
+ENG:
+This card's name becomes "Jinzo" while in the field or GY. If this card is Normal or Special Summoned: You can destroy as many Traps your opponent controls as possible (if a card is Set, reveal it), then this card gains 300 ATK for each card destroyed this way. You can only use this effect of "Jinzo - Energy Shocker" once per turn. Your opponent cannot activate Trap Cards or effects while you have another monster in your field or GY that mentions "Dark Time Wizard".
+THAI:
+ชื่อของการ์ดใบนี้จะถูกถือว่าเป็น "Jinzo" เสมอตราบใดที่อยู่บนสนามหรือในสุสาน หากการ์ดใบนี้ถูกอัญเชิญแบบปกติหรือแบบพิเศษ: คุณสามารถทำลายการ์ดกับดักที่ฝ่ายตรงข้ามควบคุมให้ได้มากที่สุดเท่าที่จะทำได้ (หากเป็นการ์ดที่เซ็ตไว้ ให้เปิดเผยการ์ดนั้น) จากนั้นการ์ดใบนี้จะได้รับ ATK เพิ่มขึ้น 300 ต่อการ์ดที่ถูกทำลายด้วยวิธีนี้แต่ละใบ คุณสามารถใช้เอฟเฟกต์นี้ของ "Jinzo - Energy Shocker" ได้เทิร์นละครั้งเท่านั้น ฝ่ายตรงข้ามไม่สามารถเปิดใช้งานการ์ดกับดักหรือเอฟเฟกต์การ์ดกับดักได้ ในขณะที่คุณมีมอนสเตอร์ตัวอื่นบนสนามหรือในสุสานของคุณที่ระบุชื่อ "Dark Time Wizard"
+============================================================
+
+ID: 101402004 | Name: Fisherman, Legend of the Sea | CDB: prerelease-betb.cdb
+ENG:
+If your opponent activates a monster effect on the field, or when their monster declares an attack, and "Umi" or a card that mentions "Dark Time Wizard" other than "Fisherman, Legend of the Sea" is on the field: You can Special Summon this card from your hand. If this card is Special Summoned: You can target 1 monster your opponent controls; destroy it, also return this card from the field to the hand during the End Phase of this turn. You can only use each effect of "Fisherman, Legend of the Sea" once per turn.
+THAI:
+หากฝ่ายตรงข้ามเปิดใช้งานเอฟเฟกต์มอนสเตอร์บนสนาม หรือเมื่อมอนสเตอร์ของฝ่ายตรงข้ามประกาศโจมตี และมี "Umi" หรือการ์ดที่ระบุชื่อ "Dark Time Wizard" ตัวอื่นยกเว้น "Fisherman, Legend of the Sea" อยู่บนสนาม: คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้จากมือของคุณ หากการ์ดใบนี้ถูกอัญเชิญแบบพิเศษ: คุณสามารถเลือกเป้าหมายมอนสเตอร์ที่ฝ่ายตรงข้ามควบคุม 1 ตัว; ทำลายมัน อีกทั้งให้นำการ์ดใบนี้บนสนามกลับขึ้นมือในระหว่างช่วง End Phase ของเทิร์นนี้ คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Fisherman, Legend of the Sea" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 101402052 | Name: Dark Time Wizard | CDB: prerelease-betb.cdb
+ENG:
+Activate 1 of these effects (but you can only use each effect of "Dark Time Wizard" once per turn);
+● Add 1 card that mentions "Dark Time Wizard" from your Deck to your hand, except "Dark Time Wizard", also add 1 "Dark Time Wizard" from your GY to your hand during the End Phase of this turn.
+● Toss a coin and call it. If you call it right, destroy as many monsters your opponent controls as possible, and if you do, inflict damage to your opponent equal to half the total original ATK of those monsters. If you call it wrong, destroy all monsters you control.
+THAI:
+เปิดใช้งาน 1 ในเอฟเฟกต์เหล่านี้ (แต่คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Dark Time Wizard" ได้เทิร์นละครั้งเท่านั้น);
+● เพิ่มการ์ดที่ระบุชื่อ "Dark Time Wizard" 1 ใบจากเด็คของคุณขึ้นมือ ยกเว้น "Dark Time Wizard" อีกทั้งให้นำ "Dark Time Wizard" 1 ใบจากสุสานของคุณขึ้นมือในระหว่างช่วง End Phase ของเทิร์นนี้
+● โยนเหรียญและทายหัวก้อย หากทายถูก ทำลายมอนสเตอร์ที่ฝ่ายตรงข้ามควบคุมให้ได้มากที่สุดเท่าที่จะทำได้ และหากทำเช่นนั้น สร้างความเสียหายแก่ฝ่ายตรงข้ามเท่ากับครึ่งหนึ่งของ ATK ดั้งเดิมรวมกันของมอนสเตอร์เหล่านั้น หากทายผิด ทำลายมอนสเตอร์ทั้งหมดที่คุณควบคุม
+============================================================
+
+ID: 101402053 | Name: Graceful Skull Dice | CDB: prerelease-betb.cdb
+ENG:
+Roll a six-sided die twice and apply these effects for the rest of this turn.
+● Monsters you control that mention "Dark Time Wizard" gain ATK/DEF equal to the total x 200.
+● Monsters your opponent controls lose ATK/DEF equal to the total x 200.
+If your opponent Normal or Special Summons a monster(s) while this card is in your GY: You can banish this card, then target 1 of those monsters; roll a six-sided die twice, and if the total is 6 or more, destroy that monster.
+THAI:
+ทอยลูกเต๋า 6 หน้า 2 ครั้ง และใช้เอฟเฟกต์เหล่านี้จนกระทั่งจบเทิร์นนี้
+● มอนสเตอร์ที่คุณควบคุมที่ระบุชื่อ "Dark Time Wizard" จะได้รับ ATK/DEF เพิ่มขึ้นเท่ากับผลรวมแต้มเต๋า x 200
+● มอนสเตอร์ที่ฝ่ายตรงข้ามควบคุมจะเสีย ATK/DEF เท่ากับผลรวมแต้มเต๋า x 200
+หากฝ่ายตรงข้ามอัญเชิญแบบปกติหรือแบบพิเศษมอนสเตอร์ในขณะที่การ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถนำการ์ดใบนี้ออกนอกเกม จากนั้นเลือกเป้าหมายมอนสเตอร์เหล่านั้น 1 ตัว; ทอยลูกเต๋า 6 หน้า 2 ครั้ง และหากผลรวมแต้มเต๋าเท่ากับ 6 หรือมากกว่า ให้ทำลายมอนสเตอร์ตัวนั้น
+============================================================
+
+ID: 101402054 | Name: Sleeping Scapegoats | CDB: prerelease-betb.cdb
+ENG:
+Special Summon up to 4 "Scapegoat Tokens" (Beast/EARTH/Level 1/ATK 0/DEF 0) in Defense Position, then if your opponent controls a monster, you can Special Summon 1 "Swift Panther Warrior" from your Deck, also for the rest of this turn, these Tokens cannot be Tributed for a Tribute Summon, also you cannot Special Summon from the Extra Deck, except Fusion Monsters. If a card(s) you control that mentions "Dark Time Wizard" would be destroyed by battle or card effect, you can destroy 1 Token you control that was Special Summoned by this effect instead.
+THAI:
+อัญเชิญแบบพิเศษ "Scapegoat Token" (ประเภท Beast/ธาตุดิน/เลเวล 1/ATK 0/DEF 0) ได้สูงสุด 4 ตัวในตำแหน่งป้องกัน จากนั้นหากฝ่ายตรงข้ามควบคุมมอนสเตอร์อยู่ คุณสามารถอัญเชิญแบบพิเศษ "Swift Panther Warrior" 1 ตัวจากเด็คของคุณได้ อีกทั้งในเทิร์นที่เหลือโทเคนเหล่านี้ไม่สามารถถูกสังเวยเพื่อการอัญเชิญแบบสังเวยได้ และคุณไม่สามารถอัญเชิญแบบพิเศษมอนสเตอร์จากเอ็กซ์ตร้าเด็คได้ ยกเว้นมอนสเตอร์ฟิวชัน หากการ์ดที่คุณควบคุมที่ระบุชื่อ "Dark Time Wizard" กำลังจะถูกทำลายจากการต่อสู้หรือเอฟเฟกต์การ์ด คุณสามารถทำลายโทเคนที่คุณควบคุม 1 ตัวที่ถูกอัญเชิญแบบพิเศษด้วยเอฟเฟกต์นี้แทนได้
+============================================================
+
+ID: 101402070 | Name: Foolish Graverobber | CDB: prerelease-betb.cdb
+ENG:
+Send 1 card that mentions "Dark Time Wizard" from your Deck to the GY, except "Foolish Graverobber", then you can Special Summon 1 monster from either GY to your field. You can banish this card from your GY; Set to your field, 1 Spell/Trap that mentions "Dark Time Wizard" from your GY, except "Foolish Graverobber", or 1 Spell/Trap from your opponent's GY. You can only use each effect of "Foolish Graverobber" once per turn.
+THAI:
+ส่งการ์ดที่ระบุชื่อ "Dark Time Wizard" 1 ใบจากเด็คของคุณลงสุสาน ยกเว้น "Foolish Graverobber" จากนั้นคุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ 1 ตัวจากสุสานของฝ่ายใดฝ่ายหนึ่งมายังสนามของคุณได้ คุณสามารถนำการ์ดใบนี้จากสุสานของคุณออกนอกเกม; เซ็ตการ์ดเวทมนตร์/กับดักที่ระบุชื่อ "Dark Time Wizard" 1 ใบจากสุสานของคุณ ยกเว้น "Foolish Graverobber" หรือเซ็ตการ์ดเวทมนตร์/กับดัก 1 ใบจากสุสานของฝ่ายตรงข้ามมายังสนามของคุณ คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Foolish Graverobber" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 101402071 | Name: Reversal Box | CDB: prerelease-betb.cdb
+ENG:
+Once per turn, during the Standby Phase: Roll a six-sided die and place counters on this card equal to the result (max. 6). When a monster effect is activated on your opponent's field, or once per battle, during damage calculation, if an opponent's monster attacks: You can remove 1 counter from this card, then target 1 of those monsters; toss a coin and call it. If you call it right, you can Special Summon 1 monster that mentions "Dark Time Wizard" from your Deck, and if you do, until the end of this turn, change the targeted monster's ATK to 0, also its effects are negated.
+THAI:
+เทิร์นละครั้ง ในช่วง Standby Phase: ทอยลูกเต๋า 6 หน้า 1 ลูก และวางเม็ดนับจำนวนบนการ์ดใบนี้ตามผลลัพธ์ที่ทอยได้ (สูงสุด 6 เม็ด) เมื่อเอฟเฟกต์มอนสเตอร์ถูกเปิดใช้งานบนสนามของฝ่ายตรงข้าม หรือครั้งละ 1 ครั้งในการต่อสู้ ในระหว่างการคำนวณความเสียหาย หากมอนสเตอร์ของฝ่ายตรงข้ามโจมตี: คุณสามารถเอาเม็ดนับจำนวนออกจากการ์ดใบนี้ 1 เม็ด จากนั้นเลือกเป้าหมายมอนสเตอร์เหล่านั้น 1 ตัว; โยนเหรียญและทายหัวก้อย หากทายถูก คุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ที่ระบุชื่อ "Dark Time Wizard" 1 ตัวจากเด็คของคุณ และหากทำเช่นนั้น เปลี่ยน ATK ของมอนสเตอร์เป้าหมายเป็น 0 อีกทั้งยกเลิกเอฟเฟกต์ของมอนสเตอร์ตัวนั้นจนกระทั่งจบเทิร์นนี้
+============================================================
+
+ID: 101305015 | Name: Aleister the Reminiscent | CDB: prerelease-cori.cdb
+ENG:
+If this card is in your hand: You can target 1 Spellcaster monster or 1 Fusion Monster on the field; Special Summon this card, and if you do, the targeted monster gains 1000 ATK until the end of this turn. If this card is Normal or Special Summoned, or flipped face-up: You can banish 1 "Invoked" monster from your Extra Deck; add 1 "Invocation", or 1 Spell that mentions it, from your Deck to your hand. You can only use each effect of "Aleister the Reminiscent" once per turn.
+THAI:
+หากการ์ดใบนี้อยู่ในมือของคุณ: คุณสามารถเลือกเป้าหมายมอนสเตอร์ประเภท Spellcaster หรือมอนสเตอร์ฟิวชัน 1 ตัวบนสนาม; อัญเชิญแบบพิเศษการ์ดใบนี้ และหากทำเช่นนั้น มอนสเตอร์เป้าหมายนั้นจะได้รับ ATK เพิ่มขึ้น 1000 จนกระทั่งจบเทิร์นนี้ หากการ์ดใบนี้ถูกอัญเชิญแบบปกติ แบบพิเศษ หรือหงายหน้าขึ้น: คุณสามารถนำมอนสเตอร์ "Invoked" 1 ตัวจากเอ็กซ์ตร้าเด็คของคุณออกนอกเกม; เพิ่ม "Invocation" หรือการ์ดเวทมนตร์ 1 ใบที่ระบุชื่อการ์ดนั้นจากเด็คของคุณขึ้นมือ คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Aleister the Reminiscent" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 101305016 | Name: Aiwass the Spirit of the Law | CDB: prerelease-cori.cdb
+ENG:
+You can banish this card from your hand or field; add 1 "Aleister" monster from your Deck to your hand, then if this effect was activated on the field, immediately after this effect resolves, you can Normal Summon 1 Spellcaster monster. If a face-up Fusion Monster(s) you control is sent to the GY, except by battle, while this card is in your GY: You can Special Summon this card, then you can Fusion Summon 1 "Invoked" monster, using monsters from your hand or field. You can only use each effect of "Aiwass the Spirit of the Law" once per turn.
+THAI:
+คุณสามารถนำการ์ดใบนี้จากมือหรือสนามของคุณออกนอกเกม; เพิ่มมอนสเตอร์ "Aleister" 1 ตัวจากเด็คของคุณขึ้นมือ จากนั้นหากเปิดใช้งานเอฟเฟกต์นี้บนสนาม ทันทีหลังจากเอฟเฟกต์นี้ทำงานเสร็จสิ้น คุณสามารถอัญเชิญแบบปกติมอนสเตอร์ประเภท Spellcaster 1 ตัวได้ หากมอนสเตอร์ฟิวชันที่หงายหน้าอยู่ที่คุณควบคุมถูกส่งลงสุสาน (ยกเว้นโดยการต่อสู้) ในขณะที่การ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้ จากนั้นคุณสามารถอัญเชิญฟิวชันมอนสเตอร์ "Invoked" 1 ตัวโดยใช้มอนสเตอร์จากมือหรือสนามของคุณเป็นวัตถุดิบได้ คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Aiwass the Spirit of the Law" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 101305017 | Name: Virakam the Artificial Spirit | CDB: prerelease-cori.cdb
+ENG:
+If you have an "Aleister" monster in your field or GY: You can Special Summon this card from your hand. If this card is Special Summoned: You can Set 1 "Invocation", or 1 Spell that mentions it, from your Deck. When your opponent activates a card or effect in response to the activation of your Fusion Monster's effect (Quick Effect): You can banish this card from the field, and if you do, negate that opponent's effect, and if you do that, banish that card. You can only use each effect of "Virakam the Artificial Spirit" once per turn.
+THAI:
+หากคุณมีมอนสเตอร์ "Aleister" อยู่บนสนามหรือในสุสานของคุณ: คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้จากมือของคุณ หากการ์ดใบนี้ถูกอัญเชิญแบบพิเศษ: คุณสามารถเซ็ต "Invocation" หรือการ์ดเวทมนตร์ 1 ใบที่ระบุชื่อการ์ดนั้นจากเด็คของคุณ เมื่อฝ่ายตรงข้ามเปิดใช้งานการ์ดหรือเอฟเฟกต์เพื่อตอบสนองต่อการเปิดใช้งานเอฟเฟกต์ของมอนสเตอร์ฟิวชันของคุณ (เอฟเฟกต์ความเร็วสูง): คุณสามารถนำการ์ดใบนี้บนสนามออกนอกเกม และหากทำเช่นนั้น ยกเลิกเอฟเฟกต์ของฝ่ายตรงข้ามนั้น และหากทำเช่นนั้นอีก ให้นำการ์ดใบนั้นออกนอกเกม คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Virakam the Artificial Spirit" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 101305030 | Name: Invoked Sorath | CDB: prerelease-cori.cdb
+ENG:
+1 "Aleister" monster + 1 FIRE or WIND monster
+During the Main Phase (Quick Effect): You can target 1 Level 6 or lower monster in either GY; Special Summon it to your field in Defense Position, but negate its effects. If this card is in your GY: You can Fusion Summon 1 "Invoked" Fusion Monster from your Extra Deck, by banishing its materials from your field and/or GY, including this card in the GY. You can only use each effect of "Invoked Sorath" once per turn.
+THAI:
+มอนสเตอร์ "Aleister" 1 ตัว + มอนสเตอร์ธาตุไฟหรือลม 1 ตัว
+ในระหว่างช่วง Main Phase (เอฟเฟกต์ความเร็วสูง): คุณสามารถเลือกเป้าหมายมอนสเตอร์เลเวล 6 หรือต่ำกว่า 1 ตัวในสุสานของฝ่ายใดฝ่ายหนึ่ง; อัญเชิญแบบพิเศษมอนสเตอร์นั้นมายังสนามของคุณในตำแหน่งป้องกัน แต่เอฟเฟกต์ของมอนสเตอร์นั้นจะถูกยกเลิก หากการ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถอัญเชิญฟิวชันมอนสเตอร์ฟิวชัน "Invoked" 1 ตัวจากเอ็กซ์ตร้าเด็คของคุณ โดยการนำวัตถุดิบจากสนาม และ/หรือสุสานของคุณออกนอกเกม ซึ่งต้องรวมการ์ดใบนี้ในสุสานด้วย คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Invoked Sorath" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 101305031 | Name: Invoked Babalon | CDB: prerelease-cori.cdb
+ENG:
+1 "Aleister" monster + 1 LIGHT or EARTH monster
+If this card is Special Summoned: You can add 1 "Virakam the Artificial Spirit" or "Magical Name - "Rosa Mundi"" from your Deck to your hand, then you can banish 1 monster from either GY. You can banish this card from your GY, then target 1 Fusion Monster you control; all monsters your opponent currently controls lose ATK equal to that monster's until the end of this turn. You can only use each effect of "Invoked Babalon" once per turn.
+THAI:
+มอนสเตอร์ "Aleister" 1 ตัว + มอนสเตอร์ธาตุแสงหรือดิน 1 ตัว
+หากการ์ดใบนี้ถูกอัญเชิญแบบพิเศษ: คุณสามารถเพิ่ม "Virakam the Artificial Spirit" หรือ "Magical Name - "Rosa Mundi"" 1 ใบจากเด็คขึ้นมือ จากนั้นคุณสามารถนำมอนสเตอร์ 1 ตัวจากสุสานของฝ่ายใดฝ่ายหนึ่งออกนอกเกมได้ คุณสามารถนำการ์ดใบนี้จากสุสานของคุณออกนอกเกม จากนั้นเลือกเป้าหมายมอนสเตอร์ฟิวชันที่คุณควบคุม 1 ตัว; มอนสเตอร์ทั้งหมดที่ฝ่ายตรงข้ามควบคุมอยู่ในปัจจุบันจะเสีย ATK เท่ากับ ATK ของมอนสเตอร์เป้าหมายนั้นจนกระทั่งจบเทิร์นนี้ คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Invoked Babalon" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 101305032 | Name: Invoked Okeanos | CDB: prerelease-cori.cdb
+ENG:
+1 "Aleister" monster + 1 DARK or WATER monster
+While this card is in the Main Monster Zone, your opponent's monsters cannot target monsters for attacks, except this one. While this card is in the Extra Monster Zone, any monster sent to your opponent's GY is banished instead. You can banish this card from your GY, then target 1 Fusion Monster you control; it can attack directly this turn. You can only use this effect of "Invoked Okeanos" once per turn.
+THAI:
+มอนสเตอร์ "Aleister" 1 ตัว + มอนสเตอร์ธาตุมืดหรือน้ำ 1 ตัว
+ตราบใดที่การ์ดใบนี้อยู่ในโซนมอนสเตอร์หลัก มอนสเตอร์ของฝ่ายตรงข้ามจะไม่สามารถเลือกเป้าหมายโจมตีมอนสเตอร์ตัวอื่นได้ ยกเว้นการ์ดใบนี้ ตราบใดที่การ์ดใบนี้อยู่ในโซนเอ็กซ์ตร้ามอนสเตอร์ มอนสเตอร์ใดก็ตามที่ถูกส่งลงสุสานของฝ่ายตรงข้ามจะถูกนำออกนอกเกมแทน คุณสามารถนำการ์ดใบนี้จากสุสานของคุณออกนอกเกม จากนั้นเลือกเป้าหมายมอนสเตอร์ฟิวชันที่คุณควบคุม 1 ตัว; มอนสเตอร์เป้าหมายนั้นสามารถโจมตีโดยตรงได้ในเทิร์นนี้ คุณสามารถใช้เอฟเฟกต์นี้ของ "Invoked Okeanos" ได้เพียงเทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 101305033 | Name: Invoked Transcendence Aeon | CDB: prerelease-cori.cdb
+ENG:
+2+ Fusion Monsters with different Attributes
+If this card is Fusion Summoned: You can banish cards from the field and/or GYs, up to the number of materials used, then if you used 3 or more, you can look at your opponent's Extra Deck, and if you do, banish up to 3 cards from it. (Quick Effect): You can declare 1 Attribute; all other monsters currently on the field become that Attribute until the end of this turn. You can only use 1 "Invoked Transcendence Aeon" effect per turn, and only once that turn.
+THAI:
+มอนสเตอร์ฟิวชันที่มีธาตุต่างกัน 2 ตัวขึ้นไป
+หากการ์ดใบนี้ถูกอัญเชิญฟิวชัน: คุณสามารถนำการ์ดจากบนสนาม และ/หรือสุสานออกนอกเกมได้สูงสุดตามจำนวนวัตถุดิบที่ใช้ จากนั้นหากคุณใช้วัตถุดิบในการอัญเชิญตั้งแต่ 3 ตัวขึ้นไป คุณสามารถดูเอ็กซ์ตร้าเด็คของฝ่ายตรงข้าม และนำการ์ดจากเอ็กซ์ตร้าเด็คออกนอกเกมได้สูงสุด 3 ใบ (เอฟเฟกต์ความเร็วสูง): คุณสามารถประกาศธาตุ 1 ธาตุ; มอนสเตอร์ตัวอื่นทั้งหมดที่อยู่บนสนามในปัจจุบันจะกลายเป็นธาตุนั้นจนกระทั่งจบเทิร์นนี้ คุณสามารถเลือกใช้เอฟเฟกต์ได้เพียง 1 เอฟเฟกต์ของ "Invoked Transcendence Aeon" ต่อเทิร์น และใช้ได้เพียงครั้งเดียวในเทิร์นนั้นเท่านั้น
+============================================================
+
+ID: 101305053 | Name: Invocation "Sword" | CDB: prerelease-cori.cdb
+ENG:
+Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters you control. If Summoning an "Invoked" Fusion Monster this way, you can also return banished monsters to the GY as material. During your Main Phase, if this card is in your GY: You can target 1 "Aleister" monster or "Invocation" in your GY; shuffle this card into the Deck, and if you do, add the targeted card to your hand. You can only use each effect of "Invocation "Sword"" once per turn.
+THAI:
+อัญเชิญฟิวชันมอนสเตอร์ฟิวชัน 1 ตัวจากเอ็กซ์ตร้าเด็คของคุณ โดยใช้มอนสเตอร์ที่คุณควบคุมเป็นวัตถุดิบฟิวชัน หากอัญเชิญมอนสเตอร์ฟิวชัน "Invoked" ด้วยวิธีนี้ คุณสามารถนำมอนสเตอร์ที่ถูกนำออกนอกเกมกลับคืนสู่สุสานเพื่อใช้เป็นวัตถุดิบฟิวชันได้ด้วย ในระหว่างช่วง Main Phase ของคุณ หากการ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถเลือกเป้าหมายมอนสเตอร์ "Aleister" หรือการ์ด "Invocation" 1 ใบในสุสานของคุณ; สับการ์ดใบนี้กลับเข้าเด็ค และหากทำเช่นนั้น เพิ่มการ์ดเป้าหมายนั้นขึ้นมือ คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Invocation "Sword"" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 101305054 | Name: Spirit Sword Aiwass | CDB: prerelease-cori.cdb
+ENG:
+Activate 1 of these effects; you cannot declare attacks for the rest of this turn, except with Fusion Monsters.
+● Special Summon 1 "Aiwass the Spirit of the Law" from your Deck or GY.
+● Send to the GY, or banish, 1 "Aleister" monster from your Deck.
+● Look at 3 random face-down cards in your opponent's Extra Deck, and if you do, banish 1 of them.
+You can only activate 1 "Spirit Sword Aiwass" per turn.
+THAI:
+เปิดใช้งาน 1 ในเอฟเฟกต์เหล่านี้; คุณจะไม่สามารถประกาศโจมตีได้ในเทิร์นที่เหลือ ยกเว้นด้วยมอนสเตอร์ฟิวชัน
+● อัญเชิญแบบพิเศษ "Aiwass the Spirit of the Law" 1 ตัวจากเด็คหรือสุสานของคุณ
+● ส่งลงสุสาน หรือนำมอนสเตอร์ "Aleister" 1 ตัวจากเด็คของคุณออกนอกเกม
+● ดูการ์ดที่คว่ำหน้าอยู่ในเอ็กซ์ตร้าเด็คของฝ่ายตรงข้ามแบบสุ่ม 3 ใบ และหากทำเช่นนั้น ให้นำการ์ดเหล่านั้นออกนอกเกม 1 ใบ
+คุณสามารถเปิดใช้งาน "Spirit Sword Aiwass" ได้เทิร์นละ 1 ใบเท่านั้น
+============================================================
+
+ID: 101305070 | Name: Magical Name - "Rosa Mundi" | CDB: prerelease-cori.cdb
+ENG:
+Banish 1 "Aleister" monster or 1 Fusion Monster from your GY; Special Summon 1 "Invoked" monster from your Extra Deck, ignoring its Summoning conditions, but banish it during the End Phase. If a monster(s) is banished face-up, while this card is in your GY: You can banish this card, then target 1 of your banished "Invoked" monsters; Special Summon it. You can only use each effect of "Magical Name - "Rosa Mundi"" once per turn.
+THAI:
+นำมอนสเตอร์ "Aleister" หรือมอนสเตอร์ฟิวชัน 1 ตัวจากสุสานของคุณออกนอกเกม; อัญเชิญแบบพิเศษมอนสเตอร์ "Invoked" 1 ตัวจากเอ็กซ์ตร้าเด็คของคุณโดยไม่สนใจเงื่อนไขการอัญเชิญ แต่ให้นำมอนสเตอร์นั้นออกนอกเกมในช่วง End Phase หากมีมอนสเตอร์ถูกนำออกนอกเกมในสภาพหงายหน้าในขณะที่การ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถนำการ์ดใบนี้ออกนอกเกม จากนั้นเลือกเป้าหมายมอนสเตอร์ "Invoked" ของคุณที่ถูกนำออกนอกเกม 1 ตัว; อัญเชิญแบบพิเศษมอนสเตอร์เป้าหมายนั้น คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Magical Name - "Rosa Mundi"" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 6325660 | Name: Dominus Spark | CDB: release-blzd.cdb
+ENG:
+During the turn in which your opponent has activated a monster effect in the hand or GY, you can activate this card from your hand. Target 1 monster your opponent controls; banish it, then if you have no Traps in your GY, your opponent can Special Summon 1 monster from their hand. If you activated this card from your hand, you cannot activate the effects of EARTH, WATER, FIRE, and WIND monsters for the rest of this Duel. You can only activate 1 "Dominus Spark" per turn.
+THAI:
+ในระหว่างเทิร์นที่ฝ่ายตรงข้ามเปิดใช้งานเอฟเฟกต์มอนสเตอร์ในมือหรือสุสาน คุณสามารถเปิดใช้งานการ์ดใบนี้จากมือของคุณได้ เลือกเป้าหมายมอนสเตอร์ที่ฝ่ายตรงข้ามควบคุม 1 ตัว; นำการ์ดนั้นออกนอกเกม จากนั้นหากคุณไม่มีการ์ดกับดักในสุสาน ฝ่ายตรงข้ามสามารถอัญเชิญแบบพิเศษมอนสเตอร์ 1 ตัวจากมือของพวกเขาได้ หากคุณเปิดใช้งานการ์ดใบนี้จากมือ คุณไม่สามารถเปิดใช้งานเอฟเฟกต์ของมอนสเตอร์ธาตุดิน, น้ำ, ไฟ และลม ได้ตลอดการดูเอลที่เหลือ คุณสามารถเปิดใช้งาน "Dominus Spark" ได้เทิร์นละ 1 ใบเท่านั้น
+============================================================
+
+ID: 10266279 | Name: Power Patron Shadow Spirit Junordo | CDB: release-blzd.cdb
+ENG:
+[ Pendulum Effect ]
+If a "Power Patron" and/or "Elfnote" monster(s) is Special Summoned to your field while this card is in the Pendulum Zone: You can destroy this card, and if you do, draw 2 cards, then discard 1 card. You can only use this effect of "Power Patron Shadow Spirit Junordo" once per turn.
+----------------------------------------
+[ Monster Effect ]
+(This card is always treated as an "Elfnote" card.)
+You can banish (face-down) the top 3 cards of your Deck; destroy this card, and if you do, Special Summon 1 "Junora the Power Patron of Tuning" from your Extra Deck (this is treated as a Synchro Summon). If this card is added to your Extra Deck face-up: You can add 1 "Power Patron" or "Elfnote" card from your face-up Extra Deck or GY to your hand, except "Power Patron Shadow Spirit Junordo". You can only use each effect of "Power Patron Shadow Spirit Junordo" once per turn.
+THAI:
+[ เอฟเฟกต์เพนดูลัม ]
+หากมอนสเตอร์ "Power Patron" และ/หรือ "Elfnote" ถูกอัญเชิญแบบพิเศษมายังสนามของคุณขณะที่การ์ดใบนี้อยู่ในโซนเพนดูลัม: คุณสามารถทำลายการ์ดใบนี้ และหากทำเช่นนั้น จั่วการ์ด 2 ใบ จากนั้นทิ้งการ์ด 1 ใบ คุณสามารถใช้เอฟเฟกต์นี้ของ "Power Patron Shadow Spirit Junordo" ได้เทิร์นละครั้งเท่านั้น
+----------------------------------------
+[ เอฟเฟกต์มอนสเตอร์ ]
+(การ์ดใบนี้จะถูกถือว่าเป็นการ์ด "Elfnote" เสมอ)
+คุณสามารถนำการ์ด 3 ใบแรกจากบนสุดของเด็คออกนอกเกม (ในสภาพคว่ำหน้า); ทำลายการ์ดใบนี้ และหากทำเช่นนั้น อัญเชิญแบบพิเศษ "Junora the Power Patron of Tuning" 1 ตัวจากเอ็กซ์ตร้าเด็คของคุณ (การอัญเชิญนี้จะถือเป็นการอัญเชิญซิงโคร) หากการ์ดใบนี้ถูกนำไปใส่ในเอ็กซ์ตร้าเด็คของคุณในสภาพหงายหน้า: คุณสามารถเพิ่มการ์ด "Power Patron" หรือ "Elfnote" 1 ใบจากเอ็กซ์ตร้าเด็คที่หงายหน้าอยู่หรือจากสุสานของคุณขึ้นมือ ยกเว้น "Power Patron Shadow Spirit Junordo" คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Power Patron Shadow Spirit Junordo" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 17209452 | Name: Kewl Tune Rotary | CDB: release-blzd.cdb
+ENG:
+If this card on the field would be used as Synchro Material, 1 Tuner in your hand can be used as 1 of the other materials. You can only use each of the following effects of "Kewl Tune Rotary" once per turn. You can reveal this card and 1 other Tuner in your hand; immediately after this effect resolves, Normal Summon 1 Tuner. If this card is sent to the GY as Synchro Material: You can activate 1 of these effects;
+● Place 1 card from your opponent's GY on the bottom of the Deck.
+● Look at your opponent's hand, then you can add 1 "Kewl Tune" Spell/Trap from your Deck to your hand.
+THAI:
+หากคุณควบคุมมอนสเตอร์ "Kewl Tune": เลือกเป้าหมายมอนสเตอร์ Tuner 1 ตัวในสุสานของคุณ; อัญเชิญแบบพิเศษมอนสเตอร์นั้น จากนั้นทันทีหลังจากเอฟเฟกต์นี้ทำงานเสร็จสิ้น คุณสามารถอัญเชิญซิงโครมอนสเตอร์ซิงโคร Tuner 1 ตัวได้ หากการ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถนำการ์ดใบนี้ออกนอกเกม จากนั้นเลือกเป้าหมายมอนสเตอร์ซิงโคร Tuner 1 ตัวในสุสานของคุณ; นำมันกลับเข้าเอ็กซ์ตร้าเด็ค และหากทำเช่นนั้น จั่วการ์ด 1 ใบ คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Kewl Tune Rotary" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 18321034 | Name: Hecahands Makibel | CDB: release-blzd.cdb
+ENG:
+If this card battles a monster, neither can be destroyed by that battle. You can only use each of the following effects of "Hecahands Makibel" once per turn. You can reveal this card in your hand; Fusion Summon 1 "Hecahands" Fusion Monster from your Extra Deck, using monsters from your hand or field, including this card in the hand. If an Illusion Fusion Monster(s) is sent to your GY while this card is in your GY: You can add this card to your hand.
+THAI:
+หากการ์ดใบนี้ต่อสู้กับมอนสเตอร์ มอนสเตอร์ทั้งสองตัวจะไม่สามารถถูกทำลายจากการต่อสู้นั้นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Hecahands Makibel" ได้เทิร์นละครั้งเท่านั้น หากมีการ์ดถูกเพิ่มขึ้นมือฝ่ายตรงข้าม (ยกเว้นในช่วง Draw Phase หรือ Damage Step): คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้จากมือของคุณ ในช่วง Main Phase ของฝ่ายตรงข้าม (เอฟเฟกต์ความเร็วสูง): คุณสามารถส่งมอนสเตอร์ที่หงายหน้าอยู่ 1 ตัวที่คุณควบคุมซึ่งมีฝ่ายตรงข้ามเป็นเจ้าของลงสุสาน; อัญเชิญแบบพิเศษมอนสเตอร์ "Hecahands" 1 ตัวจากเด็คหรือสุสานของคุณ ยกเว้น "Hecahands Makibel"
+============================================================
+
+ID: 31411835 | Name: Hecahands Dandalos | CDB: release-blzd.cdb
+ENG:
+2 "Hecahands" monsters
+You can target 1 monster your opponent controls; take control of it. You can only use this effect of "Hecahands Dandalos" once per turn. Your "Hecahands" Fusion Monsters and your monsters that are owned by your opponent can attack directly. If this card battles a monster, neither can be destroyed by that battle.
+THAI:
+หากการ์ดใบนี้ต่อสู้กับมอนสเตอร์ มอนสเตอร์ทั้งสองตัวจะไม่สามารถถูกทำลายจากการต่อสู้นั้นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Hecahands Dandalos" ได้เทิร์นละครั้งเท่านั้น หากมีการ์ดถูกเพิ่มขึ้นมือฝ่ายตรงข้าม (ยกเว้นในช่วง Draw Phase หรือ Damage Step): คุณสามารถอัญเชิญแบบพิเศษการ์ดใบนี้จากมือของคุณ ในช่วง Main Phase ของคุณ: คุณสามารถสังเวยการ์ดใบนี้; ยึดการควบคุมมอนสเตอร์ 1 ตัวที่ฝ่ายตรงข้ามควบคุมจนกระทั่ง End Phase
+============================================================
+
+ID: 39576656 | Name: Kewl Tune Crackle | CDB: release-blzd.cdb
+ENG:
+"Kewl Tune Clip" + 1+ Tuners
+If this card is Synchro Summoned: You can look at your opponent's Extra Deck, and if you do, banish (face-up) 1 card from it (until the End Phase), then you can make this card gain ATK equal to the banished monster's. If this Synchro Summoned card is sent to the GY: You can Special Summon this card, then you can look at your opponent's Extra Deck, and if you do, banish (face-up) 2 cards from it until the End Phase. You can only use each effect of "Kewl Tune Crackle" once per turn.
+THAI:
+หากการ์ดใบนี้บนสนามจะถูกใช้เป็นวัตถุดิบซิงโคร คุณสามารถใช้มอนสเตอร์ Tuner 1 ตัวในมือของคุณเป็นหนึ่งในวัตถุดิบอื่นได้ คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Kewl Tune Crackle" ได้เทิร์นละครั้งเท่านั้น หากการ์ดใบนี้ถูกอัญเชิญแบบปกติหรือแบบพิเศษ: คุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ Tuner เลเวล 4 หรือต่ำกว่า 1 ตัวจากมือหรือสุสานของคุณ ยกเว้น "Kewl Tune Crackle" หากการ์ดใบนี้ถูกส่งลงสุสานในฐานะวัตถุดิบซิงโคร: คุณสามารถจั่วการ์ด 1 ใบ
+============================================================
+
+ID: 43932352 | Name: Bayt'al-Hecahands | CDB: release-blzd.cdb
+ENG:
+You can Tribute 1 monster you control that is a "Hecahands" monster or a monster owned by your opponent; take control of 1 monster your opponent controls. You can only use this effect of "Bayt'al-Hecahands" once per turn. Once per turn, during your End Phase: Send 1 card you control to the GY.
+THAI:
+มอนสเตอร์ที่หงายหน้าอยู่ทั้งหมดบนสนามที่มีฝ่ายตรงข้ามเป็นเจ้าของจะถูกถือว่าเป็นมอนสเตอร์ประเภท Illusion คุณสามารถใช้แต่ละเอฟเฟกต์ต่อไปนี้ของ "Bayt'al-Hecahands" ได้เทิร์นละครั้งเท่านั้น หากคุณควบคุมมอนสเตอร์ "Hecahands": คุณสามารถเลือกเป้าหมายมอนสเตอร์ที่หงายหน้าอยู่ 1 ตัวที่ฝ่ายตรงข้ามควบคุม; เปลี่ยนมอนสเตอร์นั้นเป็นตำแหน่งป้องกันคว่ำหน้า หากการ์ดใบนี้ถูกส่งลงสุสาน: คุณสามารถเลือกเป้าหมายการ์ด "Hecahands" 1 ใบในสุสานของคุณ ยกเว้น "Bayt'al-Hecahands"; เพิ่มการ์ดนั้นขึ้นมือ
+============================================================
+
+ID: 56651978 | Name: Elfnote Regina | CDB: release-blzd.cdb
+ENG:
+(Quick Effect): You can send 1 other "Elfnote" card from your hand or face-up field to the GY; Special Summon this card from your hand. If this card is Normal or Special Summoned to the center Main Monster Zone: You can Special Summon 1 "Elfnote" monster from your Deck, except "Elfnote Regina". If this card is sent to the GY as Synchro Material: You can add this card to your hand. You can only use each effect of "Elfnote Regina" once per turn.
+THAI:
+มอนสเตอร์ Tuner 1 ตัว + มอนสเตอร์ที่ไม่ใช่ Tuner 1 ตัวขึ้นไป
+ในช่วง Main Phase ของคุณ: คุณสามารถสลับตำแหน่งการ์ดใบนี้ในโซนมอนสเตอร์หลักของคุณกับมอนสเตอร์ 1 ตัวในโซนมอนสเตอร์หลักของคุณ (แม้ว่าการ์ดนั้นจะคว่ำหน้าอยู่) หากมอนสเตอร์ในโซนมอนสเตอร์หลักช่องกลางเปิดใช้งานเอฟเฟกต์ (เอฟเฟกต์ความเร็วสูง): คุณสามารถยกเลิกการเปิดใช้งานนั้น และหากทำเช่นนั้น ให้ทำลายมัน คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Elfnote Regina" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 65961304 | Name: Kewl Tune Back 2 Back | CDB: release-blzd.cdb
+ENG:
+1 Tuner + 1+ Synchro Monsters
+The Levels of monsters your opponent controls are increased by 2. Your Tuners can make a second attack during each Battle Phase. When your opponent activates a monster effect (Quick Effect): You can target 1 Tuner in your GY or banishment, except a Level 10 monster; either add it to your hand or Special Summon it, then immediately after this effect resolves, you can Synchro Summon 1 Synchro Monster. You can only use this effect of "Kewl Tune Back 2 Back" twice per turn.
+THAI:
+เลือกเป้าหมายมอนสเตอร์ Tuner 1 ตัวและมอนสเตอร์ที่ไม่ใช่ Tuner 1 ตัวในสุสานของคุณ; อัญเชิญแบบพิเศษมอนสเตอร์ทั้งสองตัว แต่เอฟเฟกต์ของพวกมันจะถูกยกเลิก และทันทีหลังจากเอฟเฟกต์นี้ทำงานเสร็จสิ้น ให้อัญเชิญซิงโครมอนสเตอร์ซิงโคร 1 ตัวโดยใช้เพียงแค่มอนสเตอร์สองตัวนั้นเป็นวัตถุดิบ คุณสามารถเปิดใช้งาน "Kewl Tune Back 2 Back" ได้เทิร์นละ 1 ใบเท่านั้น
+============================================================
+
+ID: 70088809 | Name: Fidraulis Harmonia | CDB: release-blzd.cdb
+ENG:
+When your opponent activates a monster effect on the field (Quick Effect): You can reveal this card in your hand and up to 5 Synchro Monsters in your Extra Deck; apply these effects in sequence based on the total number revealed, also you cannot activate the effects of monsters Special Summoned from the Extra Deck until the end of your next turn, except Synchro Monsters.
+● 2+: Special Summon this card.
+● 4+: Send 1 of the revealed Synchro Monsters to the GY.
+● 6: Destroy 1 monster your opponent controls.
+You can only use this effect of "Fidraulis Harmonia" once per turn.
+THAI:
+หากการ์ดใบนี้อยู่ในมือของคุณ: คุณสามารถเลือกเป้าหมายมอนสเตอร์ที่หงายหน้าอยู่ 1 ตัวที่คุณควบคุม; ทำลายมัน และหากทำเช่นนั้น อัญเชิญแบบพิเศษการ์ดใบนี้ จากนั้นทันทีหลังจากเอฟเฟกต์นี้ทำงานเสร็จสิ้น คุณสามารถอัญเชิญซิงโครมอนสเตอร์ซิงโคร "Elfnote" 1 ตัวโดยใช้การ์ดใบนี้ที่คุณควบคุมเป็นวัตถุดิบได้ หากการ์ดใบนี้อยู่ในสุสานของคุณ: คุณสามารถเลือกเป้าหมายการ์ด "Elfnote" 1 ใบที่คุณควบคุม; ทำลายมัน และหากทำเช่นนั้น อัญเชิญแบบพิเศษการ์ดใบนี้ แต่ให้นำการ์ดใบนี้ออกนอกเกมเมื่อมันออกจากสนาม คุณสามารถใช้แต่ละเอฟเฟกต์ของ "Fidraulis Harmonia" ได้เทิร์นละครั้งเท่านั้น
+============================================================
+
+ID: 78114463 | Name: Solemn Report | CDB: release-blzd.cdb
+ENG:
+You can activate this card the turn it was Set, by revealing 1 other Set Trap you control. When a Spell/Trap Card is activated: Activate 1 of these effects;
+● Pay 1500 LP; negate the activation, and if you do, destroy that card, and if you do that, for the rest of this turn, neither player can activate cards, or the effects of cards, with its same original name.
+● Pay 3000 LP; negate the activation, and if you do, banish that card, then your opponent banishes all cards with its same original name from their hand and Deck.
+THAI:
+เมื่อมอนสเตอร์กำลังจะถูกอัญเชิญแบบพิเศษ หรือเมื่อเอฟเฟกต์มอนสเตอร์ถูกเปิดใช้งาน: นำมอนสเตอร์ 1 ตัวจากสุสานของคุณออกนอกเกม; ยกเลิกการอัญเชิญหรือการเปิดใช้งานนั้น และหากทำเช่นนั้น ให้ทำลายมัน จากนั้นคุณสามารถอัญเชิญแบบพิเศษมอนสเตอร์ "Elfnote" 1 ตัวจากสุสานของคุณได้ คุณสามารถเปิดใช้งาน "Solemn Report" ได้เทิร์นละ 1 ใบเท่านั้น
+============================================================
