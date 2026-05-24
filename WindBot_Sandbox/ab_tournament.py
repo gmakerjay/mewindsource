@@ -292,7 +292,7 @@ public class Deck_{args.deck}VerBExecutor : UnifiedIgnisExecutor
         played = wins_a + wins_b
         win_rate_a = (wins_a / played * 100) if played > 0 else 0
         win_rate_b = (wins_b / played * 100) if played > 0 else 0
-        avg_turns = total_turns / max(played + ties, 1)
+        avg_turns = total_turns / max(played, 1)
         avg_lp_diff = sum(lp_diffs) / len(lp_diffs) if lp_diffs else 0
         
         print("\n" + "="*60)

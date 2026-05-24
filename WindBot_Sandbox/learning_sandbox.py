@@ -174,7 +174,7 @@ def apply_learning(registry, all_match_analyses):
                 if outcome in WIN_OUTCOMES and decision and score > 150:
                     delta = 1 if outcome == "Win" else 0
                     old_p = card.get("priority", 5)
-                    new_p = min(10, old_p + delta)
+                    new_p = min(8, old_p + delta)
                     if new_p != old_p:
                         card["priority"] = new_p
                         changes.append(f"  [{dir_name}] Card {card_id} ({d.get('card_name', '?')}): priority {old_p} -> {new_p} ({outcome} + high score {score:.0f})")
@@ -187,7 +187,7 @@ def apply_learning(registry, all_match_analyses):
                         card["priority"] = new_p
                         changes.append(f"  [{dir_name}] Card {card_id} ({d.get('card_name', '?')}): priority {old_p} -> {new_p} ({outcome} despite high score {score:.0f})")
                 
-                if outcome in DRAW_OUTCOMES and decision and score > 100 and card.get("priority", 5) >= 9:
+                if outcome in DRAW_OUTCOMES and decision and score > 100 and card.get("priority", 5) >= 8:
                     old_p = card.get("priority", 5)
                     new_p = max(6, old_p - 1)
                     if new_p != old_p:

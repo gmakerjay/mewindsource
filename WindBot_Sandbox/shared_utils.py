@@ -179,6 +179,11 @@ def save_registry_list(data, path):
     if isinstance(data, dict):
         data = list(data.values())
 
+    # Enforce Hard Cap of 8 (Iron Rule #5) on priority for all cards before saving
+    for card in data:
+        if "priority" in card and card["priority"] > 8:
+            card["priority"] = 8
+
     dir_name = os.path.dirname(path)
     if dir_name and not os.path.exists(dir_name):
         os.makedirs(dir_name)

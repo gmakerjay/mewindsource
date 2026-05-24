@@ -127,7 +127,10 @@ def main():
             old_val = card.get(param_to_mutate, 5)
             
             delta = random.choice([-1, 1])
-            new_val = max(1, min(10, old_val + delta))
+            if param_to_mutate == "priority":
+                new_val = max(1, min(8, old_val + delta))
+            else:
+                new_val = max(1, min(10, old_val + delta))
             
             if new_val == old_val:
                 continue

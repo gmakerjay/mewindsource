@@ -758,6 +758,26 @@ namespace ProjectIgnisAI
                     }
                 }
             }
+            // Check Banished danger (revealed/face-up cards only)
+            foreach (var b in Duel.Fields[1].Banished)
+            {
+                if (b != null && b.Id > 0)
+                {
+                    double danger = CalculateCardDanger(b);
+                    if (_cardRegistry.ContainsKey(b.Id))
+                    {
+                        var meta = _cardRegistry[b.Id];
+                        if (meta.roles.Contains("recovery") || meta.roles.Contains("starter") || meta.roles.Contains("extender") || meta.roles.Contains("payoff"))
+                        {
+                            total += danger * 0.4;
+                        }
+                    }
+                    else if (GetStapleBaselineDanger(b.Id) > 0)
+                    {
+                        total += danger * 0.2;
+                    }
+                }
+            }
             return total;
         }
 
