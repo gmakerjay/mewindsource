@@ -192,6 +192,11 @@ def main():
             q_values[goal] = round(new_q, 4)
             update_count += 1
 
+    # Ensure all priorities are capped at 8 (Iron Rule #5)
+    for card in reg_dict.values():
+        if "priority" in card and card["priority"] > 8:
+            card["priority"] = 8
+
     # Save registry
     save_registry_list(reg_dict, reg_path)
 

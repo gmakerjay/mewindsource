@@ -65,7 +65,7 @@
       "handtrap",
       "interruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 1,
     "bait_value": 1,
     "followup_value": 2,
@@ -80,7 +80,7 @@
       "payoff",
       "interruption"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 8,
     "bait_value": 2,
     "followup_value": 8,
@@ -95,7 +95,7 @@
       "starter",
       "searcher"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 4,
     "followup_value": 6,
@@ -154,7 +154,7 @@
       "payoff",
       "disruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 8,
     "bait_value": 2,
     "followup_value": 7,
@@ -169,7 +169,7 @@
       "payoff",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 7,
     "bait_value": 2,
     "followup_value": 8,
@@ -184,7 +184,7 @@
       "starter",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 8,
     "bait_value": 4,
     "followup_value": 8,
@@ -199,7 +199,7 @@
       "starter",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 2,
     "followup_value": 8,
@@ -214,7 +214,7 @@
       "payoff",
       "interruption"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 7,
     "bait_value": 2,
     "followup_value": 7,
@@ -229,7 +229,7 @@
       "starter",
       "interruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 3,
     "followup_value": 6,
@@ -259,7 +259,7 @@
       "starter",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 2,
     "followup_value": 7,
@@ -289,7 +289,7 @@
       "extender",
       "tuner"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 4,
     "followup_value": 6,
@@ -304,7 +304,7 @@
       "handtrap",
       "interruption"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 3,
     "bait_value": 1,
     "followup_value": 5,
@@ -334,7 +334,7 @@
       "starter",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 3,
     "followup_value": 6,
@@ -379,7 +379,7 @@
       "handtrap",
       "interruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 1,
     "bait_value": 1,
     "followup_value": 5,
@@ -413,7 +413,7 @@
       "handtrap",
       "interruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 1,
     "bait_value": 1,
     "followup_value": 5,
@@ -478,7 +478,7 @@
       "combo_piece",
       "interruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 1,
     "bait_value": 1,
     "followup_value": 5,
@@ -527,7 +527,7 @@
       "starter",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 7,
     "bait_value": 3,
     "followup_value": 5,
@@ -587,7 +587,7 @@
       "starter",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 7,
     "bait_value": 3,
     "followup_value": 5,
@@ -617,7 +617,7 @@
       "starter",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 4,
     "followup_value": 5,
@@ -632,7 +632,7 @@
       "starter",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 8,
     "bait_value": 3,
     "followup_value": 5,
@@ -722,7 +722,7 @@
       "starter",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 4,
     "followup_value": 6,
@@ -849,7 +849,7 @@
       "payoff",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 2,
     "followup_value": 5,
@@ -878,7 +878,7 @@
       "payoff",
       "interruption"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 7,
     "bait_value": 2,
     "followup_value": 5,
@@ -907,7 +907,7 @@
       "payoff",
       "interruption"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 7,
     "bait_value": 2,
     "followup_value": 5,
@@ -922,7 +922,7 @@
       "payoff",
       "interruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 2,
     "followup_value": 5,
@@ -965,7 +965,7 @@
       "payoff",
       "removal"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 8,
     "bait_value": 2,
     "followup_value": 5,
@@ -993,7 +993,7 @@
     "roles": [
       "payoff"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 2,
     "followup_value": 5,
@@ -1008,7 +1008,7 @@
       "payoff",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 2,
     "followup_value": 5,
@@ -1023,7 +1023,7 @@
       "payoff",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 2,
     "followup_value": 5,
@@ -1081,7 +1081,7 @@
       "payoff",
       "interruption"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 7,
     "bait_value": 2,
     "followup_value": 5,
@@ -1096,7 +1096,7 @@
       "payoff",
       "interruption"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 7,
     "bait_value": 2,
     "followup_value": 5,
@@ -1111,7 +1111,7 @@
       "payoff",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 2,
     "followup_value": 5,
@@ -1126,7 +1126,7 @@
       "payoff",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 2,
     "followup_value": 5,
@@ -1141,7 +1141,7 @@
       "starter",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 7,
     "bait_value": 4,
     "followup_value": 8,
@@ -1156,7 +1156,7 @@
       "searcher",
       "starter"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 4,
     "followup_value": 7,
@@ -1213,7 +1213,7 @@
     "roles": [
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 3,
     "followup_value": 7,
@@ -1227,7 +1227,7 @@
     "roles": [
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 3,
     "followup_value": 8,
@@ -1256,7 +1256,7 @@
       "payoff",
       "disruption"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 1,
     "followup_value": 8,
@@ -1284,7 +1284,7 @@
     "roles": [
       "starter"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 8,
     "bait_value": 5,
     "followup_value": 8,
@@ -1298,7 +1298,7 @@
     "roles": [
       "starter"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 8,
     "bait_value": 5,
     "followup_value": 8,
@@ -1341,7 +1341,7 @@
       "searcher",
       "starter"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 5,
     "followup_value": 7,
@@ -1356,7 +1356,7 @@
       "extender",
       "disruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 3,
     "followup_value": 8,
@@ -1371,7 +1371,7 @@
       "extender",
       "removal"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 3,
     "followup_value": 8,
@@ -1387,7 +1387,7 @@
       "disruption",
       "removal"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 1,
     "followup_value": 9,
@@ -1432,7 +1432,7 @@
       "starter",
       "interruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 4,
     "followup_value": 7,
@@ -1448,7 +1448,7 @@
       "searcher",
       "interruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 8,
     "bait_value": 5,
     "followup_value": 8,
@@ -1497,7 +1497,7 @@
       "extender",
       "combo_piece"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 4,
     "bait_value": 4,
     "followup_value": 8,
@@ -1512,7 +1512,7 @@
       "payoff",
       "handtrap"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 2,
     "followup_value": 7,
@@ -1540,7 +1540,7 @@
     "roles": [
       "payoff"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 1,
     "followup_value": 6,
@@ -1555,7 +1555,7 @@
       "payoff",
       "removal"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 1,
     "followup_value": 8,
@@ -1835,7 +1835,7 @@
       "disruption",
       "floodgate"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 3,
     "followup_value": 7,
@@ -1864,7 +1864,7 @@
       "starter",
       "removal"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 7,
     "bait_value": 5,
     "followup_value": 7,
@@ -1937,7 +1937,7 @@
       "combo_piece",
       "removal"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 4,
     "bait_value": 1,
     "followup_value": 4,
@@ -1969,7 +1969,7 @@
     "roles": [
       "removal"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 4,
     "followup_value": 4,
@@ -1985,7 +1985,7 @@
       "searcher",
       "removal"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 4,
     "bait_value": 4,
     "followup_value": 7,
@@ -1999,7 +1999,7 @@
     "roles": [
       "searcher"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 3,
     "followup_value": 7,
@@ -2046,7 +2046,7 @@
       "removal",
       "extender"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 4,
     "followup_value": 6,
@@ -2061,7 +2061,7 @@
       "removal",
       "extender"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 2,
     "bait_value": 2,
     "followup_value": 6,
@@ -2075,7 +2075,7 @@
     "roles": [
       "searcher"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 5,
     "followup_value": 6,
@@ -2090,7 +2090,7 @@
       "disruption",
       "removal"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 3,
     "bait_value": 2,
     "followup_value": 5,
@@ -2104,7 +2104,7 @@
     "roles": [
       "searcher"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 5,
     "followup_value": 5,
@@ -2118,7 +2118,7 @@
     "roles": [
       "interruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 4,
     "bait_value": 2,
     "followup_value": 6,
@@ -2146,7 +2146,7 @@
     "roles": [
       "interruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 3,
     "bait_value": 1,
     "followup_value": 5,
@@ -2160,7 +2160,7 @@
     "roles": [
       "removal"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 4,
     "bait_value": 2,
     "followup_value": 5,
@@ -2203,7 +2203,7 @@
       "payoff",
       "removal"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 4,
     "bait_value": 1,
     "followup_value": 6,
@@ -2232,7 +2232,7 @@
       "payoff",
       "removal"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 1,
     "followup_value": 7,
@@ -2303,7 +2303,7 @@
       "payoff",
       "interruption"
     ],
-    "priority": 10,
+    "priority": 8,
     "risk_if_negated": 6,
     "bait_value": 1,
     "followup_value": 8,
@@ -2318,7 +2318,7 @@
       "payoff",
       "interruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 1,
     "followup_value": 7,
@@ -2332,7 +2332,7 @@
     "roles": [
       "payoff"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 5,
     "bait_value": 1,
     "followup_value": 7,
@@ -2361,7 +2361,7 @@
       "handtrap",
       "disruption"
     ],
-    "priority": 9,
+    "priority": 8,
     "risk_if_negated": 3,
     "bait_value": 1,
     "followup_value": 5,
