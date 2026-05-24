@@ -1037,15 +1037,8 @@ namespace ProjectIgnisAI
                 {
                     if (meta.roles.Contains("disruption") || meta.roles.Contains("interruption"))
                     {
-                        if (lastChainCard != null && lastChainCard.Controller == 1)
-                        {
-                            // Allow reacting to opponent's activations (e.g. chaining Ash to negate Maxx "C")
-                        }
-                        else
-                        {
-                            LogToTurn(string.Format("Block disruptive handtrap {0} on our own turn.", GetCardName(card.Id)));
-                            return false;
-                        }
+                        LogToTurn(string.Format("Block disruptive handtrap {0} on our own turn.", GetCardName(card.Id)));
+                        return false;
                     }
                 }
 
@@ -1088,9 +1081,14 @@ namespace ProjectIgnisAI
                     }
                 }
 
-                // 5. Infinite Impermanence (ID: 10045474) - If starting a chain, require target
+                // 5. Infinite Impermanence (ID: 10045474) - If on our turn, never activate; if starting a chain, require target
                 if (card.Id == 10045474)
                 {
+                    if (Duel.Player == 0)
+                    {
+                        LogToTurn("Block Infinite Impermanence on our own turn.");
+                        return false;
+                    }
                     if (lastChainCard == null && GetOpponentFaceUpMonsterCount() == 0)
                     {
                         LogToTurn("Block Infinite Impermanence: No face-up monsters on opponent's field to target.");
