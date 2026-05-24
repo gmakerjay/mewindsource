@@ -40,6 +40,14 @@ namespace ProjectIgnisAI
             public ArrayList goals { get; set; }
             public ArrayList choke_points { get; set; }
             public ArrayList weaknesses { get; set; }
+
+            public DeckIdentity()
+            {
+                playstyle = "control";
+                goals = new ArrayList();
+                choke_points = new ArrayList();
+                weaknesses = new ArrayList();
+            }
         }
 
         private Dictionary<int, CardMetadata> _cardRegistry = new Dictionary<int, CardMetadata>();
@@ -47,6 +55,7 @@ namespace ProjectIgnisAI
         private Dictionary<int, string> _cardNames = new Dictionary<int, string>();
         private DeckIdentity _deckConfig = new DeckIdentity();
         private string _resolvedDeckName = "";
+        private string _resolvedBaseDir = "";
         private string _currentGoal = "establish_interruptions";
         private string _currentPlan = "PlanA";
         private List<string> _blockedPlans = new List<string>();
@@ -59,7 +68,6 @@ namespace ProjectIgnisAI
         // Logging State Fields
         private string _matchLogDir = "";
         private string _generalLogPath = "";
-        private string _currentTurnLogPath = "";
         private string _decisionsLogPath = "";
         private int _turnCount = 0;
         
@@ -75,7 +83,7 @@ namespace ProjectIgnisAI
                 int totalAtk = 0;
                 foreach (var card in Bot.GetMonsters())
                 {
-                    if (card != null && card.IsFaceup() && card.IsAttack() && !card.IsDisabled() && !card.Attacked)
+                    if (card != null && card.IsFaceup() && card.IsAttack() && !card.Attacked)
                     {
                         totalAtk += card.Attack;
                     }
@@ -109,7 +117,7 @@ namespace ProjectIgnisAI
             LoadConfiguration();
 
             // Set up Folder Logging
-            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string baseDir = !string.IsNullOrEmpty(_resolvedBaseDir) ? _resolvedBaseDir : AppDomain.CurrentDomain.BaseDirectory;
             string timeStamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
             string matchId = Guid.NewGuid().ToString().Substring(0, 8);
             _matchLogDir = Path.Combine(baseDir, "Logs", _resolvedDeckName + "_" + timeStamp + "_" + matchId);
@@ -179,13 +187,10 @@ namespace ProjectIgnisAI
         private void LogToTurn(string message)
         {
             if (string.IsNullOrEmpty(_matchLogDir)) return;
-            if (string.IsNullOrEmpty(_currentTurnLogPath))
-            {
-                _currentTurnLogPath = Path.Combine(_matchLogDir, "turn_" + _turnCount + ".log");
-            }
+            string turnLogPath = Path.Combine(_matchLogDir, "turn_" + _turnCount + ".log");
             try
             {
-                File.AppendAllText(_currentTurnLogPath, "[" + DateTime.Now.ToString("HH:mm:ss") + "] " + message + Environment.NewLine);
+                File.AppendAllText(turnLogPath, "[" + DateTime.Now.ToString("HH:mm:ss") + "] " + message + Environment.NewLine);
             }
             catch (Exception ex)
             {
@@ -203,11 +208,19 @@ namespace ProjectIgnisAI
                 if (_loggedDecisionKeys.Contains(dedupKey)) return;
                 _loggedDecisionKeys.Add(dedupKey);
                 
+                int lpSelf = 8000;
+                int lpOpp = 8000;
+                if (Duel != null && Duel.Fields != null && Duel.Fields.Length >= 2)
+                {
+                    if (Duel.Fields[0] != null) lpSelf = Duel.Fields[0].LifePoints;
+                    if (Duel.Fields[1] != null) lpOpp = Duel.Fields[1].LifePoints;
+                }
+
                 string json = string.Format(
                     "{{\"turn\":{0},\"card_id\":{1},\"card_name\":\"{2}\",\"action\":\"{3}\",\"goal\":\"{4}\",\"score\":{5:F1},\"decision\":{6},\"plan\":\"{7}\",\"lp_self\":{8},\"lp_opp\":{9}}}",
                     _turnCount, cardId, GetCardName(cardId).Replace("\"", "'"), action, goal, score,
                     decision ? "true" : "false", plan,
-                    Duel.Fields[0].LifePoints, Duel.Fields[1].LifePoints);
+                    lpSelf, lpOpp);
                 File.AppendAllText(_decisionsLogPath, json + Environment.NewLine);
             }
             catch (Exception ex)
@@ -297,14 +310,17 @@ namespace ProjectIgnisAI
                     var rawList = serializer.Deserialize<List<Dictionary<string, object>>>(json);
                     foreach (var item in rawList)
                     {
+                        if (item == null || !item.ContainsKey("id") || item["id"] == null)
+                            continue;
+
                         var card = new CardMetadata
                         {
-                            id = (int)item["id"],
-                            priority = (int)item["priority"],
-                            risk_if_negated = (int)item["risk_if_negated"],
-                            bait_value = (int)item["bait_value"],
-                            followup_value = (int)item["followup_value"],
-                            recovery_value = (int)item["recovery_value"]
+                            id = Convert.ToInt32(item["id"]),
+                            priority = GetIntOrDefault(item, "priority", 5),
+                            risk_if_negated = GetIntOrDefault(item, "risk_if_negated", 0),
+                            bait_value = GetIntOrDefault(item, "bait_value", 0),
+                            followup_value = GetIntOrDefault(item, "followup_value", 0),
+                            recovery_value = GetIntOrDefault(item, "recovery_value", 0)
                         };
                         
                         card.q_values = new Dictionary<string, object>();
@@ -382,7 +398,14 @@ namespace ProjectIgnisAI
                     var serializer = new JavaScriptSerializer();
                     var rawDict = serializer.Deserialize<Dictionary<string, object>>(json);
                     
-                    _deckConfig.playstyle = rawDict["playstyle"].ToString();
+                    if (rawDict.ContainsKey("playstyle") && rawDict["playstyle"] != null)
+                    {
+                        _deckConfig.playstyle = rawDict["playstyle"].ToString();
+                    }
+                    else
+                    {
+                        _deckConfig.playstyle = "control";
+                    }
                     
                     _deckConfig.goals = new ArrayList();
                     if (rawDict.ContainsKey("goals") && rawDict["goals"] is IEnumerable && !(rawDict["goals"] is string))
@@ -443,6 +466,7 @@ namespace ProjectIgnisAI
                     }
                     Log("Successfully loaded " + _opponentMemory.Count + " opponent memory profiles.");
                 }
+                _resolvedBaseDir = baseDir; // Store resolved baseDir! (comment updated)
             }
             catch (Exception ex)
             {
@@ -454,32 +478,10 @@ namespace ProjectIgnisAI
         {
             try
             {
-                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                string baseDir = !string.IsNullOrEmpty(_resolvedBaseDir) ? _resolvedBaseDir : AppDomain.CurrentDomain.BaseDirectory;
                 string deckRegistryName = "cards_registry_" + _resolvedDeckName + ".json";
                 string registryPath = Path.Combine(baseDir, "config", deckRegistryName);
                 string oppMemoryPath = Path.Combine(baseDir, "config", "opponent_memory.json");
-                
-                if (!File.Exists(registryPath))
-                {
-                    string assemblyDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                    string parentDir = Path.GetDirectoryName(assemblyDir);
-                    string deckRegistryPathAssembly = Path.Combine(parentDir, "config", deckRegistryName);
-                    if (File.Exists(deckRegistryPathAssembly))
-                    {
-                        baseDir = parentDir;
-                        registryPath = deckRegistryPathAssembly;
-                        oppMemoryPath = Path.Combine(parentDir, "config", "opponent_memory.json");
-                    }
-                    else
-                    {
-                        if (File.Exists(Path.Combine(parentDir, "config", "cards_registry.json")))
-                        {
-                            baseDir = parentDir;
-                        }
-                        registryPath = Path.Combine(baseDir, "config", deckRegistryName);
-                        oppMemoryPath = Path.Combine(baseDir, "config", "opponent_memory.json");
-                    }
-                }
 
                 var serializer = new JavaScriptSerializer();
 
@@ -567,7 +569,7 @@ namespace ProjectIgnisAI
                 string outcome = "Unknown";
                 if (botLP == 0 && oppLP > 0) outcome = "Loss";
                 else if (oppLP == 0 && botLP > 0) outcome = "Win";
-                else if (_turnCount >= 3 && _ourCardsPlayed.Count > 0)
+                else if (_ourCardsPlayed.Count > 0)
                 {
                     // Match likely timed out or disconnected — apply partial learning
                     // based on LP difference as a proxy for performance
@@ -607,42 +609,39 @@ namespace ProjectIgnisAI
                         }
                         else if (outcome == "Loss" || outcome == "WeakLoss")
                         {
-                            int delta = (outcome == "Loss") ? 1 : 0;
-                            if (meta.priority > 1 && (outcome == "WeakLoss" && meta.priority > 3)) delta = 1;
+                            int delta = 0;
+                            if (outcome == "Loss" && meta.priority > 1) delta = 1;
+                            else if (outcome == "WeakLoss" && meta.priority > 2) delta = 1;
                             meta.priority = Math.Max(1, meta.priority - delta);
                             if (_disruptionsInMatch.ContainsKey(cardId) && _disruptionsInMatch[cardId].Count > 0)
                             {
                                 meta.risk_if_negated = Math.Min(10, meta.risk_if_negated + 1);
-                                foreach (var otherId in _cardRegistry.Keys)
-                                {
-                                    if (otherId != cardId)
-                                    {
-                                        var otherMeta = _cardRegistry[otherId];
-                                        if (!otherMeta.roles.Contains("starter") && !otherMeta.roles.Contains("payoff"))
-                                        {
-                                            if (otherMeta.bait_value > 0 && otherMeta.bait_value < 6)
-                                            {
-                                                otherMeta.bait_value++;
-                                            }
-                                        }
-                                    }
-                                }
                             }
                         }
-                        else if (outcome == "Draw")
-                        {
-                            // Draw: mild decay on high-priority cards not played, no boost
-                            // Anti-inflation: threshold at 8 to align with hard cap (was 9)
-                            if (meta.priority >= 8)
-                            {
-                                meta.priority = Math.Max(6, meta.priority - 1);
-                            }
-                        }
+
 
                         if (meta.priority != oldPriority || meta.risk_if_negated != oldRisk || meta.followup_value != oldFollowup || meta.bait_value != oldBait)
                         {
                             LogToMatch(string.Format("  Card {0} ({1}) adjusted: priority {2}->{3}, risk {4}->{5}, followup {6}->{7}, bait {8}->{9}",
                                 cardId, GetCardName(cardId), oldPriority, meta.priority, oldRisk, meta.risk_if_negated, oldFollowup, meta.followup_value, oldBait, meta.bait_value));
+                        }
+                    }
+                }
+
+                // Adjust bait values for non-disrupted cards to encourage baiting (run ONCE per match for Loss/WeakLoss)
+                if ((outcome == "Loss" || outcome == "WeakLoss") && _disruptionsInMatch.Count > 0)
+                {
+                    foreach (var otherId in _cardRegistry.Keys)
+                    {
+                        var otherMeta = _cardRegistry[otherId];
+                        if (!_ourCardsPlayed.Contains(otherId) && !otherMeta.roles.Contains("starter") && !otherMeta.roles.Contains("payoff"))
+                        {
+                            if (otherMeta.bait_value > 0 && otherMeta.bait_value < 6)
+                            {
+                                otherMeta.bait_value++;
+                                LogToMatch(string.Format("  Bait Value Inflation: Card {0} ({1}) bait_value increased to {2}",
+                                    otherId, GetCardName(otherId), otherMeta.bait_value));
+                            }
                         }
                     }
                 }
@@ -680,7 +679,7 @@ namespace ProjectIgnisAI
                 {
                     int ourCardId = kvp.Key;
                     List<int> oppCardIds = kvp.Value;
-                    bool isOurChokePoint = _deckConfig.choke_points.Contains(ourCardId);
+                    bool isOurChokePoint = _deckConfig.choke_points != null && _deckConfig.choke_points.Contains(ourCardId);
                     
                     foreach (int oppId in oppCardIds)
                     {
@@ -975,10 +974,27 @@ namespace ProjectIgnisAI
             return danger;
         }
 
+        private int GetIntOrDefault(Dictionary<string, object> dict, string key, int defaultValue)
+        {
+            object value;
+            if (dict != null && dict.TryGetValue(key, out value) && value != null)
+            {
+                try
+                {
+                    return Convert.ToInt32(value);
+                }
+                catch
+                {
+                    return defaultValue;
+                }
+            }
+            return defaultValue;
+        }
+
         private bool IsFaceUp(ClientCard card)
         {
             if (card == null) return false;
-            return card.Position == (int)CardPosition.FaceUpAttack || card.Position == (int)CardPosition.FaceUpDefence;
+            return card.IsFaceup();
         }
 
         private bool IsLightOrDark(ClientCard card)
@@ -1034,6 +1050,19 @@ namespace ProjectIgnisAI
             return count;
         }
 
+        private int GetBotGraveLightDarkCount()
+        {
+            int count = 0;
+            foreach (var botCard in Duel.Fields[0].Graveyard)
+            {
+                if (botCard != null && botCard.IsMonster() && IsLightOrDark(botCard))
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
         private bool EvaluateCardAction(ClientCard card, CardMetadata meta, ExecutorType type)
         {
             // Block summoning handtraps or low-ATK walls in Attack position
@@ -1056,10 +1085,10 @@ namespace ProjectIgnisAI
             {
                 ClientCard lastChainCard = Util.GetLastChainCard();
 
-                // General Rule: Never chain an interruption / handtrap / negate to our own card activation
+                // General Rule: Never chain an interruption / handtrap / negate / removal to our own card activation
                 if (lastChainCard != null && lastChainCard.Controller == 0)
                 {
-                    if (meta.roles.Contains("interruption") || meta.roles.Contains("handtrap") || meta.roles.Contains("disruption"))
+                    if (meta.roles.Contains("interruption") || meta.roles.Contains("handtrap") || meta.roles.Contains("disruption") || meta.roles.Contains("negate") || meta.roles.Contains("removal"))
                     {
                         LogToTurn(string.Format("Block chaining self-hurt: {0} (ID: {1}) responding to our own card: {2} (ID: {3})",
                             GetCardName(card.Id), card.Id, GetCardName(lastChainCard.Id), lastChainCard.Id));
@@ -1087,42 +1116,42 @@ namespace ProjectIgnisAI
                     return false;
                 }
 
-                // 2. Effect Veiler (ID: 97268402) - Only activate on opponent's turn and during opponent's Main Phase
+                // 2. Effect Veiler (ID: 97268402) - Only activate on opponent's turn and during opponent's Main Phase, and opponent controls face-up monster
                 if (card.Id == 97268402)
                 {
-                    if (Duel.Player == 0 || (Duel.Phase != DuelPhase.Main1 && Duel.Phase != DuelPhase.Main2))
+                    if (Duel.Player == 0 || (Duel.Phase != DuelPhase.Main1 && Duel.Phase != DuelPhase.Main2) || GetOpponentFaceUpMonsterCount() == 0)
                     {
-                        LogToTurn("Block activating Effect Veiler (must be opponent's Main Phase only).");
+                        LogToTurn("Block activating Effect Veiler (must be opponent's Main Phase with face-up opponent monster).");
                         return false;
                     }
                 }
 
-                // 3. Called by the Grave (ID: 24224830) - Only activate if starting a chain and there is a target in the opponent's GY
+                // 3. Called by the Grave (ID: 24224830) - Only activate if there is a target in the opponent's GY
                 if (card.Id == 24224830)
                 {
-                    if (lastChainCard == null && GetOpponentGraveMonsterCount() == 0)
+                    if (GetOpponentGraveMonsterCount() == 0)
                     {
                         LogToTurn("Block Called by the Grave: No monsters in opponent's GY to target.");
                         return false;
                     }
                 }
 
-                // 4. Bystials: Druiswurm (ID: 6637331) & Magnamhut (ID: 33854624) - Only activate if opponent has LIGHT/DARK monster in GY
+                // 4. Bystials: Druiswurm (ID: 6637331) & Magnamhut (ID: 33854624) - Only activate if opponent or bot has LIGHT/DARK monster in GY
                 if (card.Id == 6637331 || card.Id == 33854624)
                 {
-                    if (GetOpponentGraveLightDarkCount() == 0)
+                    if (GetOpponentGraveLightDarkCount() + GetBotGraveLightDarkCount() == 0)
                     {
-                        LogToTurn(string.Format("Block Bystial {0}: No LIGHT/DARK monsters in opponent's GY to banish.", GetCardName(card.Id)));
+                        LogToTurn(string.Format("Block Bystial {0}: No LIGHT/DARK monsters in either GY to banish.", GetCardName(card.Id)));
                         return false;
                     }
                 }
 
-                // 5. Infinite Impermanence (ID: 10045474) - allow set from hand in our turn (going second), require target if chaining
+                // 5. Infinite Impermanence (ID: 10045474) - require target
                 if (card.Id == 10045474)
                 {
-                    if (lastChainCard == null && Duel.Player == 0 && GetOpponentFaceUpMonsterCount() == 0)
+                    if (GetOpponentFaceUpMonsterCount() == 0)
                     {
-                        LogToTurn("Block Infinite Impermanence activation from hand: No face-up monsters on opponent's field to target.");
+                        LogToTurn("Block Infinite Impermanence activation: No face-up monsters on opponent's field to target.");
                         return false;
                     }
                 }
@@ -1134,9 +1163,9 @@ namespace ProjectIgnisAI
                     return false;
                 }
 
-                // 7. Nibiru, the Primal Being (ID: 10000010) — Only activate if opponent summoned 5+ monsters this turn
+                // 7. Nibiru, the Primal Being (ID: 27204311) — Only activate if opponent summoned 5+ monsters this turn
                 // The game engine guarantees the 5+ summon condition is met before offering activation.
-                if (card.Id == 10000010)
+                if (card.Id == 27204311)
                 {
                     if (Duel.Player == 0)
                     {
@@ -1145,8 +1174,8 @@ namespace ProjectIgnisAI
                     }
                 }
 
-                // 8. PSY-Framegear Gamma (ID: 53334641) — Only activate if we control no monsters
-                if (card.Id == 53334641)
+                // 8. PSY-Framegear Gamma (ID: 38814750) — Only activate if we control no monsters and responding to opponent monster effect
+                if (card.Id == 38814750)
                 {
                     int ourMonCount = GetZoneCount(Duel.Fields[0].MonsterZone);
                     if (ourMonCount > 0)
@@ -1154,9 +1183,9 @@ namespace ProjectIgnisAI
                         LogToTurn("Block PSY-Framegear Gamma: We control a monster.");
                         return false;
                     }
-                    if (lastChainCard == null)
+                    if (lastChainCard == null || lastChainCard.Controller != 1 || !lastChainCard.IsMonster())
                     {
-                        LogToTurn("Block PSY-Framegear Gamma: No target to chain to.");
+                        LogToTurn("Block PSY-Framegear Gamma: Last chain card is null, not controlled by opponent, or not a monster.");
                         return false;
                     }
                 }
@@ -1308,6 +1337,26 @@ namespace ProjectIgnisAI
             }
 
             // 3. Resource Advantage Adjustments
+            int deckCount = Duel.Fields[0].Deck.Count;
+            int cardAdvantage = selfHandCount + selfMonsters - (opponentHandCount + Enemy.GetMonsterCount());
+
+            // If deck is dangerously low, penalize draw/search cards to prevent self-deckout
+            if (deckCount <= 5 && (meta.roles.Contains("draw") || meta.roles.Contains("searcher")))
+            {
+                score -= 50.0;
+                LogToTurn(string.Format("Resource Tracking: Low deck count ({0})! Penalizing draw/search card: {1} (-50.0)", deckCount, GetCardName(card.Id)));
+            }
+
+            // Scale recovery/search cards when at a card disadvantage
+            if (cardAdvantage <= -3)
+            {
+                if (meta.roles.Contains("recovery") || meta.roles.Contains("searcher"))
+                {
+                    score += 15.0;
+                    LogToTurn(string.Format("Resource Tracking: Card disadvantage detected ({0}). Boosting recovery/search: {1} (+15.0)", cardAdvantage, GetCardName(card.Id)));
+                }
+            }
+
             if (selfHandCount <= 2)
             {
                 if (meta.roles.Contains("starter") || meta.roles.Contains("recovery"))
@@ -1417,15 +1466,7 @@ namespace ProjectIgnisAI
                 }
             }
 
-            // 7.3 Anti-Self Harm Check
-            if (Duel.CurrentChain.Count > 0 && Duel.LastChainPlayer == 0)
-            {
-                if (meta.roles.Contains("negate") || meta.roles.Contains("removal") || meta.roles.Contains("interruption") || meta.roles.Contains("disruption"))
-                {
-                    score -= 200.0;
-                    LogToTurn(string.Format("Self-chain prevention: Penalizing disruptive card: {0} responding to our own chain link (-200.0)", GetCardName(card.Id)));
-                }
-            }
+
 
             LogToTurn(string.Format("Analysing Card: {0} (ID: {1}) | Action: {2} | Goal: {3} | Opp Threat: {4:F1} | Score: {5:F1}",
                 GetCardName(card.Id), card.Id, type, _currentGoal, opponentThreat, score));
@@ -1484,7 +1525,7 @@ namespace ProjectIgnisAI
         {
             foreach (var card in Duel.Fields[0].Hand)
             {
-                if (card != null && _cardRegistry.ContainsKey(card.Id))
+                if (card != null && card.IsMonster() && _cardRegistry.ContainsKey(card.Id))
                 {
                     var meta = _cardRegistry[card.Id];
                     if (meta.roles.Contains("starter") || meta.roles.Contains("extender") || meta.roles.Contains("payoff") || meta.roles.Contains("searcher"))
@@ -1605,13 +1646,13 @@ namespace ProjectIgnisAI
             ClientCard card = Card;
             if (card == null) return false;
 
-            double score = 50.0; // Base score for setting
-
-            if (_cardRegistry.ContainsKey(card.Id))
+            if (!_cardRegistry.ContainsKey(card.Id))
             {
-                var meta = _cardRegistry[card.Id];
-                score = meta.priority * 10.0;
+                return false; // Unknown card — safe default, do not set
             }
+
+            var meta = _cardRegistry[card.Id];
+            double score = meta.priority * 10.0;
 
             if ((card.IsTrap() || card.HasType(CardType.QuickPlay)) && Duel.Phase == DuelPhase.Main1 && Duel.Turn > 1)
             {
@@ -1632,7 +1673,7 @@ namespace ProjectIgnisAI
             ClientCard card = Card;
             if (card != null)
             {
-                if (card.Attack > card.Defense)
+                if (card.Attack >= card.Defense)
                 {
                     bool isDefense = card.Position == (int)CardPosition.FaceDownDefence || card.Position == (int)CardPosition.FaceUpDefence;
                     if (isDefense)
@@ -1645,7 +1686,7 @@ namespace ProjectIgnisAI
                 else if (card.Defense > card.Attack)
                 {
                     bool isAttack = card.Position == (int)CardPosition.FaceDownAttack || card.Position == (int)CardPosition.FaceUpAttack;
-                    if (isAttack)
+                    if (isAttack && (Duel.Phase == DuelPhase.Main2 || card.Attacked || card.Attack == 0))
                     {
                         LogToTurn(string.Format("{0} Repositioned to Defense: {1} (ID: {2}) | ATK={3} DEF={4}", 
                             _resolvedDeckName, GetCardName(card.Id), card.Id, card.Attack, card.Defense));
@@ -1660,6 +1701,11 @@ namespace ProjectIgnisAI
         {
             ClientCard card = Card;
             if (card == null) return false;
+
+            if (!_cardRegistry.ContainsKey(card.Id))
+            {
+                return false; // Unknown card — safe default, do not set
+            }
 
             // 1. If we have other starters or extenders in hand, save the action for them.
             if (HasStarterOrExtenderInHand())
@@ -1768,7 +1814,6 @@ namespace ProjectIgnisAI
             }
 
             _turnCount = Duel.Turn;
-            _currentTurnLogPath = Path.Combine(_matchLogDir, "turn_" + _turnCount + ".log");
 
             LogToTurn(string.Format("=== Turn {0} Started (Active Player: {1}) ===", _turnCount, Duel.Player == 0 ? "Bot" : "Opponent"));
             LogToTurn(string.Format("Bot LP: {0} | Opponent LP: {1}", Duel.Fields[0].LifePoints, Duel.Fields[1].LifePoints));
@@ -1816,10 +1861,293 @@ namespace ProjectIgnisAI
             return false;
         }
 
+        private bool IsProtectedBySleepingScapegoats(ClientCard card)
+        {
+            if (card == null) return false;
+            
+            // Check if opponent controls a Sleeping Scapegoat Token (ID 101402154 or 900000113)
+            bool hasToken = false;
+            foreach (var monster in Enemy.GetMonsters())
+            {
+                if (monster != null && (monster.Id == 101402154 || monster.Id == 900000113))
+                {
+                    hasToken = true;
+                    break;
+                }
+            }
+            
+            if (!hasToken) return false;
+            
+            // Check if the card is one of the protected Dark Time cards (mentions Dark Time Wizard)
+            int id = card.Id;
+            return id == 101402001 || id == 101402002 || id == 101402003 || 
+                   id == 101402004 || id == 101402036 || id == 101402052 || 
+                   id == 101402054 || id == 101402070 || id == 101402071 ||
+                   id == 900000006 || id == 900000007 || id == 900000008 ||
+                   id == 900000009 || id == 900000010 || id == 900000011 ||
+                   id == 900000013 || id == 900000014 || id == 900000015;
+        }
+
+        private bool IsSafeAttack(ClientCard attacker, ClientCard defender)
+        {
+            if (attacker == null) return false;
+
+            // Direct attack is safe if allowed
+            if (defender == null)
+            {
+                return attacker.CanDirectAttack;
+            }
+
+            // Set real power using base helper logic safely
+            attacker.RealPower = attacker.Attack;
+            defender.RealPower = defender.GetDefensePower();
+
+            if (!OnPreBattleBetween(attacker, defender))
+                return false;
+
+            // Check opponent memory danger
+            if (_opponentMemory.ContainsKey(defender.Id))
+            {
+                double danger = _opponentMemory[defender.Id].learned_danger;
+                if (danger > 80.0 && attacker.RealPower <= defender.RealPower + 1000)
+                {
+                    return false; // Dangerous target
+                }
+            }
+
+            // If defender is protected by Sleeping Scapegoats and it would be a tie, it's suicide!
+            if (attacker.RealPower == defender.RealPower && IsProtectedBySleepingScapegoats(defender))
+            {
+                return false;
+            }
+
+            // Attack is safe if our power is strictly greater
+            if (attacker.RealPower > defender.RealPower)
+            {
+                return true;
+            }
+
+            // If it's a tie, only attack if it's our last attacker and defender is in attack position
+            if (attacker.RealPower == defender.RealPower && attacker.IsLastAttacker && defender.IsAttack())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public override BattlePhaseAction OnBattle(IList<ClientCard> attackers, IList<ClientCard> defenders)
+        {
+            // If we can close the game (lethal on board), do not abort under any circumstances!
+            if (IsLethalOnBoard())
+            {
+                return null; // Return null to delegate to default attack execution
+            }
+
+            // check if opponent has face-down spell/trap zones that could be Mirror Force, etc.
+            bool hasFaceDownBackrow = false;
+            foreach (var card in Duel.Fields[1].SpellZone)
+            {
+                if (card != null && card.IsFacedown())
+                {
+                    hasFaceDownBackrow = true;
+                    break;
+                }
+            }
+
+            // If opponent has face-down backrow, check if we have any high learned-danger battle traps in memory
+            if (hasFaceDownBackrow)
+            {
+                foreach (var kvp in _opponentMemory)
+                {
+                    if (kvp.Value.learned_danger > 75.0 && GetStapleBaselineDanger(kvp.Key) > 0)
+                    {
+                        // Check if the card is a known battle trap
+                        int cardId = kvp.Key;
+                        // Mirror Force (44095762), Dimensional Prison (70342110), Magic Cylinder (62279055), Evenly Matched (15693423)
+                        if (cardId == 44095762 || cardId == 70342110 || cardId == 62279055 || cardId == 15693423)
+                        {
+                            LogToTurn(string.Format("Battle Phase: Opponent backrow detected with known dangerous battle trap in memory: {0}. Ending battle phase to play safely.", GetCardName(cardId)));
+                            return new BattlePhaseAction(BattlePhaseAction.BattleAction.ToMainPhaseTwo);
+                        }
+                    }
+                }
+            }
+
+            // Find a safe attack among all our attackers
+            foreach (var attacker in attackers)
+            {
+                if (attacker == null || attacker.Attacked) continue;
+
+                // 1. If opponent has no monsters, check if we can attack directly
+                if (defenders.Count == 0 || Enemy.GetMonsterCount() == 0)
+                {
+                    if (IsSafeAttack(attacker, null))
+                    {
+                        LogToTurn(string.Format("Battle Phase: Declaring direct attack with {0}.", GetCardName(attacker.Id)));
+                        return AI.Attack(attacker, null);
+                    }
+                }
+
+                // 2. Scan for a safe attack target among defenders
+                // We should prioritize Scapegoat Tokens first to break protection shields!
+                List<ClientCard> sortedDefenders = new List<ClientCard>(defenders);
+                sortedDefenders.Sort((a, b) =>
+                {
+                    if (a == null && b == null) return 0;
+                    if (a == null) return 1;
+                    if (b == null) return -1;
+
+                    bool aIsToken = a.Id == 101402154 || a.Id == 900000113 || (a.Name != null && a.Name.Contains("Token"));
+                    bool bIsToken = b.Id == 101402154 || b.Id == 900000113 || (b.Name != null && b.Name.Contains("Token"));
+                    if (aIsToken && !bIsToken) return -1;
+                    if (!aIsToken && bIsToken) return 1;
+
+                    int aPower = a.GetDefensePower();
+                    int bPower = b.GetDefensePower();
+                    return aPower.CompareTo(bPower);
+                });
+
+                foreach (var defender in sortedDefenders)
+                {
+                    if (defender == null) continue;
+
+                    if (IsSafeAttack(attacker, defender))
+                    {
+                        LogToTurn(string.Format("Battle Phase: Declaring attack: {0} (ATK={1}) -> {2} (DEF={3})", 
+                            GetCardName(attacker.Id), attacker.Attack, GetCardName(defender.Id), defender.RealPower));
+                        return AI.Attack(attacker, defender);
+                    }
+                }
+            }
+
+            // If no safe attacks are found for any monster, end Battle Phase!
+            LogToTurn("Battle Phase: No safe attacks found. Transitioning to Main Phase 2.");
+            return new BattlePhaseAction(BattlePhaseAction.BattleAction.ToMainPhaseTwo);
+        }
+
+        public override BattlePhaseAction OnSelectAttackTarget(ClientCard attacker, IList<ClientCard> defenders)
+        {
+            if (defenders == null || defenders.Count == 0)
+            {
+                if (attacker.CanDirectAttack)
+                {
+                    LogToTurn(string.Format("Battle Phase: {0} attacking directly.", GetCardName(attacker.Id)));
+                    return AI.Attack(attacker, null);
+                }
+                return null;
+            }
+
+            // 1. Prioritize direct attacks if we can attack directly
+            if (attacker.CanDirectAttack)
+            {
+                LogToTurn(string.Format("Battle Phase: {0} attacking directly.", GetCardName(attacker.Id)));
+                return AI.Attack(attacker, null);
+            }
+
+            attacker.RealPower = attacker.Attack;
+
+            ClientCard bestTarget = null;
+            double maxScore = -99999999.0;
+
+            // Prioritize Scapegoat Tokens or weaker targets
+            List<ClientCard> sortedDefenders = new List<ClientCard>(defenders);
+            try
+            {
+                sortedDefenders.Sort((a, b) =>
+                {
+                    if (a == null && b == null) return 0;
+                    if (a == null) return 1;
+                    if (b == null) return -1;
+
+                    bool aIsToken = a.Id == 101402154 || a.Id == 900000113 || (a.Name != null && a.Name.Contains("Token"));
+                    bool bIsToken = b.Id == 101402154 || b.Id == 900000113 || (b.Name != null && b.Name.Contains("Token"));
+                    if (aIsToken && !bIsToken) return -1;
+                    if (!aIsToken && bIsToken) return 1;
+
+                    int aPower = a.GetDefensePower();
+                    int bPower = b.GetDefensePower();
+                    return aPower.CompareTo(bPower);
+                });
+            }
+            catch (Exception ex)
+            {
+                Log("Error sorting defenders: " + ex.Message);
+            }
+
+            foreach (var defender in sortedDefenders)
+            {
+                if (defender == null) continue;
+
+                // Set defender real power
+                defender.RealPower = defender.GetDefensePower();
+
+                // Call OnPreBattleBetween to check standard conditions (like battle protection)
+                if (!OnPreBattleBetween(attacker, defender))
+                    continue;
+
+                // Check opponent memory danger: if the card is extremely dangerous, avoid attacking it
+                if (_opponentMemory.ContainsKey(defender.Id))
+                {
+                    double danger = _opponentMemory[defender.Id].learned_danger;
+                    if (danger > 80.0 && attacker.RealPower <= defender.RealPower + 1000)
+                    {
+                        LogToTurn(string.Format("Battle Phase: Avoiding highly dangerous defender {0} (Danger: {1:F1})", GetCardName(defender.Id), danger));
+                        continue; // Skip attacking this highly dangerous target
+                    }
+                }
+
+                // If defender is protected by Sleeping Scapegoats and it would be a tie, it's suicide!
+                if (attacker.RealPower == defender.RealPower && IsProtectedBySleepingScapegoats(defender))
+                {
+                    LogToTurn(string.Format("Battle Phase: Avoiding tie attack on protected defender {0}", GetCardName(defender.Id)));
+                    continue; // Skip this tie attack
+                }
+
+                int diff = attacker.RealPower - defender.RealPower;
+                double defDanger = CalculateCardDanger(defender);
+                double score = defDanger * 10000.0 + diff;
+
+                // Check standard safe attack conditions
+                if (attacker.RealPower > defender.RealPower)
+                {
+                    if (score > maxScore)
+                    {
+                        bestTarget = defender;
+                        maxScore = score;
+                    }
+                }
+                // If it's a tie, only attack if it's our last attacker and it's worth it
+                else if (attacker.RealPower == defender.RealPower && attacker.IsLastAttacker && defender.IsAttack())
+                {
+                    if (score > maxScore)
+                    {
+                        bestTarget = defender;
+                        maxScore = score;
+                    }
+                }
+            }
+
+            if (bestTarget != null)
+            {
+                LogToTurn(string.Format("Battle Phase: {0} (ATK={1}) attacking {2} (DEF={3})", 
+                    GetCardName(attacker.Id), attacker.Attack, GetCardName(bestTarget.Id), bestTarget.RealPower));
+                return AI.Attack(attacker, bestTarget);
+            }
+
+            return null; // Return null to cancel/avoid suicide attack during a replay
+        }
+
         public override IList<ClientCard> OnSelectCard(IList<ClientCard> cards, int min, int max, long hint, bool cancelable)
         {
             LogToTurn(string.Format("OnSelectCard called: count={0}, min={1}, max={2}, hint={3}, cancelable={4}", 
                 cards != null ? cards.Count : 0, min, max, hint, cancelable));
+
+            // Delegate select attack target hint (549) to base class so that OnSelectAttackTarget override is invoked
+            if (hint == 549)
+            {
+                return base.OnSelectCard(cards, min, max, hint, cancelable);
+            }
 
             if (cards == null || cards.Count == 0)
                 return base.OnSelectCard(cards, min, max, hint, cancelable);
@@ -1828,7 +2156,7 @@ namespace ProjectIgnisAI
             List<ClientCard> available = new List<ClientCard>();
             foreach (var c in cards)
             {
-                if (Card != null && c.Id == Card.Id && cards.Count > min)
+                if (Card != null && c == Card && cards.Count > min)
                     continue;
                 available.Add(c);
             }
@@ -1934,9 +2262,6 @@ namespace ProjectIgnisAI
                 ClientCard lastChain = Util.GetLastChainCard();
                 if (lastChain != null && lastChain.Controller == 0) // Our card was in the chain before
                 {
-                    // Track opponent card seen
-                    RecordOpponentCardSeen(card.Id);
-
                     if (player == 1) // Opponent is the one chaining into us
                     {
                         // Track disruption relationship
@@ -1949,7 +2274,7 @@ namespace ProjectIgnisAI
                             _disruptionsInMatch[lastChain.Id].Add(card.Id);
                         }
 
-                        if (_deckConfig.choke_points.Contains(lastChain.Id))
+                        if (_deckConfig.choke_points != null && _deckConfig.choke_points.Contains(lastChain.Id))
                         {
                             LogToTurn(string.Format("WARNING: Opponent disrupted Bot's choke point [{0}] (ID: {1}) with [{2}] (ID: {3})!",
                                 GetCardName(lastChain.Id), lastChain.Id, cardName, card.Id));

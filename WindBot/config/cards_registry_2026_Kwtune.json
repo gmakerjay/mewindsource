@@ -47,9 +47,7 @@
   {
     "id": 14558127,
     "roles": [
-      "combo_piece",
-      "handtrap",
-      "interruption"
+      "combo_piece"
     ],
     "priority": 7,
     "risk_if_negated": 1,
@@ -383,10 +381,7 @@
   },
   {
     "id": 10045474,
-    "roles": [
-      "handtrap",
-      "interruption"
-    ],
+    "roles": [],
     "priority": 7,
     "risk_if_negated": 1,
     "bait_value": 1,
@@ -417,10 +412,7 @@
   },
   {
     "id": 24224830,
-    "roles": [
-      "handtrap",
-      "interruption"
-    ],
+    "roles": [],
     "priority": 8,
     "risk_if_negated": 1,
     "bait_value": 1,
@@ -463,9 +455,7 @@
   {
     "id": 73642296,
     "roles": [
-      "combo_piece",
-      "handtrap",
-      "interruption"
+      "combo_piece"
     ],
     "priority": 7,
     "risk_if_negated": 1,
@@ -512,9 +502,7 @@
   {
     "id": 97268402,
     "roles": [
-      "combo_piece",
-      "handtrap",
-      "interruption"
+      "combo_piece"
     ],
     "priority": 7,
     "risk_if_negated": 1,
@@ -1948,11 +1936,7 @@
   },
   {
     "id": 25311006,
-    "roles": [
-      "removal",
-      "extender",
-      "searcher"
-    ],
+    "roles": [],
     "priority": 8,
     "risk_if_negated": 3,
     "bait_value": 5,
@@ -2369,9 +2353,7 @@
   },
   {
     "id": 99243014,
-    "roles": [
-      "starter"
-    ],
+    "roles": [],
     "priority": 7,
     "risk_if_negated": 3,
     "bait_value": 1,
@@ -2387,9 +2369,7 @@
   },
   {
     "id": 84211599,
-    "roles": [
-      "starter"
-    ],
+    "roles": [],
     "priority": 6,
     "risk_if_negated": 3,
     "bait_value": 5,
@@ -2421,9 +2401,7 @@
   },
   {
     "id": 97474300,
-    "roles": [
-      "starter"
-    ],
+    "roles": [],
     "priority": 6,
     "risk_if_negated": 3,
     "bait_value": 1,
