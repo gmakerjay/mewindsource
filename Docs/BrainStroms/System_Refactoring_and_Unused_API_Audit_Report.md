@@ -140,22 +140,16 @@ The following table summarizes the bugs resolved in our refactoring pass and iss
 
 ## 6. How to Train the Bot (RL & Heuristic Tuning)
 
-The current real-time learning pipeline is file-based and runs at the end of each duel. To scale and speed up training, the following methodologies are recommended:
+The current real-time learning pipeline is file-based and runs at the end of each duel. To train and calibrate the bot safely without risking concurrency locks or configuration corruptions from simulated automated loops, the following stable methodologies are recommended:
 
-### A. Automated Local Self-Play Loop
-1. Setup two bot instances running different registries of the same executor (e.g., `UnifiedIgnis` vs `UnifiedIgnis`).
-2. Run a background PowerShell runner script that launches headless matches using:
-   ```bash
-   .\WindBot.exe Deck=2026_Labrynth Host=127.0.0.1 Port=7911 Dialog=false
-   ```
-3. Run 1,000 matches. The bot will automatically write learning outcomes back to:
-   - `opponent_memory.json` (increasing threat values of cards that disrupt its starters)
-   - `cards_registry_{deck}.json` (refining priority weights and bait values)
-4. Use a script to periodically merge configs or push the best-performing registry to the main deployment directory.
+### A. Passive Production Dueling Logs (Real-time Play Calibration)
+1. **Dueling normally**: The bot participates in normal duels (against human opponents or stable remote servers).
+2. **Safe incremental writes**: After each match, the bot leverages its thread-safe `ReadFileWithRetry` and `WriteFileWithRetry` logic to update priorities and opponent memory values. This avoids concurrent file conflicts.
+3. **No aggressive automation loops**: By training through actual matches, the bot gains realistic data from actual players, which is far higher quality than simulated self-play.
 
-### B. Heuristic Weight Convergence
-- Because the priority scale is clamped between `1` and `8`, we avoid runaway inflation.
-- Periodically check the registries to see if all cards have converged to priority 8. If they have, it indicates that the bot is winning too frequently without facing diverse disruptions. Introduce random mutation noise (e.g., randomly decrementing 5% of priorities by 1) to break local minima.
+### B. Offline Analytical Parameter Optimization
+- **Role Detection Tools**: Run static analysis scripts (like `auto_role_detector.py`) on deck lists to pre-classify new cards into roles (`starter`, `extender`, etc.) before deployment, establishing solid baseline registries.
+- **Decay & Cap Control**: Since the priority scale is strictly clamped between `1` and `8`, weight inflation is naturally limited. If a deck's priorities converge fully to `8`, it means the deck is performing optimally. If they drop, it indicates vulnerability to specific handtraps recorded in `opponent_memory.json`.
 
 ---
 
