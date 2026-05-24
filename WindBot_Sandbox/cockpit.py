@@ -19,6 +19,35 @@ REAL_REGISTRY_PATH = os.path.join(WINDBOT_DIR, "config", "cards_registry.json")
 active_process = None
 active_bots = []
 
+progress_log_lock = threading.Lock()
+
+def write_progress_log(path, content, mode="a"):
+    with progress_log_lock:
+        for _ in range(10):
+            try:
+                with open(path, mode, encoding="utf-8") as f:
+                    f.write(content)
+                return True
+            except PermissionError:
+                time.sleep(0.05)
+            except Exception:
+                break
+        return False
+
+def read_progress_log(path):
+    with progress_log_lock:
+        for _ in range(10):
+            try:
+                if os.path.exists(path):
+                    with open(path, "r", encoding="utf-8") as f:
+                        return f.read()
+                return ""
+            except PermissionError:
+                time.sleep(0.05)
+            except Exception:
+                break
+        return ""
+
 def kill_active_process():
     global active_process, active_bots
     if active_process and active_process.poll() is None:
@@ -57,26 +86,20 @@ def read_process_output(proc, log_file_path):
     try:
         for line in iter(proc.stdout.readline, b''):
             decoded_line = line.decode('utf-8', errors='replace')
-            with open(log_file_path, "a", encoding="utf-8") as f:
-                f.write(decoded_line)
+            write_progress_log(log_file_path, decoded_line)
         proc.wait()
-        with open(log_file_path, "a", encoding="utf-8") as f:
-            f.write("\n==================================================\n")
-            f.write("การทำงานเสร็จสมบูรณ์\n")
-            f.write("==================================================\n")
+        write_progress_log(log_file_path, "\n==================================================\nการทำงานเสร็จสมบูรณ์\n==================================================\n")
     except Exception as e:
-        with open(log_file_path, "a", encoding="utf-8") as f:
-            f.write(f"\nเกิดข้อผิดพลาดในการอ่านข้อมูล: {str(e)}\n")
+        write_progress_log(log_file_path, f"\nเกิดข้อผิดพลาดในการอ่านข้อมูล: {str(e)}\n")
 
 def consume_stream(proc, name, log_file_path):
     try:
         for line in iter(proc.stdout.readline, b''):
             decoded = line.decode('utf-8', errors='replace')
-            with open(log_file_path, "a", encoding="utf-8") as f:
-                f.write(f"[{name}] {decoded}")
+            if "[IgnisEngine]" in decoded:
+                write_progress_log(log_file_path, f"[{name}] {decoded}")
     except Exception as e:
-        with open(log_file_path, "a", encoding="utf-8") as f:
-            f.write(f"[{name}] เกิดข้อผิดพลาดในการอ่านลอก: {str(e)}\n")
+        write_progress_log(log_file_path, f"[{name}] เกิดข้อผิดพลาดในการอ่านลอก: {str(e)}\n")
 
 
 def run_live_duel_loop(deck, opponent, opp_deck, iterations, progress_log):
@@ -85,10 +108,7 @@ def run_live_duel_loop(deck, opponent, opp_deck, iterations, progress_log):
     windbot_dir = os.path.join(PROJECT_ROOT, "WindBot")
     
     for i in range(1, iterations + 1):
-        with open(progress_log, "a", encoding="utf-8") as f:
-            f.write(f"\n==================================================\n")
-            f.write(f"เริ่มต้นรอบที่ {i} / {iterations}\n")
-            f.write(f"==================================================\n")
+        write_progress_log(progress_log, f"\n==================================================\nเริ่มต้นรอบที่ {i} / {iterations}\n==================================================\n")
         try:
             p1 = subprocess.Popen(
                 [windbot_exe, f"name=IgnisBot", f"deck={deck}", "port=7911", "hostinfo=", "version=720937"],
@@ -120,15 +140,11 @@ def run_live_duel_loop(deck, opponent, opp_deck, iterations, progress_log):
                 
             time.sleep(1.0)
         except Exception as e:
-            with open(progress_log, "a", encoding="utf-8") as f:
-                f.write(f"เกิดข้อผิดพลาดในการรันรอบที่ {i}: {str(e)}\n")
+            write_progress_log(progress_log, f"เกิดข้อผิดพลาดในการรันรอบที่ {i}: {str(e)}\n")
             break
             
     active_bots = []
-    with open(progress_log, "a", encoding="utf-8") as f:
-        f.write("\n==================================================\n")
-        f.write("การจำลองการดวลจริงทั้งหมดเสร็จสิ้นลงแล้ว\n")
-        f.write("==================================================\n")
+    write_progress_log(progress_log, "\n==================================================\nการจำลองการดวลจริงทั้งหมดเสร็จสิ้นลงแล้ว\n==================================================\n")
 
 # get_available_decks() is now imported from shared_utils
 
@@ -378,13 +394,7 @@ class CockpitHandler(BaseHTTPRequestHandler):
             
         elif url.path == '/api/progress':
             progress_log = os.path.join(PROJECT_ROOT, "WindBot_Sandbox", "training_progress.log")
-            content = ""
-            if os.path.exists(progress_log):
-                try:
-                    with open(progress_log, "r", encoding="utf-8") as f:
-                        content = f.read()
-                except:
-                    pass
+            content = read_progress_log(progress_log)
             self.send_response(200)
             self.send_header('Content-Type', 'text/plain; charset=utf-8')
             self.end_headers()
@@ -471,9 +481,8 @@ class CockpitHandler(BaseHTTPRequestHandler):
         progress_log = os.path.join(PROJECT_ROOT, "WindBot_Sandbox", "training_progress.log")
         os.makedirs(os.path.dirname(progress_log), exist_ok=True)
         
-        with open(progress_log, "w", encoding="utf-8") as f:
-            f.write("ระบบดำเนินการ: เริ่มต้นระบบการประมวลผล...\n")
-            
+        write_progress_log(progress_log, "ระบบดำเนินการ: เริ่มต้นระบบการประมวลผล...\n", "w")
+        
         sandbox_dir = os.path.join(PROJECT_ROOT, "WindBot_Sandbox")
         cmd = []
         
@@ -522,9 +531,7 @@ class CockpitHandler(BaseHTTPRequestHandler):
             log_msg = f"คำสั่งระบบ: เริ่มต้นทัวร์นาเมนต์ A/B ทดสอบอัตราชนะ (เด็ค: {deck}, จำนวนแมตช์: {iterations})\n"
         elif mode == 'live_duel':
             log_msg = f"คำสั่งระบบ: เปิดจำลองการแข่งจริง {iterations} รอบ (เด็คหลักเรา: {deck} ปะทะ คู่ซ้อม: {opponent})\n"
-            with open(progress_log, "a", encoding="utf-8") as f:
-                f.write(log_msg)
-                f.write("โปรดตรวจสอบ: ตรวจสอบห้องและเซิร์ฟเวอร์ YGOPro/EDOPro บนพอร์ต 7911 ในเครื่องของท่าน\n")
+            write_progress_log(progress_log, log_msg + "โปรดตรวจสอบ: ตรวจสอบห้องและเซิร์ฟเวอร์ YGOPro/EDOPro บนพอร์ต 7911 ในเครื่องของท่าน\n")
                 
             opp_deck = get_opponent_deck_name(opponent)
             
@@ -536,13 +543,11 @@ class CockpitHandler(BaseHTTPRequestHandler):
                 ).start()
                 return True
             except Exception as e:
-                with open(progress_log, "a", encoding="utf-8") as f:
-                    f.write(f"เกิดข้อผิดพลาดในการเริ่มต้นรอบจำลอง: {str(e)}\n")
+                write_progress_log(progress_log, f"เกิดข้อผิดพลาดในการเริ่มต้นรอบจำลอง: {str(e)}\n")
                 return False
 
         if cmd:
-            with open(progress_log, "a", encoding="utf-8") as f:
-                f.write(log_msg)
+            write_progress_log(progress_log, log_msg)
             try:
                 active_process = subprocess.Popen(
                     cmd,
@@ -553,8 +558,7 @@ class CockpitHandler(BaseHTTPRequestHandler):
                 threading.Thread(target=read_process_output, args=(active_process, progress_log), daemon=True).start()
                 return True
             except Exception as e:
-                with open(progress_log, "a", encoding="utf-8") as f:
-                    f.write(f"เกิดข้อผิดพลาดในการเปิดรันกระบวนการ: {str(e)}\n")
+                write_progress_log(progress_log, f"เกิดข้อผิดพลาดในการเปิดรันกระบวนการ: {str(e)}\n")
                 return False
         return False
 

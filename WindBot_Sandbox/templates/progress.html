@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>📈 วัดผลการเรียนรู้ - IgnisEngine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0d19;
+            --panel-bg: rgba(22, 28, 54, 0.55);
+            --border-color: rgba(255,255,255,0.08);
+            --primary-accent: #3b82f6;
+            --secondary-accent: #8b5cf6;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: radial-gradient(circle at top right, #1d1e36 0%, #0b0d19 70%);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+        .glass-panel {
+            background: var(--panel-bg); backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color); border-radius: 16px;
+            padding: 25px; margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+        }
+        header.glass-panel {
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid rgba(59,130,246,0.2);
+        }
+        h1 { font-family: 'Outfit', sans-serif; font-size: 1.6rem;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        h2 { font-family: 'Outfit', sans-serif; font-size: 1.2rem; margin-bottom: 15px; }
+        .nav-tabs { display: flex; gap: 8px; }
+        .nav-tab { padding: 8px 20px; border-radius: 30px; font-family: 'Outfit', sans-serif;
+            font-weight: 500; font-size: 0.9rem; text-decoration: none; transition: all 0.2s;
+            border: 1px solid var(--border-color); color: var(--text-muted); }
+        .nav-tab:hover { background: rgba(255,255,255,0.05); color: var(--text-main); }
+        .nav-tab.active { background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent)); color: white; border-color: transparent; }
+
+        .controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 15px; }
+        select, .btn { padding: 10px 20px; border-radius: 8px; font-family: 'Outfit', sans-serif; font-size: 0.95rem; }
+        select { background: rgba(15,19,39,0.8); border: 1px solid var(--border-color); color: var(--text-main); min-width: 200px; }
+        .btn { border: none; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+        .btn-snap { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; box-shadow: 0 4px 15px rgba(245,158,11,0.3); }
+        .btn-snap:hover { transform: translateY(-2px); }
+        .btn-show { background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent)); color: white; box-shadow: 0 4px 15px rgba(139,92,246,0.3); }
+        .btn-show:hover { transform: translateY(-2px); }
+
+        .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
+        .stat-box { background: rgba(15,20,42,0.4); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; text-align: center; }
+        .stat-val { font-size: 1.6rem; font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--primary-accent); }
+        .stat-val.win { color: var(--success-color); }
+        .stat-val.loss { color: var(--danger-color); }
+        .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-top: 3px; }
+
+        .card-list { max-height: 400px; overflow-y: auto; margin: 10px 0; }
+        .card-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.9rem; }
+        .card-row:hover { background: rgba(255,255,255,0.03); }
+        .card-name { flex: 1; }
+        .card-change { font-family: 'Outfit', sans-serif; font-weight: 600; min-width: 80px; text-align: right; }
+        .card-change.up { color: var(--success-color); }
+        .card-change.down { color: var(--danger-color); }
+        .card-delta { margin-left: 8px; font-size: 0.8rem; opacity: 0.7; }
+
+        .danger-bar { height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin-top: 4px; overflow: hidden; }
+        .danger-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #f59e0b, var(--danger-color)); }
+
+        .winrate-bar { height: 12px; background: rgba(255,255,255,0.05); border-radius: 6px; overflow: hidden; margin: 10px 0; }
+        .winrate-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--danger-color), #f59e0b, var(--success-color));
+            transition: width 1s ease; }
+
+        .toast { position: fixed; top: 20px; right: 20px; background: var(--success-color); color: white;
+            padding: 12px 24px; border-radius: 10px; font-weight: 600; z-index: 1000;
+            box-shadow: 0 4px 20px rgba(16,185,129,0.4); animation: slideIn 0.3s ease; display: none; }
+        @keyframes slideIn { from { transform: translateX(100px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="glass-panel">
+            <div>
+                <h1>📈 วัดผลการเรียนรู้</h1>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 3px;">Snapshots → Train → Compare — ดูว่าบอทเก่งขึ้นจริงไหม</p>
+            </div>
+            <div class="nav-tabs">
+                <a href="/" class="nav-tab">🎮 ควบคุม</a>
+                <a href="/analytics" class="nav-tab">📊 วิเคราะห์</a>
+                <a href="/progress" class="nav-tab active">📈 วัดผล</a>
+            </div>
+        </header>
+
+        <!-- Controls -->
+        <div class="glass-panel">
+            <h2>📈 วัดผลการเรียนรู้</h2>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">
+                ① กด 📸 ก่อนเริ่มเทรน → ② เปิดห้อง bot vs bot → ③ กลับมากด 📊 ดูผล
+            </p>
+            <div class="controls">
+                <select id="deck-select">
+                    <option value="">-- เลือกเด็ค --</option>
+                </select>
+                <button class="btn btn-snap" onclick="takeSnapshot()">📸 บันทึกสถานะ</button>
+                <button class="btn btn-show" onclick="showProgress()">📊 แสดงผล</button>
+            </div>
+            <div id="snap-msg" style="margin-top: 10px; font-size: 0.85rem; color: var(--success-color);"></div>
+        </div>
+
+        <!-- Results -->
+        <div id="results" style="display:none;">
+            <!-- Match Summary -->
+            <div class="glass-panel" id="match-panel">
+                <h2>🎮 ผลการแข่งขัน</h2>
+                <div class="stats-row" id="match-stats"></div>
+                <div class="winrate-bar"><div class="winrate-fill" id="winrate-fill" style="width:0%"></div></div>
+                <div style="text-align:center; font-size:0.9rem; color: var(--text-muted);" id="winrate-text"></div>
+            </div>
+
+            <!-- Priority Changes -->
+            <div class="glass-panel">
+                <h2 id="changes-title">🃏 การ์ดที่ Priority เปลี่ยน</h2>
+                <div class="stats-row">
+                    <div class="stat-box"><div class="stat-val win" id="stat-up">0</div><div class="stat-label">▲ Priority เพิ่ม</div></div>
+                    <div class="stat-box"><div class="stat-val loss" id="stat-down">0</div><div class="stat-label">▼ Priority ลด</div></div>
+                    <div class="stat-box"><div class="stat-val" id="stat-total">0</div><div class="stat-label">รวมเปลี่ยนแปลง</div></div>
+                </div>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h3 style="color:var(--success-color); font-size:0.95rem; margin-bottom:8px;">▲ เพิ่มขึ้น</h3>
+                        <div class="card-list" id="changes-up"></div>
+                    </div>
+                    <div>
+                        <h3 style="color:var(--danger-color); font-size:0.95rem; margin-bottom:8px;">▼ ลดลง</h3>
+                        <div class="card-list" id="changes-down"></div>
+                    </div>
+                </div>
+                <div id="no-changes" style="display:none; padding:20px; text-align:center; color:var(--text-muted);">
+                    ⚠️ ยังไม่มีการเปลี่ยนแปลง — บอทยังไม่ได้เรียนรู้ (ตรวจสอบว่าแมตช์จบด้วย LP=0 ไม่ใช่ timeout)
+                </div>
+            </div>
+
+            <!-- Opponent Memory -->
+            <div class="glass-panel">
+                <h2>🧠 ความจำคู่ต่อสู้</h2>
+                <div class="stats-row" id="opp-stats"></div>
+                <div class="card-list" id="danger-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        function showToast(msg) {
+            const t = document.getElementById("toast");
+            t.innerText = msg; t.style.display = "block";
+            setTimeout(() => t.style.display = "none", 3000);
+        }
+
+        function loadDecks() {
+            fetch('/api/decks')
+                .then(r => r.json())
+                .then(decks => {
+                    const s = document.getElementById("deck-select");
+                    s.innerHTML = '<option value="">-- เลือกเด็ค --</option>' +
+                        decks.map(d => `<option value="${d}">${d}</option>`).join('');
+                });
+        }
+
+        function getDeck() {
+            return document.getElementById("deck-select").value;
+        }
+
+        function takeSnapshot() {
+            const deck = getDeck();
+            if (!deck) { showToast("กรุณาเลือกเด็คก่อน"); return; }
+            fetch('/api/snapshot', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({deck})
+            })
+            .then(r => r.json())
+            .then(res => {
+                document.getElementById("snap-msg").innerText = res.message;
+                showToast(res.message);
+            });
+        }
+
+        function showProgress() {
+            const deck = getDeck();
+            if (!deck) { showToast("กรุณาเลือกเด็คก่อน"); return; }
+
+            document.getElementById("snap-msg").innerText = "กำลังโหลด...";
+
+            fetch(`/api/progress_report?deck=${encodeURIComponent(deck)}`)
+                .then(r => r.json())
+                .then(data => {
+                    document.getElementById("snap-msg").innerText = "";
+                    if (data.error) { showToast(data.error); return; }
+
+                    document.getElementById("results").style.display = "block";
+
+                    // Match stats
+                    document.getElementById("match-stats").innerHTML = `
+                        <div class="stat-box"><div class="stat-val win">${data.wins}</div><div class="stat-label">✅ ชนะ</div></div>
+                        <div class="stat-box"><div class="stat-val loss">${data.losses}</div><div class="stat-label">❌ แพ้</div></div>
+                        <div class="stat-box"><div class="stat-val">${data.draws}</div><div class="stat-label">🤝 เสมอ</div></div>
+                        <div class="stat-box"><div class="stat-val">${data.total_matches}</div><div class="stat-label">📋 รวม</div></div>
+                    `;
+                    document.getElementById("winrate-fill").style.width = data.win_rate + "%";
+                    document.getElementById("winrate-text").innerText = `Win Rate: ${data.win_rate}% (${data.wins}/${data.total_matches})`;
+
+                    // Priority changes
+                    document.getElementById("stat-up").innerText = data.priority_changes_up.length;
+                    document.getElementById("stat-down").innerText = data.priority_changes_down.length;
+                    document.getElementById("stat-total").innerText = data.total_changes;
+
+                    if (data.total_changes === 0) {
+                        document.getElementById("no-changes").style.display = "block";
+                        document.getElementById("changes-up").innerHTML = "";
+                        document.getElementById("changes-down").innerHTML = "";
+                        document.getElementById("changes-title").innerText = "🃏 การ์ดที่ Priority เปลี่ยน (0 รายการ)";
+                    } else {
+                        document.getElementById("no-changes").style.display = "none";
+                        document.getElementById("changes-title").innerText = `🃏 การ์ดที่ Priority เปลี่ยน (${data.total_changes} รายการ)`;
+                        document.getElementById("changes-up").innerHTML = data.priority_changes_up.map(c =>
+                            `<div class="card-row">
+                                <span class="card-name">${c.name}</span>
+                                <span class="card-change up">${c.old} → ${c.new}</span>
+                                <span class="card-delta up">+${c.delta}</span>
+                            </div>`
+                        ).join('');
+                        document.getElementById("changes-down").innerHTML = data.priority_changes_down.map(c =>
+                            `<div class="card-row">
+                                <span class="card-name">${c.name}</span>
+                                <span class="card-change down">${c.old} → ${c.new}</span>
+                                <span class="card-delta down">-${c.delta}</span>
+                            </div>`
+                        ).join('');
+                    }
+
+                    // Opponent memory
+                    document.getElementById("opp-stats").innerHTML = `
+                        <div class="stat-box"><div class="stat-val">${data.opponent_memory_snap}</div><div class="stat-label">ก่อนเทรน</div></div>
+                        <div class="stat-box"><div class="stat-val" style="color:${data.opponent_memory_current > data.opponent_memory_snap ? 'var(--success-color)' : 'var(--primary-accent)'}">${data.opponent_memory_current}</div><div class="stat-label">หลังเทรน</div></div>
+                        <div class="stat-box"><div class="stat-val">${data.dangerous_opponents.length}</div><div class="stat-label">การ์ดอันตราย</div></div>
+                    `;
+
+                    document.getElementById("danger-list").innerHTML = data.dangerous_opponents.map(c => {
+                        const w = Math.min(c.danger, 100);
+                        return `<div class="card-row">
+                            <span class="card-name">${c.name}</span>
+                            <span style="font-size:0.8rem; color:var(--text-muted);">seen ${c.seen}x | disrupted ${c.disrupted}x</span>
+                            <span style="color:#f59e0b; font-weight:600; margin-left:10px;">danger ${c.danger}</span>
+                            <div class="danger-bar" style="width:80px; margin-left:8px;"><div class="danger-fill" style="width:${w}%"></div></div>
+                        </div>`;
+                    }).join('');
+
+                    // Scroll to results
+                    document.getElementById("results").scrollIntoView({behavior: "smooth"});
+                })
+                .catch(err => showToast("เกิดข้อผิดพลาด: " + err));
+        }
+
+        window.onload = loadDecks;
+    </script>
+</body>
+</html>
