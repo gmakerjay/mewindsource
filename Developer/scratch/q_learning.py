@@ -170,10 +170,9 @@ def main():
             current_q = q_values.get(goal, 0.0)
             
             # Discounted future return (MC return)
-            # Decisions closer to the end get closer to the final reward
-            # Proper episodic MC return: gamma^(steps_remaining) * reward
-            steps_from_end = T - 1 - t
-            G_t = reward * (args.gamma ** steps_from_end)
+            # Early decisions get higher return (discounted less relative to the start)
+            steps_from_start = t
+            G_t = reward * (args.gamma ** steps_from_start)
             
             # TD update step
             new_q = current_q + args.alpha * (G_t - current_q)

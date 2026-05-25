@@ -8,7 +8,7 @@ import glob
 import sqlite3
 
 # Paths
-PROJECT_ROOT = r"c:\Users\admin\Documents\EDOTh"
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 WINDBOT_DIR = os.path.join(PROJECT_ROOT, "WindBot")
 LOGS_DIR = os.path.join(WINDBOT_DIR, "Logs")
 PARALLEL_LOGS_DIR = os.path.join(LOGS_DIR, "ParallelMatches")

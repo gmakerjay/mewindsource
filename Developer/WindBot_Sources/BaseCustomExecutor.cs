@@ -194,19 +194,22 @@ namespace ProjectIgnisAI
             {
                 try
                 {
-                    if (Duel != null && Duel.Fields != null && Duel.Fields.Length >= 2 && Duel.Fields[0] != null && Duel.Fields[1] != null)
+                    lock (_staticLock)
                     {
-                        int botLP = Duel.Fields[0].LifePoints;
-                        int oppLP = Duel.Fields[1].LifePoints;
-                        
-                        if (botLP == 0 || oppLP == 0)
+                        if (Duel != null && Duel.Fields != null && Duel.Fields.Length >= 2 && Duel.Fields[0] != null && Duel.Fields[1] != null)
                         {
-                            ApplyRealTimeLearning();
-                        }
-                        else
-                        {
-                            _lastBotLP = botLP;
-                            _lastOppLP = oppLP;
+                            int botLP = Duel.Fields[0].LifePoints;
+                            int oppLP = Duel.Fields[1].LifePoints;
+                            
+                            if (botLP == 0 || oppLP == 0)
+                            {
+                                ApplyRealTimeLearning();
+                            }
+                            else
+                            {
+                                _lastBotLP = botLP;
+                                _lastOppLP = oppLP;
+                            }
                         }
                     }
                 }

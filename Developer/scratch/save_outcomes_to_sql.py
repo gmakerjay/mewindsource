@@ -152,7 +152,8 @@ def is_game_restart(dec, prev_dec):
     return False
 
 def parse_and_save(deck=None, opp_deck=None, wipe=False):
-    db_path = r"c:\Users\admin\Documents\EDOTh\Developer\scratch\statistics.db"
+    project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    db_path = os.path.join(project_root, "Developer", "scratch", "statistics.db")
     
     # 1. Handle wipe if requested
     if wipe:
@@ -166,7 +167,7 @@ def parse_and_save(deck=None, opp_deck=None, wipe=False):
     execute_write_transaction(db_path, init_db_tables)
     
     # 3. Read and parse log directories in memory (read-only, no locks)
-    logs_root = r"c:\Users\admin\Documents\EDOTh\WindBot\Logs"
+    logs_root = os.path.join(project_root, "WindBot", "Logs")
     log_dirs = []
     if os.path.exists(logs_root):
         for entry in os.listdir(logs_root):

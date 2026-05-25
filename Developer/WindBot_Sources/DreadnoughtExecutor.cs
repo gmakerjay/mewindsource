@@ -25,7 +25,6 @@ namespace ProjectIgnisAI
             AddExecutor(ExecutorType.Activate, 14558127, AshBlossomEffect); // Ash Blossom
             AddExecutor(ExecutorType.Activate, 10045474, ImpermanenceEffect); // Infinite Impermanence
             AddExecutor(ExecutorType.Activate, 24224830, CalledByGraveEffect); // Called by the Grave (ID 1)
-            AddExecutor(ExecutorType.Activate, 24224830, CalledByGraveEffect); // Called by the Grave (ID 2)
             AddExecutor(ExecutorType.Activate, 42141493, FuwalosEffect); // Mulcharmy Fuwalos
             AddExecutor(ExecutorType.Activate, 94145021, DrollEffect); // Droll & Lock Bird
             AddExecutor(ExecutorType.Activate, 6325660, DominusSparkEffect); // Dominus Spark

@@ -18,6 +18,11 @@ namespace ProjectIgnisAI
         }
     }
 
+    // NOTE: The following deck-specific subclasses are purposefully empty stubs.
+    // They inherit from UnifiedIgnisExecutor and rely entirely on the dynamic, weight-based
+    // registry mapping loaded from JSON config files (e.g. cards_registry_*.json) inside BaseCustomExecutor.
+    // Overriding is only necessary if custom complex combo plans need to be coded manually.
+
     [Deck("2026_AzaYummy", "2026_AzaYummy")]
     public class AzaYummyExecutor : UnifiedIgnisExecutor
     {

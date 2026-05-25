@@ -3,7 +3,7 @@ import re
 import sqlite3
 import json
 
-PROJECT_ROOT = r"c:\Users\admin\Documents\EDOTh"
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SCRIPT_DIR = os.path.join(PROJECT_ROOT, "script")
 DB_PATH = os.path.join(PROJECT_ROOT, "cards.cdb")
 
