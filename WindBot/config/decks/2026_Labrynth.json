@@ -1,4 +1,4 @@
-﻿{
+{
   "playstyle": "control",
   "goals": [
     "survive",
@@ -7,7 +7,8 @@
     "break_board"
   ],
   "choke_points": [
-    23440079
+    73355772,
+    60990740
   ],
   "weaknesses": [
     "backrow_removal",

@@ -1,0 +1,17 @@
+﻿diff --git a/WindBot/UnifiedIgnisExecutor.cs b/WindBot/UnifiedIgnisExecutor.cs
+index 0522954..6877907 100644
+--- a/WindBot/UnifiedIgnisExecutor.cs
++++ b/WindBot/UnifiedIgnisExecutor.cs
+@@ -60,11 +60,7 @@ namespace ProjectIgnisAI
+         public GoldlordExecutor(GameAI ai, Duel duel) : base(ai, duel) {}
+     }
+ 
+-    [Deck("2026_Invoke", "2026_Invoke")]
+-    public class InvokeExecutor : UnifiedIgnisExecutor
+-    {
+-        public InvokeExecutor(GameAI ai, Duel duel) : base(ai, duel) {}
+-    }
++    // 2026_Invoke executor is defined in a separate file (InvokeExecutor.cs)
+ 
+     [Deck("2026_Kwtune", "2026_Kwtune")]
+     public class KwtuneExecutor : UnifiedIgnisExecutor

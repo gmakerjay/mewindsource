@@ -1,0 +1,11 @@
+--- WindBot/BaseCustomExecutor.cs
++++ WindBot/BaseCustomExecutor.cs
+@@ -2781,7 +2781,7 @@
+                     return;
+                 }
+ 
+-                if (_needsReset || Duel.Turn < _turnCount || (Duel.Turn == 1 && _turnCount > 1))
++                if (_needsReset || Duel.Turn < _turnCount || (Duel.Turn == 1 && _turnCount >= 1))
+                 {
+                     ResetDuelState();
+                 }

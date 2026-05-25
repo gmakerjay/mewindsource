@@ -501,5 +501,13 @@
     ],
     "dialog": "default",
     "description": "Pure Yummy Combo AI"
+  },
+  {
+    "name": "2026_Dreadnought",
+    "deck": "2026_Dreadnought",
+    "difficulty": 3,
+    "masterRules": [
+      5
+    ]
   }
 ]

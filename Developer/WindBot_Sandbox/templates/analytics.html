@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>IgnisEngine Dashboard — วิเคราะห์การเรียนรู้</title>
+    <meta name="description" content="Dashboard วิเคราะห์การเรียนรู้ของ IgnisEngine AI Bot">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <style>
+        :root {
+            --bg-color: #0b0d19;
+            --panel-bg: rgba(22, 28, 54, 0.55);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary-accent: #3b82f6;
+            --secondary-accent: #8b5cf6;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: radial-gradient(circle at top right, #1d1e36 0%, var(--bg-color) 70%);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1500px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .glass-panel {
+            background: var(--panel-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        header.glass-panel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+        }
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-tabs { display: flex; gap: 8px; }
+        .nav-tab {
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+        .nav-tab:hover { background: rgba(255,255,255,0.05); color: var(--text-main); }
+        .nav-tab.active {
+            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+            color: white;
+            border-color: transparent;
+        }
+        .controls-panel {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        select {
+            background: rgba(15, 19, 39, 0.8);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            min-width: 200px;
+        }
+        select:focus {
+            border-color: var(--primary-accent);
+        }
+        .btn-show {
+            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+            color: white;
+            padding: 11px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            align-self: flex-end;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-show:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .summary-card {
+            background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(139,92,246,0.08));
+            border: 1px solid rgba(59,130,246,0.15);
+            border-radius: 14px;
+            padding: 22px 18px;
+            text-align: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .summary-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(59,130,246,0.12);
+        }
+        .summary-card .value {
+            font-size: 2.4rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .summary-card .label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .sc1 .value { color: #60a5fa; }
+        .sc2 .value { color: #a78bfa; }
+        .sc3 .value { color: #34d399; }
+        .sc4 .value { color: #fbbf24; }
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 960px) { .charts-grid { grid-template-columns: 1fr; } }
+        .chart-panel h3 {
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .chart-container {
+            position: relative;
+            height: 280px;
+        }
+        .health-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 14px;
+            margin-top: 16px;
+        }
+        .health-metric {
+            background: rgba(15, 20, 42, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px 14px;
+            text-align: center;
+        }
+        .health-metric .mv {
+            font-size: 1.7rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .health-metric .ml {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .health-metric .bar {
+            height: 4px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 2px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .health-metric .bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .no-data {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 50px 20px;
+        }
+        .no-data .emoji { font-size: 2.8rem; margin-bottom: 10px; }
+        .no-data .msg { font-size: 0.95rem; }
+        .match-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 0.85rem;
+        }
+        .match-table th {
+            text-align: left;
+            padding: 10px 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .match-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .match-table tr:hover td {
+            background: rgba(59,130,246,0.05);
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-pos { background: rgba(52,211,153,0.15); color: #34d399; }
+        .badge-neg { background: rgba(248,113,113,0.15); color: #f87171; }
+        .badge-neutral { background: rgba(156,163,175,0.15); color: #9ca3af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="glass-panel">
+            <div>
+                <h1>IgnisEngine Dashboard</h1>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">วิเคราะห์ประวัติ ความเสี่ยง และประสิทธิภาพการเรียนรู้ของบอท</p>
+            </div>
+            <div class="nav-tabs">
+                <a href="/" class="nav-tab active">📊 แดชบอร์ด</a>
+                <a href="/progress" class="nav-tab">📈 วัดผล</a>
+            </div>
+        </header>
+
+        <!-- Controls Panel -->
+        <div class="glass-panel controls-panel">
+            <div class="control-group" style="flex: 1;">
+                <label for="deck-select">เลือกเด็ค AI เพื่อดูรายงานการวิเคราะห์</label>
+                <select id="deck-select" onchange="loadAnalytics()">
+                    <!-- Loaded dynamically -->
+                </select>
+            </div>
+            <button class="btn-show" onclick="loadAnalytics()">🔄 รีเฟรชข้อมูล</button>
+        </div>
+
+        <div class="summary-grid">
+            <div class="summary-card sc1">
+                <div class="value" id="s-matches">&mdash;</div>
+                <div class="label">แมตช์ทั้งหมด</div>
+            </div>
+            <div class="summary-card sc2">
+                <div class="value" id="s-avg-score">&mdash;</div>
+                <div class="label">Avg Decision Score</div>
+            </div>
+            <div class="summary-card sc3">
+                <div class="value" id="s-health">&mdash;</div>
+                <div class="label">Registry Health</div>
+            </div>
+            <div class="summary-card sc4">
+                <div class="value" id="s-threats">&mdash;</div>
+                <div class="label">ภัยคุกคามที่เรียนรู้</div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="glass-panel chart-panel">
+                <h3>📊 LP Differential ต่อแมตช์</h3>
+                <div class="chart-container" id="lpChartContainer"><canvas id="lpChart"></canvas></div>
+            </div>
+            <div class="glass-panel chart-panel">
+                <h3>📈 คะแนนตัดสินใจเฉลี่ย</h3>
+                <div class="chart-container" id="scoreChartContainer"><canvas id="scoreChart"></canvas></div>
+            </div>
+            <div class="glass-panel chart-panel">
+                <h3>🃏 การกระจายตัว Priority</h3>
+                <div class="chart-container" id="priorityChartContainer"><canvas id="priorityChart"></canvas></div>
+            </div>
+            <div class="glass-panel chart-panel">
+                <h3>🎯 สัดส่วนเป้าหมายที่ใช้</h3>
+                <div class="chart-container" id="goalChartContainer"><canvas id="goalChart"></canvas></div>
+            </div>
+        </div>
+
+        <div class="glass-panel chart-panel">
+            <h3>⚠️ Opponent Threat Intelligence — Top 15 การ์ดอันตรายที่สุด</h3>
+            <div class="chart-container" id="threatChartContainer" style="height: 400px;"><canvas id="threatChart"></canvas></div>
+        </div>
+
+        <div class="glass-panel">
+            <h3>🧠 Registry Health Check</h3>
+            <div class="health-grid" id="health-grid"></div>
+        </div>
+
+        <div class="glass-panel">
+            <h3>📋 Match History Log</h3>
+            <div id="match-table-container"></div>
+        </div>
+    </div>
+
+    <script>
+        Chart.defaults.color = '#9ca3af';
+        Chart.defaults.borderColor = 'rgba(255,255,255,0.05)';
+        Chart.defaults.font.family = "'Inter', sans-serif";
+
+        let matchData = [];
+        let snapshotData = {};
+
+        let lpChartInstance = null;
+        let scoreChartInstance = null;
+        let priorityChartInstance = null;
+        let goalChartInstance = null;
+        let threatChartInstance = null;
+
+        function getOrCreateCanvas(parentId, canvasId) {
+            const parent = document.getElementById(parentId);
+            let canvas = document.getElementById(canvasId);
+            if (!canvas) {
+                parent.innerHTML = `<canvas id="${canvasId}"></canvas>`;
+                canvas = document.getElementById(canvasId);
+            }
+            return canvas;
+        }
+
+        async function loadDecks() {
+            try {
+                const res = await fetch('/api/decks');
+                const decks = await res.json();
+                const select = document.getElementById("deck-select");
+                select.innerHTML = decks.map(d => `<option value="${d}">${d}</option>`).join('');
+                if (decks.length > 0) {
+                    loadAnalytics();
+                }
+            } catch (err) {
+                console.error("Failed to load decks:", err);
+            }
+        }
+
+        async function loadAnalytics() {
+            const deck = document.getElementById("deck-select").value || "";
+            if (!deck) return;
+            try {
+                const [matchRes, snapRes] = await Promise.all([
+                    fetch('/api/match_history'),
+                    fetch(`/api/registry_snapshot?deck=${encodeURIComponent(deck)}`)
+                ]);
+                const allMatches = await matchRes.json();
+                matchData = allMatches.filter(m => m.deck === deck);
+                snapshotData = await snapRes.json();
+                
+                renderSummary();
+                renderLPChart();
+                renderScoreChart();
+                renderPriorityChart();
+                renderGoalChart();
+                renderThreatChart();
+                renderHealthGrid();
+                renderMatchTable();
+            } catch (err) {
+                console.error('Analytics load failed:', err);
+            }
+        }
+
+        function renderSummary() {
+            document.getElementById('s-matches').textContent = matchData.length;
+            if (matchData.length > 0) {
+                const avg = matchData.reduce((s, m) => s + m.avg_score, 0) / matchData.length;
+                document.getElementById('s-avg-score').textContent = avg.toFixed(1);
+            } else {
+                document.getElementById('s-avg-score').textContent = "0.0";
+            }
+            const h = snapshotData.health || {};
+            const inflationPct = h.high_priority_pct || 0;
+            const healthScore = Math.max(0, Math.min(100, 100 - inflationPct * 1.2)).toFixed(0);
+            document.getElementById('s-health').textContent = healthScore + '%';
+            const threats = (snapshotData.opponents || []).filter(o => o.danger >= 20).length;
+            document.getElementById('s-threats').textContent = threats;
+        }
+
+        function renderLPChart() {
+            const container = document.getElementById('lpChartContainer');
+            if (!matchData.length) {
+                container.innerHTML = '<div class="no-data"><div class="emoji">📭</div><div class="msg">ยังไม่มีข้อมูลแมตช์</div></div>';
+                if (lpChartInstance) {
+                    lpChartInstance.destroy();
+                    lpChartInstance = null;
+                }
+                return;
+            }
+            const ctx = getOrCreateCanvas('lpChartContainer', 'lpChart');
+            if (lpChartInstance) lpChartInstance.destroy();
+            lpChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: matchData.map((m, i) => 'Match #' + (i + 1)),
+                    datasets: [{
+                        label: 'LP Differential',
+                        data: matchData.map(m => m.lp_diff),
+                        backgroundColor: matchData.map(m =>
+                            m.lp_diff > 0 ? 'rgba(52, 211, 153, 0.65)' :
+                            m.lp_diff < 0 ? 'rgba(248, 113, 113, 0.65)' :
+                            'rgba(156, 163, 175, 0.4)'
+                        ),
+                        borderColor: matchData.map(m =>
+                            m.lp_diff > 0 ? '#34d399' :
+                            m.lp_diff < 0 ? '#f87171' :
+                            '#9ca3af'
+                        ),
+                        borderWidth: 2,
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: (c) => {
+                                    const m = matchData[c.dataIndex];
+                                    return 'Bot LP: ' + m.bot_lp + ' | Opp LP: ' + m.opp_lp + '\nTurns: ' + m.turns + ' | Decisions: ' + m.total_decisions;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: { grid: { color: 'rgba(255,255,255,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function renderScoreChart() {
+            const container = document.getElementById('scoreChartContainer');
+            if (!matchData.length) {
+                container.innerHTML = '<div class="no-data"><div class="emoji">📭</div><div class="msg">ยังไม่มีข้อมูลแมตช์</div></div>';
+                if (scoreChartInstance) {
+                    scoreChartInstance.destroy();
+                    scoreChartInstance = null;
+                }
+                return;
+            }
+            const ctx = getOrCreateCanvas('scoreChartContainer', 'scoreChart');
+            if (scoreChartInstance) scoreChartInstance.destroy();
+            scoreChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: matchData.map((m, i) => 'Match #' + (i + 1)),
+                    datasets: [{
+                        label: 'Avg Decision Score',
+                        data: matchData.map(m => m.avg_score),
+                        borderColor: '#a78bfa',
+                        backgroundColor: 'rgba(167, 139, 250, 0.08)',
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#a78bfa',
+                        pointRadius: 6,
+                        pointHoverRadius: 9,
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: (c) => {
+                                    const m = matchData[c.dataIndex];
+                                    return 'Decisions: ' + m.total_decisions + ' | Turns: ' + m.turns;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function renderPriorityChart() {
+            const container = document.getElementById('priorityChartContainer');
+            const dist = (snapshotData.health || {}).priority_distribution || {};
+            const levels = ['5','6','7','8','9','10'];
+            const colors = ['#6b7280','#8b5cf6','#3b82f6','#10b981','#f59e0b','#ef4444'];
+            
+            const ctx = getOrCreateCanvas('priorityChartContainer', 'priorityChart');
+            if (priorityChartInstance) priorityChartInstance.destroy();
+            priorityChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: levels.map(l => 'Priority ' + l),
+                    datasets: [{
+                        label: 'Cards',
+                        data: levels.map(l => dist[l] || 0),
+                        backgroundColor: colors.map(c => c + 'bb'),
+                        borderColor: colors,
+                        borderWidth: 2,
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: (c) => {
+                                    const total = (snapshotData.health || {}).total_cards || 1;
+                                    return ((c.raw / total) * 100).toFixed(1) + '% of total';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.04)' } },
+                        y: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function renderGoalChart() {
+            const container = document.getElementById('goalChartContainer');
+            const goalTotals = {};
+            matchData.forEach(m => {
+                for (const [g, count] of Object.entries(m.goals_used || {})) {
+                    goalTotals[g] = (goalTotals[g] || 0) + count;
+                }
+            });
+            const goalMeta = {
+                'establish_interruptions': { name: 'Establish Interruptions', color: '#3b82f6' },
+                'push_lethal':            { name: 'Push Lethal',             color: '#ef4444' },
+                'survive':                { name: 'Survive',                 color: '#10b981' }
+            };
+            const keys = Object.keys(goalTotals);
+            if (!keys.length) {
+                container.innerHTML = '<div class="no-data"><div class="emoji">📭</div><div class="msg">ยังไม่มีข้อมูลเป้าหมาย</div></div>';
+                if (goalChartInstance) {
+                    goalChartInstance.destroy();
+                    goalChartInstance = null;
+                }
+                return;
+            }
+            const ctx = getOrCreateCanvas('goalChartContainer', 'goalChart');
+            if (goalChartInstance) goalChartInstance.destroy();
+            goalChartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: keys.map(g => (goalMeta[g] || {}).name || g),
+                    datasets: [{
+                        data: keys.map(g => goalTotals[g]),
+                        backgroundColor: keys.map(g => ((goalMeta[g] || {}).color || '#8b5cf6') + 'cc'),
+                        borderColor: keys.map(g => (goalMeta[g] || {}).color || '#8b5cf6'),
+                        borderWidth: 2,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    cutout: '55%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { padding: 16, usePointStyle: true, pointStyle: 'circle', font: { size: 12 } }
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderThreatChart() {
+            const container = document.getElementById('threatChartContainer');
+            const opps = (snapshotData.opponents || []).slice(0, 15);
+            if (!opps.length) {
+                container.innerHTML = '<div class="no-data"><div class="emoji">🔍</div><div class="msg">ยังไม่มีข้อมูล Opponent Memory</div></div>';
+                if (threatChartInstance) {
+                    threatChartInstance.destroy();
+                    threatChartInstance = null;
+                }
+                return;
+            }
+            const maxD = Math.max(...opps.map(o => o.danger), 1);
+            const ctx = getOrCreateCanvas('threatChartContainer', 'threatChart');
+            if (threatChartInstance) threatChartInstance.destroy();
+            threatChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: opps.map(o => o.name),
+                    datasets: [{
+                        label: 'Danger Score',
+                        data: opps.map(o => o.danger),
+                        backgroundColor: opps.map(o => {
+                            const r = o.danger / maxD;
+                            return r > 0.7 ? 'rgba(239,68,68,0.65)' : r > 0.35 ? 'rgba(245,158,11,0.55)' : 'rgba(107,114,128,0.4)';
+                        }),
+                        borderColor: opps.map(o => {
+                            const r = o.danger / maxD;
+                            return r > 0.7 ? '#ef4444' : r > 0.35 ? '#f59e0b' : '#6b7280';
+                        }),
+                        borderWidth: 2,
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: (c) => {
+                                    const o = opps[c.dataIndex];
+                                    return 'Seen: ' + o.times_seen + 'x | Disrupted us: ' + o.times_disrupted + 'x';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true, max: 100,
+                            grid: { color: 'rgba(255,255,255,0.04)' },
+                            title: { display: true, text: 'Danger Score (0-100)', color: '#6b7280', font: { size: 11 } }
+                        },
+                        y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+                    }
+                }
+            });
+        }
+
+        function renderHealthGrid() {
+            const h = snapshotData.health || {};
+            const el = document.getElementById('health-grid');
+            const metrics = [
+                { label: 'Total Cards', value: h.total_cards || 0, suffix: '', color: '#60a5fa', pct: 100 },
+                { label: 'Avg Priority', value: h.avg_priority || 0, suffix: '',
+                  color: (h.avg_priority||0) > 8.5 ? '#f87171' : (h.avg_priority||0) > 8.0 ? '#fbbf24' : '#34d399',
+                  pct: ((h.avg_priority||0)/10)*100 },
+                { label: 'Priority >= 9', value: h.high_priority_count || 0, suffix: ' (' + (h.high_priority_pct||0) + '%)',
+                  color: (h.high_priority_pct||0) > 60 ? '#f87171' : (h.high_priority_pct||0) > 40 ? '#fbbf24' : '#34d399',
+                  pct: h.high_priority_pct || 0 },
+                { label: 'Priority = 10', value: h.max_priority_count || 0, suffix: '',
+                  color: (h.max_priority_count||0) > 15 ? '#f87171' : '#34d399',
+                  pct: ((h.max_priority_count||0)/Math.max(h.total_cards||1,1))*100 },
+                { label: 'Avg Bait Value', value: h.avg_bait || 0, suffix: '',
+                  color: (h.avg_bait||0) > 4 ? '#f87171' : (h.avg_bait||0) > 3 ? '#fbbf24' : '#34d399',
+                  pct: ((h.avg_bait||0)/8)*100 },
+                { label: 'Bait >= 6 (Decay)', value: h.high_bait_count || 0, suffix: '',
+                  color: (h.high_bait_count||0) > 10 ? '#f87171' : (h.high_bait_count||0) > 5 ? '#fbbf24' : '#34d399',
+                  pct: ((h.high_bait_count||0)/Math.max(h.total_cards||1,1))*100 }
+            ];
+            el.innerHTML = metrics.map(m =>
+                '<div class="health-metric">' +
+                    '<div class="mv" style="color:' + m.color + '">' + m.value + m.suffix + '</div>' +
+                    '<div class="ml">' + m.label + '</div>' +
+                    '<div class="bar"><div class="bar-fill" style="width:' + Math.min(m.pct,100) + '%;background:' + m.color + '"></div></div>' +
+                '</div>'
+            ).join('');
+        }
+
+        function renderMatchTable() {
+            const container = document.getElementById('match-table-container');
+            if (!matchData.length) {
+                container.innerHTML = '<div class="no-data"><div class="emoji">📭</div><div class="msg">ยังไม่มีข้อมูลแมตช์ — เล่นเกมเพิ่มเพื่อเก็บสถิติ</div></div>';
+                return;
+            }
+            let html = '<table class="match-table"><thead><tr>' +
+                '<th>เด็ค</th><th>เวลา</th><th>Playstyle</th><th>Bot LP</th><th>Opp LP</th><th>LP Diff</th><th>Turns</th><th>Decisions</th><th>Avg Score</th><th>Learned</th>' +
+                '</tr></thead><tbody>';
+            matchData.forEach(m => {
+                const diffBadge = m.lp_diff > 0 ? 'badge-pos' : m.lp_diff < 0 ? 'badge-neg' : 'badge-neutral';
+                const diffSign = m.lp_diff > 0 ? '+' : '';
+                html += '<tr>' +
+                    '<td style="font-weight:600;color:#60a5fa">' + m.deck.replace('2026_','') + '</td>' +
+                    '<td style="color:var(--text-muted);font-size:0.8rem">' + m.timestamp + '</td>' +
+                    '<td>' + m.playstyle + '</td>' +
+                    '<td>' + m.bot_lp + '</td>' +
+                    '<td>' + m.opp_lp + '</td>' +
+                    '<td><span class="badge ' + diffBadge + '">' + diffSign + m.lp_diff + '</span></td>' +
+                    '<td>' + m.turns + '</td>' +
+                    '<td>' + m.total_decisions + '</td>' +
+                    '<td style="font-weight:600;color:#a78bfa">' + m.avg_score + '</td>' +
+                    '<td>' + m.dangers_learned.length + ' threats</td>' +
+                    '</tr>';
+            });
+            html += '</tbody></table>';
+            container.innerHTML = html;
+        }
+
+        window.onload = loadDecks;
+    </script>
+</body>
+</html>

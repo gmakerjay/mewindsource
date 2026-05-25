@@ -135,6 +135,50 @@ def run_live_duel_loop(deck, opponent, opp_deck, iterations, progress_log):
                 if not active_bots:
                     break
             
+            try:
+                import shutil
+                reg_name = f"cards_registry_{deck}.json" if deck else "cards_registry.json"
+                src_reg = os.path.join(PROJECT_ROOT, "WindBot", "config", reg_name)
+                if not os.path.exists(src_reg):
+                    reg_name = "cards_registry.json"
+                    src_reg = os.path.join(PROJECT_ROOT, "WindBot", "config", reg_name)
+                
+                dst_reg = os.path.join(PROJECT_ROOT, "WindBot_Sandbox", reg_name)
+                
+                if os.path.exists(src_reg):
+                    shutil.copy2(src_reg, dst_reg)
+                    write_progress_log(progress_log, f"Synced card registry {reg_name} to sandbox successfully.\n")
+                else:
+                    write_progress_log(progress_log, f"Card registry not found at {src_reg}\n")
+                
+                opp_mem_src = os.path.join(PROJECT_ROOT, "WindBot", "config", "opponent_memory.json")
+                opp_mem_dst = os.path.join(PROJECT_ROOT, "WindBot_Sandbox", "opponent_memory.json")
+                if os.path.exists(opp_mem_src):
+                    shutil.copy2(opp_mem_src, opp_mem_dst)
+                    write_progress_log(progress_log, "Synced opponent_memory.json to sandbox successfully.\n")
+                else:
+                    write_progress_log(progress_log, f"Opponent memory not found at {opp_mem_src}\n")
+                
+                compile_bat = os.path.join(PROJECT_ROOT, "WindBot", "compile_ai.bat")
+                if os.path.exists(compile_bat):
+                    write_progress_log(progress_log, "Executing compile_ai.bat...\n")
+                    res = subprocess.run(
+                        [compile_bat],
+                        cwd=os.path.join(PROJECT_ROOT, "WindBot"),
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.STDOUT,
+                        shell=True
+                    )
+                    compile_output = res.stdout.decode('utf-8', errors='replace')
+                    if res.returncode == 0:
+                        write_progress_log(progress_log, "compile_ai.bat executed successfully.\n")
+                    else:
+                        write_progress_log(progress_log, f"compile_ai.bat returned error code {res.returncode}. Output:\n{compile_output}\n")
+                else:
+                    write_progress_log(progress_log, f"compile_ai.bat not found at {compile_bat}\n")
+            except Exception as ex:
+                write_progress_log(progress_log, f"Error in post-duel sync/compile: {ex}\n")
+            
             if not active_bots:
                 break
                 

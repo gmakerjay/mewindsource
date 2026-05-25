@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "id": 99249638,
     "roles": [
@@ -374,7 +374,9 @@
   },
   {
     "id": 10045474,
-    "roles": [],
+    "roles": [
+      "combo_piece"
+    ],
     "priority": 8,
     "risk_if_negated": 1,
     "bait_value": 1,
@@ -1461,7 +1463,7 @@
     ],
     "priority": 8,
     "risk_if_negated": 5,
-    "bait_value": 6,
+    "bait_value": 5,
     "followup_value": 7,
     "recovery_value": 5,
     "combo_plans": [
@@ -2012,7 +2014,7 @@
     ],
     "priority": 8,
     "risk_if_negated": 6,
-    "bait_value": 6,
+    "bait_value": 5,
     "followup_value": 6,
     "recovery_value": 4,
     "combo_plans": [
@@ -2336,7 +2338,9 @@
   },
   {
     "id": 4064256,
-    "roles": [],
+    "roles": [
+      "combo_piece"
+    ],
     "priority": 7,
     "risk_if_negated": 3,
     "bait_value": 0,
@@ -2349,7 +2353,9 @@
   },
   {
     "id": 20612097,
-    "roles": [],
+    "roles": [
+      "combo_piece"
+    ],
     "priority": 7,
     "risk_if_negated": 3,
     "bait_value": 0,
@@ -2407,7 +2413,9 @@
   },
   {
     "id": 20590515,
-    "roles": [],
+    "roles": [
+      "combo_piece"
+    ],
     "priority": 8,
     "risk_if_negated": 3,
     "bait_value": 0,
@@ -2420,7 +2428,9 @@
   },
   {
     "id": 68829754,
-    "roles": [],
+    "roles": [
+      "combo_piece"
+    ],
     "priority": 7,
     "risk_if_negated": 3,
     "bait_value": 0,
@@ -2463,7 +2473,9 @@
   },
   {
     "id": 56984514,
-    "roles": [],
+    "roles": [
+      "combo_piece"
+    ],
     "priority": 7,
     "risk_if_negated": 3,
     "bait_value": 0,
@@ -2476,7 +2488,9 @@
   },
   {
     "id": 94224458,
-    "roles": [],
+    "roles": [
+      "combo_piece"
+    ],
     "priority": 6,
     "risk_if_negated": 3,
     "bait_value": 0,
@@ -2489,7 +2503,9 @@
   },
   {
     "id": 93191801,
-    "roles": [],
+    "roles": [
+      "combo_piece"
+    ],
     "priority": 7,
     "risk_if_negated": 3,
     "bait_value": 0,
@@ -2502,7 +2518,9 @@
   },
   {
     "id": 53582587,
-    "roles": [],
+    "roles": [
+      "combo_piece"
+    ],
     "priority": 5,
     "risk_if_negated": 3,
     "bait_value": 0,

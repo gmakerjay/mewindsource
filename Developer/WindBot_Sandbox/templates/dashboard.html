@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>IgnisEngine Dashboard - Cockpit ควบคุมระบบ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0d19;
+            --panel-bg: rgba(22, 28, 54, 0.55);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary-accent: #3b82f6;
+            --secondary-accent: #8b5cf6;
+            --success-color: #10b981;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: radial-gradient(circle at top right, #1d1e36 0%, var(--bg-color) 70%);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            flex-grow: 1;
+        }
+        
+        .glass-panel {
+            background: var(--panel-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        header.glass-panel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        select, input {
+            background: rgba(15, 19, 39, 0.8);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+        
+        select:focus, input:focus {
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+        }
+        
+        .btn-row {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+            color: white;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .btn-danger {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: #fca5a5;
+        }
+        
+        .btn-danger:hover {
+            background: rgba(239, 68, 68, 0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .stat-card {
+            background: rgba(15, 20, 42, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .stat-val {
+            font-size: 1.8rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--primary-accent);
+            margin-bottom: 4px;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        
+        .console-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 100%;
+        }
+        
+        .console-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .console-log {
+            background: #060813;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #a7f3d0;
+            overflow-y: auto;
+            height: 400px;
+            white-space: pre-wrap;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
+        }
+        
+        .console-log::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .console-log::-webkit-scrollbar-track {
+            background: #060813;
+        }
+        
+        .console-log::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        
+        .console-log::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+        }
+        
+        .modal-content {
+            background: #111424;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 650px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: #60a5fa;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+        
+        .modal-body {
+            font-family: 'Consolas', monospace;
+            font-size: 0.85rem;
+            color: #d1d5db;
+            background: #070914;
+            padding: 20px;
+            border-radius: 8px;
+            max-height: 350px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .modal-close {
+            align-self: flex-end;
+            padding: 10px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: var(--font-display);
+            transition: background 0.2s;
+        }
+        
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .nav-tabs {
+            display: flex;
+            gap: 8px;
+        }
+        .nav-tab {
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+        .nav-tab:hover {
+            background: rgba(255,255,255,0.05);
+            color: var(--text-main);
+        }
+        .nav-tab.active {
+            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+            color: white;
+            border-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="glass-panel">
+            <div>
+                <h1>IgnisEngine Dashboard</h1>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">ระบบควบคุม ปรับแต่ง และวิเคราะห์การเรียนรู้ของบอทแบบเบ็ดเสร็จ</p>
+            </div>
+            <div class="nav-tabs">
+                <a href="/" class="nav-tab active">🎮 ควบคุม</a>
+                <a href="/progress" class="nav-tab">📈 วัดผล</a>
+            </div>
+        </header>
+
+        <div class="grid">
+            <div class="glass-panel">
+                <div class="console-wrapper">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                        <div style="display: flex; align-items: center;">
+                            <h2 style="font-size: 1.4rem;">สถานะและการแสดงผลการรัน</h2>
+                            <span id="training-badge" style="display: none; background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid #10b981; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-left: 15px; animation: pulse 2s infinite;">● กำลังเทรน</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <label for="deck-select" style="margin: 0; font-size: 0.85rem;">เลือกเด็ค:</label>
+                            <select id="deck-select" onchange="updateStats()" style="width: auto; padding: 6px 12px; font-size: 0.9rem;">
+                                <!-- Populated dynamically -->
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-val" id="stat-sandbox-count">0</div>
+                            <div class="stat-label">Sandbox Registry</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-val" id="stat-live-count">0</div>
+                            <div class="stat-label">LIVE Registry</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-val" id="stat-logs-count">0</div>
+                            <div class="stat-label">Match Logs</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-val" id="stat-opp-mem">0</div>
+                            <div class="stat-label">Opponent Cards Memory</div>
+                        </div>
+                    </div>
+
+                    <div class="console-header">
+                        <label>ผลการทำงาน (Console Log)</label>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <button class="btn btn-danger" id="btn-stop" onclick="stopTraining()" style="display: none; width: auto; padding: 6px 15px; font-size: 0.8rem; border-radius: 6px; border: none; font-weight: 600; height: 32px;">🛑 หยุดการทำงาน</button>
+                            <button class="btn btn-secondary" onclick="clearConsole()" style="width: auto; padding: 6px 15px; font-size: 0.8rem; height: 32px;">ล้างหน้าจอ</button>
+                        </div>
+                    </div>
+                    <div class="console-log" id="console-output">กล่องแสดงผลลัพธ์จากระบบการฝึกฝน...</div>
+
+                    <button class="btn btn-primary" onclick="deployConfig()" style="margin-top: 20px; background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">
+                        คัดลอกไฟล์และคอมไพล์ระบบใช้งานจริง (Deploy to windbot)
+                    </button>
+                </div>
+             <script>
+        let progressInterval = null;
+        let statusInterval = null;
+
+        function loadDropdowns() {
+            fetch('/api/decks')
+                .then(r => r.json())
+                .then(decks => {
+                    const select = document.getElementById("deck-select");
+                    select.innerHTML = decks.map(d => `<option value="${d}">${d}</option>`).join('');
+                    updateStats();
+                });
+        }
+
+        function updateStats() {
+            const deck = document.getElementById("deck-select").value || "";
+            fetch(`/api/status?deck=${encodeURIComponent(deck)}`)
+                .then(r => r.json())
+                .then(stats => {
+                    document.getElementById("stat-sandbox-count").innerText = stats.registry_count;
+                    document.getElementById("stat-live-count").innerText = stats.live_registry_count;
+                    document.getElementById("stat-logs-count").innerText = stats.match_logs_count;
+                    document.getElementById("stat-opp-mem").innerText = stats.opponent_memory_count;
+                    
+                    const badge = document.getElementById("training-badge");
+                    const btnStop = document.getElementById("btn-stop");
+                    
+                    if (stats.is_training) {
+                        badge.style.display = "inline-block";
+                        btnStop.style.display = "inline-flex";
+                        if (!progressInterval) {
+                            startLogPolling();
+                        }
+                    } else {
+                        badge.style.display = "none";
+                        btnStop.style.display = "none";
+                        if (progressInterval) {
+                            clearInterval(progressInterval);
+                            progressInterval = null;
+                            fetchLogs();
+                        }
+                    }
+                });
+        }
+
+        function stopTraining() {
+            fetch('/api/kill', {method: 'POST'})
+                .then(() => {
+                    document.getElementById("console-output").innerText += "\n\nการรันระบบถูกสั่งหยุดโดยผู้ใช้\n";
+                    updateStats();
+                });
+        }
+
+        function startLogPolling() {
+            if (progressInterval) clearInterval(progressInterval);
+            fetchLogs();
+            progressInterval = setInterval(fetchLogs, 1000);
+        }
+
+        function fetchLogs() {
+            fetch('/api/progress')
+                .then(r => r.text())
+                .then(log => {
+                    const consoleOutput = document.getElementById("console-output");
+                    consoleOutput.innerText = log;
+                    consoleOutput.scrollTop = consoleOutput.scrollHeight;
+                });
+        }
+
+        function clearConsole() {
+            document.getElementById("console-output").innerText = "";
+        }
+
+        function deployConfig() {
+            const deck = document.getElementById("deck-select").value || "";
+            document.getElementById("modal-log").innerText = "กำลังเริ่มปรับใช้ไฟล์ และรันตัวคอมไพล์ C# AI ในระบบย้อนหลัง...";
+            document.getElementById("deploy-modal").style.display = "flex";
+            
+            fetch('/api/deploy', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({deck})
+            })
+                .then(r => r.json())
+                .then(res => {
+                    const logEl = document.getElementById("modal-log");
+                    if (res.success) {
+                        logEl.style.color = "#a7f3d0";
+                        logEl.innerText = "ปรับใช้งานสำเร็จเสร็จสิ้น!\n\nผลการคอมไพล์บอท:\n" + res.output;
+                    } else {
+                        logEl.style.color = "#fca5a5";
+                        logEl.innerText = "ข้อผิดพลาดในการติดตั้งหรือคอมไพล์:\n" + res.output;
+                    }
+                    updateStats();
+                })
+                .catch(err => {
+                    document.getElementById("modal-log").innerText = "เกิดความผิดพลาดในการส่งชุดคำสั่ง: " + err;
+                });
+        }
+
+        function closeModal() {
+            document.getElementById("deploy-modal").style.display = "none";
+        }
+
+        window.onload = function() {
+            loadDropdowns();
+            fetchLogs();
+            statusInterval = setInterval(updateStats, 2000);
+        }
+    </script>
+</body>
+</html>
