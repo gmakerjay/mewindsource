@@ -38,6 +38,7 @@ namespace ProjectIgnisAI
             public ArrayList goals { get; set; }
             public ArrayList choke_points { get; set; }
             public ArrayList weaknesses { get; set; }
+            public int target_lp { get; set; }
 
             public DeckIdentity()
             {
@@ -45,6 +46,7 @@ namespace ProjectIgnisAI
                 goals = new ArrayList { "survive", "establish_interruptions", "push_lethal" };
                 choke_points = new ArrayList();
                 weaknesses = new ArrayList { "handtraps" };
+                target_lp = -1;
             }
         }
 
@@ -90,6 +92,7 @@ namespace ProjectIgnisAI
 
         protected int _lastBotLP = 8000;
         protected int _lastOppLP = 8000;
+        protected int _lastSelectedFusionId = 0;
 
         protected void UpdateLastKnownLP()
         {
@@ -133,9 +136,6 @@ namespace ProjectIgnisAI
             // Set up Folder Logging
             SetupFolderLogging();
 
-            // Start LP Monitor Thread
-            StartLPMonitor();
-
             // Register card-specific logic dynamically from metadata registry
             foreach (var cardMeta in _cardRegistry.Values)
             {
@@ -155,6 +155,9 @@ namespace ProjectIgnisAI
             AddExecutor(ExecutorType.SpellSet, OnDefaultSpellSet);
             AddExecutor(ExecutorType.Repos, OnDefaultRepos);
             AddExecutor(ExecutorType.MonsterSet, OnDefaultMonsterSet);
+
+            // Start LP Monitor Thread
+            StartLPMonitor();
         }
 
         protected void SetupFolderLogging()
@@ -201,7 +204,7 @@ namespace ProjectIgnisAI
                             int botLP = Duel.Fields[0].LifePoints;
                             int oppLP = Duel.Fields[1].LifePoints;
                             
-                            if (botLP == 0 || oppLP == 0)
+                            if (_turnCount > 0 && (botLP == 0 || oppLP == 0))
                             {
                                 ApplyRealTimeLearning();
                             }
@@ -734,6 +737,23 @@ namespace ProjectIgnisAI
                     {
                         _deckConfig.playstyle = "control";
                     }
+
+                    if (rawDict.ContainsKey("target_lp") && rawDict["target_lp"] != null)
+                    {
+                        _deckConfig.target_lp = Convert.ToInt32(rawDict["target_lp"]);
+                    }
+                    else if (rawDict.ContainsKey("lp_self") && rawDict["lp_self"] != null)
+                    {
+                        _deckConfig.target_lp = Convert.ToInt32(rawDict["lp_self"]);
+                    }
+                    else if (rawDict.ContainsKey("target_lp_threshold") && rawDict["target_lp_threshold"] != null)
+                    {
+                        _deckConfig.target_lp = Convert.ToInt32(rawDict["target_lp_threshold"]);
+                    }
+                    else
+                    {
+                        _deckConfig.target_lp = -1;
+                    }
                     
                     _deckConfig.goals = new ArrayList();
                     if (rawDict.ContainsKey("goals") && rawDict["goals"] is IEnumerable && !(rawDict["goals"] is string))
@@ -1000,11 +1020,134 @@ namespace ProjectIgnisAI
                     string oppJson = serializer.Serialize(oppDict);
                     WriteFileWithRetry(oppMemoryPath, oppJson);
                     LogToMatch("Saved " + oppDict.Count + " opponent cards to " + oppMemoryPath);
+
+                    bool targetLpIsZero = false;
+                    try
+                    {
+                        string deckConfigPath = Path.Combine(baseDir, "config", "decks", _resolvedDeckName + ".json");
+                        if (File.Exists(deckConfigPath))
+                        {
+                            string deckConfigJson = ReadFileWithRetry(deckConfigPath);
+                            var rawDict = serializer.Deserialize<Dictionary<string, object>>(deckConfigJson);
+                            if (rawDict != null)
+                            {
+                                int tLp = -1;
+                                if (rawDict.ContainsKey("target_lp") && rawDict["target_lp"] != null)
+                                    tLp = Convert.ToInt32(rawDict["target_lp"]);
+                                else if (rawDict.ContainsKey("lp_self") && rawDict["lp_self"] != null)
+                                    tLp = Convert.ToInt32(rawDict["lp_self"]);
+                                else if (rawDict.ContainsKey("target_lp_threshold") && rawDict["target_lp_threshold"] != null)
+                                    tLp = Convert.ToInt32(rawDict["target_lp_threshold"]);
+                                
+                                if (tLp == 0)
+                                {
+                                    targetLpIsZero = true;
+                                }
+                            }
+                        }
+                    }
+                    catch {}
+
+                    if (targetLpIsZero || _deckConfig.target_lp == 0)
+                    {
+                        LogToMatch("Target LP is 0. Training concluded. Syncing registry and compiling brain...");
+                        SyncRegistryToSandboxAndCompile();
+                    }
                 }
                 catch (Exception ex)
                 {
                     LogToMatch("Error saving configuration: " + ex.Message);
                 }
+            }
+        }
+
+        protected void SyncRegistryToSandboxAndCompile()
+        {
+            try
+            {
+                string baseDir = !string.IsNullOrEmpty(_resolvedBaseDir) ? _resolvedBaseDir : AppDomain.CurrentDomain.BaseDirectory;
+                string workspaceDir = baseDir;
+                while (!string.IsNullOrEmpty(workspaceDir) && 
+                       !(Directory.Exists(Path.Combine(workspaceDir, "WindBot")) && Directory.Exists(Path.Combine(workspaceDir, "Developer"))))
+                {
+                    string parent = Path.GetDirectoryName(workspaceDir);
+                    if (parent == workspaceDir || string.IsNullOrEmpty(parent))
+                        break;
+                    workspaceDir = parent;
+                }
+
+                if (string.IsNullOrEmpty(workspaceDir) || !Directory.Exists(workspaceDir))
+                {
+                    workspaceDir = Path.GetFullPath(Path.Combine(baseDir, ".."));
+                }
+
+                string windBotDir = Path.Combine(workspaceDir, "WindBot");
+                string sandboxDir = Path.Combine(workspaceDir, "Developer", "WindBot_Sandbox");
+
+                if (!Directory.Exists(sandboxDir))
+                {
+                    Log("SyncRegistryToSandboxAndCompile error: Sandbox directory not found at " + sandboxDir);
+                    return;
+                }
+
+                string deckRegistryName = "cards_registry_" + _resolvedDeckName + ".json";
+                string sourceRegistryPath = Path.Combine(windBotDir, "config", deckRegistryName);
+                string destRegistryPath = Path.Combine(sandboxDir, deckRegistryName);
+
+                string sourceMemoryPath = Path.Combine(windBotDir, "config", "opponent_memory.json");
+                string destMemoryPath = Path.Combine(sandboxDir, "opponent_memory.json");
+
+                if (File.Exists(sourceRegistryPath))
+                {
+                    File.Copy(sourceRegistryPath, destRegistryPath, true);
+                    Log("Synced registry file to " + destRegistryPath);
+                }
+                else
+                {
+                    Log("Warning: registry source path not found: " + sourceRegistryPath);
+                }
+
+                if (File.Exists(sourceMemoryPath))
+                {
+                    File.Copy(sourceMemoryPath, destMemoryPath, true);
+                    Log("Synced opponent memory to " + destMemoryPath);
+                }
+                else
+                {
+                    Log("Warning: opponent memory source path not found: " + sourceMemoryPath);
+                }
+
+                string batPath = Path.Combine(windBotDir, "compile_ai.bat");
+                if (File.Exists(batPath))
+                {
+                    System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo();
+                    psi.FileName = batPath;
+                    psi.WorkingDirectory = windBotDir;
+                    psi.CreateNoWindow = true;
+                    psi.UseShellExecute = false;
+                    
+                    System.Diagnostics.Process proc = System.Diagnostics.Process.Start(psi);
+                    if (proc != null)
+                    {
+                        proc.WaitForExit();
+                        if (proc.ExitCode != 0)
+                        {
+                            Log("Warning: compile_ai.bat failed with exit code: " + proc.ExitCode);
+                        }
+                        else
+                        {
+                            Log("Successfully compiled brain via compile_ai.bat");
+                        }
+                    }
+                }
+                else
+                {
+                    Log("SyncRegistryToSandboxAndCompile error: compile_ai.bat not found at " + batPath);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log("Exception in SyncRegistryToSandboxAndCompile: " + ex.Message);
             }
         }
 
@@ -1029,6 +1172,7 @@ namespace ProjectIgnisAI
             lock (_staticLock)
             {
                 if (_learningApplied) return;
+                LoadConfiguration();
 
                 bool hasDuelState = (Duel != null && Duel.Fields != null && Duel.Fields.Length >= 2 && Duel.Fields[0] != null && Duel.Fields[1] != null);
                 int botLP = hasDuelState ? Duel.Fields[0].LifePoints : _lastBotLP;
@@ -2300,10 +2444,78 @@ namespace ProjectIgnisAI
             bool result = EvaluateCardAction(card, meta, type);
             if (result)
             {
-                if (!_ourCardsPlayed.Contains(cardId))
-                    _ourCardsPlayed.Add(cardId);
+                lock (_staticLock)
+                {
+                    if (!_ourCardsPlayed.Contains(cardId))
+                        _ourCardsPlayed.Add(cardId);
+                }
             }
             return result;
+        }
+
+        public bool OnCardAction(int cardId, ExecutorType type, Func<bool> condition)
+        {
+            if (condition == null)
+                return false;
+
+            bool condResult = condition();
+            if (!condResult)
+                return false;
+
+            ClientCard card = null;
+            if (Bot != null)
+            {
+                if (Bot.Hand != null)
+                {
+                    foreach (var c in Bot.Hand)
+                    {
+                        if (c != null && c.Id == cardId) { card = c; break; }
+                    }
+                }
+                if (card == null && Bot.MonsterZone != null)
+                {
+                    foreach (var c in Bot.MonsterZone)
+                    {
+                        if (c != null && c.Id == cardId) { card = c; break; }
+                    }
+                }
+                if (card == null && Bot.SpellZone != null)
+                {
+                    foreach (var c in Bot.SpellZone)
+                    {
+                        if (c != null && c.Id == cardId) { card = c; break; }
+                    }
+                }
+                if (card == null && Bot.Graveyard != null)
+                {
+                    foreach (var c in Bot.Graveyard)
+                    {
+                        if (c != null && c.Id == cardId) { card = c; break; }
+                    }
+                }
+            }
+
+            if (card == null && Card != null && Card.Id == cardId)
+            {
+                card = Card;
+            }
+
+            if (card != null)
+            {
+                CardMetadata meta = GetOrCreateMetadata(card);
+                if (EvaluateCardAction(card, meta, type))
+                {
+                    lock (_staticLock)
+                    {
+                        if (!_ourCardsPlayed.Contains(cardId))
+                            _ourCardsPlayed.Add(cardId);
+                    }
+                    return true;
+                }
+                return false;
+            }
+
+            return condResult;
         }
 
         protected bool OnDefaultActivate()
@@ -2572,7 +2784,7 @@ namespace ProjectIgnisAI
                     return;
                 }
 
-                if (_needsReset || Duel.Turn < _turnCount || (Duel.Turn == 1 && _turnCount > 1))
+                if (_needsReset || Duel.Turn < _turnCount || (Duel.Turn == 1 && _turnCount >= 1))
                 {
                     ResetDuelState();
                 }
@@ -2593,7 +2805,7 @@ namespace ProjectIgnisAI
 
                 LogState();
 
-                if (_turnCount > 0 && _turnCount % 3 == 0)
+                if (_learningApplied && _turnCount > 0 && _turnCount % 3 == 0)
                 {
                     try { SaveConfiguration(); }
                     catch (Exception ex) { LogToTurn("Periodic save failed: " + ex.Message); }
@@ -2933,12 +3145,6 @@ namespace ProjectIgnisAI
                     return null;
                 }
 
-                if (attacker != null && attacker.CanDirectAttack)
-                {
-                    LogToTurn(string.Format("Battle Phase: {0} attacking directly.", GetCardName(attacker.Id)));
-                    return AI.Attack(attacker, null);
-                }
-
                 if (attacker == null)
                 {
                     return null;
@@ -3055,7 +3261,7 @@ namespace ProjectIgnisAI
                 List<ClientCard> available = new List<ClientCard>(cards);
                 bool preferHighPriority = true;
 
-                if (available.Count > 0)
+                if (available.Count > 0 && available[0] != null)
                 {
                     CardLocation loc = available[0].Location;
                     if (loc == CardLocation.Hand || loc == CardLocation.MonsterZone || loc == CardLocation.SpellZone)

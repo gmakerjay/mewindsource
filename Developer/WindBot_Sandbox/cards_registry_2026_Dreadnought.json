@@ -53,7 +53,7 @@
     "risk_if_negated": 1,
     "bait_value": 1,
     "followup_value": 2,
-    "recovery_value": 3,
+    "recovery_value": 9,
     "combo_plans": [
       "PlanA"
     ]
@@ -381,10 +381,13 @@
     "risk_if_negated": 1,
     "bait_value": 1,
     "followup_value": 5,
-    "recovery_value": 4,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
-    ]
+    ],
+    "q_values": {
+      "establish_interruptions": 0.103
+    }
   },
   {
     "id": 23434538,
@@ -410,11 +413,13 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 5,
+    "recovery_value": 9,
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "establish_interruptions": -0.072
+    }
   },
   {
     "id": 33854624,
@@ -440,7 +445,7 @@
     "risk_if_negated": 1,
     "bait_value": 1,
     "followup_value": 5,
-    "recovery_value": 5,
+    "recovery_value": 9,
     "combo_plans": [
       "PlanA"
     ]
@@ -2087,7 +2092,7 @@
     "risk_if_negated": 3,
     "bait_value": 1,
     "followup_value": 5,
-    "recovery_value": 5,
+    "recovery_value": 7,
     "combo_plans": [
       "PlanA"
     ]
@@ -2348,11 +2353,13 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 7,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": 0.0751
+    }
   },
   {
     "id": 17132130,
@@ -2376,16 +2383,17 @@
       "payoff",
       "disruption"
     ],
-    "priority": 6,
+    "priority": 8,
     "risk_if_negated": 3,
     "bait_value": 1,
     "followup_value": 5,
-    "recovery_value": 8,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
     "q_values": {
-      "establish_interruptions": 0.1044
+      "establish_interruptions": 0.305,
+      "break_board": 0.0112
     }
   },
   {
@@ -2398,7 +2406,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 6,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
@@ -2429,7 +2437,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 6,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
@@ -2441,15 +2449,18 @@
       "starter",
       "extender"
     ],
-    "priority": 5,
+    "priority": 3,
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 6,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "establish_interruptions": -0.089,
+      "break_board": -0.0584
+    }
   },
   {
     "id": 10808715,
@@ -2462,7 +2473,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 6,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
@@ -2477,7 +2488,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 8,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
@@ -2492,7 +2503,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 5,
+    "recovery_value": 9,
     "combo_plans": [
       "PlanA"
     ],
@@ -2507,7 +2518,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 7,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
@@ -2519,15 +2530,18 @@
       "starter",
       "extender"
     ],
-    "priority": 5,
+    "priority": 3,
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 6,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": 0.05,
+      "survive": -0.0657
+    }
   },
   {
     "id": 101402022,
@@ -2544,7 +2558,8 @@
       "PlanA"
     ],
     "q_values": {
-      "establish_interruptions": 0.116
+      "establish_interruptions": 0.1604,
+      "break_board": 0.0384
     }
   },
   {
@@ -2557,11 +2572,13 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 7,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": 0.1102
+    }
   },
   {
     "id": 24094653,
@@ -2572,18 +2589,20 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 7,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "establish_interruptions": -0.1098
+    }
   },
   {
     "id": 32807846,
     "roles": [
       "starter"
     ],
-    "priority": 5,
+    "priority": 3,
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
@@ -2591,7 +2610,10 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": 0.0212,
+      "survive": -0.0426
+    }
   },
   {
     "id": 52947044,
@@ -2606,7 +2628,9 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": 0.0608
+    }
   },
   {
     "id": 73628505,
@@ -2617,11 +2641,13 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 6,
+    "recovery_value": 8,
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": 0.0927
+    }
   },
   {
     "id": 81439173,
@@ -2632,7 +2658,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 5,
+    "recovery_value": 7,
     "combo_plans": [
       "PlanA"
     ],
@@ -2648,7 +2674,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 5,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
@@ -2663,7 +2689,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 5,
+    "recovery_value": 9,
     "combo_plans": [
       "PlanA"
     ],
@@ -2679,11 +2705,13 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 6,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "establish_interruptions": -0.0019
+    }
   },
   {
     "id": 101402062,
@@ -2694,11 +2722,13 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 8,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": 0.1036
+    }
   },
   {
     "id": 93657021,
@@ -2755,7 +2785,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 9,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
@@ -2766,7 +2796,7 @@
     "roles": [
       "payoff"
     ],
-    "priority": 5,
+    "priority": 3,
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
@@ -2774,7 +2804,11 @@
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": -0.0651,
+      "establish_interruptions": -0.161,
+      "survive": -0.0473
+    }
   },
   {
     "id": 46759931,
@@ -2801,7 +2835,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 8,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
@@ -2831,7 +2865,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 5,
+    "recovery_value": 7,
     "combo_plans": [
       "PlanA"
     ],
@@ -2846,11 +2880,13 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 6,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": 0.0091
+    }
   },
   {
     "id": 1948619,
@@ -2861,7 +2897,7 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 5,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
@@ -2876,11 +2912,13 @@
     "risk_if_negated": 3,
     "bait_value": 0,
     "followup_value": 5,
-    "recovery_value": 9,
+    "recovery_value": 10,
     "combo_plans": [
       "PlanA"
     ],
-    "q_values": {}
+    "q_values": {
+      "break_board": 0.0265
+    }
   },
   {
     "id": 87758525,

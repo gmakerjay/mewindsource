@@ -24,8 +24,7 @@ namespace ProjectIgnisAI
             // 1. Hand traps, interruptions, and negates (high priority response handlers)
             AddExecutor(ExecutorType.Activate, 14558127, () => OnCardAction(14558127, ExecutorType.Activate, AshBlossomEffect)); // Ash Blossom
             AddExecutor(ExecutorType.Activate, 10045474, () => OnCardAction(10045474, ExecutorType.Activate, ImpermanenceEffect)); // Infinite Impermanence
-            AddExecutor(ExecutorType.Activate, 24224830, () => OnCardAction(24224830, ExecutorType.Activate, CalledByGraveEffect)); // Called by the Grave (ID 1)
-            AddExecutor(ExecutorType.Activate, 24224830, () => OnCardAction(24224830, ExecutorType.Activate, CalledByGraveEffect)); // Called by the Grave (ID 2)
+            AddExecutor(ExecutorType.Activate, 24224830, () => OnCardAction(24224830, ExecutorType.Activate, CalledByGraveEffect)); // Called by the Grave
             AddExecutor(ExecutorType.Activate, 42141493, () => OnCardAction(42141493, ExecutorType.Activate, FuwalosEffect)); // Mulcharmy Fuwalos
             AddExecutor(ExecutorType.Activate, 94145021, () => OnCardAction(94145021, ExecutorType.Activate, DrollEffect)); // Droll & Lock Bird
             AddExecutor(ExecutorType.Activate, 6325660, () => OnCardAction(6325660, ExecutorType.Activate, DominusSparkEffect)); // Dominus Spark

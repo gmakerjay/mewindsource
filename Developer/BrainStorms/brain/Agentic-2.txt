@@ -1,0 +1,1404 @@
+ผมเห็น “ภาพรวมสถาปัตยกรรม” ค่อนข้างชัดแล้วครับ และบอกได้เลยว่านี่ไม่ใช่แค่ Executor ธรรมดา แต่เป็นการพยายามทำ “self-learning duel agent” บน WindBot/Project Ignis ที่ผสม:
+
+* Rule-based executor
+* Heuristic scoring
+* Persistent memory
+* Reinforcement learning (Q-learning style)
+* Match telemetry/log analytics
+* Offline training pipeline
+
+ทั้งหมดเข้าด้วยกัน
+
+สิ่งที่คุณกำลังทำอยู่ใกล้กับ “Lightweight Agentic RL System” มากกว่าบอท Yu-Gi-Oh ปกติแล้ว
+
+ด้านล่างคือรายงานวิเคราะห์เชิงลึกจากมุมมอง architecture + AI-agent behavior + engineering risk
+
+---
+
+# ภาพรวม Architecture ที่เจอ
+
+## Core Components
+
+จากไฟล์:
+
+* `UnifiedIgnisExecutor.cs`
+* `BaseCustomExecutor.cs`
+* `learning_sandbox.py`
+* `q_learning.py`
+* `save_outcomes_to_sql.py`
+
+ระบบแบ่งออกเป็น 4 ชั้นหลัก
+
+---
+
+# 1. Runtime Duel Agent Layer (C#)
+
+ไฟล์หลัก:
+
+* `BaseCustomExecutor.cs`
+* `UnifiedIgnisExecutor.cs`
+
+นี่คือ “online inference engine”
+
+ทำหน้าที่:
+
+* อ่าน game state
+* ตัดสินใจ
+* log decision
+* เก็บ telemetry
+* เรียนรู้บางส่วน realtime
+
+---
+
+## UnifiedIgnisExecutor.cs
+
+โครงสร้างนี้เป็น “Deck Adapter Layer”
+
+```csharp
+[Deck("2026_AzaYummy", "2026_AzaYummy")]
+public class AzaYummyExecutor : UnifiedIgnisExecutor
+```
+
+คือทุก deck ใช้ brain เดียวกัน (`BaseCustomExecutor`)
+แต่ config ต่างกันผ่าน:
+
+* registry
+* deck json
+* memory
+
+นี่เป็น design ที่ดีมาก เพราะ:
+
+### คุณกำลังทำ:
+
+> Shared cognition + deck specialization
+
+คล้าย:
+
+* AlphaStar race-specific policy
+* MOBA shared agent architecture
+
+---
+
+# 2. Dynamic Registry System
+
+นี่คือหัวใจจริงของระบบ
+
+## CardMetadata
+
+```csharp
+public class CardMetadata
+{
+    public int priority
+    public int risk_if_negated
+    public int bait_value
+    public int followup_value
+    public int recovery_value
+    public Dictionary<string, object> q_values
+}
+```
+
+นี่คือ “compressed policy representation”
+
+แทนที่จะใช้ neural network
+คุณใช้:
+
+* symbolic metadata
+* weighted heuristics
+* persistent reinforcement values
+
+ข้อดี:
+
+* explainable
+* debug ได้
+* train incremental ได้
+* ไม่ต้อง GPU
+
+ข้อเสีย:
+
+* scaling complexity
+* emergent combo understanding จำกัด
+* state abstraction ยังหยาบ
+
+---
+
+# 3. Telemetry / Observability Layer
+
+อันนี้ผมว่าดีมากและ “คิดถูกทาง”
+
+คุณ log:
+
+* decisions
+* turn states
+* LP
+* opponent threat
+* monsters
+* hand state
+* spell zones
+* outcomes
+
+ผ่าน:
+
+```csharp
+decisions.jsonl
+match_summary.log
+turn_N.log
+```
+
+นี่คือ “experience replay dataset”
+
+จริง ๆ มันคือ:
+
+> RL trajectory buffer แบบ lightweight
+
+---
+
+## Decision Logging
+
+```csharp
+LogDecision(...)
+```
+
+เก็บ:
+
+* state
+* action
+* reward proxy
+* goal
+* board snapshot
+
+นี่สำคัญมาก เพราะ:
+คุณสามารถย้อน replay ได้ทีหลัง
+
+ระบบเริ่มมีลักษณะ:
+
+* offline RL
+* imitation learning
+* supervised scoring correction
+
+ได้ในอนาคต
+
+---
+
+# 4. Offline Learning Pipeline (Python)
+
+นี่คือ training backend
+
+ไฟล์:
+
+* `learning_sandbox.py`
+* `q_learning.py`
+* `save_outcomes_to_sql.py`
+
+---
+
+# learning_sandbox.py
+
+นี่คือ:
+
+> heuristic reinforcement tuner
+
+มัน analyze:
+
+* outcomes
+* disrupted choke points
+* high score decisions
+* survival states
+
+แล้วปรับ:
+
+* priority
+* risk_if_negated
+* followup_value
+* recovery_value
+
+---
+
+## จุดสำคัญมาก
+
+คุณไม่ได้ train จาก:
+“ชนะ = ทุกอย่างดี”
+
+แต่ train จาก:
+
+* context
+* score quality
+* turn depth
+* lethal intent
+* disruption
+
+นี่ฉลาดกว่า heuristic bot ปกติมาก
+
+---
+
+# q_learning.py
+
+อันนี้คือ:
+
+> Monte Carlo episodic RL approximation
+
+คุณทำ:
+
+```python
+G_t = reward * (gamma ** steps_from_end)
+```
+
+แล้ว update:
+
+```python
+new_q = current_q + alpha * (G_t - current_q)
+```
+
+นี่คือ:
+
+* Temporal Difference-ish update
+* Monte Carlo return approximation
+
+---
+
+# สิ่งที่ระบบนี้ “เป็นอยู่จริง”
+
+Agent นี้ตอนนี้คือ:
+
+## Semi-symbolic Reinforcement Agent
+
+ไม่ใช่:
+
+* hardcoded bot ล้วน
+* neural net agent ล้วน
+
+แต่เป็น hybrid:
+
+| Component       | Type                   |
+| --------------- | ---------------------- |
+| Executor        | Rule-based             |
+| Priority        | Heuristic              |
+| Q-values        | RL                     |
+| Opponent Memory | Persistent Memory      |
+| Logs            | Experience Replay      |
+| Deck Config     | Strategic Conditioning |
+
+---
+
+# สิ่งที่ “ดีมาก” ใน architecture นี้
+
+## 1. Explainability สูงมาก
+
+คุณ debug ได้ว่า:
+
+“ทำไม bot activate card นี้”
+
+เพราะ:
+
+* score
+* goal
+* q_value
+* risk
+* plan
+
+ถูก log หมด
+
+นี่เหนือกว่า neural AI เยอะ
+
+---
+
+# 2. Persistent Learning จริง
+
+หลายระบบ fake learning
+
+แต่ของคุณ:
+
+* save registry
+* merge disk state
+* persist opponent memory
+
+คือเรียนรู้ข้าม session จริง
+
+---
+
+# 3. Dynamic Executor Registration
+
+```csharp
+AddExecutor(...)
+```
+
+จาก registry dynamic
+
+นี่ทำให้:
+
+* scale deck ได้
+* auto-add support
+* auto-generalize
+
+---
+
+# 4. Opponent Modeling
+
+```csharp
+OpponentCardMeta
+```
+
+นี่เริ่มเข้า territory:
+
+> Meta adaptation
+
+เพราะ bot จำได้ว่า:
+
+* card ไหน disruptive
+* danger เท่าไร
+* เจอบ่อยไหม
+
+---
+
+# 5. Offline + Online Learning แยกกัน
+
+นี่ถูกต้องมาก
+
+Online:
+
+* lightweight adaptation
+
+Offline:
+
+* heavier tuning
+
+เหมือน production RL systems จริง
+
+---
+
+# จุดอันตราย / ปัญหาเชิงระบบ
+
+อันนี้สำคัญมาก
+
+---
+
+# 1. State Representation ยัง “ตื้น”
+
+ตอนนี้ state mainly คือ:
+
+* LP
+* board
+* threat
+* goals
+
+แต่ยังขาด:
+
+* chain context
+* hidden information modeling
+* probabilistic hand reading
+* turn tempo
+* summon commitment depth
+
+ผลคือ:
+Agent ยัง “ไม่เข้าใจเกม”
+แต่ “จดจำ pattern”
+
+---
+
+# 2. Q-learning ยังไม่ใช่ True RL
+
+ตอนนี้ Q-value key คือ:
+
+```python
+q_values[goal]
+```
+
+แปลว่า:
+state abstraction กว้างมาก
+
+ปัจจุบัน:
+
+* action-value ไม่ละเอียด
+* ไม่มี proper state-action tuple
+* ไม่มี transition graph
+
+มันเลยใกล้:
+
+> contextual reward weighting
+
+มากกว่า RL เต็มตัว
+
+---
+
+# 3. Reward Leakage
+
+คุณใช้:
+
+* LP difference
+* outcome
+* turn count
+
+ซึ่งดีระดับหนึ่ง
+
+แต่เสี่ยง:
+
+* greedy aggression
+* short-term overfitting
+* combo inflation
+
+แม้คุณมี anti-inflation แล้วก็ตาม
+
+---
+
+# 4. Registry Inflation Problem
+
+แม้มี hard cap 8
+
+แต่ system ยัง bias ไปทาง:
+“card ที่ถูกเล่นบ่อย”
+
+ไม่ใช่:
+“card ที่ optimal จริง”
+
+---
+
+# 5. ไม่มี Exploration Strategy จริง
+
+ยังไม่เห็น:
+
+* epsilon-greedy
+* UCB
+* entropy exploration
+
+ผลคือ:
+Agent จะ converge เร็วเกิน
+แล้วติด local optimum
+
+---
+
+# 6. Opponent Modeling ยัง Global
+
+ยังไม่มี:
+
+* matchup clustering
+* archetype embeddings
+* deck fingerprinting
+
+ตอนนี้จำเป็น:
+“card danger memory”
+
+แต่ยังไม่:
+“meta understanding”
+
+---
+
+# 7. Concurrency Risk
+
+มี lock เยอะมาก
+
+```csharp
+_staticLock
+```
+
+แต่ยังมีจุดเสี่ยง:
+
+* LP monitor thread
+* file writes
+* registry merge
+
+โดยเฉพาะ:
+
+* multiple duel instances
+* parallel training
+
+---
+
+# 8. decisions.jsonl ยังไม่ใช่ Canonical Replay
+
+ตอนนี้ log เป็น:
+
+* flattened snapshots
+
+แต่ยังไม่ใช่:
+
+* full transition graph
+* chain resolution trace
+* causal replay
+
+ซึ่งจำเป็นถ้าจะไป:
+
+* imitation learning
+* transformer replay
+* sequence models
+
+---
+
+# สิ่งที่ “น่าประทับใจมาก”
+
+## คุณกำลังสร้าง “Agentic Duel AI”
+
+ไม่ใช่ scripting bot ธรรมดา
+
+สิ่งที่เห็นชัด:
+
+### Agent loop
+
+1. Observe
+2. Score
+3. Plan
+4. Act
+5. Log
+6. Learn
+7. Persist memory
+8. Adapt future behavior
+
+นี่คือ agent architecture จริง
+
+---
+
+# สิ่งที่ผมคิดว่าคุณกำลัง “มุ่งไป”
+
+จาก design ทั้งหมด ผมเดาว่าเป้าหมายคือ:
+
+## Long-term adaptive duel AI
+
+ที่:
+
+* ใช้ deck config
+* เรียนรู้ matchup
+* ปรับ combo lines
+* bait interruption
+* วิเคราะห์ choke points
+* evolve meta
+
+ซึ่ง direction ถูกมาก
+
+---
+
+# ถ้าจะยกระดับต่อ
+
+นี่คือสิ่งที่ควรทำ “ก่อน”
+
+---
+
+# Priority 1 — State Encoding
+
+สร้าง:
+
+```json
+state_signature
+```
+
+เช่น:
+
+* board pressure
+* interruption count
+* hand advantage
+* lethal threat
+* combo depth
+* turn phase
+
+แล้ว Q-learning ใช้:
+
+```python
+Q[state][action]
+```
+
+แทน:
+
+```python
+Q[goal]
+```
+
+นี่จะเปลี่ยนระบบทันที
+
+---
+
+# Priority 2 — Exploration
+
+เพิ่ม:
+
+* epsilon decay
+* stochastic action sampling
+
+ไม่งั้น bot จะ stuck meta เดิม
+
+---
+
+# Priority 3 — Action Graph
+
+ตอนนี้ action ยัง isolated
+
+ควรเก็บ:
+
+* previous action
+* combo chain
+* summon path
+
+เพื่อเรียนรู้ combo จริง
+
+---
+
+# Priority 4 — Matchup Clustering
+
+ทำ:
+
+* archetype detection
+* deck fingerprinting
+
+เช่น:
+
+* Kashtira
+* Labrynth
+* Snake-Eyes
+
+แล้วมี:
+
+```json
+matchup_q_values
+```
+
+---
+
+# Priority 5 — Replay Dataset
+
+เก็บ:
+
+* state
+* action
+* next_state
+* reward
+
+แบบ RL canonical format
+
+---
+
+# สรุปสุดท้าย
+
+ระบบนี้ “advanced กว่าที่คิดมาก”
+
+นี่ไม่ใช่:
+
+* WindBot deck script ธรรมดา
+* hardcoded executor ธรรมดา
+
+แต่มันคือ:
+
+# Hybrid Symbolic Reinforcement Agent
+
+ที่มี:
+
+* persistent memory
+* online adaptation
+* offline RL tuning
+* telemetry pipeline
+* deck-conditioned behavior
+* dynamic executor system
+
+และที่สำคัญ:
+
+## Architecture direction “ถูก”
+
+แม้ implementation ยังมีจุด primitive หลายอย่าง
+แต่ concept direction ถูกมาก
+
+โดยเฉพาะ:
+
+* separation online/offline learning
+* explainable scoring
+* replay logging
+* persistent opponent memory
+* heuristic + RL hybridization
+
+นี่เป็น foundation ที่ต่อยอดไป:
+
+* self-play training
+* matchup specialization
+* policy optimization
+* sequence learning
+* transformer replay analysis
+
+ได้จริงครับ
+
+
+ใช่ครับ — use case ที่คุณกำลังจะทำ มันเริ่มเข้าเขต:
+
+> Distributed Self-Play Reinforcement Arena
+
+แล้วปัญหาที่คุณถามคือ “core production problem” จริง ๆ ไม่ใช่แค่ scripting แล้ว
+
+สิ่งที่คุณต้องระวังที่สุดมี 5 เรื่อง:
+
+1. Race Condition
+2. Corrupted Learning
+3. Bad Experience Reinforcement
+4. Concurrent File I/O
+5. Real-time Hot Reload / Auto Deploy
+
+และตอนนี้ architecture ของคุณ “ยังเสี่ยง” กับทั้ง 5 ข้ออยู่พอสมควร
+
+ผมจะสรุปแบบ production-grade เลยว่า ถ้าจะเปิด 20 จอ self-play จริง ควร redesign ยังไง
+
+---
+
+# ภาพรวมปัญหาปัจจุบัน
+
+ตอนนี้ระบบเป็น:
+
+```text
+Multiple Duel Clients
+        ↓
+BaseCustomExecutor
+        ↓
+JSON Logs
+        ↓
+Python Trainer
+        ↓
+cards_registry.json
+```
+
+ปัญหาใหญ่คือ:
+
+## ทุก instance เขียนไฟล์เดียวกัน
+
+เช่น:
+
+* opponent_memory.json
+* cards_registry.json
+
+นี่คือจุดระเบิดของ corruption
+
+---
+
+# ปัญหาที่จะเกิดแน่ ๆ ถ้าเปิด 20 จอ
+
+---
+
+# 1. Registry Corruption
+
+ตัวอย่าง:
+
+จอ 1:
+
+```text
+priority = 5 → 6
+```
+
+จอ 2:
+
+```text
+priority = 5 → 4
+```
+
+ทั้งคู่ write พร้อมกัน
+
+ผล:
+
+* overwrite กัน
+* json เสีย
+* learning หาย
+* partial write
+
+---
+
+# 2. Learning Pollution
+
+ถ้า bot เล่นมั่ว:
+
+* bad opening
+* brick hand
+* RNG lose
+
+แล้วคุณ reward/punish ตรง ๆ
+
+จะเกิด:
+
+> catastrophic heuristic drift
+
+เช่น:
+
+* good starter ถูกลด priority
+* bad extender ถูก boost
+
+เพราะ variance สูง
+
+---
+
+# 3. Infinite Self-Reinforcing Meta
+
+Bot A:
+
+* เล่นแปลก
+
+Bot B:
+
+* เรียนรู้รับมือ style แปลกนั้น
+
+สุดท้าย:
+
+* meta collapse
+* overfit self-play
+
+แต่แพ้คนจริง
+
+นี่คือ classic self-play trap
+
+---
+
+# 4. LP=0 Detection ยังไม่ Atomic
+
+ตอนนี้:
+
+```csharp
+MonitorLP()
+```
+
+thread polling ทุก 200ms
+
+ปัญหา:
+
+* duel reset ก่อน save เสร็จ
+* match ใหม่เริ่ม
+* state overwrite
+* learning applied ซ้ำ
+
+ถ้าเปิดหลายจอ โอกาสสูงมาก
+
+---
+
+# 5. Hot Deploy Race
+
+ตอนนี้:
+
+* save registry
+* bot อื่น load registry
+
+พร้อมกัน
+
+ผล:
+
+* half-written registry
+* deserialize fail
+* stale memory
+* old cache
+
+---
+
+# แนวทาง Production Architecture ที่ควรใช้
+
+นี่คือ design ที่ผมแนะนำจริง ๆ
+
+---
+
+# เปลี่ยน Mindset ก่อน
+
+ห้ามให้:
+
+> Duel Executor เขียน learning state โดยตรง
+
+เด็ดขาด
+
+Executor ควร:
+
+* อ่านอย่างเดียว
+* append event อย่างเดียว
+
+เท่านั้น
+
+---
+
+# Architecture ใหม่ (สำคัญมาก)
+
+จากเดิม:
+
+```text
+Bot → Modify Registry
+```
+
+เปลี่ยนเป็น:
+
+```text
+Bot → Emit Events
+        ↓
+Central Trainer
+        ↓
+Validate Learning
+        ↓
+Deploy New Policy
+```
+
+นี่คือหัวใจทั้งหมด
+
+---
+
+# Production Design ที่ควรเป็น
+
+---
+
+# Layer 1 — Immutable Runtime
+
+Bot ทุกจอ:
+
+## อ่าน policy อย่างเดียว
+
+เช่น:
+
+```text
+registry_snapshot_v42.json
+```
+
+ห้ามแก้เอง
+
+---
+
+# Layer 2 — Match Event Queue
+
+ทุก duel instance:
+
+* append only
+
+เช่น:
+
+```text
+match_2026_xxx.jsonl
+```
+
+หรือ:
+
+* SQLite WAL
+* Redis stream
+* Kafka style queue
+
+---
+
+# Layer 3 — Central Learner
+
+process กลางเพียงตัวเดียว
+
+ทำ:
+
+* aggregate
+* validate
+* denoise
+* RL update
+* anti-overfit
+
+แล้วค่อย generate:
+
+```text
+registry_snapshot_v43.json
+```
+
+---
+
+# Layer 4 — Atomic Hot Reload
+
+ทุก bot:
+
+* check version periodically
+
+ถ้าเจอ:
+
+```text
+v43 > v42
+```
+
+reload policy
+
+---
+
+# สำคัญมาก — ใช้ VERSIONED SNAPSHOT
+
+แทน:
+
+```text
+cards_registry.json
+```
+
+ให้เป็น:
+
+```text
+registry_v001.json
+registry_v002.json
+registry_v003.json
+```
+
+แล้วมี:
+
+```text
+latest.txt
+```
+
+บอก current version
+
+---
+
+# ทำไมสำคัญ
+
+เพราะ:
+
+## Immutable = ไม่มี corruption
+
+bot ทุกตัวอ่าน snapshot เดียวกัน
+
+ไม่มี write collision
+
+---
+
+# วิธีทำ Auto Deploy Real-time
+
+คุณถามเรื่อง:
+
+> LP=0 แล้ว deploy learning ทันที
+
+ทำได้ครับ แต่ต้องแยก:
+
+## "match finalize"
+
+ออกจาก
+
+## "policy deploy"
+
+---
+
+# Flow ที่ถูกต้อง
+
+```text
+LP = 0
+    ↓
+Freeze Match State
+    ↓
+Write Final Match Event
+    ↓
+Mark Match Complete
+    ↓
+Trainer Consume Event
+    ↓
+Update Global Policy
+    ↓
+Publish New Snapshot
+    ↓
+Bots Hot Reload
+```
+
+---
+
+# ห้ามทำแบบนี้
+
+```text
+LP=0
+→ modify registry ทันทีใน executor
+```
+
+เพราะ:
+
+* race condition
+* duplicated learning
+* partial writes
+
+จะเกิดแน่
+
+---
+
+# วิธีป้องกัน “จำจังหวะแย่ๆ”
+
+นี่สำคัญมาก
+
+---
+
+# คุณต้องมี Confidence Filter
+
+ไม่ใช่ทุก match จะ train ได้
+
+---
+
+# ควร Ignore Match แบบนี้
+
+## 1. Brick Hands
+
+เช่น:
+
+* no starter
+* zero playable actions
+
+ไม่ควร punish
+
+---
+
+# 2. FTK / OTK Random
+
+variance สูงเกิน
+
+---
+
+# 3. Turn < 2
+
+noise สูง
+
+---
+
+# 4. RNG Blowouts
+
+เช่น:
+
+* เปิด Maxx C + Ash + Veiler + Imperm
+
+ไม่ควรสรุปว่า deck อ่อน
+
+---
+
+# 5. Disconnect / Aborted
+
+---
+
+# คุณต้องมี Match Quality Score
+
+เช่น:
+
+```python
+quality_score =
+    combo_depth * 0.3 +
+    meaningful_decisions * 0.4 +
+    turn_count * 0.3
+```
+
+train เฉพาะ:
+
+```python
+quality_score > threshold
+```
+
+---
+
+# ต้องมี Statistical Learning
+
+ห้าม update จาก:
+
+* 1 match
+* 3 matches
+
+เด็ดขาด
+
+---
+
+# ควรใช้:
+
+## Sliding Window
+
+เช่น:
+
+```text
+last 500 matches
+```
+
+แล้วค่อยปรับ policy
+
+---
+
+# สำคัญมาก — ต้องแยก
+
+## Exploration Deck
+
+กับ
+
+## Stable Deck
+
+---
+
+# ถ้าไม่แยก
+
+bot จะ:
+
+* mutate policy
+* unstable
+* drift ตลอด
+
+---
+
+# Production Pattern ที่ใช้จริง
+
+---
+
+# Stable Policy
+
+```text
+registry_stable_v42.json
+```
+
+ใช้เล่นหลัก
+
+---
+
+# Experimental Policy
+
+```text
+registry_exp_v43.json
+```
+
+ใช้กับ:
+
+* 2-3 instances
+* exploration
+
+---
+
+# ถ้า Win Rate ดีพอ
+
+Promote:
+
+```text
+exp_v43 → stable_v44
+```
+
+---
+
+# วิธีทำ Self-play 20 จอ ให้รอด
+
+---
+
+# ห้ามใช้ Shared File Writes
+
+เปลี่ยนเป็น:
+
+## SQLite WAL หรือ Redis
+
+ดีที่สุด
+
+---
+
+# Recommended Stack
+
+---
+
+# Runtime
+
+C#
+
+* Executors
+* Event emitters
+
+---
+
+# Queue
+
+SQLite WAL
+
+หรือดีสุด:
+
+* Redis Streams
+
+---
+
+# Trainer
+
+Python
+
+* learner
+* replay analysis
+* q-learning
+* deploy manager
+
+---
+
+# Policy Store
+
+Immutable snapshots
+
+---
+
+# Hot Reload
+
+File watcher หรือ version polling
+
+---
+
+# การ Detect LP=0 แบบปลอดภัย
+
+แทน polling:
+
+```csharp
+if (botLP == 0 || oppLP == 0)
+```
+
+ควรมี:
+
+```csharp
+if (matchEnded && !finalized)
+{
+    finalized = true;
+    FreezeState();
+    EmitFinalEvent();
+}
+```
+
+และ:
+
+* lock once
+* atomic finalize
+
+---
+
+# สิ่งที่ผมแนะนำแรงมาก
+
+---
+
+# ใช้ SQLite เป็น Event Store
+
+แทน json logs
+
+เพราะคุณกำลังเข้า scale:
+
+* 20 จอ
+* หลายพัน matches
+
+JSON จะเริ่มพัง
+
+---
+
+# Schema ที่ควรมี
+
+## matches
+
+```sql
+match_id
+deck_a
+deck_b
+winner
+turns
+quality_score
+timestamp
+```
+
+---
+
+# decisions
+
+```sql
+state_hash
+action
+reward
+chosen
+q_before
+q_after
+```
+
+---
+
+# replay_states
+
+```sql
+serialized_board
+serialized_hand
+threat_score
+```
+
+---
+
+# สุดท้าย — สิ่งที่คุณกำลังสร้าง “จริง ๆ”
+
+นี่ไม่ใช่:
+
+* deck script
+
+แต่มันเริ่มเป็น:
+
+# Distributed Reinforcement Learning Arena
+
+แล้ว architecture ต้องคิดแบบ:
+
+* actor system
+* event sourcing
+* immutable policy snapshots
+* centralized learner
+* replay buffer
+
+ถึงจะ scale ไป 20 จอได้จริงโดยไม่ corruption ครับ

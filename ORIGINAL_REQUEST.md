@@ -158,3 +158,28 @@ Enhance the C# executor shutdown hook and cockpit.py to sync JSON registries and
 ### Training & Deployment
 - Duel decisions are logged correctly in decisions.jsonl and successfully written to SQL database.
 - Recompilation of UnifiedIgnisExecutor.dll compiles successfully with no syntax errors.
+
+## Follow-up — 2026-05-25T15:23:36Z
+
+Read the documents in `C:\Users\admin\Documents\EDOTh\Developer\BrainStorms\brain` containing audits and reports on the ProjectIgnis self-learning bot system, analyze the source code files in `Developer\WindBot_Sources` and `Developer\WindBot_Sandbox`, find common bugs and design overlaps, and compile a comprehensive development/repair plan.
+
+Working directory: C:\Users\admin\Documents\EDOTh
+Integrity mode: development
+
+## Requirements
+
+### R1. Document Analysis and Commonalities Identification
+Read all files in `Developer\BrainStorms\brain` (such as `Agentic-1.txt` through `agentic-5.txt` and `MASTER_PROMPT_WindBotAI.md`). Perform a comprehensive cross-analysis to identify overlapping findings, conflicting recommendations, and common themes regarding bugs, architecture limitations, and design principles.
+
+### R2. Codebase Consistency Audit
+Audit the active codebase in `Developer\WindBot_Sources` (C#) and `Developer\WindBot_Sandbox` (Python) against the documented bugs (e.g. `MonitorLP` race condition, inverted Monte Carlo discount, hardcoded path violations, stubs vs implementation discrepancies). Map each finding directly to specific source code files and line numbers.
+
+### R3. Synthesis and Development Guidelines Report
+Generate a unified, structured master markdown report that synthesizes these findings, highlights validated code-level bugs, defines strict design patterns based on the master prompt, and outlines clear development pathways to resolve the identified architecture and scalability bottlenecks (concurrency, SQLite logs, state expansion, etc.).
+
+## Acceptance Criteria
+
+### Content Quality
+- [ ] The report contains a clear matrix mapping issues identified in the brainstorm documents to verified code in `Developer\WindBot_Sources` and `Developer\WindBot_Sandbox`.
+- [ ] The report explicitly addresses the 4 critical bugs (MonitorLP race condition, q_learning Monte Carlo direction, and hardcoded absolute paths) with verified locations.
+- [ ] The report includes concrete code patterns/guidelines for future development conforming to the Karpathy guidelines in `SKILL.md` and the master rules in `MASTER_PROMPT_WindBotAI.md`.

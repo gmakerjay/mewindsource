@@ -8,7 +8,7 @@ import argparse
 
 # Resolve paths relative to this script
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
 WINDBOT_DIR = os.path.join(PROJECT_ROOT, "WindBot")
 WINDBOT_EXE = os.path.join(WINDBOT_DIR, "WindBot.exe")
 ORIGINAL_SYSTEM_CONF = os.path.join(PROJECT_ROOT, "config", "system.conf")

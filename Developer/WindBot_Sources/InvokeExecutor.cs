@@ -16,6 +16,7 @@ namespace ProjectIgnisAI
         private const int HintMsg_AddToHand = 506;
         private const int HintMsg_FusionMaterial = 511;
         private const int HintMsg_LinkMaterial = 533;
+        private const int HintMsg_SpSummon = 509;
 
         public InvokeExecutor(GameAI ai, Duel duel) : base(ai, duel)
         {
@@ -23,60 +24,60 @@ namespace ProjectIgnisAI
             Executors.Clear();
 
             // 1. Hand traps, interruptions, and negates (high priority response handlers)
-            AddExecutor(ExecutorType.Activate, 14558127, AshBlossomEffect); // Ash Blossom
-            AddExecutor(ExecutorType.Activate, 73642296, GhostBelleEffect); // Ghost Belle
-            AddExecutor(ExecutorType.Activate, 10045474, ImpermanenceEffect); // Infinite Impermanence
-            AddExecutor(ExecutorType.Activate, 24224830, CalledByGraveEffect); // Called by the Grave
+            AddExecutor(ExecutorType.Activate, 14558127, () => OnCardAction(14558127, ExecutorType.Activate, AshBlossomEffect)); // Ash Blossom
+            AddExecutor(ExecutorType.Activate, 73642296, () => OnCardAction(73642296, ExecutorType.Activate, GhostBelleEffect)); // Ghost Belle
+            AddExecutor(ExecutorType.Activate, 10045474, () => OnCardAction(10045474, ExecutorType.Activate, ImpermanenceEffect)); // Infinite Impermanence
+            AddExecutor(ExecutorType.Activate, 24224830, () => OnCardAction(24224830, ExecutorType.Activate, CalledByGraveEffect)); // Called by the Grave
 
             // 2. Search & Field Spells
-            AddExecutor(ExecutorType.Activate, 73628505, TerraformingEffect); // Terraforming
-            AddExecutor(ExecutorType.Activate, 47679935, MagicalMeltdownEffect); // Magical Meltdown
-            AddExecutor(ExecutorType.Activate, 89739383, SpellbookOfSecretsEffect); // Spellbook of Secrets
+            AddExecutor(ExecutorType.Activate, 73628505, () => OnCardAction(73628505, ExecutorType.Activate, TerraformingEffect)); // Terraforming
+            AddExecutor(ExecutorType.Activate, 47679935, () => OnCardAction(47679935, ExecutorType.Activate, MagicalMeltdownEffect)); // Magical Meltdown
+            AddExecutor(ExecutorType.Activate, 89739383, () => OnCardAction(89739383, ExecutorType.Activate, SpellbookOfSecretsEffect)); // Spellbook of Secrets
 
             // 3. Extenders & Special Summons
-            AddExecutor(ExecutorType.SpSummon, 101305017, VirakamSpSummonEffect); // Virakam the Artificial Spirit
-            AddExecutor(ExecutorType.Activate, 101305017, VirakamEffect); // Virakam Effect
-            AddExecutor(ExecutorType.Activate, 101305015, AleisterReminiscentHandEffect); // Aleister the Reminiscent hand SS
+            AddExecutor(ExecutorType.SpSummon, 101305017, () => OnCardAction(101305017, ExecutorType.SpSummon, VirakamSpSummonEffect)); // Virakam the Artificial Spirit
+            AddExecutor(ExecutorType.Activate, 101305017, () => OnCardAction(101305017, ExecutorType.Activate, VirakamEffect)); // Virakam Effect
+            AddExecutor(ExecutorType.Activate, 101305015, () => OnCardAction(101305015, ExecutorType.Activate, AleisterReminiscentHandEffect)); // Aleister the Reminiscent hand SS
 
             // 4. Normal Summons
-            AddExecutor(ExecutorType.Summon, 86120751, AleisterSummonEffect); // Aleister the Invoker
-            AddExecutor(ExecutorType.Summon, 14824019, SpellbookMagicianSummonEffect); // Spellbook Magician of Prophecy
+            AddExecutor(ExecutorType.Summon, 86120751, () => OnCardAction(86120751, ExecutorType.Summon, AleisterSummonEffect)); // Aleister the Invoker
+            AddExecutor(ExecutorType.Summon, 14824019, () => OnCardAction(14824019, ExecutorType.Summon, SpellbookMagicianSummonEffect)); // Spellbook Magician of Prophecy
 
             // 5. Summon Trigger Effects & Searches
-            AddExecutor(ExecutorType.Activate, 86120751, AleisterFieldEffect);
-            AddExecutor(ExecutorType.Activate, 14824019, SpellbookMagicianFieldEffect);
-            AddExecutor(ExecutorType.Activate, 101305015, AleisterReminiscentSummonedEffect);
+            AddExecutor(ExecutorType.Activate, 86120751, () => OnCardAction(86120751, ExecutorType.Activate, AleisterFieldEffect));
+            AddExecutor(ExecutorType.Activate, 14824019, () => OnCardAction(14824019, ExecutorType.Activate, SpellbookMagicianFieldEffect));
+            AddExecutor(ExecutorType.Activate, 101305015, () => OnCardAction(101305015, ExecutorType.Activate, AleisterReminiscentSummonedEffect));
 
             // 6. Draw Engine (run after summoning/searching Spellbook components)
-            AddExecutor(ExecutorType.Activate, 23314220, SpellbookOfKnowledgeEffect);
+            AddExecutor(ExecutorType.Activate, 23314220, () => OnCardAction(23314220, ExecutorType.Activate, SpellbookOfKnowledgeEffect));
 
             // 7. Custom Archetype Setup Spells
-            AddExecutor(ExecutorType.Activate, 101305054, SpiritSwordAiwassEffect);
-            AddExecutor(ExecutorType.Activate, 101305070, RosaMundiEffect);
+            AddExecutor(ExecutorType.Activate, 101305054, () => OnCardAction(101305054, ExecutorType.Activate, SpiritSwordAiwassEffect));
+            AddExecutor(ExecutorType.Activate, 101305070, () => OnCardAction(101305070, ExecutorType.Activate, RosaMundiEffect));
 
             // 8. Link Summons
-            AddExecutor(ExecutorType.SpSummon, 34755994, ArtemisSummonEffect); // Artemis, Magistus Link-1
+            AddExecutor(ExecutorType.SpSummon, 34755994, () => OnCardAction(34755994, ExecutorType.SpSummon, ArtemisSummonEffect)); // Artemis, Magistus Link-1
 
             // 9. Fusion Summons
-            AddExecutor(ExecutorType.Activate, 74063034, InvocationEffect); // Invocation
-            AddExecutor(ExecutorType.Activate, 101305053, InvocationSwordEffect); // Invocation "Sword"
+            AddExecutor(ExecutorType.Activate, 74063034, () => OnCardAction(74063034, ExecutorType.Activate, InvocationEffect)); // Invocation
+            AddExecutor(ExecutorType.Activate, 101305053, () => OnCardAction(101305053, ExecutorType.Activate, InvocationSwordEffect)); // Invocation "Sword"
 
             // 10. Boss Monster Effects
-            AddExecutor(ExecutorType.Activate, 101305016, AiwassSpiritOfTheLawEffect); // Aiwass the Spirit of the Law
-            AddExecutor(ExecutorType.Activate, 75286621, MechabaEffect); // Invoked Mechaba
-            AddExecutor(ExecutorType.Activate, 38423248, AugoeidesEffect); // Invoked Augoeides
-            AddExecutor(ExecutorType.Activate, 101305033, TranscendenceAeonEffect); // Invoked Transcendence Aeon
-            AddExecutor(ExecutorType.Activate, 101305031, BabalonEffect); // Invoked Babalon
-            AddExecutor(ExecutorType.Activate, 101305030, SorathEffect); // Invoked Sorath
-            AddExecutor(ExecutorType.Activate, 101305032, OkeanosEffect); // Invoked Okeanos
-            AddExecutor(ExecutorType.Activate, 12307878, ElysiumEffect); // Invoked Elysium
-            AddExecutor(ExecutorType.Activate, 49513164, RaidjinEffect); // Invoked Raidjin
-            AddExecutor(ExecutorType.Activate, 13529466, PurgatrioEffect); // Invoked Purgatrio
-            AddExecutor(ExecutorType.Activate, 97973962, CaligaEffect); // Invoked Caliga
-            AddExecutor(ExecutorType.Activate, 23656668, MagellanicaEffect); // Invoked Magellanica
+            AddExecutor(ExecutorType.Activate, 101305016, () => OnCardAction(101305016, ExecutorType.Activate, AiwassSpiritOfTheLawEffect)); // Aiwass the Spirit of the Law
+            AddExecutor(ExecutorType.Activate, 75286621, () => OnCardAction(75286621, ExecutorType.Activate, MechabaEffect)); // Invoked Mechaba
+            AddExecutor(ExecutorType.Activate, 38423248, () => OnCardAction(38423248, ExecutorType.Activate, AugoeidesEffect)); // Invoked Augoeides
+            AddExecutor(ExecutorType.Activate, 101305033, () => OnCardAction(101305033, ExecutorType.Activate, TranscendenceAeonEffect)); // Invoked Transcendence Aeon
+            AddExecutor(ExecutorType.Activate, 101305031, () => OnCardAction(101305031, ExecutorType.Activate, BabalonEffect)); // Invoked Babalon
+            AddExecutor(ExecutorType.Activate, 101305030, () => OnCardAction(101305030, ExecutorType.Activate, SorathEffect)); // Invoked Sorath
+            AddExecutor(ExecutorType.Activate, 101305032, () => OnCardAction(101305032, ExecutorType.Activate, OkeanosEffect)); // Invoked Okeanos
+            AddExecutor(ExecutorType.Activate, 12307878, () => OnCardAction(12307878, ExecutorType.Activate, ElysiumEffect)); // Invoked Elysium
+            AddExecutor(ExecutorType.Activate, 49513164, () => OnCardAction(49513164, ExecutorType.Activate, RaidjinEffect)); // Invoked Raidjin
+            AddExecutor(ExecutorType.Activate, 13529466, () => OnCardAction(13529466, ExecutorType.Activate, PurgatrioEffect)); // Invoked Purgatrio
+            AddExecutor(ExecutorType.Activate, 97973962, () => OnCardAction(97973962, ExecutorType.Activate, CaligaEffect)); // Invoked Caliga
+            AddExecutor(ExecutorType.Activate, 23656668, () => OnCardAction(23656668, ExecutorType.Activate, MagellanicaEffect)); // Invoked Magellanica
 
             // 11. Hand Combat Boost (guarded to Battle Phase only to save resources)
-            AddExecutor(ExecutorType.Activate, 86120751, AleisterHandEffect);
+            AddExecutor(ExecutorType.Activate, 86120751, () => OnCardAction(86120751, ExecutorType.Activate, AleisterHandEffect));
 
             // 12. Catch-All Fallbacks
             AddExecutor(ExecutorType.Activate, OnDefaultActivate);
@@ -421,6 +422,22 @@ namespace ProjectIgnisAI
 
         public override IList<ClientCard> OnSelectCard(IList<ClientCard> cards, int min, int max, long hint, bool cancelable)
         {
+            if (hint == HintMsg_FusionMaterial)
+            {
+                IList<ClientCard> materials = GetOptimalFusionMaterials(cards, min, max);
+                _lastSelectedFusionId = 0;
+                return materials;
+            }
+            IList<ClientCard> selected = OnSelectCardInternal(cards, min, max, hint, cancelable);
+            if (hint == HintMsg_SpSummon && selected != null && selected.Count > 0)
+            {
+                _lastSelectedFusionId = selected[0].Id;
+            }
+            return selected;
+        }
+
+        private IList<ClientCard> OnSelectCardInternal(IList<ClientCard> cards, int min, int max, long hint, bool cancelable)
+        {
             if (cards == null || cards.Count == 0)
                 return base.OnSelectCard(cards, min, max, hint, cancelable);
 
@@ -481,75 +498,7 @@ namespace ProjectIgnisAI
             // 2. Fusion Material Selection (Invocation / Invocation Sword)
             if (hint == HintMsg_FusionMaterial)
             {
-                List<ClientCard> selected = new List<ClientCard>();
-                
-                // Prioritize Aleisters from field/GY
-                foreach (var c in cards)
-                {
-                    if (c.Id == 86120751 || c.Id == 101305015)
-                    {
-                        selected.Add(c);
-                        if (selected.Count >= max) break;
-                    }
-                }
-                
-                // Prioritize Artemis link material
-                if (selected.Count < max)
-                {
-                    foreach (var c in cards)
-                    {
-                        if (c.Id == 34755994 && !selected.Contains(c))
-                        {
-                            selected.Add(c);
-                            if (selected.Count >= max) break;
-                        }
-                    }
-                }
-                
-                // Prioritize other LIGHT monsters (Babalon, Veiler)
-                if (selected.Count < max)
-                {
-                    foreach (var c in cards)
-                    {
-                        if ((c.Id == 101305031 || c.Id == 10045474) && !selected.Contains(c))
-                        {
-                            selected.Add(c);
-                            if (selected.Count >= max) break;
-                        }
-                    }
-                }
-                
-                // fallback materials, avoid Virakam (101305017) if possible to keep its negate active
-                if (selected.Count < max)
-                {
-                    foreach (var c in cards)
-                    {
-                        if (c.Id != 101305017 && !selected.Contains(c))
-                        {
-                            selected.Add(c);
-                            if (selected.Count >= max) break;
-                        }
-                    }
-                }
-                
-                // If still not enough, use Virakam
-                if (selected.Count < max)
-                {
-                    foreach (var c in cards)
-                    {
-                        if (c.Id == 101305017 && !selected.Contains(c))
-                        {
-                            selected.Add(c);
-                            if (selected.Count >= max) break;
-                        }
-                    }
-                }
-                
-                if (selected.Count >= min)
-                {
-                    LogToTurn("OnSelectCard (Fusion Material): Selected optimized materials.");
-                    return selected;
-                }
+                return GetOptimalFusionMaterials(cards, min, max);
             }
 
             // 3. Spellbook of Knowledge target (send Spellcaster to GY for draw)
@@ -736,6 +685,302 @@ namespace ProjectIgnisAI
 
         public override bool OnSelectYesNo(long desc)
         {
+            return true;
+        }
+
+        private IList<ClientCard> GetOptimalFusionMaterials(IList<ClientCard> cards, int min, int max)
+        {
+            List<List<ClientCard>> combos = GetCombinations(cards, min);
+            List<List<ClientCard>> validCombos = new List<List<ClientCard>>();
+
+            foreach (var combo in combos)
+            {
+                bool isValid = false;
+                if (_lastSelectedFusionId == 75286621) // Mechaba
+                {
+                    isValid = IsInvokedMechabaRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 13529466) // Purgatrio
+                {
+                    isValid = IsInvokedPurgatrioRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 101305030) // Sorath
+                {
+                    isValid = IsInvokedSorathRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 101305031) // Babalon
+                {
+                    isValid = IsInvokedBabalonRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 101305032) // Okeanos
+                {
+                    isValid = IsInvokedOkeanosRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 97973962) // Caliga
+                {
+                    isValid = IsInvokedCaligaRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 49513164) // Raidjin
+                {
+                    isValid = IsInvokedRaidjinRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 23656668) // Magellanica
+                {
+                    isValid = IsInvokedMagellanicaRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 38423248) // Augoeides
+                {
+                    isValid = IsInvokedAugoeidesRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 12307878) // Elysium
+                {
+                    isValid = IsInvokedElysiumRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 101305033) // Transcendence Aeon
+                {
+                    isValid = IsInvokedTranscendenceAeonRecipe(combo);
+                }
+                else
+                {
+                    isValid = IsInvokedMechabaRecipe(combo) || IsInvokedPurgatrioRecipe(combo) || IsInvokedSorathRecipe(combo) || IsInvokedBabalonRecipe(combo) || IsInvokedOkeanosRecipe(combo) || IsInvokedCaligaRecipe(combo) || IsInvokedRaidjinRecipe(combo) || IsInvokedMagellanicaRecipe(combo) || IsInvokedAugoeidesRecipe(combo) || IsInvokedElysiumRecipe(combo) || IsInvokedTranscendenceAeonRecipe(combo);
+                }
+
+                if (isValid)
+                {
+                    validCombos.Add(combo);
+                }
+            }
+
+            if (validCombos.Count > 0)
+            {
+                List<ClientCard> bestCombo = null;
+                double bestScore = double.MinValue;
+                foreach (var combo in validCombos)
+                {
+                    double score = ScoreCombination(combo);
+                    if (score > bestScore)
+                    {
+                        bestScore = score;
+                        bestCombo = combo;
+                    }
+                }
+                if (bestCombo != null)
+                {
+                    return bestCombo;
+                }
+            }
+
+            List<ClientCard> sorted = new List<ClientCard>(cards);
+            sorted.Sort((a, b) =>
+            {
+                double scoreA = ScoreCardIndividual(a);
+                double scoreB = ScoreCardIndividual(b);
+                return scoreB.CompareTo(scoreA);
+            });
+
+            List<ClientCard> fallbackResult = new List<ClientCard>();
+            for (int i = 0; i < Math.Min(min, sorted.Count); i++)
+            {
+                fallbackResult.Add(sorted[i]);
+            }
+            return fallbackResult;
+        }
+
+        private double ScoreCombination(List<ClientCard> combo)
+        {
+            double totalScore = 0.0;
+            foreach (var card in combo)
+            {
+                if (card == null) continue;
+                double cardScore = ScoreCardIndividual(card);
+                totalScore += cardScore;
+            }
+            return totalScore;
+        }
+
+        private double ScoreCardIndividual(ClientCard card)
+        {
+            if (card == null) return 0.0;
+            double cardScore = 0.0;
+            CardMetadata meta = GetOrCreateMetadata(card);
+            if (meta != null)
+            {
+                cardScore -= meta.priority * 2.0;
+            }
+            if (card.Location == CardLocation.Grave)
+            {
+                cardScore += 15.0;
+            }
+            else if (card.Location == CardLocation.Hand)
+            {
+                cardScore += 5.0;
+            }
+            if (card.Id == 9411399 || card.Id == 16605586 || card.Id == 101402023)
+            {
+                cardScore += 25.0;
+            }
+            if (card.Id == 86120751 || card.Id == 101305015)
+            {
+                if (card.Location == CardLocation.Grave || card.Location == CardLocation.MonsterZone)
+                {
+                    cardScore += 20.0;
+                }
+            }
+            if (card.Location == CardLocation.Hand && 
+                (card.Id == 14558127 || card.Id == 10045474 || card.Id == 24224830 || card.Id == 73642296 || card.Id == 42141493 || card.Id == 94145021 || card.Id == 6325660 || card.Id == 78114463))
+            {
+                cardScore -= 50.0;
+            }
+            if (card.Id == 101305017)
+            {
+                cardScore -= 30.0;
+            }
+            return cardScore;
+        }
+
+        private List<List<ClientCard>> GetCombinations(IList<ClientCard> list, int k)
+        {
+            List<List<ClientCard>> result = new List<List<ClientCard>>();
+            GetCombinationsRec(list, k, 0, new List<ClientCard>(), result);
+            return result;
+        }
+
+        private void GetCombinationsRec(IList<ClientCard> list, int k, int start, List<ClientCard> current, List<List<ClientCard>> result)
+        {
+            if (current.Count == k)
+            {
+                result.Add(new List<ClientCard>(current));
+                return;
+            }
+            for (int i = start; i < list.Count; i++)
+            {
+                current.Add(list[i]);
+                GetCombinationsRec(list, k, i + 1, current, result);
+                current.RemoveAt(current.Count - 1);
+            }
+        }
+
+        private bool IsAleister(ClientCard card)
+        {
+            return card != null && (card.Id == 86120751 || card.Id == 101305015);
+        }
+
+        private bool IsInvokedMechabaRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            ClientCard c1 = combo[0];
+            ClientCard c2 = combo[1];
+            return (IsAleister(c1) && c2.Attribute == (int)CardAttribute.Light) ||
+                   (IsAleister(c2) && c1.Attribute == (int)CardAttribute.Light);
+        }
+
+        private bool IsInvokedPurgatrioRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            ClientCard c1 = combo[0];
+            ClientCard c2 = combo[1];
+            return (IsAleister(c1) && c2.Attribute == (int)CardAttribute.Fire) ||
+                   (IsAleister(c2) && c1.Attribute == (int)CardAttribute.Fire);
+        }
+
+        private bool IsInvokedSorathRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            ClientCard c1 = combo[0];
+            ClientCard c2 = combo[1];
+            return (IsAleister(c1) && (c2.Attribute == (int)CardAttribute.Fire || c2.Attribute == (int)CardAttribute.Wind)) ||
+                   (IsAleister(c2) && (c1.Attribute == (int)CardAttribute.Fire || c1.Attribute == (int)CardAttribute.Wind));
+        }
+
+        private bool IsInvokedBabalonRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            ClientCard c1 = combo[0];
+            ClientCard c2 = combo[1];
+            return (IsAleister(c1) && (c2.Attribute == (int)CardAttribute.Light || c2.Attribute == (int)CardAttribute.Earth)) ||
+                   (IsAleister(c2) && (c1.Attribute == (int)CardAttribute.Light || c1.Attribute == (int)CardAttribute.Earth));
+        }
+
+        private bool IsInvokedOkeanosRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            ClientCard c1 = combo[0];
+            ClientCard c2 = combo[1];
+            return (IsAleister(c1) && (c2.Attribute == (int)CardAttribute.Dark || c2.Attribute == (int)CardAttribute.Water)) ||
+                   (IsAleister(c2) && (c1.Attribute == (int)CardAttribute.Dark || c1.Attribute == (int)CardAttribute.Water));
+        }
+
+        private bool IsInvokedCaligaRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            ClientCard c1 = combo[0];
+            ClientCard c2 = combo[1];
+            return (IsAleister(c1) && c2.Attribute == (int)CardAttribute.Dark) ||
+                   (IsAleister(c2) && c1.Attribute == (int)CardAttribute.Dark);
+        }
+
+        private bool IsInvokedRaidjinRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            ClientCard c1 = combo[0];
+            ClientCard c2 = combo[1];
+            return (IsAleister(c1) && c2.Attribute == (int)CardAttribute.Wind) ||
+                   (IsAleister(c2) && c1.Attribute == (int)CardAttribute.Wind);
+        }
+
+        private bool IsInvokedMagellanicaRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            ClientCard c1 = combo[0];
+            ClientCard c2 = combo[1];
+            return (IsAleister(c1) && c2.Attribute == (int)CardAttribute.Earth) ||
+                   (IsAleister(c2) && c1.Attribute == (int)CardAttribute.Earth);
+        }
+
+        private bool IsInvokedAugoeidesRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            ClientCard c1 = combo[0];
+            ClientCard c2 = combo[1];
+            return (IsAleister(c1) && c2.HasType(CardType.Fusion)) ||
+                   (IsAleister(c2) && c1.HasType(CardType.Fusion));
+        }
+
+        private bool IsInvokedMonster(ClientCard c)
+        {
+            if (c == null) return false;
+            int id = c.Id;
+            return id == 75286621 || id == 13529466 || id == 101305030 || id == 101305031 || id == 101305032 || id == 97973962 || id == 49513164 || id == 23656668 || id == 38423248 || id == 12307878 || id == 101305033;
+        }
+
+        private bool IsExtraDeckSummoned(ClientCard c)
+        {
+            if (c == null) return false;
+            return c.HasType(CardType.Fusion) || c.HasType(CardType.Synchro) || c.HasType(CardType.Xyz) || c.HasType(CardType.Link);
+        }
+
+        private bool IsInvokedElysiumRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            ClientCard c1 = combo[0];
+            ClientCard c2 = combo[1];
+            return (IsInvokedMonster(c1) && IsExtraDeckSummoned(c2)) ||
+                   (IsInvokedMonster(c2) && IsExtraDeckSummoned(c1));
+        }
+
+        private bool IsInvokedTranscendenceAeonRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count < 2) return false;
+            foreach (var c in combo)
+            {
+                if (c == null || !c.HasType(CardType.Fusion)) return false;
+            }
+            HashSet<int> attrs = new HashSet<int>();
+            foreach (var c in combo)
+            {
+                if (attrs.Contains(c.Attribute)) return false;
+                attrs.Add(c.Attribute);
+            }
             return true;
         }
     }

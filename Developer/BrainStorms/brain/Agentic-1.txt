@@ -1,0 +1,230 @@
+## ตรวจสอบ Code จริงก่อนตัดสินได้ข้อมูลครบแล้ว ตอนนี้ตรวจ Bug #2 ใน save_outcomes_to_sql.py:ได้หลักฐานครบทั้ง 2 จุดแล้ว วิเคราะห์ผล:
+
+---
+
+## ผลการพิสูจน์จาก Code จริง
+
+### Bug #1 — "Placebo Learning": **ถูกต้องบางส่วน แต่วิเคราะห์กลไกผิด**
+
+Agent อีกตัวพูดว่าการ์ดหลักใน DreadnoughtExecutor ไม่ถูก log เพราะ callback ส่ง `bool` ตรงโดยไม่ผ่าน `OnCardAction` — **นี่คือข้อมูลที่ผิด**
+
+**ความจริงจาก code:**
+- `DreadnoughtExecutor` เรียก `Executors.Clear()` แล้ว re-bind callback เป็น `DoomLiegeEffect`, `DeathDogmaEffect` ฯลฯ แทนที่จะเป็น lambda `() => OnCardAction(cardId, ...)` ของ Base
+- callback เหล่านี้ส่ง `bool` กลับตรงๆ **โดยไม่ผ่าน `EvaluateCardAction`** ของ Base ซึ่งเป็นจุดที่ `LogDecision()` ถูกเรียก (บรรทัด 2173)
+- ผล: การ์ดหลัก (Doom Liege, Death Dogma ฯลฯ) **ไม่ถูกบันทึก decisions.jsonl จริง** แต่เหตุผลไม่ใช่ "ไม่ผ่าน `OnCardAction`" — มันไม่ถึง `EvaluateCardAction` เลย เพราะ callback แยกสายโดยสิ้นเชิง
+
+**แต่มีข้อแม้:** `EvaluateCardAction` ของ Dreadnought (บรรทัด 620) แค่ดัก Normal Summon boss แล้ว `return base.EvaluateCardAction(...)` ซึ่ง **ไม่ได้ช่วยการ์ดที่ bind direct callback อยู่ดี** เพราะมันไม่ถูกเรียกเลย
+
+**ข้อสรุป Bug #1:** มีอยู่จริง แต่ "แนวแก้" ของ Agent ที่บอกให้ "Overload `OnCardAction` ให้รับ condition delegate" ก็ไม่ตรงประเด็น — แนวแก้จริงคือเปลี่ยน callback ของการ์ดหลักใน Dreadnought/InvokeExecutor ให้เรียกผ่าน `OnCardAction` (หรืออย่างน้อยเรียก `LogDecision()` ก่อน `return`)
+
+---
+
+### Bug #2 — "Turn 1 Split": **ถูกต้อง และยิ่งกว่านั้น**
+
+```python
+last_turn = 0
+for dec in decisions_list:
+    turn = dec.get("turn", 0)
+    if turn < last_turn:   # ← bug อยู่ที่นี่
+        games_decisions.append(current_game_decs)
+        current_game_decs = [dec]
+    else:
+        current_game_decs.append(dec)
+    last_turn = turn
+```
+
+ถ้าเกมแรกจบในเทิร์น 1 แล้วเกมสองเริ่มที่เทิร์น 1 → `1 < 1 = False` → ไม่ตัด → สองเกมถูก merge กัน ✅ Bug นี้มีจริง
+
+**ยิ่งกว่านั้น:** ถ้าสองเกมต่อเนื่องกัน และเทิร์นแรกของเกมสองมีค่า `turn == 0` (เช่น ถ้า counter เริ่มที่ 0) ก็จะ trigger การตัดผิดพลาดเช่นกัน เพราะ `0 < lastTurn` จะเป็น True ทันที
+
+---
+
+### แนวทางแก้ไขที่ถูกต้อง
+
+**Bug #1** — ปัญหาจริงคือ Direct Callback Bypass ไม่ใช่ "ต้องสร้าง overload ใหม่":
+
+```csharp
+// แทนที่จะเป็น:
+AddExecutor(ExecutorType.Activate, 101402022, DoomLiegeEffect);
+
+// เปลี่ยนเป็น (แบบง่ายที่สุด):
+AddExecutor(ExecutorType.Activate, 101402022, () => {
+    if (!DoomLiegeEffect()) { LogDecision(101402022, "Activate", _currentGoal, 0.0, false, _currentPlan); return false; }
+    LogDecision(101402022, "Activate", _currentGoal, 999.0, true, _currentPlan);
+    return true;
+});
+
+// หรือแบบสะอาดกว่า — wrapping helper ใน Base:
+protected bool ExecuteWithLog(int cardId, ExecutorType type, Func<bool> condition)
+{
+    bool result = condition();
+    LogDecision(cardId, type.ToString(), _currentGoal, result ? 999.0 : 0.0, result, _currentPlan);
+    return result;
+}
+// แล้วเรียก:
+AddExecutor(ExecutorType.Activate, 101402022, () => ExecuteWithLog(101402022, ExecutorType.Activate, DoomLiegeEffect));
+```
+
+`ExecuteWithLog` helper นี้สั้นกว่า อ่านง่ายกว่า และไม่ต้องเปลี่ยน signature ของ `OnCardAction` เลย
+
+**Bug #2** — แก้ partitioning logic:
+
+```python
+# แทนที่ `if turn < last_turn:` ให้ใช้ sentinel ที่ชัดเจนกว่า
+# วิธีที่ดีที่สุดคือ inject game_id ลงใน decisions.jsonl แต่ถ้าไม่อยากแตะ C#:
+
+if turn < last_turn and last_turn > 0:  # กัน edge case turn==0
+    games_decisions.append(current_game_decs)
+    current_game_decs = [dec]
+elif turn == 1 and last_turn == 1 and len(current_game_decs) >= 3:
+    # heuristic: เทิร์น 1 ซ้ำหลังมีหลาย decision = เกมใหม่
+    games_decisions.append(current_game_decs)
+    current_game_decs = [dec]
+else:
+    current_game_decs.append(dec)
+last_turn = turn
+```
+
+แต่ **วิธีที่ถูกต้องสุด** คือ inject `"game_id"` field ลงทุก decision ใน C# ฝั่ง `LogDecision()` แล้ว partition ด้วย game_id แทน — ไม่ต้องเดาจาก turn number เลย
+
+---
+
+**สรุป:** Agent อีกตัวถูกในภาพรวม แต่วิเคราะห์กลไก Bug #1 ผิด (บอกว่าไม่ผ่าน `OnCardAction` ทั้งที่ปัญหาคือไม่ถึง `EvaluateCardAction`) และ solution ที่เสนอยุ่งยากเกินความจำเป็น
+
+
+นี่เป็นโจทย์ระดับ Architecture ครับ ขอดู code จริงก่อนเสนอแนวทางได้ข้อมูลครบแล้ว เห็นทุก race condition และ architecture gap ชัดเจนตอนนี้เห็นภาพทั้งหมดครบแล้ว วาด Architecture ออกมาเลย:จากที่อ่าน code จริงทั้งหมด นี่คือสิ่งที่เกิดขึ้นและวิธีแก้ที่ถูกต้อง:
+
+---
+
+## ปัญหาที่เห็นจาก code จริง
+
+**Race condition หลัก:** `SaveConfiguration()` ใน C# ใช้ `lock (_staticLock)` แต่ lock นั้นเป็น `static` ในระดับ process เดียว — พอเป็น 20 process แยกกัน lock ไม่มีผลข้ามกัน ทุก process อ่าน merge เขียน `cards_registry_DeckA.json` ไฟล์เดียวพร้อมกัน ผลคือ last-write-wins ข้อมูลหายบางส่วน
+
+**`opponent_memory.json` หนักกว่านั้น:** ไฟล์นี้ไม่มีแม้แต่ per-deck version คือ 20 instance เขียนทับกันเลย
+
+---
+
+## แนวทางแก้ 3 ชั้น
+
+### ชั้น 1 — Per-instance temp registry (แก้ race)
+
+ใน `SetupFolderLogging()` เพิ่ม temp registry path ต่อ process:
+
+```csharp
+// เพิ่มใน SetupFolderLogging()
+int port = GetCurrentPort(); // อ่านจาก args หรือ config
+_tempRegistryPath = Path.Combine(baseDir, "config", "temp",
+    $"registry_{_resolvedDeckName}_port{port}.json");
+
+// ใน SaveConfiguration() เขียนลง temp แทน live
+WriteFileWithRetry(_tempRegistryPath, regJson);
+// ไม่ต้อง merge ตรงนี้แล้ว — merger daemon จะจัดการ
+```
+
+### ชั้น 2 — Registry Merger Daemon + game_id fix
+
+สร้าง Python watcher ที่รัน parallel กับทุก match:
+
+```python
+# merge_registries.py — เรียกหลัง LP=0 detected
+import glob, json, os, tempfile
+
+def weighted_merge(temp_dir, deck_name, live_path):
+    pattern = os.path.join(temp_dir, f"registry_{deck_name}_port*.json")
+    files = glob.glob(pattern)
+    
+    merged = {}
+    for fpath in files:
+        with open(fpath) as f:
+            cards = json.load(f)
+        for card in cards:
+            cid = card["id"]
+            if cid not in merged:
+                merged[cid] = card.copy()
+            else:
+                # เลือกค่าดีที่สุด ไม่ใช่ last-write-wins
+                merged[cid]["priority"] = max(merged[cid]["priority"], card["priority"])
+                # Q-values: weighted average จาก count
+                for goal, q in card.get("q_values", {}).items():
+                    old = merged[cid].setdefault("q_values", {}).get(goal, 0.0)
+                    merged[cid]["q_values"][goal] = round((old + q) / 2, 4)
+    
+    # Atomic write — temp file → os.replace (ไม่มีช่วง corrupt)
+    with tempfile.NamedTemporaryFile("w", dir=os.path.dirname(live_path),
+                                     delete=False, suffix=".json") as tmp:
+        json.dump(list(merged.values()), tmp, indent=2)
+        tmp_path = tmp.name
+    os.replace(tmp_path, live_path)
+```
+
+**Fix Turn-1 split** — เพิ่ม `game_id` ใน `LogDecision()` ฝั่ง C#:
+
+```csharp
+// ใน SetupFolderLogging() — generate game_id ใหม่ทุกครั้ง
+_currentGameId = Guid.NewGuid().ToString().Substring(0, 8);
+
+// ใน LogDecision() — inject เข้า JSON
+var entry = new Dictionary<string, object> {
+    { "game_id", _currentGameId },  // ← เพิ่มบรรทัดนี้
+    { "card_id", cardId },
+    // ...
+};
+```
+
+แล้ว `save_outcomes_to_sql.py` partition ด้วย `game_id` แทน turn number — ไม่ต้องเดาอีก
+
+### ชั้น 3 — Selective Experience Replay (บอทจำแต่ของดี)
+
+ใน `LogDecision()` เพิ่ม filter ก่อนเขียน:
+
+```csharp
+protected void LogDecision(int cardId, string action, string goal,
+                            double score, bool decision, string plan)
+{
+    // Quality filter: บันทึกเฉพาะ decision ที่มีคุณค่าต่อการเรียนรู้
+    // - Win path: decision=true ทุกใบ (เราอยากรู้ว่าอะไรใช้ได้)
+    // - Loss path: เฉพาะ score สูง (เราอยากรู้ว่าอะไรควรหลีกเลี่ยง)
+    // - decision=false + score ต่ำ: ไม่มีประโยชน์ ข้ามไป
+    bool worthLogging = decision || score > 80.0;
+    if (!worthLogging) return;
+    
+    // ... โค้ดเดิม
+}
+```
+
+---
+
+## Auto-Deploy หลัง LP=0
+
+ระบบที่มีอยู่ใน `MonitorLP()` ตรวจ LP=0 แล้วเรียก `ApplyRealTimeLearning()` อยู่แล้ว ต้องเพิ่มแค่:
+
+```csharp
+protected void ApplyRealTimeLearning()
+{
+    lock (_staticLock)
+    {
+        if (_learningApplied) return;
+        _learningApplied = true;
+        
+        // 1. บันทึก temp registry ของ instance นี้ (เร็ว)
+        SaveToTempRegistry();
+        
+        // 2. ยิง Python merger แบบ async (ไม่บล็อกเกม)
+        System.Threading.Task.Run(() => {
+            var p = System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo {
+                FileName = "python",
+                Arguments = $"\"{_mergerScriptPath}\" --deck {_resolvedDeckName}",
+                UseShellExecute = false,
+                RedirectStandardOutput = false
+            });
+            p?.WaitForExit(3000); // timeout 3s max
+            
+            // 3. Hot-reload หลัง merge เสร็จ
+            LoadConfiguration();
+            _needsReset = true;
+        });
+    }
+}
+```
+
+ผลคือ: LP=0 → บันทึก temp → merge ทุก port → atomic write → hot-reload ทุก instance → เกมต่อไปใช้ weights ใหม่ทันที ภายใน ~2-3 วินาที โดยไม่ต้อง restart WindBot เลย

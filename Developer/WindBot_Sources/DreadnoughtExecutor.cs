@@ -22,58 +22,58 @@ namespace ProjectIgnisAI
             Executors.Clear();
 
             // 1. Hand traps, interruptions, and negates (high priority response handlers)
-            AddExecutor(ExecutorType.Activate, 14558127, AshBlossomEffect); // Ash Blossom
-            AddExecutor(ExecutorType.Activate, 10045474, ImpermanenceEffect); // Infinite Impermanence
-            AddExecutor(ExecutorType.Activate, 24224830, CalledByGraveEffect); // Called by the Grave (ID 1)
-            AddExecutor(ExecutorType.Activate, 42141493, FuwalosEffect); // Mulcharmy Fuwalos
-            AddExecutor(ExecutorType.Activate, 94145021, DrollEffect); // Droll & Lock Bird
-            AddExecutor(ExecutorType.Activate, 6325660, DominusSparkEffect); // Dominus Spark
-            AddExecutor(ExecutorType.Activate, 78114463, SolemnReportEffect); // Solemn Report
+            AddExecutor(ExecutorType.Activate, 14558127, () => OnCardAction(14558127, ExecutorType.Activate, AshBlossomEffect)); // Ash Blossom
+            AddExecutor(ExecutorType.Activate, 10045474, () => OnCardAction(10045474, ExecutorType.Activate, ImpermanenceEffect)); // Infinite Impermanence
+            AddExecutor(ExecutorType.Activate, 24224830, () => OnCardAction(24224830, ExecutorType.Activate, CalledByGraveEffect)); // Called by the Grave
+            AddExecutor(ExecutorType.Activate, 42141493, () => OnCardAction(42141493, ExecutorType.Activate, FuwalosEffect)); // Mulcharmy Fuwalos
+            AddExecutor(ExecutorType.Activate, 94145021, () => OnCardAction(94145021, ExecutorType.Activate, DrollEffect)); // Droll & Lock Bird
+            AddExecutor(ExecutorType.Activate, 6325660, () => OnCardAction(6325660, ExecutorType.Activate, DominusSparkEffect)); // Dominus Spark
+            AddExecutor(ExecutorType.Activate, 78114463, () => OnCardAction(78114463, ExecutorType.Activate, SolemnReportEffect)); // Solemn Report
 
             // 2. Search & Field Spells
-            AddExecutor(ExecutorType.Activate, 73628505, TerraformingEffect); // Terraforming
-            AddExecutor(ExecutorType.Activate, 101402062, DarkCityFieldEffect); // Clock Tower Prison City - Dark City Field Activation
-            AddExecutor(ExecutorType.Activate, 101402022, DoomLiegeEffect); // Doom Liege (Banish/Search)
-            AddExecutor(ExecutorType.Activate, 40237839, SabatielEffect); // Sabatiel (Search Poly/Fusion)
+            AddExecutor(ExecutorType.Activate, 73628505, () => OnCardAction(73628505, ExecutorType.Activate, TerraformingEffect)); // Terraforming
+            AddExecutor(ExecutorType.Activate, 101402062, () => OnCardAction(101402062, ExecutorType.Activate, DarkCityFieldEffect)); // Clock Tower Prison City - Dark City Field Activation
+            AddExecutor(ExecutorType.Activate, 101402022, () => OnCardAction(101402022, ExecutorType.Activate, DoomLiegeEffect)); // Doom Liege (Banish/Search)
+            AddExecutor(ExecutorType.Activate, 40237839, () => OnCardAction(40237839, ExecutorType.Activate, SabatielEffect)); // Sabatiel (Search Poly/Fusion)
 
             // 3. Extenders & Special Summons (Hand/GY)
-            AddExecutor(ExecutorType.SpSummon, 101402023, DreadnoughtServantSpSummon); // Dreadnought Servant hand SS
-            AddExecutor(ExecutorType.Activate, 101402023, DreadnoughtServantEffect); // Dreadnought Servant (Destroy/Search or GY spin)
-            AddExecutor(ExecutorType.SpSummon, 10808715, DuskCrowSpSummon); // Dusk Crow SS
-            AddExecutor(ExecutorType.Activate, 10808715, DuskCrowEffect); // Dusk Crow search
-            AddExecutor(ExecutorType.Activate, 58288218, MaskedHeroFurnaceEffect); // Furnace search
-            AddExecutor(ExecutorType.SpSummon, 58288218, MaskedHeroFurnaceSpSummon); // Furnace SS from GY
-            AddExecutor(ExecutorType.Activate, 66206748, MaskedHeroFountainEffect); // Fountain SS/Set Mask Change
-            AddExecutor(ExecutorType.SpSummon, 101402021, DeathDogmaSpSummon); // Death Dogma SS
-            AddExecutor(ExecutorType.Activate, 101402021, DeathDogmaEffect); // Death Dogma (Burn or Quick Fusion)
-            AddExecutor(ExecutorType.SpSummon, 83965310, PlasmaSpSummon); // Plasma SS
-            AddExecutor(ExecutorType.Activate, 83965310, PlasmaEffect); // Plasma Absorb
+            AddExecutor(ExecutorType.SpSummon, 101402023, () => OnCardAction(101402023, ExecutorType.SpSummon, DreadnoughtServantSpSummon)); // Dreadnought Servant hand SS
+            AddExecutor(ExecutorType.Activate, 101402023, () => OnCardAction(101402023, ExecutorType.Activate, DreadnoughtServantEffect)); // Dreadnought Servant (Destroy/Search or GY spin)
+            AddExecutor(ExecutorType.SpSummon, 10808715, () => OnCardAction(10808715, ExecutorType.SpSummon, DuskCrowSpSummon)); // Dusk Crow SS
+            AddExecutor(ExecutorType.Activate, 10808715, () => OnCardAction(10808715, ExecutorType.Activate, DuskCrowEffect)); // Dusk Crow search
+            AddExecutor(ExecutorType.Activate, 58288218, () => OnCardAction(58288218, ExecutorType.Activate, MaskedHeroFurnaceEffect)); // Furnace search
+            AddExecutor(ExecutorType.SpSummon, 58288218, () => OnCardAction(58288218, ExecutorType.SpSummon, MaskedHeroFurnaceSpSummon)); // Furnace SS from GY
+            AddExecutor(ExecutorType.Activate, 66206748, () => OnCardAction(66206748, ExecutorType.Activate, MaskedHeroFountainEffect)); // Fountain SS/Set Mask Change
+            AddExecutor(ExecutorType.SpSummon, 101402021, () => OnCardAction(101402021, ExecutorType.SpSummon, DeathDogmaSpSummon)); // Death Dogma SS
+            AddExecutor(ExecutorType.Activate, 101402021, () => OnCardAction(101402021, ExecutorType.Activate, DeathDogmaEffect)); // Death Dogma (Burn or Quick Fusion)
+            AddExecutor(ExecutorType.SpSummon, 83965310, () => OnCardAction(83965310, ExecutorType.SpSummon, PlasmaSpSummon)); // Plasma SS
+            AddExecutor(ExecutorType.Activate, 83965310, () => OnCardAction(83965310, ExecutorType.Activate, PlasmaEffect)); // Plasma Absorb
 
             // 4. Normal Summons
-            AddExecutor(ExecutorType.Summon, 27780618, VyonSummon); // Vision HERO Vyon
-            AddExecutor(ExecutorType.Summon, 101402022, DoomLiegeSummon); // Doom Liege
-            AddExecutor(ExecutorType.Summon, 50720316, ShadowMistSummon); // Shadow Mist
-            AddExecutor(ExecutorType.Summon, 101402023, DreadnoughtServantSummon); // Servant
+            AddExecutor(ExecutorType.Summon, 27780618, () => OnCardAction(27780618, ExecutorType.Summon, VyonSummon)); // Vision HERO Vyon
+            AddExecutor(ExecutorType.Summon, 101402022, () => OnCardAction(101402022, ExecutorType.Summon, DoomLiegeSummon)); // Doom Liege
+            AddExecutor(ExecutorType.Summon, 50720316, () => OnCardAction(50720316, ExecutorType.Summon, ShadowMistSummon)); // Shadow Mist
+            AddExecutor(ExecutorType.Summon, 101402023, () => OnCardAction(101402023, ExecutorType.Summon, DreadnoughtServantSummon)); // Servant
 
             // 5. Summon Trigger Effects & Searches
-            AddExecutor(ExecutorType.Activate, 27780618, VyonEffect); // Vyon Send/Search Poly
-            AddExecutor(ExecutorType.Activate, 50720316, ShadowMistEffect); // Shadow Mist Search
+            AddExecutor(ExecutorType.Activate, 27780618, () => OnCardAction(27780618, ExecutorType.Activate, VyonEffect)); // Vyon Send/Search Poly
+            AddExecutor(ExecutorType.Activate, 50720316, () => OnCardAction(50720316, ExecutorType.Activate, ShadowMistEffect)); // Shadow Mist Search
 
             // 6. Fusion & Spell Engines
-            AddExecutor(ExecutorType.Activate, 52947044, FusionDestinyEffect); // Fusion Destiny
-            AddExecutor(ExecutorType.Activate, 24094653, PolymerizationEffect); // Polymerization
-            AddExecutor(ExecutorType.Activate, 21143940, MaskChangeEffect); // Mask Change
-            AddExecutor(ExecutorType.Activate, 48130397, SuperPolymerizationEffect); // Super Poly
-            AddExecutor(ExecutorType.Activate, 100456010, DBurstEffect); // D-Burst (Destroy/SS or GY Double Attack)
+            AddExecutor(ExecutorType.Activate, 52947044, () => OnCardAction(52947044, ExecutorType.Activate, FusionDestinyEffect)); // Fusion Destiny
+            AddExecutor(ExecutorType.Activate, 24094653, () => OnCardAction(24094653, ExecutorType.Activate, PolymerizationEffect)); // Polymerization
+            AddExecutor(ExecutorType.Activate, 21143940, () => OnCardAction(21143940, ExecutorType.Activate, MaskChangeEffect)); // Mask Change
+            AddExecutor(ExecutorType.Activate, 48130397, () => OnCardAction(48130397, ExecutorType.Activate, SuperPolymerizationEffect)); // Super Poly
+            AddExecutor(ExecutorType.Activate, 100456010, () => OnCardAction(100456010, ExecutorType.Activate, DBurstEffect)); // D-Burst (Destroy/SS or GY Double Attack)
 
             // 7. Extra Deck Proc & Boss Triggers
-            AddExecutor(ExecutorType.SpSummon, 101402037, DreadnoughtSpSummon); // Dreadnought Alt Summon Proc
-            AddExecutor(ExecutorType.Activate, 101402037, DreadnoughtEffect); // Dreadnought Search
-            AddExecutor(ExecutorType.Activate, 60461804, DPEEffect); // DPE Destroy/Rebirth
-            AddExecutor(ExecutorType.Activate, 90579153, DystopiaEffect); // Dystopia Destroy
-            AddExecutor(ExecutorType.Activate, 23204029, ContrastHeroChaosEffect); // Contrast HERO Chaos Negate
-            AddExecutor(ExecutorType.Activate, 9411399, MaliciousEffect); // Malicious Summon another copy
-            AddExecutor(ExecutorType.Activate, 16605586, DenierEffect); // Denier Recycle/SS
+            AddExecutor(ExecutorType.SpSummon, 101402037, () => OnCardAction(101402037, ExecutorType.SpSummon, DreadnoughtSpSummon)); // Dreadnought Alt Summon Proc
+            AddExecutor(ExecutorType.Activate, 101402037, () => OnCardAction(101402037, ExecutorType.Activate, DreadnoughtEffect)); // Dreadnought Search
+            AddExecutor(ExecutorType.Activate, 60461804, () => OnCardAction(60461804, ExecutorType.Activate, DPEEffect)); // DPE Destroy/Rebirth
+            AddExecutor(ExecutorType.Activate, 90579153, () => OnCardAction(90579153, ExecutorType.Activate, DystopiaEffect)); // Dystopia Destroy
+            AddExecutor(ExecutorType.Activate, 23204029, () => OnCardAction(23204029, ExecutorType.Activate, ContrastHeroChaosEffect)); // Contrast HERO Chaos Negate
+            AddExecutor(ExecutorType.Activate, 9411399, () => OnCardAction(9411399, ExecutorType.Activate, MaliciousEffect)); // Malicious Summon another copy
+            AddExecutor(ExecutorType.Activate, 16605586, () => OnCardAction(16605586, ExecutorType.Activate, DenierEffect)); // Denier Recycle/SS
 
             // 8. Catch-All Fallbacks
             AddExecutor(ExecutorType.Activate, OnDefaultActivate);
@@ -694,6 +694,22 @@ namespace ProjectIgnisAI
 
         public override IList<ClientCard> OnSelectCard(IList<ClientCard> cards, int min, int max, long hint, bool cancelable)
         {
+            if (hint == HintMsg_FusionMaterial)
+            {
+                IList<ClientCard> materials = GetOptimalFusionMaterials(cards, min, max);
+                _lastSelectedFusionId = 0;
+                return materials;
+            }
+            IList<ClientCard> selected = OnSelectCardInternal(cards, min, max, hint, cancelable);
+            if (hint == HintMsg_SpSummon && selected != null && selected.Count > 0)
+            {
+                _lastSelectedFusionId = selected[0].Id;
+            }
+            return selected;
+        }
+
+        private IList<ClientCard> OnSelectCardInternal(IList<ClientCard> cards, int min, int max, long hint, bool cancelable)
+        {
             if (cards == null || cards.Count == 0)
                 return base.OnSelectCard(cards, min, max, hint, cancelable);
 
@@ -864,33 +880,7 @@ namespace ProjectIgnisAI
             // 4. Fusion Material Selection (Polymerization, Death Dogma, etc.)
             if (hint == HintMsg_FusionMaterial)
             {
-                List<ClientCard> selected = new List<ClientCard>();
-                // Prioritize recycling Malicious, Denier, or Servant
-                foreach (var c in cards)
-                {
-                    if ((c.Id == 9411399 || c.Id == 16605586 || c.Id == 101402023) && !selected.Contains(c))
-                    {
-                        selected.Add(c);
-                        if (selected.Count >= max) break;
-                    }
-                }
-                foreach (var c in cards)
-                {
-                    if (IsDestinyHero(c) && !selected.Contains(c))
-                    {
-                        selected.Add(c);
-                        if (selected.Count >= max) break;
-                    }
-                }
-                foreach (var c in cards)
-                {
-                    if (!selected.Contains(c))
-                    {
-                        selected.Add(c);
-                        if (selected.Count >= max) break;
-                    }
-                }
-                if (selected.Count >= min) return selected;
+                return GetOptimalFusionMaterials(cards, min, max);
             }
 
             // 5. Denier Recycle target selection
@@ -991,6 +981,209 @@ namespace ProjectIgnisAI
                 }
             }
             return base.OnSelectOption(options);
+        }
+
+        private IList<ClientCard> GetOptimalFusionMaterials(IList<ClientCard> cards, int min, int max)
+        {
+            List<List<ClientCard>> combos = GetCombinations(cards, min);
+            List<List<ClientCard>> validCombos = new List<List<ClientCard>>();
+
+            foreach (var combo in combos)
+            {
+                bool isValid = false;
+                if (_lastSelectedFusionId == 60461804) // DPE
+                {
+                    isValid = IsDpeRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 101402037) // Dreadnought
+                {
+                    isValid = IsDreadnoughtRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 90579153) // Dystopia
+                {
+                    isValid = IsDystopiaRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 30757127) // Dangerous
+                {
+                    isValid = IsDangerousRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 46759931) // Trinity
+                {
+                    isValid = IsTrinityRecipe(combo);
+                }
+                else if (_lastSelectedFusionId == 23204029) // Contrast HERO Chaos
+                {
+                    isValid = IsContrastHeroChaosRecipe(combo);
+                }
+                else
+                {
+                    isValid = IsDpeRecipe(combo) || IsDreadnoughtRecipe(combo) || IsDystopiaRecipe(combo) || IsDangerousRecipe(combo) || IsTrinityRecipe(combo) || IsContrastHeroChaosRecipe(combo);
+                }
+
+                if (isValid)
+                {
+                    validCombos.Add(combo);
+                }
+            }
+
+            if (validCombos.Count > 0)
+            {
+                List<ClientCard> bestCombo = null;
+                double bestScore = double.MinValue;
+                foreach (var combo in validCombos)
+                {
+                    double score = ScoreCombination(combo);
+                    if (score > bestScore)
+                    {
+                        bestScore = score;
+                        bestCombo = combo;
+                    }
+                }
+                if (bestCombo != null)
+                {
+                    return bestCombo;
+                }
+            }
+
+            List<ClientCard> sorted = new List<ClientCard>(cards);
+            sorted.Sort((a, b) =>
+            {
+                double scoreA = ScoreCardIndividual(a);
+                double scoreB = ScoreCardIndividual(b);
+                return scoreB.CompareTo(scoreA);
+            });
+
+            List<ClientCard> fallbackResult = new List<ClientCard>();
+            for (int i = 0; i < Math.Min(min, sorted.Count); i++)
+            {
+                fallbackResult.Add(sorted[i]);
+            }
+            return fallbackResult;
+        }
+
+        private double ScoreCombination(List<ClientCard> combo)
+        {
+            double totalScore = 0.0;
+            foreach (var card in combo)
+            {
+                if (card == null) continue;
+                double cardScore = ScoreCardIndividual(card);
+                totalScore += cardScore;
+            }
+            return totalScore;
+        }
+
+        private double ScoreCardIndividual(ClientCard card)
+        {
+            if (card == null) return 0.0;
+            double cardScore = 0.0;
+            CardMetadata meta = GetOrCreateMetadata(card);
+            if (meta != null)
+            {
+                cardScore -= meta.priority * 2.0;
+            }
+            if (card.Location == CardLocation.Grave)
+            {
+                cardScore += 15.0;
+            }
+            else if (card.Location == CardLocation.Hand)
+            {
+                cardScore += 5.0;
+            }
+            if (card.Id == 9411399 || card.Id == 16605586 || card.Id == 101402023)
+            {
+                cardScore += 25.0;
+            }
+            if (card.Id == 86120751 || card.Id == 101305015)
+            {
+                if (card.Location == CardLocation.Grave || card.Location == CardLocation.MonsterZone)
+                {
+                    cardScore += 20.0;
+                }
+            }
+            if (card.Location == CardLocation.Hand && 
+                (card.Id == 14558127 || card.Id == 10045474 || card.Id == 24224830 || card.Id == 73642296 || card.Id == 42141493 || card.Id == 94145021 || card.Id == 6325660 || card.Id == 78114463))
+            {
+                cardScore -= 50.0;
+            }
+            if (card.Id == 101305017)
+            {
+                cardScore -= 30.0;
+            }
+            return cardScore;
+        }
+
+        private List<List<ClientCard>> GetCombinations(IList<ClientCard> list, int k)
+        {
+            List<List<ClientCard>> result = new List<List<ClientCard>>();
+            GetCombinationsRec(list, k, 0, new List<ClientCard>(), result);
+            return result;
+        }
+
+        private void GetCombinationsRec(IList<ClientCard> list, int k, int start, List<ClientCard> current, List<List<ClientCard>> result)
+        {
+            if (current.Count == k)
+            {
+                result.Add(new List<ClientCard>(current));
+                return;
+            }
+            for (int i = start; i < list.Count; i++)
+            {
+                current.Add(list[i]);
+                GetCombinationsRec(list, k, i + 1, current, result);
+                current.RemoveAt(current.Count - 1);
+            }
+        }
+
+        private bool IsMaskedHero(ClientCard card)
+        {
+            if (card == null) return false;
+            int id = card.Id;
+            return id == 58288218 || id == 66206748 || id == 10808715 || id == 58481572 || id == 54757758 || id == 69394324 || id == 63813056 || id == 93657021;
+        }
+
+        private bool IsDpeRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            ClientCard c1 = combo[0];
+            ClientCard c2 = combo[1];
+            bool case1 = (IsHero(c1) && c1.Level >= 6) && IsDestinyHero(c2);
+            bool case2 = (IsHero(c2) && c2.Level >= 6) && IsDestinyHero(c1);
+            return case1 || case2;
+        }
+
+        private bool IsDreadnoughtRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            return IsDestinyHero(combo[0]) && combo[0].Level >= 5 && IsDestinyHero(combo[1]) && combo[1].Level >= 5;
+        }
+
+        private bool IsDystopiaRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            return IsDestinyHero(combo[0]) && IsDestinyHero(combo[1]);
+        }
+
+        private bool IsDangerousRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            ClientCard c1 = combo[0];
+            ClientCard c2 = combo[1];
+            bool case1 = IsDestinyHero(c1) && (c2.Attribute == (int)CardAttribute.Dark && c2.HasType(CardType.Effect));
+            bool case2 = IsDestinyHero(c2) && (c1.Attribute == (int)CardAttribute.Dark && c1.HasType(CardType.Effect));
+            return case1 || case2;
+        }
+
+        private bool IsTrinityRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 3) return false;
+            return IsHero(combo[0]) && IsHero(combo[1]) && IsHero(combo[2]);
+        }
+
+        private bool IsContrastHeroChaosRecipe(List<ClientCard> combo)
+        {
+            if (combo.Count != 2) return false;
+            return IsMaskedHero(combo[0]) && IsMaskedHero(combo[1]);
         }
     }
 }
